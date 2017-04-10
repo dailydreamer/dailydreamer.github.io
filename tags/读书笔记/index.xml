@@ -1,0 +1,1871 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>读书笔记 on dailydreamer</title>
+    <link>https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml</link>
+    <description>Recent content in 读书笔记 on dailydreamer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>移动端体验</title>
+      <link>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</link>
+      <pubDate>Thu, 16 Jun 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</guid>
+      <description>
+
+&lt;p&gt;前段时间在Edx上浏览了一门课程&lt;a href=&#34;https://courses.edx.org/courses/course-v1:MITx+21W.789.1x+1T2016/info&#34;&gt;Mobile Application Experiences&lt;/a&gt;，听课笔记记录如下。&lt;/p&gt;
+
+&lt;h2 id=&#34;come-up-an-idea&#34;&gt;Come up an idea&lt;/h2&gt;
+
+&lt;h3 id=&#34;research-method&#34;&gt;Research method&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;observation&lt;/li&gt;
+&lt;li&gt;location tour: park, office&amp;hellip;&lt;/li&gt;
+&lt;li&gt;contextual inquiring: working, workout&amp;hellip;&lt;/li&gt;
+&lt;li&gt;think aloud&lt;/li&gt;
+&lt;li&gt;diary logging: taking photo, recording video&amp;hellip; close to the time that happened&lt;/li&gt;
+&lt;li&gt;interview: ask last time they do something rather than the general situation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;look at what they are frustrating to do. What kind of role the environment is playing.&lt;/p&gt;
+
+&lt;h3 id=&#34;analyze-data&#34;&gt;Analyze data&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;flow models: analyze how data flow transfer between subjects&lt;/li&gt;
+&lt;li&gt;conversation analyze: look at the conversation of subjects related to a subject&lt;/li&gt;
+&lt;li&gt;critical incident analyze: look at the place where people get stuck&lt;/li&gt;
+&lt;li&gt;affinity analyze&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;affinity-analyze&#34;&gt;Affinity analyze&lt;/h4&gt;
+
+&lt;p&gt;From data(bottom up) to find themes.
+It cannot help you to prove a particular hypothesis because you only talk to a few people which can represent everyone.&lt;/p&gt;
+
+&lt;p&gt;This method is about discovery, not preconceived notions.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create Note: each post represent one idea.&lt;/li&gt;
+&lt;li&gt;Put up note&lt;/li&gt;
+&lt;li&gt;Use 3 hierarchies, users&amp;rsquo; exact quotes, users&amp;rsquo; one sentence summary, theme similar between users.&lt;/li&gt;
+&lt;li&gt;Group the notes use the similar theme&lt;/li&gt;
+&lt;li&gt;Come up with a design through the theme&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;identifying-gaps&#34;&gt;Identifying gaps&lt;/h3&gt;
+
+&lt;p&gt;listen from different source and board audience&lt;/p&gt;
+
+&lt;p&gt;build a quick prototype and give it to them&lt;/p&gt;
+
+&lt;h3 id=&#34;proposal&#34;&gt;Proposal&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;why you think the project need to be done&lt;/li&gt;
+&lt;li&gt;what your objects and design elements are&lt;/li&gt;
+&lt;li&gt;how do you test your projects if they have meet your objects.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;remember to allow people to navigate through your proposal easily&lt;/p&gt;
+
+&lt;h2 id=&#34;build-and-test-your-idea-with-paper-prototype&#34;&gt;Build and test your idea with paper prototype&lt;/h2&gt;
+
+&lt;h3 id=&#34;concept-modeling&#34;&gt;Concept modeling&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;before + after: how is life different with your app&lt;/li&gt;
+&lt;li&gt;user mental model: how do user think about the key part of your app&lt;/li&gt;
+&lt;li&gt;architecture model&lt;/li&gt;
+&lt;li&gt;user types&lt;/li&gt;
+&lt;li&gt;content types&lt;/li&gt;
+&lt;li&gt;service model: what are all the user touch point with your system&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;user-cases&#34;&gt;User cases&lt;/h3&gt;
+
+&lt;h3 id=&#34;structure-flow&#34;&gt;Structure(flow)&lt;/h3&gt;
+
+&lt;p&gt;How your product empower people&amp;rsquo;s work flow.&lt;/p&gt;
+
+&lt;h3 id=&#34;screen-design&#34;&gt;Screen design&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;where I am, where to go, how to get here&lt;/li&gt;
+&lt;li&gt;set expectations and provide feedback&lt;/li&gt;
+&lt;li&gt;ergonomic design&lt;/li&gt;
+&lt;li&gt;rely on recognition rather than recall&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;paper-prototype&#34;&gt;Paper prototype&lt;/h2&gt;
+
+&lt;p&gt;start with paper: people tend to critical of overall concept&lt;/p&gt;
+
+&lt;p&gt;then mock up screens: people tend to critical on design details&lt;/p&gt;
+
+&lt;h2 id=&#34;usability-testing&#34;&gt;Usability testing&lt;/h2&gt;
+
+&lt;p&gt;about 5 people can cover 80% situations&lt;/p&gt;
+
+&lt;p&gt;Role: moderator, computer, note taker and user.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>买基金给我加薪</title>
+      <link>https://dailydreamer.me/post/2016-06-15-fund-tips/</link>
+      <pubDate>Wed, 15 Jun 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-06-15-fund-tips/</guid>
+      <description>
+
+&lt;p&gt;一本有关基金的入门书籍，一些基本知识和理念。&lt;/p&gt;
+
+&lt;h2 id=&#34;术语&#34;&gt;术语&lt;/h2&gt;
+
+&lt;p&gt;选中长期绩效好的基金。&lt;/p&gt;
+
+&lt;p&gt;所选择的基金公司不能只重视一只基金。&lt;/p&gt;
+
+&lt;p&gt;基金风险指标：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;标准差：过去一年净值的稳定程度，越低越稳定&lt;/li&gt;
+&lt;li&gt;beta值：基金波动幅度与打大盘的比值，越低越稳定&lt;/li&gt;
+&lt;li&gt;夏普指数：每单位反风险带来的收益，越大收益越高。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;定投秘籍&#34;&gt;定投秘籍&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;越早进场越好&lt;/li&gt;
+&lt;li&gt;账面亏损无所谓，赎回时要赚钱&lt;/li&gt;
+&lt;li&gt;定期检视，适时去芜存菁（绩效连续在同类型中处在下游）&lt;/li&gt;
+&lt;li&gt;只设停利，不设停损（简单计算，年利率是定存的5倍）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;单笔投资秘籍&#34;&gt;单笔投资秘籍&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;熟悉市场脉动&lt;/li&gt;
+&lt;li&gt;分批进场，买跌不买涨&lt;/li&gt;
+&lt;li&gt;定期检视，停利更要止损&lt;/li&gt;
+&lt;li&gt;懂得分批出场&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;结合基本面（经济景气）和技术面&lt;/p&gt;
+
+&lt;h3 id=&#34;基本面&#34;&gt;基本面&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;国内生产总值&lt;/li&gt;
+&lt;li&gt;主要经济指标&lt;/li&gt;
+&lt;li&gt;美国采购经理指数&lt;/li&gt;
+&lt;li&gt;消费者物价指数&lt;/li&gt;
+&lt;li&gt;美联储态度&lt;/li&gt;
+&lt;li&gt;消费者信心指数&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;技术面&#34;&gt;技术面&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;季线&lt;/li&gt;
+&lt;li&gt;KD线&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;结合操作&#34;&gt;结合操作&lt;/h2&gt;
+
+&lt;p&gt;定投的收益也是市场的重要指标&lt;/p&gt;
+
+&lt;p&gt;进场时：先定投，低谷时单笔投资&lt;/p&gt;
+
+&lt;p&gt;出场时：先2-3次赎单笔投资，再一次赎回定投&lt;/p&gt;
+
+&lt;p&gt;获利后滚入再投资&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>读过的一些设计书籍</title>
+      <link>https://dailydreamer.me/post/2016-05-24-some-design-books/</link>
+      <pubDate>Tue, 24 May 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-05-24-some-design-books/</guid>
+      <description>
+
+&lt;p&gt;最近翻了一下之前记的一些读书笔记，将读过的一些经典的设计书籍总结一下，记录在这里。&lt;/p&gt;
+
+&lt;h2 id=&#34;不要让我思考&#34;&gt;不要让我思考&lt;/h2&gt;
+
+&lt;p&gt;整本书都在传递一个强烈的概念：不要让我思考。用户不喜欢思考，比如用户阅读网页的方式是扫描，选择的时候抱着满意即可、勉强应付的心态。
+强迫用户思考会使他们离开你的产品。&lt;/p&gt;
+
+&lt;p&gt;下面是几个具体的优化：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;明显标识可点击处，划分页面区域，降低视觉噪音&lt;/li&gt;
+&lt;li&gt;去掉不必要的文字&lt;/li&gt;
+&lt;li&gt;统一导航&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;设计心理学&#34;&gt;设计心理学&lt;/h2&gt;
+
+&lt;p&gt;整本书从心理学的角度看设计。&lt;/p&gt;
+
+&lt;p&gt;人认知的基本模型是目标 -&amp;gt; 行动 -&amp;gt; 反馈，好的产品应该有一个好的概念模型&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;减少目标到行动认知负担，也即上面提到的不要让我思考&lt;/li&gt;
+&lt;li&gt;产生合理的反馈&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;具体有下面几个原则：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;应用存储于外部世界(物理环境)和头脑中(文化标准)的知识，建立界面到功能的自然匹配&lt;/li&gt;
+&lt;li&gt;简化任务结构&lt;/li&gt;
+&lt;li&gt;注重可视性，比如一个按钮是一个功能&lt;/li&gt;
+&lt;li&gt;利用自然和人为的限制因素&lt;/li&gt;
+&lt;li&gt;考虑可能出现的人为差错，防止错误需要警报或强迫性功能&lt;/li&gt;
+&lt;li&gt;若无法做到以上几点，就标准化&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;写给大家看的设计书&#34;&gt;写给大家看的设计书&lt;/h2&gt;
+
+&lt;p&gt;这本书主要讲了视觉设计中的几个基本原则：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;亲密性：将相关的项组织在一起，物理位置的接近意味着存在关联&lt;/li&gt;
+&lt;li&gt;对齐：任何元素都不能在页面上随意摆放，每个元素应当与页面上另一个元素存在某种视觉联系&lt;/li&gt;
+&lt;li&gt;重复：把现有的一致性向前推进一步&lt;/li&gt;
+&lt;li&gt;对比：让他们截然不同吧&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其他还有注意留白。&lt;/p&gt;
+
+&lt;h2 id=&#34;设计中的设计&#34;&gt;设计中的设计&lt;/h2&gt;
+
+&lt;p&gt;日本设计师原研哉的作品。
+一开始只是被书中精美的图片和排版所吸引，但是也收获了不少。&lt;/p&gt;
+
+&lt;p&gt;设计师坂茂应原研哉之邀再设计卫生纸时，设计了方形卫生纸。
+由于方形的阻力更大会使每次使用的纸变少，而且方形相较于原型更方便运输。
+这种再设计可以让人从习以为常的日常中跳脱出来，从另一个角度看问题。&lt;/p&gt;
+
+&lt;p&gt;原研哉说，设计师在其受众头脑中创建一种信息建筑，受众通过视觉听觉味觉触觉等感官信息，以及被外界重新唤醒的记忆来构建信息建筑。&lt;/p&gt;
+
+&lt;p&gt;原研哉对书和纸的看法：书作为一种存储信息的媒介可能有诸多不便。
+但是如果我们好好观察一下信息与个人的关系，会发现重要的其实是我们能多深入的理解信息。
+就书而言，我们会有更愉快的用户体验，我们会更中意于那些以适当重量和质地的材料呈现的信息。
+这可能就像食物与人类的关系一样。
+因为电子媒介的兴起，纸终于能做他该做的事情了——充当一种本性迷人的材料。&lt;/p&gt;
+
+&lt;p&gt;他还是无印良品咨询委员会委员。
+无印良品的理念是无设计的设计，简单，追求的不是这个好而是这样就好。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一种新科学</title>
+      <link>https://dailydreamer.me/post/2016-03-20-a-new-kind-of-science/</link>
+      <pubDate>Sun, 20 Mar 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-03-20-a-new-kind-of-science/</guid>
+      <description>
+
+&lt;p&gt;本书作者是Mathematica之父Stephen Wolfram。
+他在完成Mathematica后挣了一大笔钱，然后几十年一直在搞自己喜欢的研究和探索，最终著成本书（论经济基础对研究的重要性）。
+虽然书中的研究缺少确实的证据而更多的是作者的猜测，但是以目前的科学也不足以证伪。
+不过有计算复杂性科学家发过&lt;a href=&#34;http://scottaaronson.com/papers/nks.pdf&#34;&gt;paper&lt;/a&gt;评判这种没有同行评阅和修改的出书模式，并且质疑了其内容的价值。
+但是作为思路开阔一读也未尝不可。&lt;/p&gt;
+
+&lt;p&gt;而且这本书实在是太长了，并且充满了各种论断但是缺少证据，最终没有看完，日后有机会再补完。&lt;/p&gt;
+
+&lt;h2 id=&#34;the-foundation-for-a-new-kind-of-science&#34;&gt;The Foundation for a New Kind of Science&lt;/h2&gt;
+
+&lt;p&gt;实际上系统理论没必要必须建立在传统数学规律之上。
+使用传统数学规则经常无法使用简单的规则解释复杂的自然现象，但是遵从简单规律的程序却可以产生复杂的结果。&lt;/p&gt;
+
+&lt;p&gt;Principle of Computational Equivalence: Whenever one sees behavior that is not obviously simple - in essentially any system - it can be thought of as correspoding to a computation of equivalent sophitication.&lt;/p&gt;
+
+&lt;p&gt;这个原理揭示了传统数学规则的局限性，它只能解释简单的系统因为它大大简化了计算复杂度。&lt;/p&gt;
+
+&lt;p&gt;现在的物理太依赖连续的数学表示或概率，但是离散的其实更简单，并且可以解释很多基本现象。&lt;/p&gt;
+
+&lt;p&gt;现在数学不能解释复杂的生物系统，而简单程序可以。&lt;/p&gt;
+
+&lt;p&gt;A new kind of science不仅能够解释各个学科的复杂问题，也能对经典的基础问题进行解释。&lt;/p&gt;
+
+&lt;h2 id=&#34;the-crucial-experiment&#34;&gt;The Crucial Experiment&lt;/h2&gt;
+
+&lt;h3 id=&#34;how-do-simple-program-behave&#34;&gt;How do simple program behave?&lt;/h3&gt;
+
+&lt;p&gt;细胞自动机即使从简单条件开始，遵从简单条件发展，也会展示惊人的复杂性，正如我们在自然中看到的。&lt;/p&gt;
+
+&lt;p&gt;尽管每个cell都遵从相同的规律，但是因为环境的不同，它们的行为也不同。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-need-for-a-new-intuition&#34;&gt;The need for a new intuition&lt;/h3&gt;
+
+&lt;p&gt;细胞自动机的复杂性与我们认为一个复杂事物必然构成复杂的直觉相反，而这种直觉可能来自于工程中，那里我们从功能出发，逐步将系统分解到细节，我们能预测系统的一切行为。
+但是却不是这样，事实上类似细胞自动机这种不可预测的结构在自然中很常见。&lt;/p&gt;
+
+&lt;h3 id=&#34;why-these-discoveries-were-not-made-before&#34;&gt;Why these discoveries were not made before&lt;/h3&gt;
+
+&lt;p&gt;早期计算机太昂贵，而这些工作没有传统科学框架下的意义。&lt;/p&gt;
+
+&lt;p&gt;既需要基础科学的知识，又需要计算科学的经验和直觉。&lt;/p&gt;
+
+&lt;p&gt;许多发现都指向了new kind of science，如二维细胞自动机the game of life，但是都被人们忽略了。&lt;/p&gt;
+
+&lt;h2 id=&#34;the-world-of-simple-programs&#34;&gt;The world of simple programs&lt;/h2&gt;
+
+&lt;p&gt;二色一维两个邻居的细胞自动机有256种情况，三色有3^8种情况，但是其中的模式大都类似。&lt;/p&gt;
+
+&lt;p&gt;Mobile Automata: 一次只有一个active cell，下一步active cell左移或右移。&lt;/p&gt;
+
+&lt;p&gt;active cell越多，越容易有复杂性。&lt;/p&gt;
+
+&lt;p&gt;Turing machine, Substitution system…&lt;/p&gt;
+
+&lt;p&gt;系统依赖的规则稍加复杂，结果就显示出惊人的复杂性，但是之后依赖规则再复杂也不会有太大的不同。&lt;/p&gt;
+
+&lt;p&gt;大量的实验，简单的实验适合用计算机编程，但同时也可能模拟复杂现象。&lt;/p&gt;
+
+&lt;h2 id=&#34;system-based-on-numbers&#34;&gt;System based on numbers&lt;/h2&gt;
+
+&lt;p&gt;2进制digital sequence显示出和细胞自动机相似的复杂性。&lt;/p&gt;
+
+&lt;p&gt;递归序列、素数序列等等&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;连续的细胞自动机，微分方程，连续的系统也能产生复杂的结构。&lt;/p&gt;
+
+&lt;h2 id=&#34;two-dimensions-and-beyond&#34;&gt;Two dimensions and beyond&lt;/h2&gt;
+
+&lt;p&gt;二维三维的系统有类似的复杂性。&lt;/p&gt;
+
+&lt;p&gt;基于限制的系统，也是当规则复杂到3*3时才会产生随机现象。&lt;/p&gt;
+
+&lt;p&gt;传统数学规律大多基于限制，因此难于发现复杂性。&lt;/p&gt;
+
+&lt;h2 id=&#34;starting-from-randomness&#34;&gt;Starting from randomness&lt;/h2&gt;
+
+&lt;p&gt;随机开始的细胞自动机会最终归于4个模式。&lt;/p&gt;
+
+&lt;h2 id=&#34;mechanisms-in-programs-and-nature&#34;&gt;Mechanisms in programs and nature&lt;/h2&gt;
+
+&lt;h3 id=&#34;university-of-behavior&#34;&gt;University of behavior&lt;/h3&gt;
+
+&lt;p&gt;自然中的一些复杂性和细胞自动机中表现出的模式相同。&lt;/p&gt;
+
+&lt;h3 id=&#34;three-mechanisms-of-randomness&#34;&gt;Three mechanisms of randomness&lt;/h3&gt;
+
+&lt;p&gt;三种导致随机的机制：每一步输入均随机、初始输入(敏感)随机、无外界随机因素intrinsic randomness generation。
+船在水上的运动是第一种，混沌效应是第二种，第三种有rule 30自动机，伪随机数生成器，自然界中最常见第三种。&lt;/p&gt;
+
+&lt;p&gt;实际设备的问题限制了随机性的观测，即内部状态恢复的速率和不可避免的相关性。&lt;/p&gt;
+
+&lt;p&gt;Mathematica使用rule 30细胞自动机产生随机数。。。&lt;/p&gt;
+
+&lt;p&gt;大部分随机数生成器使用multiplier 65539 linear congruential generators，因为它更易被数学分析，但是有最大重复间隔使得不是完全随机。&lt;/p&gt;
+
+&lt;p&gt;intrinsic randomness generation和自然界随机的共同特征是可重复实验，而其他两种机制则不可重复。&lt;/p&gt;
+
+&lt;p&gt;intrinsic randomness generation对扰动的容忍程度大于第二种机制，而实际系统中总是有扰动的。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-phenomenon-of-continuity&#34;&gt;The phenomenon of continuity&lt;/h3&gt;
+
+&lt;p&gt;宏观上看起来连续的系统微观上也可能是离散的，如水流和风等。&lt;/p&gt;
+
+&lt;p&gt;这样的原因之一是随机性。&lt;/p&gt;
+
+&lt;h3 id=&#34;origins-of-discreteness&#34;&gt;Origins of discreteness&lt;/h3&gt;
+
+&lt;p&gt;连续的系统也能引起离散的行为，如量变引起质变的烧开水。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-problem-of-satisfying-constraints&#34;&gt;The problem of satisfying constraints&lt;/h3&gt;
+
+&lt;p&gt;基于限制的大都只能产生简单的现象。&lt;/p&gt;
+
+&lt;h3 id=&#34;origins-of-simple-behavior&#34;&gt;Origins of simple behavior&lt;/h3&gt;
+
+&lt;p&gt;uniformity, repetition, nesting都可以从各种机制中产生。&lt;/p&gt;
+
+&lt;h2 id=&#34;implications-for-everyday-system&#34;&gt;Implications for everyday system&lt;/h2&gt;
+
+&lt;h3 id=&#34;issues-of-modeling&#34;&gt;Issues of modeling&lt;/h3&gt;
+
+&lt;p&gt;为日常生活中的复杂现象通过简单程序的规则建模。&lt;/p&gt;
+
+&lt;p&gt;模型可以是粗略的描画复杂现象的轮廓，而不必使得模型内部的部分对应于实际系统的部分。&lt;/p&gt;
+
+&lt;p&gt;传统模型大多是数学等式的集合，因而不能很好的刻画复杂现象；
+传统模型很难轻松得到结果，由于连续不能直接运行在计算机上。
+而简单程序模型就没有这些问题。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-growth-of-crystals&#34;&gt;The growth of crystals&lt;/h3&gt;
+
+&lt;p&gt;用二维六边形细胞自动机模拟雪花生成结构。&lt;/p&gt;
+
+&lt;h3 id=&#34;fluid-flow&#34;&gt;Fluid flow&lt;/h3&gt;
+
+&lt;p&gt;只要粒子和动量的数量级一致，即使是高度粒子模型也能显示出湍流的行为。&lt;/p&gt;
+
+&lt;p&gt;传统的数学解释认为湍流系统是出事输入敏感的，但是细胞自动机模型却不这么假设。
+这也更符合实际现象。&lt;/p&gt;
+
+&lt;h3 id=&#34;fundamental-issues-in-biology&#34;&gt;Fundamental Issues in Biology&lt;/h3&gt;
+
+&lt;p&gt;从部分organism角度看生物，在显微镜规模下，就是简单程序的细胞自动机。&lt;/p&gt;
+
+&lt;p&gt;自然选择也许类似于工程，倾向于原则简单而可控的部件和规则，避免过度的复杂性。&lt;/p&gt;
+
+&lt;p&gt;而复杂的高等动物则是自然选择的搜索过程中的一些随机采样的结果，因为没有引入缺陷而保留了下来。&lt;/p&gt;
+
+&lt;h2 id=&#34;fundamental-physics&#34;&gt;Fundamental Physics&lt;/h2&gt;
+
+&lt;p&gt;能否抛开现有的物理体系使用简单程序构建起新的物理体系。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-notion-of-reversibility&#34;&gt;The Notion of Reversibility&lt;/h3&gt;
+
+&lt;p&gt;只有一少部分细胞自动机是可逆的，但是系统仍然展示了高度的复杂性。&lt;/p&gt;
+
+&lt;h3 id=&#34;irreversibility-and-the-second-law-of-thermodynamics&#34;&gt;Irreversibility and the Second Law of Thermodynamics&lt;/h3&gt;
+
+&lt;p&gt;粒子物理可逆但是很多自然现象不可逆，并且演变的越来越随机越复杂。&lt;/p&gt;
+
+&lt;p&gt;根据简单程序模拟，越来越复杂是因为初始情况设置的简单。&lt;/p&gt;
+
+&lt;p&gt;自然现象的初始情况都很简单，是因为初始情况的计算复杂性应该要小于实验过程。&lt;/p&gt;
+
+&lt;p&gt;如果系统产生了足够的随机性，可以认为它们之间的趋同使得它们的属性跟初始条件无关。
+这使得现在我们可以使用很少的参数来近似表示一些物理系统。&lt;/p&gt;
+
+&lt;p&gt;但是自然中，尤其是生物系统存在一些不遵热力学第二定律，即越来越复杂的系统，否则宇宙就变得趋同了，而不是现在这样多样。&lt;/p&gt;
+
+&lt;p&gt;根据37号自动机观察所得，热力学第二定律不是普适的。
+宇宙持续变大，一些信息被忽略，自成一个有组织的小系统独自发展，然后相互重复。&lt;/p&gt;
+
+&lt;h3 id=&#34;ultimate-models-for-the-universe&#34;&gt;Ultimate models for the universe&lt;/h3&gt;
+
+&lt;p&gt;根据本书发现，宇宙的终极模型可能依赖于简单的规则。&lt;/p&gt;
+
+&lt;p&gt;如何发现这个规则呢？根据物理现象推倒超出计算能力范围，因此试图遍历所有可能的简单模型看能否产生想要的宇宙的结果。&lt;/p&gt;
+
+&lt;p&gt;现在发现的规律很可能都是终极模型的表象。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-nature-of-space&#34;&gt;The nature of space&lt;/h3&gt;
+
+&lt;p&gt;宇宙空间很可能是离散的。而过去一直认为是连续的，因为传统数学善于计算这种模式。&lt;/p&gt;
+
+&lt;h3 id=&#34;space-as-a-network&#34;&gt;Space as a network&lt;/h3&gt;
+
+&lt;p&gt;空间可能是由节点网络构成的。&lt;/p&gt;
+
+&lt;p&gt;节点的距离和网络的维度有关。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-relationship-of-space-and-time&#34;&gt;The relationship of space and time&lt;/h3&gt;
+
+&lt;p&gt;现代物理倾向于认为时间和空间本质相似，是时空第四维。
+但是时间和空间的相似性很可能是不够小的实验数据导致的。
+探索后作者发现在最本质上时空分离，就像元胞自动机的演化。&lt;/p&gt;
+
+&lt;h2 id=&#34;time-and-causal-metwork&#34;&gt;Time and causal metwork&lt;/h2&gt;
+
+&lt;p&gt;时空很可能是一种mobile automaton或图灵机，一次之更新一个单元。&lt;/p&gt;
+
+&lt;p&gt;但是对于图灵机内部的单元来说，他察觉到变化时已经更新了一轮，因此感觉不到一次只更新了一个。&lt;/p&gt;
+
+&lt;h2 id=&#34;我的结论&#34;&gt;我的结论&lt;/h2&gt;
+
+&lt;p&gt;我就看到这里为止了，总的来说提供了一种新颖的离散化的思想。
+世界就是一种巨大的计算机，谁都曾经这么想过，但是Wolfram对其进行了更深入的探讨。
+蕴含其中的是宇宙遵循着简单的规则，这和许多科学家是相同的。&lt;/p&gt;
+
+&lt;p&gt;后面几章引用一下&lt;a href=&#34;https://book.douban.com/review/1287160/&#34;&gt;豆瓣的书评&lt;/a&gt;，留待以后补完。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;9.Fundamental Physics
+我认为这章的内容很重要，首先，我们要有一个信念：这个世界就是一个计算机，每一件事情都是计算。
+在这个前提下，我们来看世界，怎样的宇宙才是从程序上最可行的呢？
+作者探讨了空间网络、因果网络等模型。
+究竟宇宙是不是一太计算机，我们实际上不能证伪，但是如果从程序的角度出发，却发现我们可以从一个完全不同的角度得到很多疑难问题的解答。
+在因果网络模型下，相对论、量子论等等都是系统涌现出来的一种结果。
+如果这一切正确的话，我们自然能得到一个统一量子论和相对论的工具。
+另外，本章提出来的时空观是非常关键的，因果网络是最本质的东西，时间和空间甚至都是涌现出来的现象。&lt;/p&gt;
+
+&lt;p&gt;10.Processes of Perception and Analysis
+讲述把细胞自动机应用到计算机科学、人工智能、信息处理等领域的具体方法。
+视觉感知、加密解密、思维过程等等都有涉猎。&lt;/p&gt;
+
+&lt;p&gt;11.The Notion of Computation
+究竟什么是计算？在很早，丘奇图灵论题就指出，一切与图灵机等价的过程就是计算。
+那么细胞自动机与图灵机那个更强呢？
+通过作者特别的证明（运用图形和说明，而不是数学推导），我们看到一类特制的细胞自动机可以模拟任何一台其他的细胞自动机，而且还能模拟图灵机以及其他的计算系统。
+翻过来，图灵机和其他计算模型也都能模拟细胞自动机。
+实际上能够执行通用计算的机器仅仅需要简单的规则，也就是101号细胞自动机。
+作者认为101细胞自动机非常重要，因为它规则简单，而且能够模拟任意的复杂计算过程。&lt;/p&gt;
+
+&lt;p&gt;12.The Principle of Computational Equivalence
+本章提出了一个猜想：The Principle of Computational Equivalence，也就是计算等价性原理，作者认为宇宙的一却活动都是一种计算，而且能够完成复杂计算的过程都是等价于通用计算的，所以，原则上讲，细胞自动机110能够模拟任何一个复杂的计算过程。
+作者当然也讨论了哥德尔定理、不可判定问题，认为对于第四类细胞自动机，我们除了运行它以外，根本无法判定它在未来的行为，即使在原则上，因为它是不可判定的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>关键对话</title>
+      <link>https://dailydreamer.me/post/2016-03-07-difficult-conversation/</link>
+      <pubDate>Mon, 07 Mar 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-03-07-difficult-conversation/</guid>
+      <description>
+
+&lt;p&gt;Difficult Conversation(关键对话)，是指让你感到害怕和焦虑的对话，比如家人间、情侣间的吵架，上下级间的工作安排等。
+本书对这种对话进行了深入的剖析，将问题分解看透彻之后可以更好的处理这种对话。&lt;/p&gt;
+
+&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
+
+&lt;p&gt;关键对话的结构：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;What happend&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The feelings conversation&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The identity conversation&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;我们不能改变周围，但是能改变的是对待这些挑战的反应。&lt;/p&gt;
+
+&lt;h3 id=&#34;what-happend&#34;&gt;What happend&lt;/h3&gt;
+
+&lt;p&gt;不要一上来就认为你是对的，试图搞清楚对方的感知、解释和价值观。&lt;/p&gt;
+
+&lt;p&gt;对方的意图可能很复杂，不要预先假定是坏的。&lt;/p&gt;
+
+&lt;p&gt;不要一味责备对方，试图弄清楚双方对造成问题的贡献。&lt;/p&gt;
+
+&lt;h3 id=&#34;feeling-conversation&#34;&gt;Feeling conversation&lt;/h3&gt;
+
+&lt;p&gt;情感是困难对话的核心。&lt;/p&gt;
+
+&lt;h3 id=&#34;identity-conversation&#34;&gt;Identity conversation&lt;/h3&gt;
+
+&lt;p&gt;调整你的认知失调造成的困难感是最有技巧可学习的。&lt;/p&gt;
+
+&lt;h2 id=&#34;shift-to-a-learning-stance&#34;&gt;Shift to a learning stance&lt;/h2&gt;
+
+&lt;h3 id=&#34;what-happend-conversation&#34;&gt;What happend conversation&lt;/h3&gt;
+
+&lt;h4 id=&#34;stop-arguing-about-who-s-right-explore-each-other-s-stories&#34;&gt;Stop arguing about who&amp;rsquo;s right, explore each other&amp;rsquo;s stories.&lt;/h4&gt;
+
+&lt;p&gt;每个人对故事的解读都是有道理的。
+争吵阻碍了我们从他人的角度理解故事。&lt;/p&gt;
+
+&lt;p&gt;为什么会有不同的故事解读：我们注意到的和获取到的信息不同。
+我们有不同的解读，受过去经历和隐含的规则的影响。&lt;/p&gt;
+
+&lt;p&gt;对他人的故事感到好奇。&lt;/p&gt;
+
+&lt;p&gt;有时候了解对方的立场不代表一定要同意，比如提出分手的时候，承认双方的立场。&lt;/p&gt;
+
+&lt;h4 id=&#34;don-t-assume-they-mean-it-disentangle-intent-from-impact&#34;&gt;Don&amp;rsquo;t assume they mean it: disentangle intent from impact.&lt;/h4&gt;
+
+&lt;p&gt;我们假设别人的意图通常是错的。&lt;/p&gt;
+
+&lt;p&gt;试图去理解自己复杂的意图会给对方传递积极和在乎的信号。&lt;/p&gt;
+
+&lt;p&gt;将你的意图告诉对方，试图弄清楚你的行为对对方的影响。&lt;/p&gt;
+
+&lt;h4 id=&#34;abandon-blame-map-the-contribution-system&#34;&gt;Abandon blame: map the contribution system&lt;/h4&gt;
+
+&lt;p&gt;blame是关于judging但是contribution是关于understanding并且looking forward。&lt;/p&gt;
+
+&lt;p&gt;提问我们各自做了或没做什么导致了这种结果，可以如何改进。&lt;/p&gt;
+
+&lt;p&gt;在此过程中分享情感是必要的。&lt;/p&gt;
+
+&lt;p&gt;四个容易忽略的错误：avoiding until now. being approachable.
+忽略了每个人都很不一样。problemic role assumptions.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-feeling-conversation&#34;&gt;The feeling conversation&lt;/h3&gt;
+
+&lt;h4 id=&#34;have-your-feelings&#34;&gt;Have your feelings&lt;/h4&gt;
+
+&lt;p&gt;情感是关键对话的核心。&lt;/p&gt;
+
+&lt;p&gt;不应该抛开情感只谈问题解决。&lt;/p&gt;
+
+&lt;p&gt;找到你的情感，和情感协商，然后分享真实的感受。&lt;/p&gt;
+
+&lt;p&gt;理解情感很困难，受到原生家庭的很多错误影响。&lt;/p&gt;
+
+&lt;p&gt;责备可以成为你探寻更深层次情感的线索。&lt;/p&gt;
+
+&lt;p&gt;情感是基于感知的，感知可以协商，因此情感也可以协商。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-identity-conversation&#34;&gt;the identity conversation&lt;/h3&gt;
+
+&lt;h4 id=&#34;groud-your-identity-ask-yourself-what-s-at-stake&#34;&gt;Groud your identity: ask yourself what&amp;rsquo;s at stake&lt;/h4&gt;
+
+&lt;p&gt;核心认知：我有竞争力么？我是好人么？我值得爱么？&lt;/p&gt;
+
+&lt;p&gt;错误的认知：all or nothing&lt;/p&gt;
+
+&lt;p&gt;找到你的不稳定的认知，然后对它有清楚的认识。&lt;/p&gt;
+
+&lt;h3 id=&#34;create-a-learning-conversation&#34;&gt;create a learning conversation&lt;/h3&gt;
+
+&lt;h4 id=&#34;what-s-your-purpose-when-to-raise-it-and-when-to-let-it-go&#34;&gt;What&amp;rsquo;s your purpose? When to raise it and when to let it go&lt;/h4&gt;
+
+&lt;p&gt;发起关键对话之前先思考：你们之间是否真的有矛盾？是否有比发起对话更好的解决方法？你的目的是否合理？&lt;/p&gt;
+
+&lt;p&gt;Sometimes just let it go.&lt;/p&gt;
+
+&lt;h4 id=&#34;getting-start-begin-from-the-third-story&#34;&gt;Getting start: begin from the third story&lt;/h4&gt;
+
+&lt;p&gt;我们通常从自己的故事开始，但是这会很不愉快。&lt;/p&gt;
+
+&lt;p&gt;从第三方视角的故事开始。&lt;/p&gt;
+
+&lt;h2 id=&#34;road-map&#34;&gt;Road map&lt;/h2&gt;
+
+&lt;p&gt;将原版的操作手册摘录如下~&lt;/p&gt;
+
+&lt;h3 id=&#34;step-l-prepare-by-walking-through-the-three-conversations&#34;&gt;Step l: Prepare by Walking Through the Three Conversations&lt;/h3&gt;
+
+&lt;h4 id=&#34;sort-out-what-happened&#34;&gt;Sort out What Happened.&lt;/h4&gt;
+
+&lt;p&gt;Where does your story come from (information, past experiences, rules)? Theirs?&lt;/p&gt;
+
+&lt;p&gt;What impact has this situation had on you? What might their
+intentions have been?&lt;/p&gt;
+
+&lt;p&gt;What have you each contributed to the problem?&lt;/p&gt;
+
+&lt;h4 id=&#34;understand-emotions&#34;&gt;Understand Emotions.&lt;/h4&gt;
+
+&lt;p&gt;Explore your emotional footprint, and the bundle of emotions
+you experience.&lt;/p&gt;
+
+&lt;h4 id=&#34;ground-your-identity&#34;&gt;Ground Your Identity.&lt;/h4&gt;
+
+&lt;p&gt;What&amp;rsquo;s at stake for you about you? What do you need to accept
+to be better grounded?&lt;/p&gt;
+
+&lt;h3 id=&#34;step-2-check-your-purposes-and-decide-whether-to-raise-the-issue&#34;&gt;Step 2: Check Your Purposes and Decide Whether to Raise the Issue&lt;/h3&gt;
+
+&lt;p&gt;Purposes: What do you hope to accomplish by having this conversation? Shift your stance to support learning, sharing, and
+problem-solving.&lt;/p&gt;
+
+&lt;p&gt;Deciding: Is this the best way to address the issue and achieve
+your purposes? Is the issue really embedded in your Identity
+Conversation? Can you affect the problem by changing your
+contributions? If you don&amp;rsquo;t raise it, what can you do to help
+yourself let go?&lt;/p&gt;
+
+&lt;h3 id=&#34;step-3-start-from-the-third-story&#34;&gt;Step 3: Start from the Third Story&lt;/h3&gt;
+
+&lt;p&gt;Describe the problem as the difference between your stories.
+Include both viewpoints as a legitimate part of the discussion.&lt;/p&gt;
+
+&lt;p&gt;Share your purposes.&lt;/p&gt;
+
+&lt;p&gt;Invite them to join you as a Partner in sorting out the situation
+together.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-4-explore-their-story-and-yours&#34;&gt;Step 4: Explore Their Story and Yours&lt;/h3&gt;
+
+&lt;p&gt;Listen to understand their perspective on what happened. Ask
+questions. Acknowledge the feelings behind the arguments and
+accusations. Paraphrase to see if you&amp;rsquo;ve got it. Try to unravel
+how the two of you got to this place.&lt;/p&gt;
+
+&lt;p&gt;Share your own viewpoint, your past experiences, intentions,
+feelings.&lt;/p&gt;
+
+&lt;p&gt;Reframe, reframe, reframe to keep on track. From truth to
+perceptions, blame to contribution, accusations to feelings,
+and so on.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-5-problem-solving&#34;&gt;Step 5: Problem-Solving&lt;/h3&gt;
+
+&lt;p&gt;Invent options that meet each side&amp;rsquo;s most important concerns
+and interests.&lt;/p&gt;
+
+&lt;p&gt;Look to standards for what should happen. Keep in mind the
+standard of mutual caretaking; relationships that always go one
+way rarely last.&lt;/p&gt;
+
+&lt;p&gt;Talk about how to keep communication open as you go for-
+ward.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>神话的力量</title>
+      <link>https://dailydreamer.me/post/2016-01-13-power-of-myth/</link>
+      <pubDate>Wed, 13 Jan 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-01-13-power-of-myth/</guid>
+      <description>
+
+&lt;p&gt;前些年读过的一本很神奇的书，记下一些富有力量的话语，有机会要重新温习。&lt;/p&gt;
+
+&lt;h2 id=&#34;善与恶&#34;&gt;善与恶&lt;/h2&gt;
+
+&lt;p&gt;善恶是相对于你的立场而定的。
+对某人来说是善，对其他人可能就是恶。
+但对上帝而言，二者并无不同。
+你扮演着自己的角色，即使在你了解他有多可怕后也不退缩，而能把它看成是神秘超越而美妙惊奇世界之前奏。&lt;/p&gt;
+
+&lt;p&gt;生命最大的挑战之一，就是肯定你心里最讨厌的人或事。
+你不能说不应该有毒蛇，因为那是生命的本来面目。
+但是在行动中，假如你看到毒蛇咬人，你会杀了他。
+那并不是否定蛇，而是对那个情景说不。&lt;/p&gt;
+
+&lt;p&gt;这两句话从更高的层面看待了善与恶的相对性。
+每个人都有着自己的使命与愿景，与你相顺的于你即善，与你相逆的于你即恶。
+知道没有绝对的善与恶是成熟的标志。&lt;/p&gt;
+
+&lt;h2 id=&#34;人生的态度&#34;&gt;人生的态度&lt;/h2&gt;
+
+&lt;p&gt;生命一切皆苦，顺其自然，便是喜悦。
+但是顺其自然，并不代表自暴自弃随波逐流，这不是必然的结论。
+你将参与人生这场游戏，竭尽所能。&lt;/p&gt;
+
+&lt;p&gt;不论你在何处，只要遵循你内心直觉的喜悦，你就可以享受到永恒生命之泉的那份清新，它一直在你内心的生命中。&lt;/p&gt;
+
+&lt;p&gt;这世界上许多人都不曾停下来，倾听自己或邻人，学习什么是该做的，和什么是他们的生活价值。
+对物质的追求是无止境的，但你终将在40岁意识到你已到达人生的巅峰，只有走下坡路的日子可活而陷入深深的忧虑。&lt;/p&gt;
+
+&lt;p&gt;你只有一生可活，你不需要为他人而活，要活的专注，遵循内心直觉的喜悦。&lt;/p&gt;
+
+&lt;p&gt;这几句话曾经同银他妈，以及后来读到的尼采的永劫回归理论，一起深刻的影响了我的人生抉择。遵从内心的喜悦吧。&lt;/p&gt;
+
+&lt;h2 id=&#34;神话在今天的意义&#34;&gt;神话在今天的意义&lt;/h2&gt;
+
+&lt;p&gt;艺术家是今日的巫师。而作为普通人，我们应该读书来理解自然的神性。
+读对的人写的书，你的心就会被带到某个层次，你可因此而拥有一种美好，温和，慢慢燃烧的喜悦。&lt;/p&gt;
+
+&lt;p&gt;不同的个体本是一体的，你们本来就是一个生命的两面，当下的分隔，只不过是在时空条件下，体验形体的方式结果罢了。我们的真实在于与所有的生命结合一致。
+这个形而上的真理，可以在危机之下立刻体验到。因为它就是你生命的真理。&lt;/p&gt;
+
+&lt;p&gt;整本书读完后，可以感受到神话不只是过去的故事，而是人类祖先古老的共同记忆和模范；
+而今天的生活中，虽然不再相信神话表面描述的故事，但是其内涵却依然深深的烙印在我们心底，一直发挥着作用。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>禅与摩托车维修的艺术</title>
+      <link>https://dailydreamer.me/post/2015-08-04-Zen-and-the-Art-of-Motorcycle-Maintenance/</link>
+      <pubDate>Tue, 04 Aug 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-08-04-Zen-and-the-Art-of-Motorcycle-Maintenance/</guid>
+      <description>
+
+&lt;h2 id=&#34;第三章&#34;&gt;第三章&lt;/h2&gt;
+
+&lt;p&gt;科学就是现代的鬼神。
+过去人们使用鬼神解释自然现象，现代人们使用所谓的科学来解释。
+这些都只存在于人们心里，是对自然规律的一种认识和解释。&lt;/p&gt;
+
+&lt;h2 id=&#34;第四章&#34;&gt;第四章&lt;/h2&gt;
+
+&lt;p&gt;一个世纪前和小孩一起读古典的方式：读两句话，等他一连串的提问，然后回答他的问题。&lt;/p&gt;
+
+&lt;h2 id=&#34;第六章&#34;&gt;第六章&lt;/h2&gt;
+
+&lt;p&gt;使用二分法，将人类的认知分为古典的和浪漫的。
+古典的认知认为这个世界是由一些基本形式组成的；浪漫的认知则从表象来观察，主要的是情感而非事实。&lt;/p&gt;
+
+&lt;p&gt;斐德洛的古典中有名为分析的小刀。&lt;/p&gt;
+
+&lt;h2 id=&#34;第七章&#34;&gt;第七章&lt;/h2&gt;
+
+&lt;p&gt;我们选择性的筛选出感官接受的结果，浪漫的认知直接针对这个结果，而古典的认知使用分析的小刀对其进行分类，并且注重相互之间的联系。&lt;/p&gt;
+
+&lt;h2 id=&#34;第八章&#34;&gt;第八章&lt;/h2&gt;
+
+&lt;p&gt;摩托车的外观是浪漫的，但是内在的运作是纯古典的。
+他的外壳就是古典和浪漫的分界。&lt;/p&gt;
+
+&lt;p&gt;摩托车也是一种系统，正如政府和军队。
+只要架构系统的理性还在，系统就可以被轻易重新构建。&lt;/p&gt;
+
+&lt;h2 id=&#34;第九章&#34;&gt;第九章&lt;/h2&gt;
+
+&lt;p&gt;逻辑使你在系统中找到自己的路。逻辑有归纳法和演绎法。
+两种方法交替使用就能解决问题。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十章&#34;&gt;第十章&lt;/h2&gt;
+
+&lt;p&gt;前面铺垫了那么多，这一章开始渐渐接近了问题的核心。&lt;/p&gt;
+
+&lt;p&gt;在科学的殿堂中有许多深宅大院。
+有的人倾心科学是因为优越的智力，有的人则完全为了实用的目的。
+如果上帝派来的天使将上面两种人从殿中驱逐出去，那么殿里会空旷许多。
+那些获得天使青睐的人，有些古怪、沉默和孤独，除了同是不受欢迎的人外，彼此之间少有相似之处。
+斐德洛认为自己就是这样的人。
+所以当他提出科学困扰他的问题时，没有人真正关心。于是他开始了心灵探索的道路。&lt;/p&gt;
+
+&lt;p&gt;困扰他的问题是什么呢?&lt;/p&gt;
+
+&lt;p&gt;科学研究，或者说自然科学的研究，是通过观察现象做出假设然后实验证明得出结论。
+爱因斯坦认为，根据进化论所显示的，在历史上任何一刻，所有可想见的存在，总有一个会证明它比其他一切要优越。
+但是斐德洛认为现在由于眼界的广阔，假设出现的速度远大于验证他们的速度，因此科学真理持续的时间越来越短，很容易被后来验证的假设推翻。
+各种假设和定理的增加，把人从唯一绝对的真理，引向多元、摇摆不定、相对的世界，是造成社会和思想价值混乱的元凶。
+现在的理性结构不符合社会所需，然而在情感上空虚，在美学上没有任何表现。
+造成社会上一些人在整个文明的理性架构下，活的盲目而疏离，找寻不到答案。&lt;/p&gt;
+
+&lt;p&gt;我以为因为斐德洛是搞生物化学的，如果他从事过数学研究就会发现这个所有自然科学的根基是一门注重概念的演绎科学，不是使用实验证明假设，而是靠演绎。
+依靠最底下的公理构建起整个大树。
+每当物理学家走的飞快依靠直觉提出各种假设，数学总是跟在后面谨慎的证明。
+虽然偶尔出现过改变公理构建出不同大树的情况，但总体上没有这个问题。
+壮哉我大数学~&lt;/p&gt;
+
+&lt;h2 id=&#34;第十一章&#34;&gt;第十一章&lt;/h2&gt;
+
+&lt;p&gt;斐德洛通过哲学探索人类心灵的高山地带。&lt;/p&gt;
+
+&lt;p&gt;大卫·休谟的经验主义，认为我们的知识都来自于感官。
+但是会得出推论说整个世界出自于人的想象。&lt;/p&gt;
+
+&lt;p&gt;康德试图推翻经验主义。
+他认为我们人性之中有一种直觉，我们认为的现实，是直觉和感官接收到的讯息融合而成。
+我们通过感官接收到的讯息不断修正直觉，直觉也在过滤着感官接收到的讯息。&lt;/p&gt;
+
+&lt;p&gt;斐德洛认为康德的《纯粹理性批判》中有着属于理性自身的丑陋。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十二章&#34;&gt;第十二章&lt;/h2&gt;
+
+&lt;p&gt;斐德洛之后去了印度研究东方哲学，他的知识在那儿出现了混乱。
+他离开了印度，放弃了对理性的追求，念了新闻学位，结婚生子。&lt;/p&gt;
+
+&lt;p&gt;放下了之后，反而成熟的更快。
+于是他变成我们的作者又开始继续追寻，通过这次旅途。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十三章&#34;&gt;第十三章&lt;/h2&gt;
+
+&lt;p&gt;斐德洛说，真正的大学是心灵的世界，是多少世纪以来流传给我们的理性思想，大学的本质在于通过教授们流传下来的理性自身。
+物质的大学只是为真正的理性教会提供了生存的环境。&lt;/p&gt;
+
+&lt;p&gt;斐德洛因为对科学理性缺乏信心，所以才成为了理性教会的狂热研究者。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十四章&#34;&gt;第十四章&lt;/h2&gt;
+
+&lt;p&gt;科学没有和人的心灵连在一起，所以在盲目之中暴露出了丑陋的一面。
+解决的方法不是抛弃或否定理性，而是扩展理性的内涵。&lt;/p&gt;
+
+&lt;p&gt;哥伦布发现新大陆时也拓展了整个文化的根基，当时人们抛弃了中古世纪的价值观，接受理性的新世界。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十五章&#34;&gt;第十五章&lt;/h2&gt;
+
+&lt;p&gt;重返斐德洛教书的地方，探寻良质的意义。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十六章&#34;&gt;第十六章&lt;/h2&gt;
+
+&lt;p&gt;良质的第一部分，模仿是一种罪恶。
+是学校的教育造成了这一点，他试图取消分数和学位制度，但是并没有得到好的结果。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十七章&#34;&gt;第十七章&lt;/h2&gt;
+
+&lt;p&gt;良质是说一篇优秀的作品不需要任何规则，不需要任何理论，然而他指向某种东西，非常真实。
+不是模仿，而是內驱的创造。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十八章&#34;&gt;第十八章&lt;/h2&gt;
+
+&lt;p&gt;不去界定良质，不用理性去分析良质。使用理性来支持这一观点。&lt;/p&gt;
+
+&lt;p&gt;如果剥离良质，世界将不能正确运转，不值得活下去，因此良质是存在的。&lt;/p&gt;
+
+&lt;p&gt;良质同时存在于古典和浪漫两个世界中。由于没有定义，古典被迫用浪漫的观点去看良质。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十九章&#34;&gt;第十九章&lt;/h2&gt;
+
+&lt;p&gt;良质既不属于人心的一部分，也不属于物质。&lt;/p&gt;
+
+&lt;p&gt;良质就是同时意识到主客观存在时所发生的事件。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十章&#34;&gt;第二十章&lt;/h2&gt;
+
+&lt;p&gt;&amp;ldquo;过去&amp;rdquo;只存在于我们的记忆之中，&amp;rdquo;未来&amp;rdquo;则存在于我们的计划之中，而只有&amp;rdquo;现在&amp;rdquo;才是惟一的真实。
+你理智上所意识到的那棵树，由于这一小段的时间的关系，便属于过去，因而对你来说并不真实。
+任何经由思想所意识到的总是存在于过去，因而都不真实。
+所以真实总是存在于你所看到的那一刹那，且在你还没有意识到之前。除此之外，没有别的真实。
+这种在意识之前的真实，就是斐德洛所谓的良质。
+由于所有经由思想所认知的事物必须来自于这一段思考前的真实，所以良质是因，而果才是所有的主体以及客体。&lt;/p&gt;
+
+&lt;p&gt;如果我们想用我们所创造的世界去涵盖、去刺激我们创造的源头，这是不可能的。
+这就是为什么良质无法被界定，如果我们去界定，我们所界定的就无法涵盖整体的良质。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十二章&#34;&gt;第二十二章&lt;/h2&gt;
+
+&lt;p&gt;彭加列说，“潜意识自我”注视着一个问题的一大串解决方案，但是只有有趣的可以闯进意识领域内。
+数学解答是由潜意识自我所选择的，是基于“数学之美”，数字与形式的和谐，以及几何学的优雅。
+彭加列说，这是一个所有数学家都知道的真实的美感，可是世俗者对此是如此无知以至于经常想笑。
+但是这和谐、这美丽，是它整个的核心。&lt;/p&gt;
+
+&lt;p&gt;上面一段话我理解为这就是数学的良质。
+作者将数学证明中创造性的部分归结为良质这一更加基本的概念，十分的新奇。&lt;/p&gt;
+
+&lt;p&gt;事实的预先选择并不是基于主观的、反覆无常的&amp;rdquo;任何你喜欢的东西&amp;rdquo;，而是基于良质，即实在自身。良质区别于主观和客观之外。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十四章&#34;&gt;第二十四章&lt;/h2&gt;
+
+&lt;p&gt;如果科技的根本问题在于，科技专家或是反科技的人都缺乏关心之情；
+而且，如果关心和良质是一体的两面，那么我们就可以推论出，今天在科技上出现的根本问题，就在于学科学的人和反科学的人，都缺乏在科学上洞悉良质的能力。&lt;/p&gt;
+
+&lt;p&gt;一个人在修理摩托车的时候，对车子的了解分分秒秒都在改变，因而得到了全新认识，其中蕴含了更多的良质。修理的人不会受限于传统的做法，因为他有足够理性的基础拒绝这些思想。
+真实不再是静态的，它不是让你决定是要去奋战还是打退堂鼓的思想，它们是会跟着你成长的思想。
+所以具有良质的真实，它的本质不再是静态的。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十五章&#34;&gt;第二十五章&lt;/h2&gt;
+
+&lt;p&gt;如果你想要高水准的表现，就必须具备鉴赏力以及达到目标的方法，也就是同时具有对良质的古典和浪漫的认知。&lt;/p&gt;
+
+&lt;p&gt;只有内心宁静，我们才能察觉到良质的存在。他超越了浪漫和古典的认知，将二者融合为一。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十六章&#34;&gt;第二十六章&lt;/h2&gt;
+
+&lt;p&gt;进取心，希腊人称之为热忱。
+以及其中的一些陷阱。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十七章及之后&#34;&gt;第二十七章及之后&lt;/h2&gt;
+
+&lt;p&gt;阐述了斐德洛和作者融合成长的心路历程，最后完成了对自己的救赎。&lt;/p&gt;
+
+&lt;h2 id=&#34;我的总结&#34;&gt;我的总结&lt;/h2&gt;
+
+&lt;p&gt;现在由于自然科学研究方法的问题，导致真理持续的时间原来越短，价值观变得多元化了。
+这时候就需要人们意识到除了古典和浪漫之外的良质，即对自己所做事务有一种热忱和鉴赏力，同时能够有做好他的技术，这样才不会造成价值观的混乱和生活的疏离感。
+感觉此时的中国和上世纪的美国面临着类似的问题，人们缺乏信仰，生活无价值无意义，盲目拜金等等问题，都是价值观混乱的表现。
+而作者通过自己内心之路的探求，提出了一种基于良质的解决方法，虽然道理容易理解，但是思考的过程十分严谨，令人信服，感觉收获颇丰。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>人人都是产品经理</title>
+      <link>https://dailydreamer.me/post/2015-07-25-product-manager/</link>
+      <pubDate>Sat, 25 Jul 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-07-25-product-manager/</guid>
+      <description>
+
+&lt;h2 id=&#34;写给-1到3岁的产品经理&#34;&gt;写给-1到3岁的产品经理&lt;/h2&gt;
+
+&lt;h3 id=&#34;我们到底是不是产品经理&#34;&gt;我们到底是不是产品经理&lt;/h3&gt;
+
+&lt;p&gt;产品是可以满足人需求的载体，商业产品在用户需求和商业目标之间平衡。&lt;/p&gt;
+
+&lt;p&gt;宝洁产生了产品经理的概念。&lt;/p&gt;
+
+&lt;p&gt;传统产品经理是品牌经理或产品市场经理，重在营销。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;典型的传统行业&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;互联网、软件行业&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;行业形态&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;成熟行业&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;新兴行业&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;产品形态与成本结构&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;实物&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;虚拟物品&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;生命周期&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;几年&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;几个月&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;盈利模式&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;单一卖产品赚钱&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;多元盈利&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;用户心态&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;花钱买&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;免费用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;互联网软件行业产品创新多，产品经理注重产品功能规划。&lt;/p&gt;
+
+&lt;p&gt;产品多为虚拟物品，因此注重需求分析和设计细节。&lt;/p&gt;
+
+&lt;p&gt;产品生命周期短，产品经理在项目完成度和产品质量间做平衡。&lt;/p&gt;
+
+&lt;p&gt;盈利模式更多元，靠用户数量，产品经理重视用户研究和用户需求。&lt;/p&gt;
+
+&lt;p&gt;用户免费用，更换成本小，用户是上帝，重视用户体验。&lt;/p&gt;
+
+&lt;p&gt;管理是在资源不足的情况下把事情做成的能力。而资源不足是常态，因此你已是产品经理。&lt;/p&gt;
+
+&lt;h3 id=&#34;我真的想做-怎么入行&#34;&gt;我真的想做，怎么入行&lt;/h3&gt;
+
+&lt;p&gt;喜欢做产品，并且不是站在用户角度，而是站在产品经理角度看待产品。&lt;/p&gt;
+
+&lt;p&gt;研究产品经理招聘广告并总形成调研报告。&lt;/p&gt;
+
+&lt;h2 id=&#34;一个需求的奋斗史&#34;&gt;一个需求的奋斗史&lt;/h2&gt;
+
+&lt;p&gt;用户研究-&amp;gt;需求采集-&amp;gt;需求分析-&amp;gt;需求筛选-&amp;gt;需求管理。&lt;/p&gt;
+
+&lt;h3 id=&#34;需求采集的大生产运功&#34;&gt;需求采集的大生产运功&lt;/h3&gt;
+
+&lt;p&gt;明确目标，明确采集方法，制定采集计划，执行采集，资料整理，然后进需求分析。&lt;/p&gt;
+
+&lt;p&gt;定性的说：用户访谈。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;为避免说的和做的不一致，可以尽量在用户和产品交互的场合下进行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;要避免样本少，以偏概全。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;牢记访谈目的，不要太强势，也不要被用户代跑。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;避免一组固定的问题。这会让用户有被审问的感觉。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;首先关注目标，任务其次，多问为什么这么做。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;避免让用户成为设计师，用户的解决方案通常短浅片面(这个深有体会。。。)。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;避免讨论技术。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;鼓励讲故事。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;避免诱导性的问题。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;定量的说：调查问卷&lt;/p&gt;
+
+&lt;p&gt;用户访谈通常是开放性问题，调查问卷则是封闭式。&lt;/p&gt;
+
+&lt;p&gt;作答时间最好不要超过10分钟。开篇简单问题，需要思考的在中间，个人信息在最后。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;样本和目标群体可能有偏差。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;样本不能过少&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;问卷内容应该无引导性。答案的顺序也会对答案产生影响。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;定性的做：可用性测试&lt;/p&gt;
+
+&lt;p&gt;是UGC(用户产生内容)的实践。让用户使用原型产品发现设计中的可用性问题。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;可用性测试不能太晚。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;明确是测试产品，不是测试用户。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可以使用Think aloud方法。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;一切错都是产品和我们的错。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;定量的做：数据分析&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不要过于学术，讲究性价比。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不要误读数据。提高统计水平；不要为了迎合某个观点取找数据。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;平时注意收集数据。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;需求采集人人有责&#34;&gt;需求采集人人有责&lt;/h3&gt;
+
+&lt;p&gt;从用户得到的一手需求，从销售和老板得到的二手需求。&lt;/p&gt;
+
+&lt;p&gt;单项需求卡片。&lt;/p&gt;
+
+&lt;p&gt;尽可能多的采集：现场调查，AB测试，卡片分类，自己提需求。&lt;/p&gt;
+
+&lt;h3 id=&#34;听用户的但不要照着做&#34;&gt;听用户的但不要照着做&lt;/h3&gt;
+
+&lt;p&gt;明确我们存在的价值：将用户需求转化为产品需求。&lt;/p&gt;
+
+&lt;p&gt;需求分析是一个分总分的过程，先透过用户需求看到本质，然后将本质分解为产品需求。&lt;/p&gt;
+
+&lt;p&gt;满足需求的三种方式，直接满足、降低理想、转移需求，最高境界是创造需求。&lt;/p&gt;
+
+&lt;p&gt;需求分析步骤：需求转化，确定基本属性，分析商业价值，初评实现难度，计算性价比。&lt;/p&gt;
+
+&lt;p&gt;性价比 = 商业价值 / 实现难度。&lt;/p&gt;
+
+&lt;h3 id=&#34;活下来的永远是少数&#34;&gt;活下来的永远是少数&lt;/h3&gt;
+
+&lt;p&gt;初创团队适合安产品线划分，产品经理权力大，单个产品得到保证；成熟企业适合按职能线划分，增加资源共享与团队交流学习。&lt;/p&gt;
+
+&lt;p&gt;商业需求文档：项目背景、商业价值、功能需求描述、非功能需求描述、资源评估、风险和对策。&lt;/p&gt;
+
+&lt;p&gt;少而精，吹走漏肥皂盒的故事。&lt;/p&gt;
+
+&lt;h2 id=&#34;项目坎坷的一生&#34;&gt;项目坎坷的一生&lt;/h2&gt;
+
+&lt;h3 id=&#34;从产品到项目&#34;&gt;从产品到项目&lt;/h3&gt;
+
+&lt;p&gt;产品是解决问题的东西，项目是一个过程，产品要一个个项目来实现。&lt;/p&gt;
+
+&lt;p&gt;产品经理靠想，做正确的事情；项目经理靠做，把事情做正确。&lt;/p&gt;
+
+&lt;p&gt;产品体验和项目难度的权衡。&lt;/p&gt;
+
+&lt;h3 id=&#34;一切从kick-off开始&#34;&gt;一切从Kick off开始&lt;/h3&gt;
+
+&lt;p&gt;团队组建、时间计划、沟通方式、誓师大会。&lt;/p&gt;
+
+&lt;h3 id=&#34;关键的青春期-又见需求&#34;&gt;关键的青春期，又见需求&lt;/h3&gt;
+
+&lt;p&gt;商业需求文档、市场需求文档、产品需求文档、功能详细说明。&lt;/p&gt;
+
+&lt;h3 id=&#34;成长-一步一个脚印&#34;&gt;成长，一步一个脚印&lt;/h3&gt;
+
+&lt;p&gt;需求评审过后进行需求冻结。&lt;/p&gt;
+
+&lt;h3 id=&#34;山寨级项目管理&#34;&gt;山寨级项目管理&lt;/h3&gt;
+
+&lt;p&gt;逐步建立自己的文档模板库。&lt;/p&gt;
+
+&lt;p&gt;逐步建立流程，就是把经常做的事情的好的方法固化下来。&lt;/p&gt;
+
+&lt;h2 id=&#34;我的产品-我的团队&#34;&gt;我的产品，我的团队&lt;/h2&gt;
+
+&lt;h3 id=&#34;大产品-大设计-大团队&#34;&gt;大产品，大设计，大团队&lt;/h3&gt;
+
+&lt;p&gt;所有和产品有关的事都是产品经理的事。&lt;/p&gt;
+
+&lt;h4 id=&#34;产品之大&#34;&gt;产品之大&lt;/h4&gt;
+
+&lt;p&gt;时间之大——产品生命周期：&lt;/p&gt;
+
+&lt;p&gt;不同时期的产品和市场用户都有其特点，最佳状态是彼此的完美配合。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dailydreamer.me/images/产品生命周期里的五种用户群体.png&#34; alt=&#34;产品生命周期里的五种用户群体&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;空间之大——商业、产品、技术&lt;/p&gt;
+
+&lt;p&gt;公司的DNA：腾讯是产品主导，Google曾经是技术主导，阿里巴巴曾经是商业主导。&lt;/p&gt;
+
+&lt;h3 id=&#34;设计之大&#34;&gt;设计之大&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dailydreamer.me/images/用户体验的要素.png&#34; alt=&#34;用户体验的要素&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;本能水平设计，能满足用户需求；行为水平设计，好用，交互便利；反思水平设计，情感化设计。&lt;/p&gt;
+
+&lt;h4 id=&#34;团队之大&#34;&gt;团队之大&lt;/h4&gt;
+
+&lt;p&gt;随着团队变大，分工要渐渐明晰，让各种人与各种事匹配。如客服到PD的接口人。&lt;/p&gt;
+
+&lt;p&gt;职能型组织和项目型组织，以及结合两者的矩阵型组织。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dailydreamer.me/images/矩阵型组织.png&#34; alt=&#34;矩阵型组织&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;游走于商业和技术之间&#34;&gt;游走于商业和技术之间&lt;/h3&gt;
+
+&lt;p&gt;心思缜密的规划师，狭义的产品团队。&lt;/p&gt;
+
+&lt;p&gt;激情四射的设计师，精雕细琢的交互设计与敏捷开发的权衡取舍。&lt;/p&gt;
+
+&lt;p&gt;阴险狡诈的运营师。&lt;/p&gt;
+
+&lt;h3 id=&#34;商业团队-冲锋陷阵&#34;&gt;商业团队，冲锋陷阵&lt;/h3&gt;
+
+&lt;p&gt;版本细分的策略：做功能区分，打细分市场；策略性做出“炮灰版”。&lt;/p&gt;
+
+&lt;h3 id=&#34;技术团队-坚强后盾&#34;&gt;技术团队，坚强后盾&lt;/h3&gt;
+
+&lt;p&gt;如何与工程师合作：制定规则。如需求变更的流程。&lt;/p&gt;
+
+&lt;h3 id=&#34;容易被遗忘的角落&#34;&gt;容易被遗忘的角落&lt;/h3&gt;
+
+&lt;p&gt;最好的资源：老板。让老板做问答题-&amp;gt;让老板做选择题-&amp;gt;让老板做判断题。&lt;/p&gt;
+
+&lt;h3 id=&#34;大家好才是真的好&#34;&gt;大家好才是真的好&lt;/h3&gt;
+
+&lt;p&gt;产品经理的无授权领导：不为我所有，但为我所用。&lt;/p&gt;
+
+&lt;p&gt;既要领导，也要管理。&lt;/p&gt;
+
+&lt;p&gt;让团队开心，小礼物和团队活动。&lt;/p&gt;
+
+&lt;h2 id=&#34;别让灵魂更不上脚步&#34;&gt;别让灵魂更不上脚步&lt;/h2&gt;
+
+&lt;h3 id=&#34;触及产品的灵魂&#34;&gt;触及产品的灵魂&lt;/h3&gt;
+
+&lt;p&gt;应该做什么：以价值观为根基。&lt;/p&gt;
+
+&lt;p&gt;价值观、使命、愿景。在此之上构筑公司战略。&lt;/p&gt;
+
+&lt;h3 id=&#34;可行性分析三部曲&#34;&gt;可行性分析三部曲&lt;/h3&gt;
+
+&lt;p&gt;我们在哪儿：市场扫描(PEST)，竞品分析($APPEALS)，自我分析(SWOT)。&lt;/p&gt;
+
+&lt;p&gt;我们去哪儿：细分市场、目标用户、满足什么需求。&lt;/p&gt;
+
+&lt;h3 id=&#34;做吧-准备出发&#34;&gt;做吧，准备出发&lt;/h3&gt;
+
+&lt;p&gt;产品的路标规划。&lt;/p&gt;
+
+&lt;p&gt;不要试图在一个会议中解决很多问题。&lt;/p&gt;
+
+&lt;p&gt;大会决定小事 小会决定大事。&lt;/p&gt;
+
+&lt;p&gt;要想会议不流于形式，就把会议变成形式，会前做好关键人员的沟通。&lt;/p&gt;
+
+&lt;p&gt;罗伯特议事规则。所有人提意见，少数人讨论，一个人拍板。&lt;/p&gt;
+
+&lt;p&gt;会议记录，重点是会议决议与遗留问题。&lt;/p&gt;
+
+&lt;h3 id=&#34;kpi-kpi-kpi&#34;&gt;KPI!KPI!KPI!&lt;/h3&gt;
+
+&lt;p&gt;smart原则：具体，可度量，可实现，现实性，有时限。&lt;/p&gt;
+
+&lt;p&gt;远视者把目的当手段，近视者把手段当目的。&lt;/p&gt;
+
+&lt;p&gt;短期目标与长期目标的权衡，如成绩中上的同学比成绩最好的有出息。&lt;/p&gt;
+
+&lt;h3 id=&#34;本书的源头活水&#34;&gt;本书的源头活水&lt;/h3&gt;
+
+&lt;h2 id=&#34;产品经理的自我修养&#34;&gt;产品经理的自我修养&lt;/h2&gt;
+
+&lt;p&gt;爱生活让我们充满动力，有理想让我们目标明确，会思考让我们方法得当，能沟通让我们团队前进。&lt;/p&gt;
+
+&lt;h3 id=&#34;爱生活才会爱产品&#34;&gt;爱生活才会爱产品&lt;/h3&gt;
+
+&lt;p&gt;电子菜单用来数据收集和个性定制。&lt;/p&gt;
+
+&lt;p&gt;windows回收站当文件夹。。。&lt;/p&gt;
+
+&lt;h3 id=&#34;有理想-就不会变咸鱼&#34;&gt;有理想，就不会变咸鱼&lt;/h3&gt;
+
+&lt;p&gt;战略是公司的灵魂，理想是人的灵魂。&lt;/p&gt;
+
+&lt;p&gt;要做的事，想做的事，能做的事重合。&lt;/p&gt;
+
+&lt;p&gt;个人品牌建设。&lt;/p&gt;
+
+&lt;h3 id=&#34;会思考-活到老学到老&#34;&gt;会思考，活到老学到老&lt;/h3&gt;
+
+&lt;p&gt;注重方法和知识的积累。&lt;/p&gt;
+
+&lt;h3 id=&#34;能沟通-在什么山头唱什么歌&#34;&gt;能沟通，在什么山头唱什么歌&lt;/h3&gt;
+
+&lt;p&gt;销售卖产品，PD卖想法。&lt;/p&gt;
+
+&lt;p&gt;沟通不是为了说服，而是为了更好的认识世界。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://dailydreamer.me/images/四种一对一沟通方式的比较.png&#34; alt=&#34;四种一对一沟通方式的比较&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;产品经理主义&#34;&gt;产品经理主义&lt;/h3&gt;
+
+&lt;p&gt;为什么做，第5章战略。&lt;/p&gt;
+
+&lt;p&gt;做什么事，解决什么人的什么问题，第2章需求。&lt;/p&gt;
+
+&lt;p&gt;何时做、谁来做，第3、4章项目和团队。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UNIX编程艺术</title>
+      <link>https://dailydreamer.me/post/2015-06-28-unix-programming-art/</link>
+      <pubDate>Sun, 28 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-06-28-unix-programming-art/</guid>
+      <description>
+
+&lt;p&gt;这本书极为经典，虽然后半部分的细节有些过时，但是前面的哲学影响深远且富有启发性。&lt;/p&gt;
+
+&lt;h2 id=&#34;哲学&#34;&gt;哲学&lt;/h2&gt;
+
+&lt;p&gt;UNIX有它独有的文化和哲学，它富有生命力且影响深远。UNIX诞生于1969年，而今天化身为Linux、BSD、MacOS X等，应用广泛且强大。&lt;/p&gt;
+
+&lt;p&gt;UNIX文件在字节层次上再无结构，文件删除了无法恢复，作业控制有欠精致，命名方式混乱。这些都是UNIX的缺点。&lt;/p&gt;
+
+&lt;p&gt;最大的争议在于，&lt;strong&gt;提供机制，而不是策略&lt;/strong&gt;。
+比如X Window，提供一套极端通用的图形操作，将界面的观感(策略)推后到应用层。
+这使得UNIX可以提供很多行为选项和令人眼花缭乱的定制功能。
+然而它的代价就是当用户“可以”设置自己的策略时，他们“必须”设置自己的策略。
+这使得UNIX失去了很多非技术用户，但是策略相对短寿，机制才会长存。
+只提供机制才能使得UNIX长久保鲜。&lt;/p&gt;
+
+&lt;p&gt;同时，UNIX还有着及其丰富和优秀的外围文化。
+开源软件，跨平台可移植和开放标准(IEEE的可移植操作系统标准POS很快被大家加后缀变成了POSIX)，Internet和TCP/IP协议，开源社区，从头到脚的灵活性(在其他系统中，完成设计者预见的任务容易，但是设计者没有预料到的就很难)，以及UNIX hack很有乐趣。&lt;/p&gt;
+
+&lt;p&gt;UNIX哲学起源与Ken Thompson早期关于如何设计一个服务接口简洁、小巧精干的操作系统的思考，一路成长且博采众长。
+UNIX管道的发明人Doug Mcllroy总结，UNIX哲学是一个程序只做一件事，并做好。程序要能协作。
+程序要能处理文本流，因为这是最通用的接口。整体上，UNIX哲学可以概括为一下几点：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;模块原则&lt;/strong&gt;：使用简洁的接口拼合简单的部件&lt;/p&gt;
+
+&lt;p&gt;编制复杂软件而又不至于一败涂地的唯一非方法就是降低其整体复杂度，用清晰的接口把若干简单的模块组合成一个复杂的软件。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;清晰原则&lt;/strong&gt;：清晰胜于机巧&lt;/p&gt;
+
+&lt;p&gt;些程序时，要想到你不是写给计算机看，而是写给人看的。优雅而清晰的代码不仅不容易崩溃，而且更易于让后来的修改者立刻理解。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;组合原则&lt;/strong&gt;：设计时考虑拼接&lt;/p&gt;
+
+&lt;p&gt;在输入输出方面，UNIX传统极力提倡采用简单、文本化、面向流、设备无关的格式，否则很难和其它程序衔接。要想让程序具有组合性，就要使程序彼此独立。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;分离原则&lt;/strong&gt;：策略同机制分离，接口同引擎分离&lt;/p&gt;
+
+&lt;p&gt;策略短寿，机制长存。在探索新策略的时候尽量不要打破机制，这样也可以为机制编写更好的测试。&lt;/p&gt;
+
+&lt;p&gt;在GUI之外也可以应用这个原则，如Emacs编辑器使用内嵌的脚本语言Lisp解释器来控制用C编写的编辑原语操作。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;简洁原则&lt;/strong&gt;：设计要简洁，复杂度要低&lt;/p&gt;
+
+&lt;p&gt;复杂的东西代价更高，bug更多。以简洁为美，总设法将程序系统分解成几个能够协作的小部分。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;透明性原则&lt;/strong&gt;：设计要可见，以便审查和调试。&lt;/p&gt;
+
+&lt;p&gt;透明性是说一眼能看出软件是在做什么以及怎样做的，显见性是说程序带有监视和显示内部状态的功能。尽早设置调试选项。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;健壮原则&lt;/strong&gt;：健壮源于透明与简洁&lt;/p&gt;
+
+&lt;p&gt;健壮性指在超出设计者预想外的条件下也能运行良好。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;表示原则&lt;/strong&gt;：把知识叠入数据以求逻辑质朴而健壮。&lt;/p&gt;
+
+&lt;p&gt;数据比变成逻辑更容易驾驭。主动将代码的复杂度转移到数据之中去。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;通俗原则&lt;/strong&gt;：接口设计避免标新立异&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;缄默原则&lt;/strong&gt;：如果一个程序没什么好说的，就保持沉默&lt;/p&gt;
+
+&lt;p&gt;只输出重要的东西。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;补救原则&lt;/strong&gt;：出现异常时，马上退出并给出足量错误信息&lt;/p&gt;
+
+&lt;p&gt;“宽容的收，谨慎的发”。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;经济原则&lt;/strong&gt;：宁花机器一分，不花程序员一秒&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;生成原则&lt;/strong&gt;：避免手工hack，尽量编写程序去生成程序&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;优化原则&lt;/strong&gt;：雕琢之前先有型&lt;/p&gt;
+
+&lt;p&gt;先制作原型，再精雕细琢。从原型中寻找通过牺牲最小局部简洁性而获得较大性能提升的地方。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;多样原则&lt;/strong&gt;：绝不相信所谓“不二法门”断言&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;扩展原则&lt;/strong&gt;：设计着眼未来，未来总比预想的快&lt;/p&gt;
+
+&lt;p&gt;一言以蔽之，就是KISS，Keep it simple and stupid。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;历史-双流记&#34;&gt;历史————双流记&lt;/h2&gt;
+
+&lt;p&gt;忘记过去的人，注定要重蹈覆辙。&lt;/p&gt;
+
+&lt;h2 id=&#34;对比-unix哲学同其他哲学的比较&#34;&gt;对比：UNIX哲学同其他哲学的比较&lt;/h2&gt;
+
+&lt;p&gt;UNIX风格，一切皆文件，以及在此之上的管道概念。&lt;/p&gt;
+
+&lt;p&gt;UNIX中，进程生成代价低，并且有简便的进程间通讯。使得众多小工具、管道和过滤器组成了一个均衡系统。
+而反UNIX系统必须编写庞大的单个程序，并且进程间通讯要知晓彼此的细节，否则就只能采取低效不安去的方式。&lt;/p&gt;
+
+&lt;p&gt;UNIX中内部边界清晰。
+有多用户权限，以及把设计关键安全性的功能限制在尽可能小的可信代码块上。
+即使shell也不是什么特权程序。&lt;/p&gt;
+
+&lt;p&gt;UNIX文件不是靠后缀名识别的，没有文件属性，但是可以通过magic number来识别文件。
+文件属性在管道中会引发棘手的问题，对文件属性的支持会使程序员使用不透明的文件格式。&lt;/p&gt;
+
+&lt;p&gt;如果不像UNIX强调CLI命令行界面，那么程序设计不会考虑以未预料的方式合作，难以实现远程系统管理，守护进程难以实现。&lt;/p&gt;
+
+&lt;p&gt;UNIX开发门槛很低，有大量廉价工具和简单接口，开创了轻松编程的先河。&lt;/p&gt;
+
+&lt;h2 id=&#34;模块性-保持清晰-保持简洁&#34;&gt;模块性，保持清晰，保持简洁&lt;/h2&gt;
+
+&lt;h3 id=&#34;封装和最佳模块大小&#34;&gt;封装和最佳模块大小&lt;/h3&gt;
+
+&lt;p&gt;模块太小时，复杂性全在于接口，阅读代码需要知道大量接口。模块太大时，模块内部代码bug太多。这都不是很好。&lt;/p&gt;
+
+&lt;h3 id=&#34;紧凑型和正交性&#34;&gt;紧凑型和正交性&lt;/h3&gt;
+
+&lt;p&gt;紧凑性是指一个设计内否装进人脑，有经验的用户是否不需要手册。
+不要有内部功能冗余，否则会出现功能子集成为“方言”，“方言”之间相互不能理解。&lt;/p&gt;
+
+&lt;p&gt;正交性是说每一个动作只改变一件事而不影响其他。正交性缩短了测试和开发的时间。重构的原则性目标就是提高正交性。&lt;/p&gt;
+
+&lt;p&gt;任何一个知识点在系统内都应当有一个唯一、权威的描述。&lt;/p&gt;
+
+&lt;p&gt;围绕“解决一个定义明确的问题”的强核心算法组织设计，避免臆断和捏造。&lt;/p&gt;
+
+&lt;h3 id=&#34;软件是多层的&#34;&gt;软件是多层的&lt;/h3&gt;
+
+&lt;p&gt;纯粹自顶向下设计和自底向上设计都不好，可以结合使用。
+但是需要胶合层来协调策略和机制。&lt;/p&gt;
+
+&lt;p&gt;C语言作为结构汇编程序是薄胶合层的经典代表。
+完美之道，不在无可增加，而在无可减少。&lt;/p&gt;
+
+&lt;p&gt;UNIX强烈倾向于把程序分解成由胶合层连接的库集合。&lt;/p&gt;
+
+&lt;p&gt;OO经常被过分推崇为解决软件复杂性的唯一方法，这违背了多样性原则。&lt;/p&gt;
+
+&lt;p&gt;OO在其取得成功的领域(GUI，仿真，图形)之所以成功的主要原因之一是因为在这些领域里很难弄错类型的问题本体。&lt;/p&gt;
+
+&lt;h2 id=&#34;文本化-好协议产生好实践&#34;&gt;文本化：好协议产生好实践&lt;/h2&gt;
+
+&lt;h3 id=&#34;文本化的重要性&#34;&gt;文本化的重要性&lt;/h3&gt;
+
+&lt;p&gt;文本流非常通用，并且通过压缩文本可以有很好的性能。&lt;/p&gt;
+
+&lt;p&gt;二进制格式限制了位数，文本可拓展性更强。&lt;/p&gt;
+
+&lt;h3 id=&#34;数据文件元格式&#34;&gt;数据文件元格式&lt;/h3&gt;
+
+&lt;p&gt;尽可能使用元格式而不是标新立异。&lt;/p&gt;
+
+&lt;p&gt;DSV，分隔符分隔值。如/etc/password用冒号分隔，反斜杠转义。&lt;/p&gt;
+
+&lt;p&gt;RFC 822，电子邮件格式。HTTP1.1也是这种格式。属性每行一个，冒号接空白结束。&lt;/p&gt;
+
+&lt;p&gt;Cookie-Jar和Record-Jar，用%%\n结束。&lt;/p&gt;
+
+&lt;p&gt;XML，适合复杂数据格式，但是不能被传统UNIX工具解析。&lt;/p&gt;
+
+&lt;p&gt;UNIX文本文件的约定：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如果可能，以换行符结束的每一行只存一个记录。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果可能，每行不超过80个字符。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用#引入注释。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;支持反斜杠约定。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用冒号或连续空白作为分隔符。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不要过分区别TAB和空格(令人头疼的python缩进)。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于复杂的记录，使用节格式。使用%%\n作为分隔符。并支持连续行(如Cookie-Jar)。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;包含版本号，或将格式设计成相互独立的自描述字节块(如PNG)。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不要仅对文件的一部分进行压缩或二进制编码。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;应用协议设计&#34;&gt;应用协议设计&lt;/h3&gt;
+
+&lt;p&gt;//TODO 留着以后看。。。&lt;/p&gt;
+
+&lt;h2 id=&#34;透明性-来点儿光&#34;&gt;透明性，来点儿光&lt;/h2&gt;
+
+&lt;p&gt;透明性是说知道程序在干什么，可显性是说知道程序怎么干的。&lt;/p&gt;
+
+&lt;p&gt;优雅的代码不仅正确而且显然正确。优雅的代码不仅将算法传递给计算机而且将见解传递和信心传递给阅读代码的人。&lt;/p&gt;
+
+&lt;p&gt;编写透明可显的系统节省的精力，将来可能就是自己的财富。&lt;/p&gt;
+
+&lt;h3 id=&#34;为透明性和可显性设计&#34;&gt;为透明性和可显性设计&lt;/h3&gt;
+
+&lt;p&gt;要追求代码的透明，最有效的方法很简单，就是不要在具体操作的代码上加上太多抽象层。&lt;/p&gt;
+
+&lt;p&gt;可以默认隐藏细节，但不要使其无法被访问。&lt;/p&gt;
+
+&lt;p&gt;反例，不透明的Windows注册表，注册表蠕变。&lt;/p&gt;
+
+&lt;h3 id=&#34;为可维护性设计&#34;&gt;为可维护性设计&lt;/h3&gt;
+
+&lt;p&gt;选择简单的算法，提供开发者手册。&lt;/p&gt;
+
+&lt;h2 id=&#34;多道程序设计-分离进程为独立的功能&#34;&gt;多道程序设计：分离进程为独立的功能&lt;/h2&gt;
+
+&lt;p&gt;做单件事并做好。&lt;/p&gt;
+
+&lt;p&gt;真正挑战的不是协议语法而是协议逻辑。&lt;/p&gt;
+
+&lt;h3 id=&#34;从性能调整中分离复杂度控制&#34;&gt;从性能调整中分离复杂度控制&lt;/h3&gt;
+
+&lt;p&gt;除非万不得已(性能太差)尽量避免使用线程。&lt;/p&gt;
+
+&lt;p&gt;将程序划分成多个子进程可以使需要特权的代码块尽量少。&lt;/p&gt;
+
+&lt;h3 id=&#34;unix-ipc方法分类&#34;&gt;UNIX IPC方法分类&lt;/h3&gt;
+
+&lt;p&gt;将任务转给专门程序。UNIX shellout。&lt;/p&gt;
+
+&lt;p&gt;管道，重定向和过滤器。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;管道中所有阶段程序都是并发执行的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;管道的缺点或局限是单向性。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;包装器。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;隐藏shell管线的复杂细节。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安全性包装器。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;从进程。&lt;/p&gt;
+
+&lt;p&gt;对等进程间通信。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;临时文件。用文件名包含$$，即PID保证文件名唯一。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;信号。需要信号的程序会向var/run写入pidfile。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;套接字。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;共享内存。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;要避免的问题和方法&#34;&gt;要避免的问题和方法&lt;/h3&gt;
+
+&lt;p&gt;废弃的UNIX IPC方法。&lt;/p&gt;
+
+&lt;p&gt;远程过程调用。不够透明可显。&lt;/p&gt;
+
+&lt;p&gt;线程。同步互斥锁开销大且bug多。&lt;/p&gt;
+
+&lt;h2 id=&#34;微型语言-寻找唱歌的音符&#34;&gt;微型语言：寻找唱歌的音符&lt;/h2&gt;
+
+&lt;p&gt;更高级的语言可以使用更少的行数完成更多任务，也意味着更少的bug。&lt;/p&gt;
+
+&lt;p&gt;UNIX包容小型的、为专门领域特制、大量减少程序行数的语言。&lt;/p&gt;
+
+&lt;p&gt;//TODO 留着以后看。。。&lt;/p&gt;
+
+&lt;h2 id=&#34;生成-提升规格说明的层次&#34;&gt;生成：提升规格说明的层次&lt;/h2&gt;
+
+&lt;p&gt;尽可能把设计的复杂度从代码转移到数据中去。&lt;/p&gt;
+
+&lt;h2 id=&#34;配置-迈出正确的第一步&#34;&gt;配置：迈出正确的第一步&lt;/h2&gt;
+
+&lt;h3 id=&#34;什么应该是可配置的&#34;&gt;什么应该是可配置的&lt;/h3&gt;
+
+&lt;p&gt;对于能够进行可靠检测的东西，就不要提供配置开关。&lt;/p&gt;
+
+&lt;p&gt;提高程序适应能力，除非这样做会产生超过0.7秒延时。&lt;/p&gt;
+
+&lt;p&gt;增加一个配置选项，就会减少测试覆盖率。&lt;/p&gt;
+
+&lt;h3 id=&#34;配置在哪里&#34;&gt;配置在哪里&lt;/h3&gt;
+
+&lt;p&gt;局部覆盖全局。&lt;/p&gt;
+
+&lt;p&gt;使用同参数选项预期寿命最匹配的机制。&lt;/p&gt;
+
+&lt;h3 id=&#34;命令行选项&#34;&gt;命令行选项&lt;/h3&gt;
+
+&lt;p&gt;传统UNIX风格如&lt;code&gt;-ab&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;GNU风格如`&lt;code&gt;--a --b&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;接口-unix环境下的用户接口设计模式&#34;&gt;接口：UNIX环境下的用户接口设计模式&lt;/h2&gt;
+
+&lt;p&gt;最小立异原则。新颖性提高了用户与接口最初几次的交互成本。仔细掂量你的折衷。&lt;/p&gt;
+
+&lt;p&gt;提倡以共生和委派策略提高代码复用，降低复杂度。&lt;/p&gt;
+
+&lt;p&gt;UNIX接口历史。面向行的，面向字符阵列的，和基于X的。&lt;/p&gt;
+
+&lt;p&gt;接口设计在这些条件间权衡：简洁，表现力，易用，透明，脚本化能力。&lt;/p&gt;
+
+&lt;p&gt;现代接口应当既支持CLI又支持可视接口，它们各有优缺点。&lt;/p&gt;
+
+&lt;p&gt;UNIX程序员愿意使接口富有表现力和可配置。&lt;/p&gt;
+
+&lt;p&gt;接口设计模式：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;过滤器：catlike型，宽进严出，不需要的也不丢弃，绝不增加无用数据。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;canstrip模式，如clear。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;源模式，如ls。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;引擎和接口分离。MVC模式。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;基于语言的接口。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;等等各种模式。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;网页浏览器作为通用前端，避免了后端大量GUI冗余代码。&lt;/p&gt;
+
+&lt;h2 id=&#34;优化&#34;&gt;优化&lt;/h2&gt;
+
+&lt;p&gt;知道何时不去优化。&lt;/p&gt;
+
+&lt;p&gt;最有效的优化往往是优化以外的事情，如清晰干净的设计。&lt;/p&gt;
+
+&lt;p&gt;最强大的优化技术是不优化。摩尔定律的指数效应。不值得为常数项优化。&lt;/p&gt;
+
+&lt;p&gt;先估量，后优化。明确瓶颈所在，使用性能评估工具。&lt;/p&gt;
+
+&lt;p&gt;小即是美，尽量将核心代码和数据结构放进缓存。&lt;/p&gt;
+
+&lt;p&gt;降低延时。可以批处理、重叠操作、缓存。&lt;/p&gt;
+
+&lt;h2 id=&#34;复杂度-尽可能简单-但别简单过了头&#34;&gt;复杂度：尽可能简单，但别简单过了头&lt;/h2&gt;
+
+&lt;h3 id=&#34;谈谈复杂度&#34;&gt;谈谈复杂度&lt;/h3&gt;
+
+&lt;p&gt;程序员在意实现的复杂度，用户在意界面或接口的复杂度，第三个标准是代码总行数。&lt;/p&gt;
+
+&lt;p&gt;接口复杂度和实现复杂度需要折衷。&lt;/p&gt;
+
+&lt;p&gt;旧学派UNIX唯一的框架就是重定向、管道和shell，而Emacs将非常多的文本缓冲区和援助进程同文件系统统一在一起，大大超越shell框架。&lt;/p&gt;
+
+&lt;p&gt;选择需要管理的上下文环境，并且按照边界所允许的最小化方式构建程序。只有实证其他方法行不通时才编写大程序。&lt;/p&gt;
+
+&lt;h2 id=&#34;语言-c还是非c&#34;&gt;语言：C还是非C&lt;/h2&gt;
+
+&lt;p&gt;C的内存管理是复杂性和错误的深渊。&lt;/p&gt;
+
+&lt;p&gt;真实世界中的程序往往受I/O、网络等的影响远大于CPU的影响。&lt;/p&gt;
+
+&lt;p&gt;shell即使一种最早的解释型语言，高级shell编程可以混合各个语言。&lt;/p&gt;
+
+&lt;p&gt;C语言资源效率接近机器语言，但是编程是资源管理的炼狱。&lt;/p&gt;
+
+&lt;p&gt;C++最佳之处是编译效率以及面向对象和泛型编程的结合，最糟之处是它太过怪异复杂，其设计者承认他不指望任何一个程序员能够完全掌握C++。&lt;/p&gt;
+
+&lt;p&gt;shell最佳之处在书写小型程序自然快捷，不用安装，但是不适合大型程序，并且不好移植。&lt;/p&gt;
+
+&lt;p&gt;Perl最佳之处是作为加强shell的强力胶合程序，但是Perl有些部分很丑陋。&lt;/p&gt;
+
+&lt;p&gt;Python清晰易读，易学易用，容易和C结合，但是效率相对低下。&lt;/p&gt;
+
+&lt;p&gt;Java移植性好，效率较高，面向对象，但是爹不好。。。&lt;/p&gt;
+
+&lt;h2 id=&#34;工具-开发的战术&#34;&gt;工具：开发的战术&lt;/h2&gt;
+
+&lt;p&gt;讲解了各种UNIX开发工具，但是太过陈旧了。&lt;/p&gt;
+
+&lt;h2 id=&#34;重用-论不要重新发明轮子&#34;&gt;重用：论不要重新发明轮子&lt;/h2&gt;
+
+&lt;p&gt;透明性是重用的关键。&lt;/p&gt;
+
+&lt;p&gt;开源后换工作也可以使用原来的代码。&lt;/p&gt;
+
+&lt;p&gt;编写开源软件的人往往自己也使用，并且开源社区不会羞于抓bug。&lt;/p&gt;
+
+&lt;h3 id=&#34;许可证问题&#34;&gt;许可证问题&lt;/h3&gt;
+
+&lt;p&gt;OSD，OSI Cerified Open Source认证标志的法律定义，是最好的自由软件定义。所有标准许可证都满足他。&lt;/p&gt;
+
+&lt;p&gt;MIT，BSD，GPL，MPL等等。&lt;/p&gt;
+
+&lt;h2 id=&#34;可移植性-软件可移植性与遵循标准&#34;&gt;可移植性：软件可移植性与遵循标准&lt;/h2&gt;
+
+&lt;h2 id=&#34;文档-向网络世界阐释代码&#34;&gt;文档：向网络世界阐释代码&lt;/h2&gt;
+
+&lt;h2 id=&#34;开放源码-在unix新社区中编程&#34;&gt;开放源码：在UNIX新社区中编程&lt;/h2&gt;
+
+&lt;p&gt;开发源码的规则很简单：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;源码公开&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;尽早发布，经常发布&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;给贡献以表扬&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;开源开发利用散布在互联网上，而且主要通过email和网络文档交流的大型程序员团队。一般有核心开发者或核心开发组来指导项目。&lt;/p&gt;
+
+&lt;p&gt;代码质量很难判断，开发者通常通过提交质量来评估补丁。&lt;/p&gt;
+
+&lt;h2 id=&#34;未来-危机与机遇&#34;&gt;未来：危机与机遇&lt;/h2&gt;
+
+&lt;h3 id=&#34;plan-9-未来之路&#34;&gt;PLAN 9， 未来之路&lt;/h3&gt;
+
+&lt;p&gt;所有挂载的文件服务器都具备相同的类文件系统接口。&lt;/p&gt;
+
+&lt;p&gt;PLAN 9 失败了，说明更优秀方案的最危险敌人，就是一个现存的足够优秀的架构。&lt;/p&gt;
+
+&lt;h3 id=&#34;unix设计中的问题&#34;&gt;UNIX设计中的问题&lt;/h3&gt;
+
+&lt;p&gt;UNIX文件就是一大袋字节。&lt;/p&gt;
+
+&lt;p&gt;UNIX对GUI支持孱弱。&lt;/p&gt;
+
+&lt;p&gt;文件删除不可撤销。&lt;/p&gt;
+
+&lt;p&gt;UNIX假定文件系统是静态的。Linux改进了这一点，具有文件和目录更改通知功能。&lt;/p&gt;
+
+&lt;p&gt;作业控制设计拙劣。&lt;/p&gt;
+
+&lt;p&gt;UNIX API没有使用异常。&lt;/p&gt;
+
+&lt;h3 id=&#34;unix环境问题&#34;&gt;UNIX环境问题&lt;/h3&gt;
+
+&lt;h3 id=&#34;unix文化问题&#34;&gt;UNIX文化问题&lt;/h3&gt;
+
+&lt;h3 id=&#34;信任的理由&#34;&gt;信任的理由&lt;/h3&gt;
+
+&lt;p&gt;迄今为止，打赌UNIX玩家会输的人总是聪明一时糊涂一世。我们能赢————只要我们想赢。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>程序员修炼之道</title>
+      <link>https://dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/</link>
+      <pubDate>Thu, 04 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/</guid>
+      <description>
+
+&lt;p&gt;这本书出版有些年头了，虽然其中的例子有些老旧，但是有些思想和哲学永远不会过时。&lt;/p&gt;
+
+&lt;h2 id=&#34;注重实效的哲学&#34;&gt;注重实效的哲学&lt;/h2&gt;
+
+&lt;p&gt;负责，提供各种选择，不找蹩脚的借口。&lt;/p&gt;
+
+&lt;p&gt;避免软件腐烂，破窗效应，不要容忍破窗户。&lt;/p&gt;
+
+&lt;p&gt;启动杂役，做变化的催化剂。&lt;/p&gt;
+
+&lt;p&gt;不要被温水煮青蛙，留意大图景。&lt;/p&gt;
+
+&lt;p&gt;让用户参与权衡，使质量成为需求问题。&lt;/p&gt;
+
+&lt;p&gt;像管理金融资产一样管理知识资产。定期为你的知识资产投资。&lt;/p&gt;
+
+&lt;p&gt;不要搁置问题。&lt;/p&gt;
+
+&lt;p&gt;批判的分析你读到的和听到的。&lt;/p&gt;
+
+&lt;p&gt;注重交流，想清楚你要说什么，了解听众。&lt;/p&gt;
+
+&lt;h2 id=&#34;注重实效的途径&#34;&gt;注重实效的途径&lt;/h2&gt;
+
+&lt;h3 id=&#34;重复的危害&#34;&gt;重复的危害&lt;/h3&gt;
+
+&lt;p&gt;系统中的每一项知识都必须具有单一、无歧义、权威的表示。Don&amp;rsquo;t Repeat Yourself！这不是你是否能记住的问题，而是何时忘记的问题。&lt;/p&gt;
+
+&lt;p&gt;强加的重复：&lt;/p&gt;
+
+&lt;p&gt;客户端服务器端不同语言：可以根据元数据在Build时生成不同语言的类定义及结构。&lt;/p&gt;
+
+&lt;p&gt;根据需求文档自动生成测试。&lt;/p&gt;
+
+&lt;p&gt;无意的重复：&lt;/p&gt;
+
+&lt;p&gt;需要缓存时可能会破坏DRY原则，但是应该在类内部解决，不要将其暴露给外界。&lt;/p&gt;
+
+&lt;h3 id=&#34;正交性&#34;&gt;正交性&lt;/h3&gt;
+
+&lt;p&gt;消除无关事物之间的影响。&lt;/p&gt;
+
+&lt;h3 id=&#34;可撤销性&#34;&gt;可撤销性&lt;/h3&gt;
+
+&lt;p&gt;不存在最终决策，采用灵活的架构。&lt;/p&gt;
+
+&lt;h3 id=&#34;曳光弹&#34;&gt;曳光弹&lt;/h3&gt;
+
+&lt;p&gt;用曳光弹找到目标，给出可展示的项目骨架，它可以即时的反馈。&lt;/p&gt;
+
+&lt;h3 id=&#34;原型与便笺&#34;&gt;原型与便笺&lt;/h3&gt;
+
+&lt;p&gt;为了学习而制作原型。原型甚至可以不用编码，他需要确定各个组件的责任和是否解耦。&lt;/p&gt;
+
+&lt;h2 id=&#34;基本工具&#34;&gt;基本工具&lt;/h2&gt;
+
+&lt;p&gt;用纯文本保存知识。它不会过时，更易测试。&lt;/p&gt;
+
+&lt;p&gt;要修正问题，而不是发出指责。&lt;/p&gt;
+
+&lt;p&gt;再现bug，使数据可视化。&lt;/p&gt;
+
+&lt;p&gt;向别人讲述你的代码要做什么时可能会帮助你理清思路。&lt;/p&gt;
+
+&lt;p&gt;不要假定，要证明。&lt;/p&gt;
+
+&lt;h2 id=&#34;注重实效的偏执&#34;&gt;注重实效的偏执&lt;/h2&gt;
+
+&lt;p&gt;你不可能写出完美的软件。&lt;/p&gt;
+
+&lt;h3 id=&#34;dbc-按合约设计&#34;&gt;DBC 按合约设计&lt;/h3&gt;
+
+&lt;p&gt;前条件，后条件，类不变项。&lt;/p&gt;
+
+&lt;h3 id=&#34;死程序不说谎&#34;&gt;死程序不说谎&lt;/h3&gt;
+
+&lt;p&gt;早崩溃，要崩溃不要破坏。&lt;/p&gt;
+
+&lt;h3 id=&#34;断言式编程&#34;&gt;断言式编程&lt;/h3&gt;
+
+&lt;p&gt;如果他不可能发生，用断言确保。&lt;/p&gt;
+
+&lt;h2 id=&#34;弯曲-或折断&#34;&gt;弯曲，或折断&lt;/h2&gt;
+
+&lt;p&gt;使模块之间的耦合减至最小。&lt;/p&gt;
+
+&lt;p&gt;要配置，不要集成。&lt;/p&gt;
+
+&lt;p&gt;将抽象放进代码，将细节放进元数据。&lt;/p&gt;
+
+&lt;p&gt;总是为并发进行设计。&lt;/p&gt;
+
+&lt;p&gt;使模型与视图分离。&lt;/p&gt;
+
+&lt;h2 id=&#34;当你编码时&#34;&gt;当你编码时&lt;/h2&gt;
+
+&lt;p&gt;不要靠巧合编程。&lt;/p&gt;
+
+&lt;p&gt;为你的假定建立文档。&lt;/p&gt;
+
+&lt;p&gt;早重构，常重构。这是一种痛苦管理。经常进行短小的重构之后测试。&lt;/p&gt;
+
+&lt;p&gt;测试驱动的设计。测试你的软件，否则你的用户就得测试。&lt;/p&gt;
+
+&lt;p&gt;与用户一同工作，以像用户一样思考。&lt;/p&gt;
+
+&lt;p&gt;抽象比细节获得更长久。&lt;/p&gt;
+
+&lt;p&gt;不要在盒子外面思考，要找到盒子，即真正的约束。亚历山大大帝用剑劈开了弗里吉亚国王戈尔系的号称解不开的结。&lt;/p&gt;
+
+&lt;p&gt;有些事情去做胜于描述，比如试着描述一下你系鞋带的过程。不要一开始编写太过详尽的规范。它和编码总是交替进行。&lt;/p&gt;
+
+&lt;p&gt;不要做形式方法的奴隶，有时原型展示比UML图更有说服力。昂贵的工具不一定能制作出更好的设计。&lt;/p&gt;
+
+&lt;h2 id=&#34;注重实效的项目&#34;&gt;注重实效的项目&lt;/h2&gt;
+
+&lt;p&gt;不要使用手工流程。&lt;/p&gt;
+
+&lt;p&gt;早测试，常测试，自动测试。&lt;/p&gt;
+
+&lt;p&gt;温和的超出用户的期望。与用户交流期望。&lt;/p&gt;
+
+&lt;p&gt;在你的作品上签名。这是责任和荣耀的表现。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

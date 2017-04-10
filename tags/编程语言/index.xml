@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程语言 on dailydreamer</title>
+    <link>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml</link>
+    <description>Recent content in 编程语言 on dailydreamer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>从函数式语言想到的</title>
+      <link>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</link>
+      <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</guid>
+      <description>
+
+&lt;p&gt;最近看了一本书&lt;a href=&#34;https://pragprog.com/book/btlang/seven-languages-in-seven-weeks&#34;&gt;Seven Languages in Seven Weeks&lt;/a&gt;。
+原来一直都在面向对象编程，对函数式语言了解并不多，看完这本书之后还是很受启发，接触了许多不同语言的新的思想。&lt;/p&gt;
+
+&lt;h2 id=&#34;各种编程范式&#34;&gt;各种编程范式&lt;/h2&gt;
+
+&lt;h3 id=&#34;imperative-programming&#34;&gt;imperative programming&lt;/h3&gt;
+
+&lt;p&gt;古老的编程范式，以冯诺以曼结构的机器思考的方式编程，如C语言。&lt;/p&gt;
+
+&lt;h3 id=&#34;object-oriented-programming&#34;&gt;object oriented programming&lt;/h3&gt;
+
+&lt;p&gt;现在正当年的主力编程范式，如Java、C#、ruby、python，以及深度融合了函数式思想但本质还是OOP的scala。&lt;/p&gt;
+
+&lt;p&gt;它的分支Prototype-based programming，如JavaScript，是一种十分灵活的编程方式。
+没有Class定义，所有的Object都以另一个Object为prototype，可以很灵活的改变原型链上的Object的数据和方法。&lt;/p&gt;
+
+&lt;h3 id=&#34;logic-programming&#34;&gt;logic programming&lt;/h3&gt;
+
+&lt;p&gt;面向推理逻辑的特定编程范式，是一种高等级的抽象，如prolog，声明定义和推导即可得出特定问题的答案。&lt;/p&gt;
+
+&lt;h3 id=&#34;functional-programming&#34;&gt;functional programming&lt;/h3&gt;
+
+&lt;p&gt;被认为是下一代的编程范式。
+函数式编程范式基于lambda calculus的思想，很早就在大名鼎鼎Lisp中出现。
+其核心思想是认为一切程序都可以由纯函数组成，纯函数没有副作用，输入一样则输出必然一样；
+所有数据结构都是immutable的，其值不能被改变。&lt;/p&gt;
+
+&lt;p&gt;早年由于我们的计算机架构是冯诺以曼结构，其基本操作都是基于副作用的，因此这种函数式编程带来的性能上的极大损失使其没有像命令式编程一样成为主流语言。
+现在随着计算机性能的提升以及相关理论和实现的完善，函数式编程的思想带来的好处逐渐体现，并且也积极的影响着其它现在的主流语言。
+同时涌现了一批为了兼容现有平台而作出一定妥协的”过渡性语言”，如Scala（Better Java）、Clojure（JVM上的Lisp）、F#（.Net上的OCaml）。&lt;/p&gt;
+
+&lt;h2 id=&#34;函数式语言的积极影响&#34;&gt;函数式语言的积极影响&lt;/h2&gt;
+
+&lt;h3 id=&#34;基于immutable思想的数据结构&#34;&gt;基于immutable思想的数据结构&lt;/h3&gt;
+
+&lt;p&gt;immutable带来的好处是程序的结果更加的可以预测，变量不会在你看不见的地方被偷偷改变。
+而且在多核的并行架构下Immutable能够避免复杂的状态和逻辑维护，使程序更加高效简单。&lt;/p&gt;
+
+&lt;p&gt;过去Lisp中主要的immutable数据结构是List,在某些情况下这种数据结构的性能非常糟糕（如查找是O(n)）。
+而现在一些精巧复杂的树状的数据结构可以兼顾immutable和性能（以一定的存储空间为代价），如&lt;a href=&#34;https://infoscience.epfl.ch/record/64398/files/idealhashtrees.pdf&#34;&gt;Ideal Hash Trees&lt;/a&gt;中的Hash array mapped trie(HAMT)。
+&lt;a href=&#34;http://hypirion.com/musings/understanding-persistent-vector-pt-1&#34;&gt;这篇文章&lt;/a&gt;详细讲解了Clojure中的Persistent Vectors（虽然叫Vector但只是接口一样，实际这货是个树）的实现原理。
+它基于HAMT，能够在保持immutable维护过去状态以供回滚的同时达到增加、更新、查找都为O(1)的性能。
+知乎上的&lt;a href=&#34;http://www.zhihu.com/question/35244627&#34;&gt;这个讨论&lt;/a&gt;介绍了一些其它的相关数据结构。&lt;/p&gt;
+
+&lt;h3 id=&#34;基于immutable的系统&#34;&gt;基于immutable的系统&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://nixos.org/&#34;&gt;Nix OS&lt;/a&gt;是一种使用Nix packager manager的纯函数式思想的系统。
+Nix packager manager也可以在Linux和Mac OS X上使用。
+它将每一个软件包都独立开来，升级软件的时候不会影响原来已经安装好的其它版本的该软件，使得软件可以轻松回滚，并且不会出现由于版本导致的各种问题，是ruby的RVM，node.js的NVM，python的virtualenv等等软件所解决问题的终极解决方案。&lt;/p&gt;
+
+&lt;h3 id=&#34;类型&#34;&gt;类型&lt;/h3&gt;
+
+&lt;p&gt;Haskell拥有强大的类型系统。
+static type是指其编译时进行类型检查，strong type是指其类型检查要求类型严格匹配。
+配合type inference，Haskell的类型系统做到了你不需要时感受不到，需要清晰接口时可以显示声明。
+它永远在保障着程序的正确性，不会产生JavaScript中一些被人广泛诟病的错误（&lt;a href=&#34;https://www.destroyallsoftware.com/talks/wat&#34;&gt;这个视频&lt;/a&gt;我笑了好久。。。）。
+Scala中也有type inference，但是由于JVM的限制功能很有限。&lt;/p&gt;
+
+&lt;p&gt;Haskell中的type class可以优雅的实现generics和polymorphism，并且可以避免很多OOP中因为不能把函数作为一等公民传递（高阶函数）而造成的臃肿的设计模式。
+Julia中multiple dispatch更进一步，根据每个参数的类型不同调用不同的函数实现，更符合直觉，且避免了OOP中dynamic dispatch的动态查找带来的性能损失。&lt;/p&gt;
+
+&lt;h3 id=&#34;并发&#34;&gt;并发&lt;/h3&gt;
+
+&lt;p&gt;OOP中对于并发的处理通常是基于thread以及共享内存和互斥锁，这个模型被实践证明即使是有经验的程序员也很难驾驭。
+而许多函数式语言提出了更好的解决方案。&lt;/p&gt;
+
+&lt;p&gt;erlang是为了稳定的企业级基础服务而开发的语言。
+erlang虚拟机使得新建进程更加轻量，进程间通讯更加方便。
+结合immutable特性以及actor进程池模型和消息传递来解决并发问题。
+erlang虚拟机还有一个厉害的特性是能够在语言内轻易管理进程的生命周期，这催生了独特的let it crash哲学，以及不用停止程序即可修改代码等等的神奇功能，使得erlang程序可以运行多年而不用重启。&lt;/p&gt;
+
+&lt;p&gt;scala中也使用actor作为并发模型。
+clojure中借鉴了关系型数据库的transactional特性，使用software transactional memory管理并发。&lt;/p&gt;
+
+&lt;p&gt;这些模型都被实践证明更加容易产生可靠的代码且更容易理解。&lt;/p&gt;
+
+&lt;h3 id=&#34;pattern-matching&#34;&gt;Pattern matching&lt;/h3&gt;
+
+&lt;p&gt;不同于传统OOP对象相等比较的是引用相等，如Java中String类型的&lt;code&gt;==&lt;/code&gt;和&lt;code&gt;equals()&lt;/code&gt;的令人迷惑的区别，Pattern matching是深度比较两个对象，更加符合直觉，并且配合immutable也可以有很好的性能。
+当然Pattern Matching更加灵活，带来了匹配类型，destructing等等实用的功能。&lt;/p&gt;
+
+&lt;h3 id=&#34;meta-programming&#34;&gt;meta programming&lt;/h3&gt;
+
+&lt;p&gt;Lisp中程序即数据，整个程序就是用List数据结构表达的，使得其macro远远强大于C的字符串替换，可以实现很多优雅的domain specific language(DSL)。
+后来很多语言都将macro和meta programming作为自己的重要特性，即使是拥抱了OOP的ruby和scala。&lt;/p&gt;
+
+&lt;h3 id=&#34;其它&#34;&gt;其它&lt;/h3&gt;
+
+&lt;p&gt;如Currying，Functor，Applicative，Monad等等新的概念和抽象，使用Maybe Monad杜绝Null这一Java程序员永远的痛等等。&lt;/p&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;函数式编程为我们带来了更优雅简洁易懂的程序，以及许多优秀的思想。
+虽然今天的主流语言仍然是OOP，但是我们可以靠自己慢慢推动新一代编程范式的发展，找到最佳的结合点。&lt;/p&gt;
+
+&lt;p&gt;需要注意的是不应该盲目推崇函数式编程的思想。
+编程语言里还有另一种实用派，学术派眼中的“另类”，从实际出发得出的迥然不同的语言，如C和go。
+不同的思路有着不同的权衡取舍，取其精华去其糟粕，结合自己的使用场景选择，合适的才是最好的。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WPF全局隐藏鼠标</title>
+      <link>https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</link>
+      <pubDate>Mon, 29 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
+      <description>&lt;p&gt;前些日子使用WPF实现了一个填平两个屏幕间缝隙的小程序，在那里面需要让光标在两个屏幕间的时候将其隐藏。
+在一个程序内部隐藏鼠标很容易，在WPF中只需设置&lt;code&gt;Mouse.OverrideCursor = Cursors.None&lt;/code&gt;。
+但是当程序最小化后鼠标还能隐藏着实费了一番功夫。
+大致有如下几种思路。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看&lt;a href=&#34;http://stackoverflow.com/questions/10541014/hiding-system-cursor&#34;&gt;这里&lt;/a&gt;。
+但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐；
+而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！
+只有重启才能重新显示鼠标。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;要隐藏鼠标时将鼠标的位置一直设置在右下角。
+这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏；
+同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最后终于找到了一种十分讨巧的方法。
+就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。
+大致代码如下：&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cs&#34;&gt;Window cursorWin;
+private void cursorWinInit()
+{
+    cursorWin = new Window();
+    cursorWin.Left = bound - (W + hideBuffer);
+    cursorWin.Top = 0;
+    cursorWin.Width = 2 * (W + hideBuffer);
+    cursorWin.Height = maxHeight;
+    cursorWin.ShowInTaskbar = false;            //禁止在任务栏显示
+    cursorWin.WindowStyle = WindowStyle.None;   //无边框
+    cursorWin.AllowsTransparency = true;        //透明
+    cursorWin.Topmost = true;                   //置顶
+    cursorWin.Background = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));     //透明
+}
+private void myHideCursor()
+{
+    cursorWin.Dispatcher.Invoke(
+        new Action(
+            delegate
+            {
+                cursorWin.Show();
+                Mouse.OverrideCursor = Cursors.None;
+            }));
+}
+
+private void myShowCursor()
+{
+    cursorWin.Dispatcher.Invoke(
+        new Action(
+            delegate
+            {
+                cursorWin.Hide();
+                Mouse.OverrideCursor = null;
+            }));
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python解析XML与生成迭代器</title>
+      <link>https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</link>
+      <pubDate>Tue, 23 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</guid>
+      <description>
+
+&lt;p&gt;这次来看看Python解析XML与生成迭代器。&lt;/p&gt;
+
+&lt;h2 id=&#34;迭代器&#34;&gt;迭代器&lt;/h2&gt;
+
+&lt;p&gt;使用yield操作符可以使一个函数变成迭代器。如下一段测试代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def genTest(n):
+  print 1
+  print 2
+  for i in range(3,n+1):
+    yield i
+  print n+1
+  print n+2
+
+if __name__ == &#39;__main__&#39;:
+  for i in genTest(5):
+    print i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输出如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以看出第一次调用genTest()时执行了1,2位置的代码。
+之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。&lt;/p&gt;
+
+&lt;h2 id=&#34;python解析xml&#34;&gt;Python解析XML&lt;/h2&gt;
+
+&lt;p&gt;Python解析XML有许多种方法，它们各有特色。&lt;/p&gt;
+
+&lt;h3 id=&#34;elementtree&#34;&gt;ElementTree&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.python.org/2/library/xml.etree.elementtree.html&#34;&gt;ElementTree&lt;/a&gt;是python xml解析的一种轻量级实现。
+它将XMl文件读取到内存中以一棵树的形式存储。
+它速度快且方便使用，但是不能读取不规范的XMl文件，并且会一次将XML文件解析入内存。
+因此适合解析一些小型的XML文件。
+cElementTree是它的一个C优化过的版本。&lt;/p&gt;
+
+&lt;p&gt;示例代码如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def readXMLET(filename):
+  try:
+    import xml.etree.cElementTree as ET
+  except ImportError:
+    import xml.etree.ElementTree as ET
+  tree = ET.ElementTree(file=filename)
+  print &#39;read finish!&#39;
+  root = tree.getroot()
+  for child in root:
+    yield child.tag, child.attrib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;beautifulsoup-parser&#34;&gt;BeautifulSoup Parser&lt;/h3&gt;
+
+&lt;p&gt;刚提到ElementTree不能读取不规范的XML，&lt;a href=&#34;http://lxml.de/elementsoup.html&#34;&gt;BeautifulSoup Parser&lt;/a&gt;则可以，它试图修复XML中的不规范成分。
+但是由于使用了正则表达式，相对的它的效率会低于ElementTree。&lt;/p&gt;
+
+&lt;p&gt;示例代码如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def readXMLlxml(filename):
+  from lxml.html import soupparser
+
+  tree = soupparser.parse(filename)
+  root = tree.getroot()
+  for child in root:
+    yield child.tag, child.attrib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;sax&#34;&gt;SAX&lt;/h3&gt;
+
+&lt;p&gt;前面两种方法都是将XML一次以一棵树的形式读入内存中。
+若是XML文件较大的话这种方式会非常慢且消耗内存。
+&lt;a href=&#34;https://docs.python.org/2/library/xml.sax.html&#34;&gt;SAX&lt;/a&gt;则是以一种异步的方式处理它遇到的XML标签，而不是将其一次全部解析，因此比较适合体积很大的XML文件。
+但是它不会记得之前处理过的标签算是一个缺点。&lt;/p&gt;
+
+&lt;p&gt;你需要继承xml.sax.ContentHandler类，然后在解析的时候将这个类的实例传入即可。&lt;/p&gt;
+
+&lt;p&gt;这个类有如下方法：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;characters(content)方法：调用时机为从行开始，遇到标签之前，存在字符，content的值为这些字符串；从一个标签，遇到下一个标签之前， 存在字符，content的值为这些字符串；从一个标签，遇到行结束符之前，存在字符，content的值为这些字符串。标签可以是开始标签，也可以是结束标签。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;startDocument()方法：文档启动的时候调用。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;endDocument()方法：解析器到达文档结尾时调用。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;startElement(name, attrs)方法：遇到XML开始标签时调用，name是标签的名字，attrs是标签的属性值字典。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;endElement(name)方法：遇到XML结束标签时调用。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;示例代码如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;class resHandler(xml.sax.ContentHandler):
+  def __init__(self):
+    self.count = 0
+
+  def startElement(self, tag, attrib):
+    if tag == &#39;doc&#39;:
+      self.count += 1
+      if self.count % 1000 == 0:
+        print self.count
+      doc = {
+        TAG:tag,
+        TITLE:attrib[TITLE],
+        ANCHOR:attrib[ANCHOR],
+        H1:attrib[H1],
+        PATH:attrib[PATH],
+        PAGERANK:attrib[PAGERANK]
+      }
+      print doc
+
+def readXMLSAX(filename):
+  parser = xml.sax.make_parser()
+  parser.setContentHandler(resHandler())
+  parser.parse(filename)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

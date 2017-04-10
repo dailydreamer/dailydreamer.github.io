@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="dailydreamer的小空间">
+
+
+<link rel="shortcut icon" href="/images/avatar.jpg" />
+
+<meta name="keywords" content="同源策略, JSONP, CORS">
+<title>CORS解决单页应用跨域问题</title>
+
+<link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
+<link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css" rel="stylesheet" type="text/css">
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <nav class="nav has-shadow">
+  <div class="nav-left">
+    <span id="toggle__menu" class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <a href="/index.html" class="nav-item">Dailydreamer's Space</a>
+  </div>
+
+  <div class="nav-center">
+    <a class="nav-item" href="https://github.com/dailydreamer">
+      <span class="icon">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+    <a class="nav-item" href="/index.xml" type="application/rss+xml">
+      <span class="icon">
+        <i class="fa fa-rss"></i>
+      </span>
+    </a>
+  </div>
+</nav>      
+
+  <div id="container">
+    <aside>
+  <nav class="sidebar">
+    <div id="tags__ul">
+      <a id="all_posts" class="tag is-primary">
+        全部 
+        <span class="tag-count">23</span>
+      </a>
+      
+      <a id="编程" class="tag">
+        编程 
+        <span class="tag-count">15</span>
+      </a>
+      
+      <a id="读书笔记" class="tag">
+        读书笔记 
+        <span class="tag-count">10</span>
+      </a>
+      
+      <a id="web" class="tag">
+        web 
+        <span class="tag-count">5</span>
+      </a>
+      
+      <a id="elasticsearch" class="tag">
+        elasticsearch 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="编程语言" class="tag">
+        编程语言 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="产品经理" class="tag">
+        产品经理 
+        <span class="tag-count">2</span>
+      </a>
+      
+      <a id="哲学" class="tag">
+        哲学 
+        <span class="tag-count">2</span>
+      </a>
+      
+      <a id="ssh" class="tag">
+        ssh 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="心理学" class="tag">
+        心理学 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="理财" class="tag">
+        理财 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="科学" class="tag">
+        科学 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="系统安全" class="tag">
+        系统安全 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="设计" class="tag">
+        设计 
+        <span class="tag-count">1</span>
+      </a>
+      
+    </div>
+
+    <div class="menu">
+      <ul id="posts__ul" class="menu-list">
+        
+        
+        <li class="all_posts 读书笔记 产品经理">
+          <a href="https://dailydreamer.me/post/2016-06-16-mobile-application-experience/">
+            <span class="posts-title">移动端体验</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 理财">
+          <a href="https://dailydreamer.me/post/2016-06-15-fund-tips/">
+            <span class="posts-title">买基金给我加薪</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/">
+            <span class="posts-title">从函数式语言想到的</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-05-25-webrtc-introduction/">
+            <span class="posts-title">WebRTC简介</span>
+            <span class="posts-date">May, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 设计">
+          <a href="https://dailydreamer.me/post/2016-05-24-some-design-books/">
+            <span class="posts-title">读过的一些设计书籍</span>
+            <span class="posts-date">May, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/">
+            <span class="posts-title">DOM和DOM Event</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/">
+            <span class="posts-title">CSS Cheat Sheet</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/">
+            <span class="posts-title">单页应用JWT身份认证</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/">
+            <span class="posts-title">CORS解决单页应用跨域问题</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 科学">
+          <a href="https://dailydreamer.me/post/2016-03-20-a-new-kind-of-science/">
+            <span class="posts-title">一种新科学</span>
+            <span class="posts-date">Mar, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 心理学">
+          <a href="https://dailydreamer.me/post/2016-03-07-difficult-conversation/">
+            <span class="posts-title">关键对话</span>
+            <span class="posts-date">Mar, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 哲学">
+          <a href="https://dailydreamer.me/post/2016-01-13-power-of-myth/">
+            <span class="posts-title">神话的力量</span>
+            <span class="posts-date">Jan, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 系统安全">
+          <a href="https://dailydreamer.me/post/2015-11-23-meet-ctf/">
+            <span class="posts-title">一次与CTF的邂逅</span>
+            <span class="posts-date">Nov, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 ssh">
+          <a href="https://dailydreamer.me/post/2015-10-30-ssh-config/">
+            <span class="posts-title">多个github账号的ssh key切换</span>
+            <span class="posts-date">Oct, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 哲学">
+          <a href="https://dailydreamer.me/post/2015-08-04-Zen-and-the-Art-of-Motorcycle-Maintenance/">
+            <span class="posts-title">禅与摩托车维修的艺术</span>
+            <span class="posts-date">Aug, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 产品经理">
+          <a href="https://dailydreamer.me/post/2015-07-25-product-manager/">
+            <span class="posts-title">人人都是产品经理</span>
+            <span class="posts-date">Jul, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/">
+            <span class="posts-title">WPF全局隐藏鼠标</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 编程">
+          <a href="https://dailydreamer.me/post/2015-06-28-unix-programming-art/">
+            <span class="posts-title">UNIX编程艺术</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/">
+            <span class="posts-title">Python解析XML与生成迭代器</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 elasticsearch">
+          <a href="https://dailydreamer.me/post/2015-06-22-elasticsearch-config-2/">
+            <span class="posts-title">ElasticSearch搜索配置（2）</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 elasticsearch">
+          <a href="https://dailydreamer.me/post/2015-06-05-elasticsearch-config-1/">
+            <span class="posts-title">ElasticSearch搜索配置（1）</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 编程">
+          <a href="https://dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/">
+            <span class="posts-title">程序员修炼之道</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 elasticsearch">
+          <a href="https://dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/">
+            <span class="posts-title">在AWS上配置ElasticSearch</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        
+      </ul>
+    </div>
+  </nav>
+</aside>
+    <article>
+      <div class="content post">
+        <h1 data-identifier="2016-04-08">CORS解决单页应用跨域问题</h1>
+        
+
+<h2 id="同源策略-https-developer-mozilla-org-en-us-docs-web-security-same-origin-policy"><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">同源策略</a></h2>
+
+<p>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。
+这时前端和后端部署在不同的服务器上。
+而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。</p>
+
+<p>同源是指协议+主机名+端口号全部相同，称为同源。
+详细见下表，是跟&rdquo;<a href="http://www.example.com/dir/page.html&quot;做比较。">http://www.example.com/dir/page.html&quot;做比较。</a></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Compared URL</th>
+<th align="left">Outcome</th>
+<th align="left">Reason</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="http://www.example.com/dir/page2.html">http://www.example.com/dir/page2.html</a></td>
+<td align="left">Success</td>
+<td align="left">Same protocol, host and port</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://www.example.com/dir2/other.html">http://www.example.com/dir2/other.html</a></td>
+<td align="left">Success</td>
+<td align="left">Same protocol, host and port</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://username:password@www.example.com/dir2/other.html">http://username:password@www.example.com/dir2/other.html</a></td>
+<td align="left">Success</td>
+<td align="left">Same protocol, host and port</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://www.example.com:81/dir/other.html">http://www.example.com:81/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Same protocol and host but different port</td>
+</tr>
+
+<tr>
+<td align="left"><a href="https://www.example.com/dir/other.html">https://www.example.com/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Different protocol</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://en.example.com/dir/other.html">http://en.example.com/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Different host</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://example.com/dir/other.html">http://example.com/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Different host (exact match required)</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://v2.www.example.com/dir/other.html">http://v2.www.example.com/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Different host (exact match required)</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://www.example.com:80/dir/other.html">http://www.example.com:80/dir/other.html</a></td>
+<td align="left">Depends</td>
+<td align="left">Port explicit. Depends on implementation in browser</td>
+</tr>
+</tbody>
+</table>
+
+<p>Javascript不能访问非同源下的资源，如cookie，localstorge等，这也意味着ajax请求后返回的数据会被浏览器认为是非同源而禁止Javascript操作。
+通常的解决方法有JSONP(JSON with Padding)和CORS(Cross-origin resource sharing)。
+当然如果要求实时性的话也可以考虑WebSocket协议，这点本文不展开。</p>
+
+<h2 id="jsonp-https-en-wikipedia-org-wiki-jsonp"><a href="https://en.wikipedia.org/wiki/JSONP">JSONP</a></h2>
+
+<p>HTML标准里的<code>&lt;script&gt;</code>标签，它可以调用部署在CDN上或其他服务器上的非同源Javascript。
+JSONP实际上是利用了这一点，和服务器端约定，在发送请求时加入了一个回调函数的参数。
+如Jquery中设置参数<code>dataType: &quot;jsonp&quot;</code>后，请求相当于插入页面如下标签</p>
+
+<pre><code class="language-html">&lt;script src=&quot;http://www.example.net/api/example?callback=mycallback&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>服务器端返回的payload为<code>mycallback(data)</code>，通过<code>&lt;script&gt;</code>标签执行，就完成了ajax请求。</p>
+
+<p>JSONP的优点是实现简单，兼容性很好。
+缺点是只支持GET请求。</p>
+
+<h2 id="cors-https-developer-mozilla-org-en-us-docs-web-http-access-control-cors"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS</a></h2>
+
+<p>CORS是W3C推荐的跨域HTTP请求的新机制，它可以支持如下请求：</p>
+
+<ul>
+<li>XMLHttpRequest(即ajax请求)</li>
+<li>Web Fonts</li>
+<li>WebGL textures</li>
+<li>canvas中drawImage产生的Images/video frames</li>
+<li>CSS</li>
+<li>Scripts</li>
+</ul>
+
+<h3 id="简单请求">简单请求</h3>
+
+<p>简单请求，是指满足如下条件的请求：</p>
+
+<p>只允许如下方法：</p>
+
+<ul>
+<li>GET</li>
+<li>HEAD</li>
+<li>POST</li>
+</ul>
+
+<p>除了浏览器自动设置的属性（如Connection, User-Agent等), 只允许设置如下头部属性：</p>
+
+<ul>
+<li>Accept</li>
+<li>Accept-Language</li>
+<li>Content-Language</li>
+<li>Content-Type</li>
+</ul>
+
+<p>只允许如下Content-Type值:</p>
+
+<ul>
+<li>application/x-www-form-urlencoded</li>
+<li>multipart/form-data</li>
+<li>text/plain</li>
+</ul>
+
+<p>对于简单请求，要允许CORS，需要在后端返回的response的header中设置<code>Access-Control-Allow-Origin</code>允许前端服务器地址的ajax请求，可以使用通配符或白名单。
+如<code>Access-Control-Allow-Origin: *</code>允许所有跨域请求，<code>Access-Control-Allow-Origin: http://example.com</code>允许前端服务器example.com的跨域请求。</p>
+
+<p>发送CORS跨域请求默认不带cookie。
+可以设置request的header中xhr对象<code>withCredentials: true</code>一同发送cookie，同时后端返回的response的header中设置<code>Access-Control-Allow-Credentials: true</code>接收cookie。
+注意使用cookie时<code>Access-Control-Allow-Origin</code>的值不能是通配符<code>*</code>。</p>
+
+<h3 id="preflighted-requests">Preflighted requests</h3>
+
+<p>除了简单请求外的请求都是复杂请求。
+在发送复杂请求之前需要先发送一个OPTIONS方法的Preflighted requests，后端确认安全后再发送正式请求。
+具体设置可以参考<a href="https://www.w3.org/TR/cors/">W3C推荐标准</a>。</p>
+
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'dailydreamer';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>      
+    </article>
+  </div>
+  
+  <link href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="/js/zepto.min.js"></script>
+  <script src="/js/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/yaml.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-75912368-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>

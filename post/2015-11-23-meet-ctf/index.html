@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="dailydreamer的小空间">
+
+
+<link rel="shortcut icon" href="/images/avatar.jpg" />
+
+<meta name="keywords" content="Buffer Overflow, pwntools">
+<title>一次与CTF的邂逅</title>
+
+<link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
+<link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css" rel="stylesheet" type="text/css">
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <nav class="nav has-shadow">
+  <div class="nav-left">
+    <span id="toggle__menu" class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <a href="/index.html" class="nav-item">Dailydreamer's Space</a>
+  </div>
+
+  <div class="nav-center">
+    <a class="nav-item" href="https://github.com/dailydreamer">
+      <span class="icon">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+    <a class="nav-item" href="/index.xml" type="application/rss+xml">
+      <span class="icon">
+        <i class="fa fa-rss"></i>
+      </span>
+    </a>
+  </div>
+</nav>      
+
+  <div id="container">
+    <aside>
+  <nav class="sidebar">
+    <div id="tags__ul">
+      <a id="all_posts" class="tag is-primary">
+        全部 
+        <span class="tag-count">23</span>
+      </a>
+      
+      <a id="编程" class="tag">
+        编程 
+        <span class="tag-count">15</span>
+      </a>
+      
+      <a id="读书笔记" class="tag">
+        读书笔记 
+        <span class="tag-count">10</span>
+      </a>
+      
+      <a id="web" class="tag">
+        web 
+        <span class="tag-count">5</span>
+      </a>
+      
+      <a id="elasticsearch" class="tag">
+        elasticsearch 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="编程语言" class="tag">
+        编程语言 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="产品经理" class="tag">
+        产品经理 
+        <span class="tag-count">2</span>
+      </a>
+      
+      <a id="哲学" class="tag">
+        哲学 
+        <span class="tag-count">2</span>
+      </a>
+      
+      <a id="ssh" class="tag">
+        ssh 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="心理学" class="tag">
+        心理学 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="理财" class="tag">
+        理财 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="科学" class="tag">
+        科学 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="系统安全" class="tag">
+        系统安全 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="设计" class="tag">
+        设计 
+        <span class="tag-count">1</span>
+      </a>
+      
+    </div>
+
+    <div class="menu">
+      <ul id="posts__ul" class="menu-list">
+        
+        
+        <li class="all_posts 读书笔记 产品经理">
+          <a href="https://dailydreamer.me/post/2016-06-16-mobile-application-experience/">
+            <span class="posts-title">移动端体验</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 理财">
+          <a href="https://dailydreamer.me/post/2016-06-15-fund-tips/">
+            <span class="posts-title">买基金给我加薪</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/">
+            <span class="posts-title">从函数式语言想到的</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-05-25-webrtc-introduction/">
+            <span class="posts-title">WebRTC简介</span>
+            <span class="posts-date">May, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 设计">
+          <a href="https://dailydreamer.me/post/2016-05-24-some-design-books/">
+            <span class="posts-title">读过的一些设计书籍</span>
+            <span class="posts-date">May, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/">
+            <span class="posts-title">DOM和DOM Event</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/">
+            <span class="posts-title">CSS Cheat Sheet</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/">
+            <span class="posts-title">单页应用JWT身份认证</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/">
+            <span class="posts-title">CORS解决单页应用跨域问题</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 科学">
+          <a href="https://dailydreamer.me/post/2016-03-20-a-new-kind-of-science/">
+            <span class="posts-title">一种新科学</span>
+            <span class="posts-date">Mar, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 心理学">
+          <a href="https://dailydreamer.me/post/2016-03-07-difficult-conversation/">
+            <span class="posts-title">关键对话</span>
+            <span class="posts-date">Mar, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 哲学">
+          <a href="https://dailydreamer.me/post/2016-01-13-power-of-myth/">
+            <span class="posts-title">神话的力量</span>
+            <span class="posts-date">Jan, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 系统安全">
+          <a href="https://dailydreamer.me/post/2015-11-23-meet-ctf/">
+            <span class="posts-title">一次与CTF的邂逅</span>
+            <span class="posts-date">Nov, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 ssh">
+          <a href="https://dailydreamer.me/post/2015-10-30-ssh-config/">
+            <span class="posts-title">多个github账号的ssh key切换</span>
+            <span class="posts-date">Oct, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 哲学">
+          <a href="https://dailydreamer.me/post/2015-08-04-Zen-and-the-Art-of-Motorcycle-Maintenance/">
+            <span class="posts-title">禅与摩托车维修的艺术</span>
+            <span class="posts-date">Aug, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 产品经理">
+          <a href="https://dailydreamer.me/post/2015-07-25-product-manager/">
+            <span class="posts-title">人人都是产品经理</span>
+            <span class="posts-date">Jul, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/">
+            <span class="posts-title">WPF全局隐藏鼠标</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 编程">
+          <a href="https://dailydreamer.me/post/2015-06-28-unix-programming-art/">
+            <span class="posts-title">UNIX编程艺术</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/">
+            <span class="posts-title">Python解析XML与生成迭代器</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 elasticsearch">
+          <a href="https://dailydreamer.me/post/2015-06-22-elasticsearch-config-2/">
+            <span class="posts-title">ElasticSearch搜索配置（2）</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 elasticsearch">
+          <a href="https://dailydreamer.me/post/2015-06-05-elasticsearch-config-1/">
+            <span class="posts-title">ElasticSearch搜索配置（1）</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 编程">
+          <a href="https://dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/">
+            <span class="posts-title">程序员修炼之道</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 elasticsearch">
+          <a href="https://dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/">
+            <span class="posts-title">在AWS上配置ElasticSearch</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        
+      </ul>
+    </div>
+  </nav>
+</aside>
+    <article>
+      <div class="content post">
+        <h1 data-identifier="2015-11-23">一次与CTF的邂逅</h1>
+        
+
+<p>机缘巧合做了两道CTF二进制题目，谨以此为记。</p>
+
+<h3 id="第一题-recho">第一题 recho</h3>
+
+<p>主要参考<a href="https://blog.skullsecurity.org/2013/ropasaurusrex-a-primer-on-return-oriented-programming">这篇博客</a>，ruby实现，也有人推荐了<a href="http://drops.wooyun.org/tips/6597">这篇</a>python实现版，使用了<code>pwntools</code>。</p>
+
+<p>第一题中<code>handle()</code>函数<code>buf</code>大小<code>256Byte</code>，但是<code>recv_line()</code>函数接受用户输入没有限制长度，存在<code>BOF</code>漏洞可以利用。</p>
+
+<p>为了方便本地调试，将源代码中关于<code>drop_priv()</code>相关函数去除后，本地编译。</p>
+
+<p>为了能够在64位linux上编译和执行32位文件，需要安装32位环境。以Ubuntu14.04为例，执行</p>
+
+<pre><code class="language-sh">sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib
+</code></pre>
+
+<p>即可。</p>
+
+<p>编译时使用命令</p>
+
+<pre><code class="language-sh">gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c
+</code></pre>
+
+<p>注意使用<code>-m32</code>参数编译成32位，<code>-fno-stack-protector</code>关闭stack canary检测，<code>-g</code>方便gdb调试。</p>
+
+<p>运行<code>./recholocal</code>后通过命令</p>
+
+<pre><code class="language-sh">ps -aux | grep recholocal
+</code></pre>
+
+<p>查看其进程号，通过</p>
+
+<pre><code class="language-sh">gdb atach pid
+</code></pre>
+
+<p>来调试该进程。</p>
+
+<pre><code class="language-sh">set follow-fork-mode child
+</code></pre>
+
+<p>可以使gdb在程序<code>fork()</code>后跟随子进程。</p>
+
+<p>在程序中找到<code>recvline()</code>和<code>sendlen()</code>，使用</p>
+
+<pre><code class="language-sh">objdump -d recholocal | grep recvline
+</code></pre>
+
+<p>获取地址，使用他们来对内存进行写和读。
+注意<code>recv_line</code>最后以<code>\n</code>结束。
+还有程序最开始调用的<code>sendstr()</code>函数会将是将<code>payload</code>的<code>strlen()</code>长度发送，如果<code>payload</code>中有<code>0x00</code>就会被截断发送。</p>
+
+<p>使用<code>objdump -x recholocal</code>可以查看各个section的位置和布局，找到一个可读可写又足够大的section来存放我们的字符串参数，如<code>.bss</code>或<code>.dynamic</code>等。
+发现<code>.dynamic</code>的位置是<code>0x0804a10c</code>。</p>
+
+<p>为了对付ALSR，需要先知道<code>libc</code>中某个函数的运行时地址，使用<code>sendlen()</code>将其发送过来，再加上<code>system()</code>相对这个函数的偏移，写入某个函数<code>got</code>表项，在调用该函数就是相当于调用了<code>system()</code>。</p>
+
+<p>使用</p>
+
+<pre><code class="language-sh">objdump -R recholocal | grep __libc_start_main
+</code></pre>
+
+<p>发现<code>__libc_start_main()</code>的<code>got</code>表项地址为<code>0x0804a040</code>。</p>
+
+<pre><code class="language-sh">ldd recholocal
+</code></pre>
+
+<p>可发现本地链接库<code>libc.so.6</code>的位置，对其<code>objdump</code>后找到<code>__libc_start_main()</code>和<code>__libc_system()</code>的地址，计算其偏移。</p>
+
+<p>使用<code>objdump -d recholocal | egrep 'pop|ret'</code>发现<code>ppppr</code>如下</p>
+
+<pre><code class="language-sh">8048d1c:	5b                   	pop    %ebx
+8048d1d:	5e                   	pop    %esi
+8048d1e:	5f                   	pop    %edi
+8048d1f:	5d                   	pop    %ebp
+8048d20:	c3                   	ret   
+</code></pre>
+
+<p>在堆砌堆栈时需要使用，使用时截取需要部分即可。</p>
+
+<p>本地跑通后将地址改为服务器端地址即可。</p>
+
+<p>刚开始本来想利用<a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">这篇博客</a>中的方法获取reverse shell，后来发现由于recho程序中将标准输入输出都复制到了socket中，所以只需<code>cat ～/flag</code>然后再<code>read()</code>出来即可。</p>
+
+<h3 id="第二题-weapon-shop">第二题 weapon_shop</h3>
+
+<p>这一题只有二进制文件，先使用IDA Pro反编译，按<code>F5</code>可以看到部分C伪码，结合程序对函数进行理解。</p>
+
+<p>可以看到该程序输入时都限制了长度，因此不方便<code>BOF</code>。
+但是找到在输入<code>Credit Card Number</code>时长度限制为<code>200Byte</code>，而且写入了可执行的<code>.bss</code>段，因此可以在这里写入一些<code>shellcode</code>，地址为<code>0x0804b1e0</code>。</p>
+
+<p>同时注意到在买武器过程中输入数字，使用了<code>strtol()</code>函数，它会扫描字符串，跳过前面的空格，将后面的字符转换成数字。而函数只检查了第一个字符不是负号，以及不大于8，因此可以输入空格加一个任意负数。
+后面它使用数组起始地址加这个数得到的地址对其自增，因此输入一个合理的偏移量就可以对任意高于该数组起始地址的地址进行自增。
+该数组位于主循环函数的栈上，因此可以对主循环函数的返回地址改写位<code>shellcode</code>所在的地址。
+注意该自增只增加一个字节，因此需要对返回地址每个字节分别自增。</p>
+
+<p><code>shellcode</code>最后选取了拿到<code>/bin/sh</code>的<code>shellcode</code>。
+因此最后使用了<code>pwntools</code>里的<code>interactive()</code>函数和远端<code>shell</code>进行交互。</p>
+
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'dailydreamer';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>      
+    </article>
+  </div>
+  
+  <link href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="/js/zepto.min.js"></script>
+  <script src="/js/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/yaml.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-75912368-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+</body>
+</html>

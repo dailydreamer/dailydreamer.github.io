@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on dailydreamer</title>
+    <link>https://dailydreamer.me/tags/ssh/index.xml</link>
+    <description>Recent content in Ssh on dailydreamer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://dailydreamer.me/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>多个github账号的ssh key切换</title>
+      <link>https://dailydreamer.me/post/2015-10-30-ssh-config/</link>
+      <pubDate>Fri, 30 Oct 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-10-30-ssh-config/</guid>
+      <description>
+
+&lt;p&gt;当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。&lt;/p&gt;
+
+&lt;h2 id=&#34;github多个账号ssh-key切换&#34;&gt;github多个账号ssh key切换&lt;/h2&gt;
+
+&lt;h3 id=&#34;配置ssh的config文件&#34;&gt;配置ssh的config文件&lt;/h3&gt;
+
+&lt;p&gt;使用&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;youremail@xxx.com&amp;quot;&lt;/code&gt;生成两个ssh key之后，在~/.ssh/下添加一个config文件，内容如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Host github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+Host second.github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_second
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;设置远程仓库的ssh地址&#34;&gt;设置远程仓库的ssh地址&lt;/h3&gt;
+
+&lt;p&gt;只需要让ssh的目标主机地址变为你写的Host即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git remote add origin git@second.github.com:myname/myrepo.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;更加深入的利用ssh config文件可以参考&lt;a href=&#34;http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/&#34;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

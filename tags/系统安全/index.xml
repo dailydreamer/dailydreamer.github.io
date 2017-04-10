@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统安全 on dailydreamer</title>
+    <link>https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/index.xml</link>
+    <description>Recent content in 系统安全 on dailydreamer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>一次与CTF的邂逅</title>
+      <link>https://dailydreamer.me/post/2015-11-23-meet-ctf/</link>
+      <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-11-23-meet-ctf/</guid>
+      <description>
+
+&lt;p&gt;机缘巧合做了两道CTF二进制题目，谨以此为记。&lt;/p&gt;
+
+&lt;h3 id=&#34;第一题-recho&#34;&gt;第一题 recho&lt;/h3&gt;
+
+&lt;p&gt;主要参考&lt;a href=&#34;https://blog.skullsecurity.org/2013/ropasaurusrex-a-primer-on-return-oriented-programming&#34;&gt;这篇博客&lt;/a&gt;，ruby实现，也有人推荐了&lt;a href=&#34;http://drops.wooyun.org/tips/6597&#34;&gt;这篇&lt;/a&gt;python实现版，使用了&lt;code&gt;pwntools&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;第一题中&lt;code&gt;handle()&lt;/code&gt;函数&lt;code&gt;buf&lt;/code&gt;大小&lt;code&gt;256Byte&lt;/code&gt;，但是&lt;code&gt;recv_line()&lt;/code&gt;函数接受用户输入没有限制长度，存在&lt;code&gt;BOF&lt;/code&gt;漏洞可以利用。&lt;/p&gt;
+
+&lt;p&gt;为了方便本地调试，将源代码中关于&lt;code&gt;drop_priv()&lt;/code&gt;相关函数去除后，本地编译。&lt;/p&gt;
+
+&lt;p&gt;为了能够在64位linux上编译和执行32位文件，需要安装32位环境。以Ubuntu14.04为例，执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;即可。&lt;/p&gt;
+
+&lt;p&gt;编译时使用命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意使用&lt;code&gt;-m32&lt;/code&gt;参数编译成32位，&lt;code&gt;-fno-stack-protector&lt;/code&gt;关闭stack canary检测，&lt;code&gt;-g&lt;/code&gt;方便gdb调试。&lt;/p&gt;
+
+&lt;p&gt;运行&lt;code&gt;./recholocal&lt;/code&gt;后通过命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ps -aux | grep recholocal
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看其进程号，通过&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;gdb atach pid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;来调试该进程。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;set follow-fork-mode child
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以使gdb在程序&lt;code&gt;fork()&lt;/code&gt;后跟随子进程。&lt;/p&gt;
+
+&lt;p&gt;在程序中找到&lt;code&gt;recvline()&lt;/code&gt;和&lt;code&gt;sendlen()&lt;/code&gt;，使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;objdump -d recholocal | grep recvline
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;获取地址，使用他们来对内存进行写和读。
+注意&lt;code&gt;recv_line&lt;/code&gt;最后以&lt;code&gt;\n&lt;/code&gt;结束。
+还有程序最开始调用的&lt;code&gt;sendstr()&lt;/code&gt;函数会将是将&lt;code&gt;payload&lt;/code&gt;的&lt;code&gt;strlen()&lt;/code&gt;长度发送，如果&lt;code&gt;payload&lt;/code&gt;中有&lt;code&gt;0x00&lt;/code&gt;就会被截断发送。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code&gt;objdump -x recholocal&lt;/code&gt;可以查看各个section的位置和布局，找到一个可读可写又足够大的section来存放我们的字符串参数，如&lt;code&gt;.bss&lt;/code&gt;或&lt;code&gt;.dynamic&lt;/code&gt;等。
+发现&lt;code&gt;.dynamic&lt;/code&gt;的位置是&lt;code&gt;0x0804a10c&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;为了对付ALSR，需要先知道&lt;code&gt;libc&lt;/code&gt;中某个函数的运行时地址，使用&lt;code&gt;sendlen()&lt;/code&gt;将其发送过来，再加上&lt;code&gt;system()&lt;/code&gt;相对这个函数的偏移，写入某个函数&lt;code&gt;got&lt;/code&gt;表项，在调用该函数就是相当于调用了&lt;code&gt;system()&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;objdump -R recholocal | grep __libc_start_main
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;发现&lt;code&gt;__libc_start_main()&lt;/code&gt;的&lt;code&gt;got&lt;/code&gt;表项地址为&lt;code&gt;0x0804a040&lt;/code&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ldd recholocal
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可发现本地链接库&lt;code&gt;libc.so.6&lt;/code&gt;的位置，对其&lt;code&gt;objdump&lt;/code&gt;后找到&lt;code&gt;__libc_start_main()&lt;/code&gt;和&lt;code&gt;__libc_system()&lt;/code&gt;的地址，计算其偏移。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code&gt;objdump -d recholocal | egrep &#39;pop|ret&#39;&lt;/code&gt;发现&lt;code&gt;ppppr&lt;/code&gt;如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;8048d1c:	5b                   	pop    %ebx
+8048d1d:	5e                   	pop    %esi
+8048d1e:	5f                   	pop    %edi
+8048d1f:	5d                   	pop    %ebp
+8048d20:	c3                   	ret   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在堆砌堆栈时需要使用，使用时截取需要部分即可。&lt;/p&gt;
+
+&lt;p&gt;本地跑通后将地址改为服务器端地址即可。&lt;/p&gt;
+
+&lt;p&gt;刚开始本来想利用&lt;a href=&#34;http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet&#34;&gt;这篇博客&lt;/a&gt;中的方法获取reverse shell，后来发现由于recho程序中将标准输入输出都复制到了socket中，所以只需&lt;code&gt;cat ～/flag&lt;/code&gt;然后再&lt;code&gt;read()&lt;/code&gt;出来即可。&lt;/p&gt;
+
+&lt;h3 id=&#34;第二题-weapon-shop&#34;&gt;第二题 weapon_shop&lt;/h3&gt;
+
+&lt;p&gt;这一题只有二进制文件，先使用IDA Pro反编译，按&lt;code&gt;F5&lt;/code&gt;可以看到部分C伪码，结合程序对函数进行理解。&lt;/p&gt;
+
+&lt;p&gt;可以看到该程序输入时都限制了长度，因此不方便&lt;code&gt;BOF&lt;/code&gt;。
+但是找到在输入&lt;code&gt;Credit Card Number&lt;/code&gt;时长度限制为&lt;code&gt;200Byte&lt;/code&gt;，而且写入了可执行的&lt;code&gt;.bss&lt;/code&gt;段，因此可以在这里写入一些&lt;code&gt;shellcode&lt;/code&gt;，地址为&lt;code&gt;0x0804b1e0&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;同时注意到在买武器过程中输入数字，使用了&lt;code&gt;strtol()&lt;/code&gt;函数，它会扫描字符串，跳过前面的空格，将后面的字符转换成数字。而函数只检查了第一个字符不是负号，以及不大于8，因此可以输入空格加一个任意负数。
+后面它使用数组起始地址加这个数得到的地址对其自增，因此输入一个合理的偏移量就可以对任意高于该数组起始地址的地址进行自增。
+该数组位于主循环函数的栈上，因此可以对主循环函数的返回地址改写位&lt;code&gt;shellcode&lt;/code&gt;所在的地址。
+注意该自增只增加一个字节，因此需要对返回地址每个字节分别自增。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;shellcode&lt;/code&gt;最后选取了拿到&lt;code&gt;/bin/sh&lt;/code&gt;的&lt;code&gt;shellcode&lt;/code&gt;。
+因此最后使用了&lt;code&gt;pwntools&lt;/code&gt;里的&lt;code&gt;interactive()&lt;/code&gt;函数和远端&lt;code&gt;shell&lt;/code&gt;进行交互。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

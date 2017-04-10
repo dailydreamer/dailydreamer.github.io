@@ -1,0 +1,1855 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcom to Dailydreamer&#39;s Space on dailydreamer</title>
+    <link>https://dailydreamer.me/index.xml</link>
+    <description>Recent content in Welcom to Dailydreamer&#39;s Space on dailydreamer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 Apr 2017 22:49:03 +0800</lastBuildDate>
+    <atom:link href="https://dailydreamer.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>移动端体验</title>
+      <link>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</link>
+      <pubDate>Thu, 16 Jun 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</guid>
+      <description>
+
+&lt;p&gt;前段时间在Edx上浏览了一门课程&lt;a href=&#34;https://courses.edx.org/courses/course-v1:MITx+21W.789.1x+1T2016/info&#34;&gt;Mobile Application Experiences&lt;/a&gt;，听课笔记记录如下。&lt;/p&gt;
+
+&lt;h2 id=&#34;come-up-an-idea&#34;&gt;Come up an idea&lt;/h2&gt;
+
+&lt;h3 id=&#34;research-method&#34;&gt;Research method&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;observation&lt;/li&gt;
+&lt;li&gt;location tour: park, office&amp;hellip;&lt;/li&gt;
+&lt;li&gt;contextual inquiring: working, workout&amp;hellip;&lt;/li&gt;
+&lt;li&gt;think aloud&lt;/li&gt;
+&lt;li&gt;diary logging: taking photo, recording video&amp;hellip; close to the time that happened&lt;/li&gt;
+&lt;li&gt;interview: ask last time they do something rather than the general situation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;look at what they are frustrating to do. What kind of role the environment is playing.&lt;/p&gt;
+
+&lt;h3 id=&#34;analyze-data&#34;&gt;Analyze data&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;flow models: analyze how data flow transfer between subjects&lt;/li&gt;
+&lt;li&gt;conversation analyze: look at the conversation of subjects related to a subject&lt;/li&gt;
+&lt;li&gt;critical incident analyze: look at the place where people get stuck&lt;/li&gt;
+&lt;li&gt;affinity analyze&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;affinity-analyze&#34;&gt;Affinity analyze&lt;/h4&gt;
+
+&lt;p&gt;From data(bottom up) to find themes.
+It cannot help you to prove a particular hypothesis because you only talk to a few people which can represent everyone.&lt;/p&gt;
+
+&lt;p&gt;This method is about discovery, not preconceived notions.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create Note: each post represent one idea.&lt;/li&gt;
+&lt;li&gt;Put up note&lt;/li&gt;
+&lt;li&gt;Use 3 hierarchies, users&amp;rsquo; exact quotes, users&amp;rsquo; one sentence summary, theme similar between users.&lt;/li&gt;
+&lt;li&gt;Group the notes use the similar theme&lt;/li&gt;
+&lt;li&gt;Come up with a design through the theme&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;identifying-gaps&#34;&gt;Identifying gaps&lt;/h3&gt;
+
+&lt;p&gt;listen from different source and board audience&lt;/p&gt;
+
+&lt;p&gt;build a quick prototype and give it to them&lt;/p&gt;
+
+&lt;h3 id=&#34;proposal&#34;&gt;Proposal&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;why you think the project need to be done&lt;/li&gt;
+&lt;li&gt;what your objects and design elements are&lt;/li&gt;
+&lt;li&gt;how do you test your projects if they have meet your objects.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;remember to allow people to navigate through your proposal easily&lt;/p&gt;
+
+&lt;h2 id=&#34;build-and-test-your-idea-with-paper-prototype&#34;&gt;Build and test your idea with paper prototype&lt;/h2&gt;
+
+&lt;h3 id=&#34;concept-modeling&#34;&gt;Concept modeling&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;before + after: how is life different with your app&lt;/li&gt;
+&lt;li&gt;user mental model: how do user think about the key part of your app&lt;/li&gt;
+&lt;li&gt;architecture model&lt;/li&gt;
+&lt;li&gt;user types&lt;/li&gt;
+&lt;li&gt;content types&lt;/li&gt;
+&lt;li&gt;service model: what are all the user touch point with your system&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;user-cases&#34;&gt;User cases&lt;/h3&gt;
+
+&lt;h3 id=&#34;structure-flow&#34;&gt;Structure(flow)&lt;/h3&gt;
+
+&lt;p&gt;How your product empower people&amp;rsquo;s work flow.&lt;/p&gt;
+
+&lt;h3 id=&#34;screen-design&#34;&gt;Screen design&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;where I am, where to go, how to get here&lt;/li&gt;
+&lt;li&gt;set expectations and provide feedback&lt;/li&gt;
+&lt;li&gt;ergonomic design&lt;/li&gt;
+&lt;li&gt;rely on recognition rather than recall&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;paper-prototype&#34;&gt;Paper prototype&lt;/h2&gt;
+
+&lt;p&gt;start with paper: people tend to critical of overall concept&lt;/p&gt;
+
+&lt;p&gt;then mock up screens: people tend to critical on design details&lt;/p&gt;
+
+&lt;h2 id=&#34;usability-testing&#34;&gt;Usability testing&lt;/h2&gt;
+
+&lt;p&gt;about 5 people can cover 80% situations&lt;/p&gt;
+
+&lt;p&gt;Role: moderator, computer, note taker and user.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>买基金给我加薪</title>
+      <link>https://dailydreamer.me/post/2016-06-15-fund-tips/</link>
+      <pubDate>Wed, 15 Jun 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-06-15-fund-tips/</guid>
+      <description>
+
+&lt;p&gt;一本有关基金的入门书籍，一些基本知识和理念。&lt;/p&gt;
+
+&lt;h2 id=&#34;术语&#34;&gt;术语&lt;/h2&gt;
+
+&lt;p&gt;选中长期绩效好的基金。&lt;/p&gt;
+
+&lt;p&gt;所选择的基金公司不能只重视一只基金。&lt;/p&gt;
+
+&lt;p&gt;基金风险指标：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;标准差：过去一年净值的稳定程度，越低越稳定&lt;/li&gt;
+&lt;li&gt;beta值：基金波动幅度与打大盘的比值，越低越稳定&lt;/li&gt;
+&lt;li&gt;夏普指数：每单位反风险带来的收益，越大收益越高。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;定投秘籍&#34;&gt;定投秘籍&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;越早进场越好&lt;/li&gt;
+&lt;li&gt;账面亏损无所谓，赎回时要赚钱&lt;/li&gt;
+&lt;li&gt;定期检视，适时去芜存菁（绩效连续在同类型中处在下游）&lt;/li&gt;
+&lt;li&gt;只设停利，不设停损（简单计算，年利率是定存的5倍）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;单笔投资秘籍&#34;&gt;单笔投资秘籍&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;熟悉市场脉动&lt;/li&gt;
+&lt;li&gt;分批进场，买跌不买涨&lt;/li&gt;
+&lt;li&gt;定期检视，停利更要止损&lt;/li&gt;
+&lt;li&gt;懂得分批出场&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;结合基本面（经济景气）和技术面&lt;/p&gt;
+
+&lt;h3 id=&#34;基本面&#34;&gt;基本面&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;国内生产总值&lt;/li&gt;
+&lt;li&gt;主要经济指标&lt;/li&gt;
+&lt;li&gt;美国采购经理指数&lt;/li&gt;
+&lt;li&gt;消费者物价指数&lt;/li&gt;
+&lt;li&gt;美联储态度&lt;/li&gt;
+&lt;li&gt;消费者信心指数&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;技术面&#34;&gt;技术面&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;季线&lt;/li&gt;
+&lt;li&gt;KD线&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;结合操作&#34;&gt;结合操作&lt;/h2&gt;
+
+&lt;p&gt;定投的收益也是市场的重要指标&lt;/p&gt;
+
+&lt;p&gt;进场时：先定投，低谷时单笔投资&lt;/p&gt;
+
+&lt;p&gt;出场时：先2-3次赎单笔投资，再一次赎回定投&lt;/p&gt;
+
+&lt;p&gt;获利后滚入再投资&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>从函数式语言想到的</title>
+      <link>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</link>
+      <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</guid>
+      <description>
+
+&lt;p&gt;最近看了一本书&lt;a href=&#34;https://pragprog.com/book/btlang/seven-languages-in-seven-weeks&#34;&gt;Seven Languages in Seven Weeks&lt;/a&gt;。
+原来一直都在面向对象编程，对函数式语言了解并不多，看完这本书之后还是很受启发，接触了许多不同语言的新的思想。&lt;/p&gt;
+
+&lt;h2 id=&#34;各种编程范式&#34;&gt;各种编程范式&lt;/h2&gt;
+
+&lt;h3 id=&#34;imperative-programming&#34;&gt;imperative programming&lt;/h3&gt;
+
+&lt;p&gt;古老的编程范式，以冯诺以曼结构的机器思考的方式编程，如C语言。&lt;/p&gt;
+
+&lt;h3 id=&#34;object-oriented-programming&#34;&gt;object oriented programming&lt;/h3&gt;
+
+&lt;p&gt;现在正当年的主力编程范式，如Java、C#、ruby、python，以及深度融合了函数式思想但本质还是OOP的scala。&lt;/p&gt;
+
+&lt;p&gt;它的分支Prototype-based programming，如JavaScript，是一种十分灵活的编程方式。
+没有Class定义，所有的Object都以另一个Object为prototype，可以很灵活的改变原型链上的Object的数据和方法。&lt;/p&gt;
+
+&lt;h3 id=&#34;logic-programming&#34;&gt;logic programming&lt;/h3&gt;
+
+&lt;p&gt;面向推理逻辑的特定编程范式，是一种高等级的抽象，如prolog，声明定义和推导即可得出特定问题的答案。&lt;/p&gt;
+
+&lt;h3 id=&#34;functional-programming&#34;&gt;functional programming&lt;/h3&gt;
+
+&lt;p&gt;被认为是下一代的编程范式。
+函数式编程范式基于lambda calculus的思想，很早就在大名鼎鼎Lisp中出现。
+其核心思想是认为一切程序都可以由纯函数组成，纯函数没有副作用，输入一样则输出必然一样；
+所有数据结构都是immutable的，其值不能被改变。&lt;/p&gt;
+
+&lt;p&gt;早年由于我们的计算机架构是冯诺以曼结构，其基本操作都是基于副作用的，因此这种函数式编程带来的性能上的极大损失使其没有像命令式编程一样成为主流语言。
+现在随着计算机性能的提升以及相关理论和实现的完善，函数式编程的思想带来的好处逐渐体现，并且也积极的影响着其它现在的主流语言。
+同时涌现了一批为了兼容现有平台而作出一定妥协的”过渡性语言”，如Scala（Better Java）、Clojure（JVM上的Lisp）、F#（.Net上的OCaml）。&lt;/p&gt;
+
+&lt;h2 id=&#34;函数式语言的积极影响&#34;&gt;函数式语言的积极影响&lt;/h2&gt;
+
+&lt;h3 id=&#34;基于immutable思想的数据结构&#34;&gt;基于immutable思想的数据结构&lt;/h3&gt;
+
+&lt;p&gt;immutable带来的好处是程序的结果更加的可以预测，变量不会在你看不见的地方被偷偷改变。
+而且在多核的并行架构下Immutable能够避免复杂的状态和逻辑维护，使程序更加高效简单。&lt;/p&gt;
+
+&lt;p&gt;过去Lisp中主要的immutable数据结构是List,在某些情况下这种数据结构的性能非常糟糕（如查找是O(n)）。
+而现在一些精巧复杂的树状的数据结构可以兼顾immutable和性能（以一定的存储空间为代价），如&lt;a href=&#34;https://infoscience.epfl.ch/record/64398/files/idealhashtrees.pdf&#34;&gt;Ideal Hash Trees&lt;/a&gt;中的Hash array mapped trie(HAMT)。
+&lt;a href=&#34;http://hypirion.com/musings/understanding-persistent-vector-pt-1&#34;&gt;这篇文章&lt;/a&gt;详细讲解了Clojure中的Persistent Vectors（虽然叫Vector但只是接口一样，实际这货是个树）的实现原理。
+它基于HAMT，能够在保持immutable维护过去状态以供回滚的同时达到增加、更新、查找都为O(1)的性能。
+知乎上的&lt;a href=&#34;http://www.zhihu.com/question/35244627&#34;&gt;这个讨论&lt;/a&gt;介绍了一些其它的相关数据结构。&lt;/p&gt;
+
+&lt;h3 id=&#34;基于immutable的系统&#34;&gt;基于immutable的系统&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://nixos.org/&#34;&gt;Nix OS&lt;/a&gt;是一种使用Nix packager manager的纯函数式思想的系统。
+Nix packager manager也可以在Linux和Mac OS X上使用。
+它将每一个软件包都独立开来，升级软件的时候不会影响原来已经安装好的其它版本的该软件，使得软件可以轻松回滚，并且不会出现由于版本导致的各种问题，是ruby的RVM，node.js的NVM，python的virtualenv等等软件所解决问题的终极解决方案。&lt;/p&gt;
+
+&lt;h3 id=&#34;类型&#34;&gt;类型&lt;/h3&gt;
+
+&lt;p&gt;Haskell拥有强大的类型系统。
+static type是指其编译时进行类型检查，strong type是指其类型检查要求类型严格匹配。
+配合type inference，Haskell的类型系统做到了你不需要时感受不到，需要清晰接口时可以显示声明。
+它永远在保障着程序的正确性，不会产生JavaScript中一些被人广泛诟病的错误（&lt;a href=&#34;https://www.destroyallsoftware.com/talks/wat&#34;&gt;这个视频&lt;/a&gt;我笑了好久。。。）。
+Scala中也有type inference，但是由于JVM的限制功能很有限。&lt;/p&gt;
+
+&lt;p&gt;Haskell中的type class可以优雅的实现generics和polymorphism，并且可以避免很多OOP中因为不能把函数作为一等公民传递（高阶函数）而造成的臃肿的设计模式。
+Julia中multiple dispatch更进一步，根据每个参数的类型不同调用不同的函数实现，更符合直觉，且避免了OOP中dynamic dispatch的动态查找带来的性能损失。&lt;/p&gt;
+
+&lt;h3 id=&#34;并发&#34;&gt;并发&lt;/h3&gt;
+
+&lt;p&gt;OOP中对于并发的处理通常是基于thread以及共享内存和互斥锁，这个模型被实践证明即使是有经验的程序员也很难驾驭。
+而许多函数式语言提出了更好的解决方案。&lt;/p&gt;
+
+&lt;p&gt;erlang是为了稳定的企业级基础服务而开发的语言。
+erlang虚拟机使得新建进程更加轻量，进程间通讯更加方便。
+结合immutable特性以及actor进程池模型和消息传递来解决并发问题。
+erlang虚拟机还有一个厉害的特性是能够在语言内轻易管理进程的生命周期，这催生了独特的let it crash哲学，以及不用停止程序即可修改代码等等的神奇功能，使得erlang程序可以运行多年而不用重启。&lt;/p&gt;
+
+&lt;p&gt;scala中也使用actor作为并发模型。
+clojure中借鉴了关系型数据库的transactional特性，使用software transactional memory管理并发。&lt;/p&gt;
+
+&lt;p&gt;这些模型都被实践证明更加容易产生可靠的代码且更容易理解。&lt;/p&gt;
+
+&lt;h3 id=&#34;pattern-matching&#34;&gt;Pattern matching&lt;/h3&gt;
+
+&lt;p&gt;不同于传统OOP对象相等比较的是引用相等，如Java中String类型的&lt;code&gt;==&lt;/code&gt;和&lt;code&gt;equals()&lt;/code&gt;的令人迷惑的区别，Pattern matching是深度比较两个对象，更加符合直觉，并且配合immutable也可以有很好的性能。
+当然Pattern Matching更加灵活，带来了匹配类型，destructing等等实用的功能。&lt;/p&gt;
+
+&lt;h3 id=&#34;meta-programming&#34;&gt;meta programming&lt;/h3&gt;
+
+&lt;p&gt;Lisp中程序即数据，整个程序就是用List数据结构表达的，使得其macro远远强大于C的字符串替换，可以实现很多优雅的domain specific language(DSL)。
+后来很多语言都将macro和meta programming作为自己的重要特性，即使是拥抱了OOP的ruby和scala。&lt;/p&gt;
+
+&lt;h3 id=&#34;其它&#34;&gt;其它&lt;/h3&gt;
+
+&lt;p&gt;如Currying，Functor，Applicative，Monad等等新的概念和抽象，使用Maybe Monad杜绝Null这一Java程序员永远的痛等等。&lt;/p&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;函数式编程为我们带来了更优雅简洁易懂的程序，以及许多优秀的思想。
+虽然今天的主流语言仍然是OOP，但是我们可以靠自己慢慢推动新一代编程范式的发展，找到最佳的结合点。&lt;/p&gt;
+
+&lt;p&gt;需要注意的是不应该盲目推崇函数式编程的思想。
+编程语言里还有另一种实用派，学术派眼中的“另类”，从实际出发得出的迥然不同的语言，如C和go。
+不同的思路有着不同的权衡取舍，取其精华去其糟粕，结合自己的使用场景选择，合适的才是最好的。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WebRTC简介</title>
+      <link>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</link>
+      <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</guid>
+      <description>
+
+&lt;h2 id=&#34;webrtc-http-www-html5rocks-com-en-tutorials-webrtc-basics-简介&#34;&gt;&lt;a href=&#34;http://www.html5rocks.com/en/tutorials/webrtc/basics/&#34;&gt;WebRTC&lt;/a&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;WebRTC是一种在浏览器中无需任何插件的点对点(P2P)实时视频、音频、数据交流协议，其中RTC是实时沟通(Real Time Communication)的缩写。
+过去，实时沟通昂贵且实现复杂，需要专用的视频和音频设备及技术，使得将其集成进已有服务昂贵且费时。
+后来，Google开源了Gmail和Hangouts中使用的RTC技术，并且参与W3C相关规范的制定。
+2011年，WebRTC第一个版本被实现。
+现在WebRTC技术已经被WhatsApp, Facebook Messenger等应用广泛使用。&lt;/p&gt;
+
+&lt;p&gt;WebRTC主要实现了3个API，&lt;code&gt;getUserMedia&lt;/code&gt;、&lt;code&gt;RTCPeerConnection&lt;/code&gt;和&lt;code&gt;RTCDataChannel&lt;/code&gt;。
+其中&lt;code&gt;getUserMedia&lt;/code&gt;定义了来获取设备上的视频(包括摄像头输入和屏幕输入等)、音频流的接口。&lt;code&gt;RTCPeerConnection&lt;/code&gt;定义了用于处理两个客户端之间的流数据的接口。&lt;code&gt;RTCDataChannel&lt;/code&gt;定义了用于处理两个客户端之间任意数据收发的接口。&lt;/p&gt;
+
+&lt;h2 id=&#34;使用webrtc过程&#34;&gt;使用WebRTC过程&lt;/h2&gt;
+
+&lt;p&gt;使用WebRTC时需要如下步骤：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用getUserMedia获取MediaStream流数据，此时可以用Constraints对MediaStream的帧率、宽、高等进行设置。&lt;/li&gt;
+&lt;li&gt;使用RTCPeerConnection初始化客户端session，将MediaStream附加到session上。&lt;/li&gt;
+&lt;li&gt;获取网络信息(如IP地址、端口等)，与其他客户端进行Signaling(信令交换)。
+该过程使用&lt;a href=&#34;https://en.wikipedia.org/wiki/Session_Description_Protocol&#34;&gt;SDP（Session Description Protocol）协议&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;Signaling交换流媒体数据信息(如编码、分辨率等)。&lt;/li&gt;
+&lt;li&gt;Signaling过程完成，直接点对点交换流媒体数据MediaStream。&lt;/li&gt;
+&lt;li&gt;(可选)建立RTCDataChannel进行数据交换。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;实际应用中，会遇到客户端处于防火墙或NAT之后等复杂情况，这时需要用到&lt;a href=&#34;http://en.wikipedia.org/wiki/STUN&#34;&gt;STUN协议&lt;/a&gt;或&lt;a href=&#34;https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT&#34;&gt;TURN协议&lt;/a&gt;等来实现防火墙和NAT穿透，获取真实的网络信息。&lt;/p&gt;
+
+&lt;p&gt;由于WebRTC在建立session之后流媒体数据是点对点传输，这样虽然很快，但是如果遇到大量客户端的视频会议等场景，客户端之间需要两两连接，对于客户端带宽要求很高。
+这时就需要&lt;a href=&#34;https://en.wikipedia.org/wiki/Multipoint_control_unit&#34;&gt;MCU(Multipoint Control Unit)&lt;/a&gt;来改变网络拓扑，节省带宽提高性能。&lt;/p&gt;
+
+&lt;p&gt;WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交换，如WebSocket或XMPP等。&lt;/p&gt;
+
+&lt;p&gt;由于WebRTC标准实现还未最终完全确定，各个浏览器都需开启实验性功能才能使用，可以考虑Chrome插件或者使用Electron封装成桌面程序的形式提供更好的用户体验。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>读过的一些设计书籍</title>
+      <link>https://dailydreamer.me/post/2016-05-24-some-design-books/</link>
+      <pubDate>Tue, 24 May 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-05-24-some-design-books/</guid>
+      <description>
+
+&lt;p&gt;最近翻了一下之前记的一些读书笔记，将读过的一些经典的设计书籍总结一下，记录在这里。&lt;/p&gt;
+
+&lt;h2 id=&#34;不要让我思考&#34;&gt;不要让我思考&lt;/h2&gt;
+
+&lt;p&gt;整本书都在传递一个强烈的概念：不要让我思考。用户不喜欢思考，比如用户阅读网页的方式是扫描，选择的时候抱着满意即可、勉强应付的心态。
+强迫用户思考会使他们离开你的产品。&lt;/p&gt;
+
+&lt;p&gt;下面是几个具体的优化：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;明显标识可点击处，划分页面区域，降低视觉噪音&lt;/li&gt;
+&lt;li&gt;去掉不必要的文字&lt;/li&gt;
+&lt;li&gt;统一导航&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;设计心理学&#34;&gt;设计心理学&lt;/h2&gt;
+
+&lt;p&gt;整本书从心理学的角度看设计。&lt;/p&gt;
+
+&lt;p&gt;人认知的基本模型是目标 -&amp;gt; 行动 -&amp;gt; 反馈，好的产品应该有一个好的概念模型&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;减少目标到行动认知负担，也即上面提到的不要让我思考&lt;/li&gt;
+&lt;li&gt;产生合理的反馈&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;具体有下面几个原则：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;应用存储于外部世界(物理环境)和头脑中(文化标准)的知识，建立界面到功能的自然匹配&lt;/li&gt;
+&lt;li&gt;简化任务结构&lt;/li&gt;
+&lt;li&gt;注重可视性，比如一个按钮是一个功能&lt;/li&gt;
+&lt;li&gt;利用自然和人为的限制因素&lt;/li&gt;
+&lt;li&gt;考虑可能出现的人为差错，防止错误需要警报或强迫性功能&lt;/li&gt;
+&lt;li&gt;若无法做到以上几点，就标准化&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;写给大家看的设计书&#34;&gt;写给大家看的设计书&lt;/h2&gt;
+
+&lt;p&gt;这本书主要讲了视觉设计中的几个基本原则：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;亲密性：将相关的项组织在一起，物理位置的接近意味着存在关联&lt;/li&gt;
+&lt;li&gt;对齐：任何元素都不能在页面上随意摆放，每个元素应当与页面上另一个元素存在某种视觉联系&lt;/li&gt;
+&lt;li&gt;重复：把现有的一致性向前推进一步&lt;/li&gt;
+&lt;li&gt;对比：让他们截然不同吧&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其他还有注意留白。&lt;/p&gt;
+
+&lt;h2 id=&#34;设计中的设计&#34;&gt;设计中的设计&lt;/h2&gt;
+
+&lt;p&gt;日本设计师原研哉的作品。
+一开始只是被书中精美的图片和排版所吸引，但是也收获了不少。&lt;/p&gt;
+
+&lt;p&gt;设计师坂茂应原研哉之邀再设计卫生纸时，设计了方形卫生纸。
+由于方形的阻力更大会使每次使用的纸变少，而且方形相较于原型更方便运输。
+这种再设计可以让人从习以为常的日常中跳脱出来，从另一个角度看问题。&lt;/p&gt;
+
+&lt;p&gt;原研哉说，设计师在其受众头脑中创建一种信息建筑，受众通过视觉听觉味觉触觉等感官信息，以及被外界重新唤醒的记忆来构建信息建筑。&lt;/p&gt;
+
+&lt;p&gt;原研哉对书和纸的看法：书作为一种存储信息的媒介可能有诸多不便。
+但是如果我们好好观察一下信息与个人的关系，会发现重要的其实是我们能多深入的理解信息。
+就书而言，我们会有更愉快的用户体验，我们会更中意于那些以适当重量和质地的材料呈现的信息。
+这可能就像食物与人类的关系一样。
+因为电子媒介的兴起，纸终于能做他该做的事情了——充当一种本性迷人的材料。&lt;/p&gt;
+
+&lt;p&gt;他还是无印良品咨询委员会委员。
+无印良品的理念是无设计的设计，简单，追求的不是这个好而是这样就好。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DOM和DOM Event</title>
+      <link>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</link>
+      <pubDate>Mon, 25 Apr 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</guid>
+      <description>
+
+&lt;h2 id=&#34;dom和html-javascript-css的关系&#34;&gt;DOM和HTML，JavaScript，CSS的关系&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction&#34;&gt;Document Object Model(DOM)&lt;/a&gt;是W3C制定的一种语言无关的面向对象的文档模型，规定了一组可编程的interface需要实现的属性和方法。
+HTML和XML文档实现了DOM，因此拥有面向对象的特性，其结构、样式、内容等可以被其他语言的DOM实现操纵。
+DOM Level 4是2015年的最新一版标准。&lt;/p&gt;
+
+&lt;p&gt;HTML中&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;元素中嵌入的JavaScript就是DOM的一种实现，如下所示：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var paragraphs = document.getElementsByTagName(&amp;quot;P&amp;quot;);
+// paragraphs[0] is the first &amp;lt;p&amp;gt; element
+// paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc.
+alert(paragraphs[0].nodeName);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中&lt;code&gt;document&lt;/code&gt;对象，&lt;code&gt;getElementsByTagName&lt;/code&gt;方法，&lt;code&gt;alert&lt;/code&gt;方法，&lt;code&gt;nodeName&lt;/code&gt;属性均是DOM标准规定的。&lt;/p&gt;
+
+&lt;p&gt;你也可以用其它语言操作DOM，如下的Python示例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;# Python DOM example
+import xml.dom.minidom as m
+doc = m.parse(&amp;quot;test.xml&amp;quot;);
+doc.nodeName # DOM property of document object;
+p_list = doc.getElementsByTagName(&amp;quot;para&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var table = document.getElementById(&amp;quot;table&amp;quot;);
+var tableAttrs = table.attributes; // Node/Element interface
+for (var i = 0; i &amp;lt; tableAttrs.length; i++) {
+  // HTMLTableElement interface: border attribute
+  if(tableAttrs[i].nodeName.toLowerCase() == &amp;quot;border&amp;quot;)
+    table.border = &amp;quot;1&amp;quot;;
+}
+// HTMLTableElement interface: summary attribute
+table.summary = &amp;quot;note: increased border&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;attributes&lt;/code&gt;属性是DOM标准，&lt;code&gt;border&lt;/code&gt;和&lt;code&gt;summary&lt;/code&gt;属性是HTML标准。&lt;/p&gt;
+
+&lt;p&gt;其它XML的方言如SVG等也有实现DOM之外的标准。&lt;/p&gt;
+
+&lt;p&gt;CSS是一种为DOM文档标记样式的语言，而DOM Element种的style属性被解释为行内样式表。&lt;/p&gt;
+
+&lt;h2 id=&#34;dom-event&#34;&gt;DOM Event&lt;/h2&gt;
+
+&lt;p&gt;DOM Level 2中规定了基本的&lt;a href=&#34;https://www.w3.org/TR/DOM-Level-2-Events/events.html&#34;&gt;DOM Event Model&lt;/a&gt;，包括事件的处理流程以及注册方法等等。
+这里主要讲一下事件处理流程，感觉和WPF的事件机制很相似。&lt;/p&gt;
+
+&lt;h3 id=&#34;基本流程&#34;&gt;基本流程&lt;/h3&gt;
+
+&lt;p&gt;在DOM implementation中触发事件后，触发事件的元素EventTarget被指定给Event对象的target属性。
+如果该事件没有使用事件捕获和事件冒泡，那么所有的EventListener被执行后事件处理结束。
+如果使用了事件捕获或事件冒泡，那么事件传播过程如后文所示，依次执行过程中所有元素上注册的该事件的EventListener。
+执行过程是同步的，且一个EventListener内的异常不会影响后续EventListener的执行。&lt;/p&gt;
+
+&lt;h3 id=&#34;事件捕获-event-capture&#34;&gt;事件捕获(Event capture)&lt;/h3&gt;
+
+&lt;p&gt;事件捕获阶段，事件从DOM树的顶端元素，通常是Document，沿着EventTarget的祖先元素向EventTarget传播。
+设置addEventListener方法的useCapture属性为true可以使该EventListener在事件捕获阶段截获由其后代元素产生的相应事件，同时该EventListener在事件冒泡阶段不会再被触发。&lt;/p&gt;
+
+&lt;p&gt;注意和WPF等基于delegation的模型不同的是，截获的是后代元素的相应事件，这意味者如果EventTarget上的设置useCapture的EventListener不会被触发，因为自己不是自己的后代；
+并且指定的不是一个EventTarget，而是一种特定的事件类型，如果事件类型不同不会被触发。&lt;/p&gt;
+
+&lt;h3 id=&#34;事件冒泡-event-bubbling&#34;&gt;事件冒泡(Event bubbling)&lt;/h3&gt;
+
+&lt;p&gt;事件冒泡阶段，一开始和没有使用冒泡的事件一样，所有EventTarget上的EventListener都被执行。
+然后从EventTarget沿着DOM树，向其祖先元素传播，直到DOM树顶端，过程和事件捕获相反。
+设置了useCapture属性的EventListener不会在这一阶段被触发。&lt;/p&gt;
+
+&lt;p&gt;事件传播的链条在事件被触发时就已经确定，传播过程中DOM树的改变不影响传播过程。&lt;/p&gt;
+
+&lt;h3 id=&#34;stoppropagation&#34;&gt;stopPropagation&lt;/h3&gt;
+
+&lt;p&gt;在事件传播的过程中，如果一个EventListener调用了Event对象的stopPropagation方法，那么事件会停止传播，链条上后续元素的EventListener不会被触发。&lt;/p&gt;
+
+&lt;h3 id=&#34;preventdefault&#34;&gt;preventDefault&lt;/h3&gt;
+
+&lt;p&gt;一些事件被指定为cancelable。这些事件的DOM implementation通常都会有一些默认的事件处理方法。在这些事件上调用preventDefault方法可以阻止这些事件处理方法的执行。&lt;/p&gt;
+
+&lt;p&gt;如下例子展示了用preventDefault阻止非小写字母的输入。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;preventDefault example&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;p&amp;gt;请输入一些字母,只允许小写字母.&amp;lt;/p&amp;gt;
+&amp;lt;form&amp;gt;
+&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;my-textbox&amp;quot;/&amp;gt;
+&amp;lt;/form&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+function checkName(evt) {
+var charCode = evt.charCode;
+  if (charCode != 0) {
+    if (charCode &amp;lt; 97 || charCode &amp;gt; 122) {
+      evt.preventDefault();
+      alert(&amp;quot;只能输入小写字母.&amp;quot; + &amp;quot;\n&amp;quot;
+            + &amp;quot;charCode: &amp;quot; + charCode + &amp;quot;\n&amp;quot;
+      );
+    }
+  }
+}
+document.getElementById(&#39;my-textbox&#39;).addEventListener(
+    &#39;keypress&#39;, checkName, false
+ );
+&amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;常用的mouseevent&#34;&gt;常用的MouseEvent&lt;/h3&gt;
+
+&lt;p&gt;有click，mousedown，mouseup，mouseover，mousemove，mouseout。&lt;/p&gt;
+
+&lt;p&gt;click是在同一屏幕位置的mousedown和mouseup先后依次触发后被触发。&lt;/p&gt;
+
+&lt;p&gt;MouseEvent都会冒泡，并且除mousemove外都Cancelable。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CSS Cheat Sheet</title>
+      <link>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</link>
+      <pubDate>Thu, 14 Apr 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</guid>
+      <description>
+
+&lt;h2 id=&#34;html&#34;&gt;HTML&lt;/h2&gt;
+
+&lt;p&gt;block element块级元素，撑满一行&lt;/p&gt;
+
+&lt;p&gt;inline element行内元素，宽度包围内容&lt;/p&gt;
+
+&lt;h2 id=&#34;css原理&#34;&gt;CSS原理&lt;/h2&gt;
+
+&lt;h3 id=&#34;选择符&#34;&gt;选择符&lt;/h3&gt;
+
+&lt;p&gt;a, b {} 同时选中a和b&lt;/p&gt;
+
+&lt;p&gt;a b {} a是b的祖先元素时选中b&lt;/p&gt;
+
+&lt;p&gt;a &amp;gt; b {} a是b的父元素时选中b&lt;/p&gt;
+
+&lt;p&gt;a + b {} a紧邻b时选中b&lt;/p&gt;
+
+&lt;p&gt;a ~ b {} a和b是同胞时选中b&lt;/p&gt;
+
+&lt;p&gt;* {} 全部选中&lt;/p&gt;
+
+&lt;p&gt;.a {} 选中a类&lt;/p&gt;
+
+&lt;p&gt;#a {} 选中id为a&lt;/p&gt;
+
+&lt;p&gt;a.b {} 选中同时为a标签和b类&lt;/p&gt;
+
+&lt;p&gt;.a.b {} 选中同时为a类和b类&lt;/p&gt;
+
+&lt;p&gt;a[b] {} 选中a标签中带有b属性的&lt;/p&gt;
+
+&lt;p&gt;a[b=c] {} 选中a标签中b属性值为c的&lt;/p&gt;
+
+&lt;h4 id=&#34;伪类&#34;&gt;伪类&lt;/h4&gt;
+
+&lt;p&gt;a标签 a:link a:visited a:hover a:active&lt;/p&gt;
+
+&lt;p&gt;a:focus a:target&lt;/p&gt;
+
+&lt;p&gt;一组同胞元素中的第几个 a:first-child a:last-child a:nth-child(n) a:nth-child(odd) a:nth-child(even)&lt;/p&gt;
+
+&lt;h4 id=&#34;伪元素&#34;&gt;伪元素&lt;/h4&gt;
+
+&lt;p&gt;a::first-letter a::first-line&lt;/p&gt;
+
+&lt;p&gt;a::before a::after&lt;/p&gt;
+
+&lt;p&gt;搜索引擎不会索引伪元素&lt;/p&gt;
+
+&lt;h4 id=&#34;继承&#34;&gt;继承&lt;/h4&gt;
+
+&lt;p&gt;字体颜色等相关属性会继承，位置等相关属性不会继承&lt;/p&gt;
+
+&lt;h3 id=&#34;浏览器层叠样式表顺序&#34;&gt;浏览器层叠样式表顺序&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;浏览器默认&lt;/li&gt;
+&lt;li&gt;用户样式表&lt;/li&gt;
+&lt;li&gt;作者链接样式表（按链接先后顺序）&lt;/li&gt;
+&lt;li&gt;作者嵌入样式表&lt;/li&gt;
+&lt;li&gt;作者行内样式表&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;特指度：包含多少标签、类名、ID等（I-C-E三位数），特指度高的优先级高&lt;/p&gt;
+
+&lt;p&gt;特指度相同时顺序靠后的优先级高&lt;/p&gt;
+
+&lt;h3 id=&#34;css属性&#34;&gt;CSS属性&lt;/h3&gt;
+
+&lt;p&gt;文本值&lt;/p&gt;
+
+&lt;p&gt;数字值&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;px 像素&lt;/li&gt;
+&lt;li&gt;em 字体中M的宽度&lt;/li&gt;
+&lt;li&gt;ex 字体中x的高度&lt;/li&gt;
+&lt;li&gt;百分比&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;颜色值（颜色名，RGB，HSL，16进制）&lt;/p&gt;
+
+&lt;h2 id=&#34;定位元素&#34;&gt;定位元素&lt;/h2&gt;
+
+&lt;p&gt;垂直外边距叠加：垂直方向相邻两个box取margin较大的作为外边距&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;p {
+  font-size: 1em;
+  margin: .75em 30px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如上排版文字最好垂直相对外边距，水平绝对外边距&lt;/p&gt;
+
+&lt;p&gt;给设定了宽度\高度的盒子加边框、内边距、外边距会使盒子更宽\更高。CSS3的box-sizing属性可以消除这一特点。&lt;/p&gt;
+
+&lt;h3 id=&#34;position&#34;&gt;position&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;static：普通文档流&lt;/li&gt;
+&lt;li&gt;relative: 仍然在文档流中，相对原来的box位置变化，原来box占据的位置不变&lt;/li&gt;
+&lt;li&gt;absolute：从文档流中脱出，会随页面滚动&lt;/li&gt;
+&lt;li&gt;fixed：从文档流中脱出，不会随页面滚动&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;定位上下文：带有非static position的最近祖先元素，默认是body。&lt;/p&gt;
+
+&lt;h3 id=&#34;display&#34;&gt;display&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;inline&lt;/li&gt;
+&lt;li&gt;block&lt;/li&gt;
+&lt;li&gt;none（空间会被回收）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最近支持越来越好的flexbox布局，值得有空仔细研究。&lt;/p&gt;
+
+&lt;h3 id=&#34;background&#34;&gt;background&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;background-repeat&lt;/li&gt;
+&lt;li&gt;background-size&lt;/li&gt;
+&lt;li&gt;background-attachment&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;css3支持多张背景图片，先列出的在上层&lt;/p&gt;
+
+&lt;p&gt;背景渐变&lt;/p&gt;
+
+&lt;h2 id=&#34;字体和文本&#34;&gt;字体和文本&lt;/h2&gt;
+
+&lt;p&gt;em相对最近的被设置过字体的祖先大小&lt;/p&gt;
+
+&lt;p&gt;CSS3 rem相对root即body字体大小&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;text-indent&lt;/li&gt;
+&lt;li&gt;text-align&lt;/li&gt;
+&lt;li&gt;vertical-align: sub(下标) super(上标) top middle bottom&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Web字体&lt;/p&gt;
+
+&lt;h2 id=&#34;界面组件&#34;&gt;界面组件&lt;/h2&gt;
+
+&lt;p&gt;label的for属性可以把标签和控件关联起来&lt;/p&gt;
+
+&lt;p&gt;fieldset表单域&lt;/p&gt;
+
+&lt;p&gt;用section块级元素包裹label和input&lt;/p&gt;
+
+&lt;h2 id=&#34;响应式布局&#34;&gt;响应式布局&lt;/h2&gt;
+
+&lt;h3 id=&#34;媒体查询&#34;&gt;媒体查询&lt;/h3&gt;
+
+&lt;p&gt;媒体类型：all handled print screen 等&lt;/p&gt;
+
+&lt;p&gt;媒体特性：max-device-width max-width orientation&lt;/p&gt;
+
+&lt;p&gt;and not all 等逻辑运算符&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>单页应用JWT身份认证</title>
+      <link>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</link>
+      <pubDate>Sat, 09 Apr 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</guid>
+      <description>
+
+&lt;p&gt;最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。
+为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。
+这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。&lt;/p&gt;
+
+&lt;h2 id=&#34;jwt-https-jwt-io-introduction&#34;&gt;&lt;a href=&#34;https://jwt.io/introduction/&#34;&gt;JWT&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。
+相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。
+相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。
+缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。&lt;/p&gt;
+
+&lt;p&gt;JWT由三部分组成，Header.Payload.Signature。&lt;/p&gt;
+
+&lt;h3 id=&#34;header&#34;&gt;Header&lt;/h3&gt;
+
+&lt;p&gt;Header包含签名算法和type，如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;,
+  &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Base64编码后即为Header。&lt;/p&gt;
+
+&lt;h3 id=&#34;payload&#34;&gt;Payload&lt;/h3&gt;
+
+&lt;p&gt;主体内容部分。有一些保留属性，如iss (issuer), exp (expiration time), sub (subject), aud (audience)等。也可以声明私有属性。&lt;/p&gt;
+
+&lt;p&gt;如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;sub&amp;quot;: &amp;quot;1234567890&amp;quot;,
+  &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;,
+  &amp;quot;admin&amp;quot;: true
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Base64编码后即为Payload。&lt;/p&gt;
+
+&lt;h3 id=&#34;signature&#34;&gt;Signature&lt;/h3&gt;
+
+&lt;p&gt;签名部分，生成过程如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;alg(
+  base64UrlEncode(header) + &amp;quot;.&amp;quot; +
+  base64UrlEncode(payload),
+  secret)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中alg为Header中声明的签名算法，常用的如SHA256等。
+结合secret校对签名可以保证JWT的完整性和不可伪造性。&lt;/p&gt;
+
+&lt;h3 id=&#34;身份验证过程&#34;&gt;身份验证过程&lt;/h3&gt;
+
+&lt;p&gt;后端API除了注册和登录外的需要身份验证的接口都对JWT签名进行验证，不通过则返回401 Unauthorized，保护API。
+用户注册登录后生成JWT返回用户，用户访问受保护的API时需要随请求发送JWT至服务器端。&lt;/p&gt;
+
+&lt;h2 id=&#34;两种常见的安全威胁&#34;&gt;两种常见的安全威胁&lt;/h2&gt;
+
+&lt;p&gt;接下来看看单页应用开发中几种常见的安全威胁：MITM(Man-In-The-Middle)，XSS(Cross-site scripting)和CSRF(Cross Site Request Forgery)。&lt;/p&gt;
+
+&lt;h3 id=&#34;mitm-https-www-owasp-org-index-php-man-in-the-middle-attack&#34;&gt;&lt;a href=&#34;https://www.owasp.org/index.php/Man-in-the-middle_attack&#34;&gt;MITM&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。
+这里我们在应用层主要使用SSL加密，即HTTPS防范它。
+在后端response的header的cookie设置&lt;code&gt;Secure&lt;/code&gt;字段，强制cookie使用HTTPS传输。&lt;/p&gt;
+
+&lt;h3 id=&#34;xss-https-www-owasp-org-index-php-cross-site-scripting-28xss-29&#34;&gt;&lt;a href=&#34;https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29&#34;&gt;XSS&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;XSS是指将恶意脚本注入站点，如在用户聊天框输入的地方输入如下内容&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=x onerror=&amp;quot;alert(XSS!)&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果不经过滤就显示内容，那么该网页就会执行被注入的脚本，弹出一个alert。&lt;/p&gt;
+
+&lt;p&gt;防范XSS的关键是不要信任任何用户提供的内容，对它们进行充分的过滤再使用。
+并且在后端response的header的cookie设置&lt;code&gt;HttpOnly&lt;/code&gt;字段，禁止浏览器Javascript脚本操作cookie。&lt;/p&gt;
+
+&lt;h3 id=&#34;csrf-https-www-owasp-org-index-php-cross-site-request-forgery-28csrf-29&#34;&gt;&lt;a href=&#34;https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29&#34;&gt;CSRF&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;CSRF利用了一个事实，即如&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;标签等发起的简单的GET请求是不被同源策略约束的。
+如果攻击者在他的页面中加入一个标签如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;http://example.com/api/user&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;引诱你访问这个界面后，该标签像example.com的user api发送GET请求，并且会附上你的example.com的cookie，那么攻击者就能得到你在example.com的user信息。&lt;/p&gt;
+
+&lt;p&gt;要防范CSRF，主要有两种方式。
+可以在后端的response的header中加入&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;白名单，限制跨域访问；
+或者使用一些Synchronizer Token技术。
+如在用户新建立一个sesseion时产生一个独有的Synchronizer Token，存储在表单的隐藏域、URL参数等地方，JWT的payload中也存储一份。
+然后每次请求时前端都通过Javascript脚本发送Synchronizer Token,而这个token攻击者无法获取（除非先进行XSS）。
+据此，后端就可以验证前端的身份非攻击者。&lt;/p&gt;
+
+&lt;h2 id=&#34;前端jwt存储&#34;&gt;前端JWT存储&lt;/h2&gt;
+
+&lt;p&gt;JWT存储有两种方式，localStorage和cookie。&lt;/p&gt;
+
+&lt;h3 id=&#34;localstorage&#34;&gt;localStorage&lt;/h3&gt;
+
+&lt;p&gt;后端返回JWT后，前端存储在localStorage中，每次请求时设置HTTP Authorization Header，使用Bearer scheme，如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;HTTP/1.1
+
+GET /api/user
+Host: example.com
+Authorization: Bearer Header.Payload.Signature
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;后端验证即可。&lt;/p&gt;
+
+&lt;p&gt;存储在localStorage的优点是不使用cookie，避免了JWT被MIMT和CSRF攻击。缺点时localStorage可以被Javascript访问，容易被XSS攻击。&lt;/p&gt;
+
+&lt;h3 id=&#34;cookie&#34;&gt;cookie&lt;/h3&gt;
+
+&lt;p&gt;后端response的header设置Set-Cookie，如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;HTTP/1.1 200 OK
+
+Set-Cookie: token=Header.Payload.Signature Secure; HttpOnly;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;前端发器跨域请求时，正确设置(见上一篇blog)后会同时附带cookie，后端验证即可。&lt;/p&gt;
+
+&lt;p&gt;存储在cookie的优点是在设置了&lt;code&gt;Secure; HttpOnly;&lt;/code&gt;后防范了XSS和MIMT攻击，但是容易收到CSRF攻击。&lt;/p&gt;
+
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;JWT提供了一种很好的身份验证方式，至于存储在哪里向来有很多争论，这是一个权衡取舍的过程。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CORS解决单页应用跨域问题</title>
+      <link>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</link>
+      <pubDate>Fri, 08 Apr 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
+      <description>
+
+&lt;h2 id=&#34;同源策略-https-developer-mozilla-org-en-us-docs-web-security-same-origin-policy&#34;&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy&#34;&gt;同源策略&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。
+这时前端和后端部署在不同的服务器上。
+而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。&lt;/p&gt;
+
+&lt;p&gt;同源是指协议+主机名+端口号全部相同，称为同源。
+详细见下表，是跟&amp;rdquo;&lt;a href=&#34;http://www.example.com/dir/page.html&amp;quot;做比较。&#34;&gt;http://www.example.com/dir/page.html&amp;quot;做比较。&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Compared URL&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Outcome&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Reason&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.example.com/dir/page2.html&#34;&gt;http://www.example.com/dir/page2.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Success&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Same protocol, host and port&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.example.com/dir2/other.html&#34;&gt;http://www.example.com/dir2/other.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Success&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Same protocol, host and port&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://username:password@www.example.com/dir2/other.html&#34;&gt;http://username:password@www.example.com/dir2/other.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Success&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Same protocol, host and port&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.example.com:81/dir/other.html&#34;&gt;http://www.example.com:81/dir/other.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Same protocol and host but different port&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.example.com/dir/other.html&#34;&gt;https://www.example.com/dir/other.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Different protocol&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://en.example.com/dir/other.html&#34;&gt;http://en.example.com/dir/other.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Different host&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://example.com/dir/other.html&#34;&gt;http://example.com/dir/other.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Different host (exact match required)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://v2.www.example.com/dir/other.html&#34;&gt;http://v2.www.example.com/dir/other.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Different host (exact match required)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.example.com:80/dir/other.html&#34;&gt;http://www.example.com:80/dir/other.html&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Depends&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Port explicit. Depends on implementation in browser&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Javascript不能访问非同源下的资源，如cookie，localstorge等，这也意味着ajax请求后返回的数据会被浏览器认为是非同源而禁止Javascript操作。
+通常的解决方法有JSONP(JSON with Padding)和CORS(Cross-origin resource sharing)。
+当然如果要求实时性的话也可以考虑WebSocket协议，这点本文不展开。&lt;/p&gt;
+
+&lt;h2 id=&#34;jsonp-https-en-wikipedia-org-wiki-jsonp&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/JSONP&#34;&gt;JSONP&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;HTML标准里的&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签，它可以调用部署在CDN上或其他服务器上的非同源Javascript。
+JSONP实际上是利用了这一点，和服务器端约定，在发送请求时加入了一个回调函数的参数。
+如Jquery中设置参数&lt;code&gt;dataType: &amp;quot;jsonp&amp;quot;&lt;/code&gt;后，请求相当于插入页面如下标签&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script src=&amp;quot;http://www.example.net/api/example?callback=mycallback&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;服务器端返回的payload为&lt;code&gt;mycallback(data)&lt;/code&gt;，通过&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签执行，就完成了ajax请求。&lt;/p&gt;
+
+&lt;p&gt;JSONP的优点是实现简单，兼容性很好。
+缺点是只支持GET请求。&lt;/p&gt;
+
+&lt;h2 id=&#34;cors-https-developer-mozilla-org-en-us-docs-web-http-access-control-cors&#34;&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&#34;&gt;CORS&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;CORS是W3C推荐的跨域HTTP请求的新机制，它可以支持如下请求：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;XMLHttpRequest(即ajax请求)&lt;/li&gt;
+&lt;li&gt;Web Fonts&lt;/li&gt;
+&lt;li&gt;WebGL textures&lt;/li&gt;
+&lt;li&gt;canvas中drawImage产生的Images/video frames&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;li&gt;Scripts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;简单请求&#34;&gt;简单请求&lt;/h3&gt;
+
+&lt;p&gt;简单请求，是指满足如下条件的请求：&lt;/p&gt;
+
+&lt;p&gt;只允许如下方法：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GET&lt;/li&gt;
+&lt;li&gt;HEAD&lt;/li&gt;
+&lt;li&gt;POST&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;除了浏览器自动设置的属性（如Connection, User-Agent等), 只允许设置如下头部属性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Accept&lt;/li&gt;
+&lt;li&gt;Accept-Language&lt;/li&gt;
+&lt;li&gt;Content-Language&lt;/li&gt;
+&lt;li&gt;Content-Type&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;只允许如下Content-Type值:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;application/x-www-form-urlencoded&lt;/li&gt;
+&lt;li&gt;multipart/form-data&lt;/li&gt;
+&lt;li&gt;text/plain&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;对于简单请求，要允许CORS，需要在后端返回的response的header中设置&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;允许前端服务器地址的ajax请求，可以使用通配符或白名单。
+如&lt;code&gt;Access-Control-Allow-Origin: *&lt;/code&gt;允许所有跨域请求，&lt;code&gt;Access-Control-Allow-Origin: http://example.com&lt;/code&gt;允许前端服务器example.com的跨域请求。&lt;/p&gt;
+
+&lt;p&gt;发送CORS跨域请求默认不带cookie。
+可以设置request的header中xhr对象&lt;code&gt;withCredentials: true&lt;/code&gt;一同发送cookie，同时后端返回的response的header中设置&lt;code&gt;Access-Control-Allow-Credentials: true&lt;/code&gt;接收cookie。
+注意使用cookie时&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;的值不能是通配符&lt;code&gt;*&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;preflighted-requests&#34;&gt;Preflighted requests&lt;/h3&gt;
+
+&lt;p&gt;除了简单请求外的请求都是复杂请求。
+在发送复杂请求之前需要先发送一个OPTIONS方法的Preflighted requests，后端确认安全后再发送正式请求。
+具体设置可以参考&lt;a href=&#34;https://www.w3.org/TR/cors/&#34;&gt;W3C推荐标准&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一种新科学</title>
+      <link>https://dailydreamer.me/post/2016-03-20-a-new-kind-of-science/</link>
+      <pubDate>Sun, 20 Mar 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-03-20-a-new-kind-of-science/</guid>
+      <description>
+
+&lt;p&gt;本书作者是Mathematica之父Stephen Wolfram。
+他在完成Mathematica后挣了一大笔钱，然后几十年一直在搞自己喜欢的研究和探索，最终著成本书（论经济基础对研究的重要性）。
+虽然书中的研究缺少确实的证据而更多的是作者的猜测，但是以目前的科学也不足以证伪。
+不过有计算复杂性科学家发过&lt;a href=&#34;http://scottaaronson.com/papers/nks.pdf&#34;&gt;paper&lt;/a&gt;评判这种没有同行评阅和修改的出书模式，并且质疑了其内容的价值。
+但是作为思路开阔一读也未尝不可。&lt;/p&gt;
+
+&lt;p&gt;而且这本书实在是太长了，并且充满了各种论断但是缺少证据，最终没有看完，日后有机会再补完。&lt;/p&gt;
+
+&lt;h2 id=&#34;the-foundation-for-a-new-kind-of-science&#34;&gt;The Foundation for a New Kind of Science&lt;/h2&gt;
+
+&lt;p&gt;实际上系统理论没必要必须建立在传统数学规律之上。
+使用传统数学规则经常无法使用简单的规则解释复杂的自然现象，但是遵从简单规律的程序却可以产生复杂的结果。&lt;/p&gt;
+
+&lt;p&gt;Principle of Computational Equivalence: Whenever one sees behavior that is not obviously simple - in essentially any system - it can be thought of as correspoding to a computation of equivalent sophitication.&lt;/p&gt;
+
+&lt;p&gt;这个原理揭示了传统数学规则的局限性，它只能解释简单的系统因为它大大简化了计算复杂度。&lt;/p&gt;
+
+&lt;p&gt;现在的物理太依赖连续的数学表示或概率，但是离散的其实更简单，并且可以解释很多基本现象。&lt;/p&gt;
+
+&lt;p&gt;现在数学不能解释复杂的生物系统，而简单程序可以。&lt;/p&gt;
+
+&lt;p&gt;A new kind of science不仅能够解释各个学科的复杂问题，也能对经典的基础问题进行解释。&lt;/p&gt;
+
+&lt;h2 id=&#34;the-crucial-experiment&#34;&gt;The Crucial Experiment&lt;/h2&gt;
+
+&lt;h3 id=&#34;how-do-simple-program-behave&#34;&gt;How do simple program behave?&lt;/h3&gt;
+
+&lt;p&gt;细胞自动机即使从简单条件开始，遵从简单条件发展，也会展示惊人的复杂性，正如我们在自然中看到的。&lt;/p&gt;
+
+&lt;p&gt;尽管每个cell都遵从相同的规律，但是因为环境的不同，它们的行为也不同。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-need-for-a-new-intuition&#34;&gt;The need for a new intuition&lt;/h3&gt;
+
+&lt;p&gt;细胞自动机的复杂性与我们认为一个复杂事物必然构成复杂的直觉相反，而这种直觉可能来自于工程中，那里我们从功能出发，逐步将系统分解到细节，我们能预测系统的一切行为。
+但是却不是这样，事实上类似细胞自动机这种不可预测的结构在自然中很常见。&lt;/p&gt;
+
+&lt;h3 id=&#34;why-these-discoveries-were-not-made-before&#34;&gt;Why these discoveries were not made before&lt;/h3&gt;
+
+&lt;p&gt;早期计算机太昂贵，而这些工作没有传统科学框架下的意义。&lt;/p&gt;
+
+&lt;p&gt;既需要基础科学的知识，又需要计算科学的经验和直觉。&lt;/p&gt;
+
+&lt;p&gt;许多发现都指向了new kind of science，如二维细胞自动机the game of life，但是都被人们忽略了。&lt;/p&gt;
+
+&lt;h2 id=&#34;the-world-of-simple-programs&#34;&gt;The world of simple programs&lt;/h2&gt;
+
+&lt;p&gt;二色一维两个邻居的细胞自动机有256种情况，三色有3^8种情况，但是其中的模式大都类似。&lt;/p&gt;
+
+&lt;p&gt;Mobile Automata: 一次只有一个active cell，下一步active cell左移或右移。&lt;/p&gt;
+
+&lt;p&gt;active cell越多，越容易有复杂性。&lt;/p&gt;
+
+&lt;p&gt;Turing machine, Substitution system…&lt;/p&gt;
+
+&lt;p&gt;系统依赖的规则稍加复杂，结果就显示出惊人的复杂性，但是之后依赖规则再复杂也不会有太大的不同。&lt;/p&gt;
+
+&lt;p&gt;大量的实验，简单的实验适合用计算机编程，但同时也可能模拟复杂现象。&lt;/p&gt;
+
+&lt;h2 id=&#34;system-based-on-numbers&#34;&gt;System based on numbers&lt;/h2&gt;
+
+&lt;p&gt;2进制digital sequence显示出和细胞自动机相似的复杂性。&lt;/p&gt;
+
+&lt;p&gt;递归序列、素数序列等等&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;连续的细胞自动机，微分方程，连续的系统也能产生复杂的结构。&lt;/p&gt;
+
+&lt;h2 id=&#34;two-dimensions-and-beyond&#34;&gt;Two dimensions and beyond&lt;/h2&gt;
+
+&lt;p&gt;二维三维的系统有类似的复杂性。&lt;/p&gt;
+
+&lt;p&gt;基于限制的系统，也是当规则复杂到3*3时才会产生随机现象。&lt;/p&gt;
+
+&lt;p&gt;传统数学规律大多基于限制，因此难于发现复杂性。&lt;/p&gt;
+
+&lt;h2 id=&#34;starting-from-randomness&#34;&gt;Starting from randomness&lt;/h2&gt;
+
+&lt;p&gt;随机开始的细胞自动机会最终归于4个模式。&lt;/p&gt;
+
+&lt;h2 id=&#34;mechanisms-in-programs-and-nature&#34;&gt;Mechanisms in programs and nature&lt;/h2&gt;
+
+&lt;h3 id=&#34;university-of-behavior&#34;&gt;University of behavior&lt;/h3&gt;
+
+&lt;p&gt;自然中的一些复杂性和细胞自动机中表现出的模式相同。&lt;/p&gt;
+
+&lt;h3 id=&#34;three-mechanisms-of-randomness&#34;&gt;Three mechanisms of randomness&lt;/h3&gt;
+
+&lt;p&gt;三种导致随机的机制：每一步输入均随机、初始输入(敏感)随机、无外界随机因素intrinsic randomness generation。
+船在水上的运动是第一种，混沌效应是第二种，第三种有rule 30自动机，伪随机数生成器，自然界中最常见第三种。&lt;/p&gt;
+
+&lt;p&gt;实际设备的问题限制了随机性的观测，即内部状态恢复的速率和不可避免的相关性。&lt;/p&gt;
+
+&lt;p&gt;Mathematica使用rule 30细胞自动机产生随机数。。。&lt;/p&gt;
+
+&lt;p&gt;大部分随机数生成器使用multiplier 65539 linear congruential generators，因为它更易被数学分析，但是有最大重复间隔使得不是完全随机。&lt;/p&gt;
+
+&lt;p&gt;intrinsic randomness generation和自然界随机的共同特征是可重复实验，而其他两种机制则不可重复。&lt;/p&gt;
+
+&lt;p&gt;intrinsic randomness generation对扰动的容忍程度大于第二种机制，而实际系统中总是有扰动的。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-phenomenon-of-continuity&#34;&gt;The phenomenon of continuity&lt;/h3&gt;
+
+&lt;p&gt;宏观上看起来连续的系统微观上也可能是离散的，如水流和风等。&lt;/p&gt;
+
+&lt;p&gt;这样的原因之一是随机性。&lt;/p&gt;
+
+&lt;h3 id=&#34;origins-of-discreteness&#34;&gt;Origins of discreteness&lt;/h3&gt;
+
+&lt;p&gt;连续的系统也能引起离散的行为，如量变引起质变的烧开水。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-problem-of-satisfying-constraints&#34;&gt;The problem of satisfying constraints&lt;/h3&gt;
+
+&lt;p&gt;基于限制的大都只能产生简单的现象。&lt;/p&gt;
+
+&lt;h3 id=&#34;origins-of-simple-behavior&#34;&gt;Origins of simple behavior&lt;/h3&gt;
+
+&lt;p&gt;uniformity, repetition, nesting都可以从各种机制中产生。&lt;/p&gt;
+
+&lt;h2 id=&#34;implications-for-everyday-system&#34;&gt;Implications for everyday system&lt;/h2&gt;
+
+&lt;h3 id=&#34;issues-of-modeling&#34;&gt;Issues of modeling&lt;/h3&gt;
+
+&lt;p&gt;为日常生活中的复杂现象通过简单程序的规则建模。&lt;/p&gt;
+
+&lt;p&gt;模型可以是粗略的描画复杂现象的轮廓，而不必使得模型内部的部分对应于实际系统的部分。&lt;/p&gt;
+
+&lt;p&gt;传统模型大多是数学等式的集合，因而不能很好的刻画复杂现象；
+传统模型很难轻松得到结果，由于连续不能直接运行在计算机上。
+而简单程序模型就没有这些问题。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-growth-of-crystals&#34;&gt;The growth of crystals&lt;/h3&gt;
+
+&lt;p&gt;用二维六边形细胞自动机模拟雪花生成结构。&lt;/p&gt;
+
+&lt;h3 id=&#34;fluid-flow&#34;&gt;Fluid flow&lt;/h3&gt;
+
+&lt;p&gt;只要粒子和动量的数量级一致，即使是高度粒子模型也能显示出湍流的行为。&lt;/p&gt;
+
+&lt;p&gt;传统的数学解释认为湍流系统是出事输入敏感的，但是细胞自动机模型却不这么假设。
+这也更符合实际现象。&lt;/p&gt;
+
+&lt;h3 id=&#34;fundamental-issues-in-biology&#34;&gt;Fundamental Issues in Biology&lt;/h3&gt;
+
+&lt;p&gt;从部分organism角度看生物，在显微镜规模下，就是简单程序的细胞自动机。&lt;/p&gt;
+
+&lt;p&gt;自然选择也许类似于工程，倾向于原则简单而可控的部件和规则，避免过度的复杂性。&lt;/p&gt;
+
+&lt;p&gt;而复杂的高等动物则是自然选择的搜索过程中的一些随机采样的结果，因为没有引入缺陷而保留了下来。&lt;/p&gt;
+
+&lt;h2 id=&#34;fundamental-physics&#34;&gt;Fundamental Physics&lt;/h2&gt;
+
+&lt;p&gt;能否抛开现有的物理体系使用简单程序构建起新的物理体系。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-notion-of-reversibility&#34;&gt;The Notion of Reversibility&lt;/h3&gt;
+
+&lt;p&gt;只有一少部分细胞自动机是可逆的，但是系统仍然展示了高度的复杂性。&lt;/p&gt;
+
+&lt;h3 id=&#34;irreversibility-and-the-second-law-of-thermodynamics&#34;&gt;Irreversibility and the Second Law of Thermodynamics&lt;/h3&gt;
+
+&lt;p&gt;粒子物理可逆但是很多自然现象不可逆，并且演变的越来越随机越复杂。&lt;/p&gt;
+
+&lt;p&gt;根据简单程序模拟，越来越复杂是因为初始情况设置的简单。&lt;/p&gt;
+
+&lt;p&gt;自然现象的初始情况都很简单，是因为初始情况的计算复杂性应该要小于实验过程。&lt;/p&gt;
+
+&lt;p&gt;如果系统产生了足够的随机性，可以认为它们之间的趋同使得它们的属性跟初始条件无关。
+这使得现在我们可以使用很少的参数来近似表示一些物理系统。&lt;/p&gt;
+
+&lt;p&gt;但是自然中，尤其是生物系统存在一些不遵热力学第二定律，即越来越复杂的系统，否则宇宙就变得趋同了，而不是现在这样多样。&lt;/p&gt;
+
+&lt;p&gt;根据37号自动机观察所得，热力学第二定律不是普适的。
+宇宙持续变大，一些信息被忽略，自成一个有组织的小系统独自发展，然后相互重复。&lt;/p&gt;
+
+&lt;h3 id=&#34;ultimate-models-for-the-universe&#34;&gt;Ultimate models for the universe&lt;/h3&gt;
+
+&lt;p&gt;根据本书发现，宇宙的终极模型可能依赖于简单的规则。&lt;/p&gt;
+
+&lt;p&gt;如何发现这个规则呢？根据物理现象推倒超出计算能力范围，因此试图遍历所有可能的简单模型看能否产生想要的宇宙的结果。&lt;/p&gt;
+
+&lt;p&gt;现在发现的规律很可能都是终极模型的表象。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-nature-of-space&#34;&gt;The nature of space&lt;/h3&gt;
+
+&lt;p&gt;宇宙空间很可能是离散的。而过去一直认为是连续的，因为传统数学善于计算这种模式。&lt;/p&gt;
+
+&lt;h3 id=&#34;space-as-a-network&#34;&gt;Space as a network&lt;/h3&gt;
+
+&lt;p&gt;空间可能是由节点网络构成的。&lt;/p&gt;
+
+&lt;p&gt;节点的距离和网络的维度有关。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-relationship-of-space-and-time&#34;&gt;The relationship of space and time&lt;/h3&gt;
+
+&lt;p&gt;现代物理倾向于认为时间和空间本质相似，是时空第四维。
+但是时间和空间的相似性很可能是不够小的实验数据导致的。
+探索后作者发现在最本质上时空分离，就像元胞自动机的演化。&lt;/p&gt;
+
+&lt;h2 id=&#34;time-and-causal-metwork&#34;&gt;Time and causal metwork&lt;/h2&gt;
+
+&lt;p&gt;时空很可能是一种mobile automaton或图灵机，一次之更新一个单元。&lt;/p&gt;
+
+&lt;p&gt;但是对于图灵机内部的单元来说，他察觉到变化时已经更新了一轮，因此感觉不到一次只更新了一个。&lt;/p&gt;
+
+&lt;h2 id=&#34;我的结论&#34;&gt;我的结论&lt;/h2&gt;
+
+&lt;p&gt;我就看到这里为止了，总的来说提供了一种新颖的离散化的思想。
+世界就是一种巨大的计算机，谁都曾经这么想过，但是Wolfram对其进行了更深入的探讨。
+蕴含其中的是宇宙遵循着简单的规则，这和许多科学家是相同的。&lt;/p&gt;
+
+&lt;p&gt;后面几章引用一下&lt;a href=&#34;https://book.douban.com/review/1287160/&#34;&gt;豆瓣的书评&lt;/a&gt;，留待以后补完。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;9.Fundamental Physics
+我认为这章的内容很重要，首先，我们要有一个信念：这个世界就是一个计算机，每一件事情都是计算。
+在这个前提下，我们来看世界，怎样的宇宙才是从程序上最可行的呢？
+作者探讨了空间网络、因果网络等模型。
+究竟宇宙是不是一太计算机，我们实际上不能证伪，但是如果从程序的角度出发，却发现我们可以从一个完全不同的角度得到很多疑难问题的解答。
+在因果网络模型下，相对论、量子论等等都是系统涌现出来的一种结果。
+如果这一切正确的话，我们自然能得到一个统一量子论和相对论的工具。
+另外，本章提出来的时空观是非常关键的，因果网络是最本质的东西，时间和空间甚至都是涌现出来的现象。&lt;/p&gt;
+
+&lt;p&gt;10.Processes of Perception and Analysis
+讲述把细胞自动机应用到计算机科学、人工智能、信息处理等领域的具体方法。
+视觉感知、加密解密、思维过程等等都有涉猎。&lt;/p&gt;
+
+&lt;p&gt;11.The Notion of Computation
+究竟什么是计算？在很早，丘奇图灵论题就指出，一切与图灵机等价的过程就是计算。
+那么细胞自动机与图灵机那个更强呢？
+通过作者特别的证明（运用图形和说明，而不是数学推导），我们看到一类特制的细胞自动机可以模拟任何一台其他的细胞自动机，而且还能模拟图灵机以及其他的计算系统。
+翻过来，图灵机和其他计算模型也都能模拟细胞自动机。
+实际上能够执行通用计算的机器仅仅需要简单的规则，也就是101号细胞自动机。
+作者认为101细胞自动机非常重要，因为它规则简单，而且能够模拟任意的复杂计算过程。&lt;/p&gt;
+
+&lt;p&gt;12.The Principle of Computational Equivalence
+本章提出了一个猜想：The Principle of Computational Equivalence，也就是计算等价性原理，作者认为宇宙的一却活动都是一种计算，而且能够完成复杂计算的过程都是等价于通用计算的，所以，原则上讲，细胞自动机110能够模拟任何一个复杂的计算过程。
+作者当然也讨论了哥德尔定理、不可判定问题，认为对于第四类细胞自动机，我们除了运行它以外，根本无法判定它在未来的行为，即使在原则上，因为它是不可判定的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>关键对话</title>
+      <link>https://dailydreamer.me/post/2016-03-07-difficult-conversation/</link>
+      <pubDate>Mon, 07 Mar 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-03-07-difficult-conversation/</guid>
+      <description>
+
+&lt;p&gt;Difficult Conversation(关键对话)，是指让你感到害怕和焦虑的对话，比如家人间、情侣间的吵架，上下级间的工作安排等。
+本书对这种对话进行了深入的剖析，将问题分解看透彻之后可以更好的处理这种对话。&lt;/p&gt;
+
+&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
+
+&lt;p&gt;关键对话的结构：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;What happend&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The feelings conversation&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The identity conversation&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;我们不能改变周围，但是能改变的是对待这些挑战的反应。&lt;/p&gt;
+
+&lt;h3 id=&#34;what-happend&#34;&gt;What happend&lt;/h3&gt;
+
+&lt;p&gt;不要一上来就认为你是对的，试图搞清楚对方的感知、解释和价值观。&lt;/p&gt;
+
+&lt;p&gt;对方的意图可能很复杂，不要预先假定是坏的。&lt;/p&gt;
+
+&lt;p&gt;不要一味责备对方，试图弄清楚双方对造成问题的贡献。&lt;/p&gt;
+
+&lt;h3 id=&#34;feeling-conversation&#34;&gt;Feeling conversation&lt;/h3&gt;
+
+&lt;p&gt;情感是困难对话的核心。&lt;/p&gt;
+
+&lt;h3 id=&#34;identity-conversation&#34;&gt;Identity conversation&lt;/h3&gt;
+
+&lt;p&gt;调整你的认知失调造成的困难感是最有技巧可学习的。&lt;/p&gt;
+
+&lt;h2 id=&#34;shift-to-a-learning-stance&#34;&gt;Shift to a learning stance&lt;/h2&gt;
+
+&lt;h3 id=&#34;what-happend-conversation&#34;&gt;What happend conversation&lt;/h3&gt;
+
+&lt;h4 id=&#34;stop-arguing-about-who-s-right-explore-each-other-s-stories&#34;&gt;Stop arguing about who&amp;rsquo;s right, explore each other&amp;rsquo;s stories.&lt;/h4&gt;
+
+&lt;p&gt;每个人对故事的解读都是有道理的。
+争吵阻碍了我们从他人的角度理解故事。&lt;/p&gt;
+
+&lt;p&gt;为什么会有不同的故事解读：我们注意到的和获取到的信息不同。
+我们有不同的解读，受过去经历和隐含的规则的影响。&lt;/p&gt;
+
+&lt;p&gt;对他人的故事感到好奇。&lt;/p&gt;
+
+&lt;p&gt;有时候了解对方的立场不代表一定要同意，比如提出分手的时候，承认双方的立场。&lt;/p&gt;
+
+&lt;h4 id=&#34;don-t-assume-they-mean-it-disentangle-intent-from-impact&#34;&gt;Don&amp;rsquo;t assume they mean it: disentangle intent from impact.&lt;/h4&gt;
+
+&lt;p&gt;我们假设别人的意图通常是错的。&lt;/p&gt;
+
+&lt;p&gt;试图去理解自己复杂的意图会给对方传递积极和在乎的信号。&lt;/p&gt;
+
+&lt;p&gt;将你的意图告诉对方，试图弄清楚你的行为对对方的影响。&lt;/p&gt;
+
+&lt;h4 id=&#34;abandon-blame-map-the-contribution-system&#34;&gt;Abandon blame: map the contribution system&lt;/h4&gt;
+
+&lt;p&gt;blame是关于judging但是contribution是关于understanding并且looking forward。&lt;/p&gt;
+
+&lt;p&gt;提问我们各自做了或没做什么导致了这种结果，可以如何改进。&lt;/p&gt;
+
+&lt;p&gt;在此过程中分享情感是必要的。&lt;/p&gt;
+
+&lt;p&gt;四个容易忽略的错误：avoiding until now. being approachable.
+忽略了每个人都很不一样。problemic role assumptions.&lt;/p&gt;
+
+&lt;h3 id=&#34;the-feeling-conversation&#34;&gt;The feeling conversation&lt;/h3&gt;
+
+&lt;h4 id=&#34;have-your-feelings&#34;&gt;Have your feelings&lt;/h4&gt;
+
+&lt;p&gt;情感是关键对话的核心。&lt;/p&gt;
+
+&lt;p&gt;不应该抛开情感只谈问题解决。&lt;/p&gt;
+
+&lt;p&gt;找到你的情感，和情感协商，然后分享真实的感受。&lt;/p&gt;
+
+&lt;p&gt;理解情感很困难，受到原生家庭的很多错误影响。&lt;/p&gt;
+
+&lt;p&gt;责备可以成为你探寻更深层次情感的线索。&lt;/p&gt;
+
+&lt;p&gt;情感是基于感知的，感知可以协商，因此情感也可以协商。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-identity-conversation&#34;&gt;the identity conversation&lt;/h3&gt;
+
+&lt;h4 id=&#34;groud-your-identity-ask-yourself-what-s-at-stake&#34;&gt;Groud your identity: ask yourself what&amp;rsquo;s at stake&lt;/h4&gt;
+
+&lt;p&gt;核心认知：我有竞争力么？我是好人么？我值得爱么？&lt;/p&gt;
+
+&lt;p&gt;错误的认知：all or nothing&lt;/p&gt;
+
+&lt;p&gt;找到你的不稳定的认知，然后对它有清楚的认识。&lt;/p&gt;
+
+&lt;h3 id=&#34;create-a-learning-conversation&#34;&gt;create a learning conversation&lt;/h3&gt;
+
+&lt;h4 id=&#34;what-s-your-purpose-when-to-raise-it-and-when-to-let-it-go&#34;&gt;What&amp;rsquo;s your purpose? When to raise it and when to let it go&lt;/h4&gt;
+
+&lt;p&gt;发起关键对话之前先思考：你们之间是否真的有矛盾？是否有比发起对话更好的解决方法？你的目的是否合理？&lt;/p&gt;
+
+&lt;p&gt;Sometimes just let it go.&lt;/p&gt;
+
+&lt;h4 id=&#34;getting-start-begin-from-the-third-story&#34;&gt;Getting start: begin from the third story&lt;/h4&gt;
+
+&lt;p&gt;我们通常从自己的故事开始，但是这会很不愉快。&lt;/p&gt;
+
+&lt;p&gt;从第三方视角的故事开始。&lt;/p&gt;
+
+&lt;h2 id=&#34;road-map&#34;&gt;Road map&lt;/h2&gt;
+
+&lt;p&gt;将原版的操作手册摘录如下~&lt;/p&gt;
+
+&lt;h3 id=&#34;step-l-prepare-by-walking-through-the-three-conversations&#34;&gt;Step l: Prepare by Walking Through the Three Conversations&lt;/h3&gt;
+
+&lt;h4 id=&#34;sort-out-what-happened&#34;&gt;Sort out What Happened.&lt;/h4&gt;
+
+&lt;p&gt;Where does your story come from (information, past experiences, rules)? Theirs?&lt;/p&gt;
+
+&lt;p&gt;What impact has this situation had on you? What might their
+intentions have been?&lt;/p&gt;
+
+&lt;p&gt;What have you each contributed to the problem?&lt;/p&gt;
+
+&lt;h4 id=&#34;understand-emotions&#34;&gt;Understand Emotions.&lt;/h4&gt;
+
+&lt;p&gt;Explore your emotional footprint, and the bundle of emotions
+you experience.&lt;/p&gt;
+
+&lt;h4 id=&#34;ground-your-identity&#34;&gt;Ground Your Identity.&lt;/h4&gt;
+
+&lt;p&gt;What&amp;rsquo;s at stake for you about you? What do you need to accept
+to be better grounded?&lt;/p&gt;
+
+&lt;h3 id=&#34;step-2-check-your-purposes-and-decide-whether-to-raise-the-issue&#34;&gt;Step 2: Check Your Purposes and Decide Whether to Raise the Issue&lt;/h3&gt;
+
+&lt;p&gt;Purposes: What do you hope to accomplish by having this conversation? Shift your stance to support learning, sharing, and
+problem-solving.&lt;/p&gt;
+
+&lt;p&gt;Deciding: Is this the best way to address the issue and achieve
+your purposes? Is the issue really embedded in your Identity
+Conversation? Can you affect the problem by changing your
+contributions? If you don&amp;rsquo;t raise it, what can you do to help
+yourself let go?&lt;/p&gt;
+
+&lt;h3 id=&#34;step-3-start-from-the-third-story&#34;&gt;Step 3: Start from the Third Story&lt;/h3&gt;
+
+&lt;p&gt;Describe the problem as the difference between your stories.
+Include both viewpoints as a legitimate part of the discussion.&lt;/p&gt;
+
+&lt;p&gt;Share your purposes.&lt;/p&gt;
+
+&lt;p&gt;Invite them to join you as a Partner in sorting out the situation
+together.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-4-explore-their-story-and-yours&#34;&gt;Step 4: Explore Their Story and Yours&lt;/h3&gt;
+
+&lt;p&gt;Listen to understand their perspective on what happened. Ask
+questions. Acknowledge the feelings behind the arguments and
+accusations. Paraphrase to see if you&amp;rsquo;ve got it. Try to unravel
+how the two of you got to this place.&lt;/p&gt;
+
+&lt;p&gt;Share your own viewpoint, your past experiences, intentions,
+feelings.&lt;/p&gt;
+
+&lt;p&gt;Reframe, reframe, reframe to keep on track. From truth to
+perceptions, blame to contribution, accusations to feelings,
+and so on.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-5-problem-solving&#34;&gt;Step 5: Problem-Solving&lt;/h3&gt;
+
+&lt;p&gt;Invent options that meet each side&amp;rsquo;s most important concerns
+and interests.&lt;/p&gt;
+
+&lt;p&gt;Look to standards for what should happen. Keep in mind the
+standard of mutual caretaking; relationships that always go one
+way rarely last.&lt;/p&gt;
+
+&lt;p&gt;Talk about how to keep communication open as you go for-
+ward.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>神话的力量</title>
+      <link>https://dailydreamer.me/post/2016-01-13-power-of-myth/</link>
+      <pubDate>Wed, 13 Jan 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2016-01-13-power-of-myth/</guid>
+      <description>
+
+&lt;p&gt;前些年读过的一本很神奇的书，记下一些富有力量的话语，有机会要重新温习。&lt;/p&gt;
+
+&lt;h2 id=&#34;善与恶&#34;&gt;善与恶&lt;/h2&gt;
+
+&lt;p&gt;善恶是相对于你的立场而定的。
+对某人来说是善，对其他人可能就是恶。
+但对上帝而言，二者并无不同。
+你扮演着自己的角色，即使在你了解他有多可怕后也不退缩，而能把它看成是神秘超越而美妙惊奇世界之前奏。&lt;/p&gt;
+
+&lt;p&gt;生命最大的挑战之一，就是肯定你心里最讨厌的人或事。
+你不能说不应该有毒蛇，因为那是生命的本来面目。
+但是在行动中，假如你看到毒蛇咬人，你会杀了他。
+那并不是否定蛇，而是对那个情景说不。&lt;/p&gt;
+
+&lt;p&gt;这两句话从更高的层面看待了善与恶的相对性。
+每个人都有着自己的使命与愿景，与你相顺的于你即善，与你相逆的于你即恶。
+知道没有绝对的善与恶是成熟的标志。&lt;/p&gt;
+
+&lt;h2 id=&#34;人生的态度&#34;&gt;人生的态度&lt;/h2&gt;
+
+&lt;p&gt;生命一切皆苦，顺其自然，便是喜悦。
+但是顺其自然，并不代表自暴自弃随波逐流，这不是必然的结论。
+你将参与人生这场游戏，竭尽所能。&lt;/p&gt;
+
+&lt;p&gt;不论你在何处，只要遵循你内心直觉的喜悦，你就可以享受到永恒生命之泉的那份清新，它一直在你内心的生命中。&lt;/p&gt;
+
+&lt;p&gt;这世界上许多人都不曾停下来，倾听自己或邻人，学习什么是该做的，和什么是他们的生活价值。
+对物质的追求是无止境的，但你终将在40岁意识到你已到达人生的巅峰，只有走下坡路的日子可活而陷入深深的忧虑。&lt;/p&gt;
+
+&lt;p&gt;你只有一生可活，你不需要为他人而活，要活的专注，遵循内心直觉的喜悦。&lt;/p&gt;
+
+&lt;p&gt;这几句话曾经同银他妈，以及后来读到的尼采的永劫回归理论，一起深刻的影响了我的人生抉择。遵从内心的喜悦吧。&lt;/p&gt;
+
+&lt;h2 id=&#34;神话在今天的意义&#34;&gt;神话在今天的意义&lt;/h2&gt;
+
+&lt;p&gt;艺术家是今日的巫师。而作为普通人，我们应该读书来理解自然的神性。
+读对的人写的书，你的心就会被带到某个层次，你可因此而拥有一种美好，温和，慢慢燃烧的喜悦。&lt;/p&gt;
+
+&lt;p&gt;不同的个体本是一体的，你们本来就是一个生命的两面，当下的分隔，只不过是在时空条件下，体验形体的方式结果罢了。我们的真实在于与所有的生命结合一致。
+这个形而上的真理，可以在危机之下立刻体验到。因为它就是你生命的真理。&lt;/p&gt;
+
+&lt;p&gt;整本书读完后，可以感受到神话不只是过去的故事，而是人类祖先古老的共同记忆和模范；
+而今天的生活中，虽然不再相信神话表面描述的故事，但是其内涵却依然深深的烙印在我们心底，一直发挥着作用。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一次与CTF的邂逅</title>
+      <link>https://dailydreamer.me/post/2015-11-23-meet-ctf/</link>
+      <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-11-23-meet-ctf/</guid>
+      <description>
+
+&lt;p&gt;机缘巧合做了两道CTF二进制题目，谨以此为记。&lt;/p&gt;
+
+&lt;h3 id=&#34;第一题-recho&#34;&gt;第一题 recho&lt;/h3&gt;
+
+&lt;p&gt;主要参考&lt;a href=&#34;https://blog.skullsecurity.org/2013/ropasaurusrex-a-primer-on-return-oriented-programming&#34;&gt;这篇博客&lt;/a&gt;，ruby实现，也有人推荐了&lt;a href=&#34;http://drops.wooyun.org/tips/6597&#34;&gt;这篇&lt;/a&gt;python实现版，使用了&lt;code&gt;pwntools&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;第一题中&lt;code&gt;handle()&lt;/code&gt;函数&lt;code&gt;buf&lt;/code&gt;大小&lt;code&gt;256Byte&lt;/code&gt;，但是&lt;code&gt;recv_line()&lt;/code&gt;函数接受用户输入没有限制长度，存在&lt;code&gt;BOF&lt;/code&gt;漏洞可以利用。&lt;/p&gt;
+
+&lt;p&gt;为了方便本地调试，将源代码中关于&lt;code&gt;drop_priv()&lt;/code&gt;相关函数去除后，本地编译。&lt;/p&gt;
+
+&lt;p&gt;为了能够在64位linux上编译和执行32位文件，需要安装32位环境。以Ubuntu14.04为例，执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;即可。&lt;/p&gt;
+
+&lt;p&gt;编译时使用命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意使用&lt;code&gt;-m32&lt;/code&gt;参数编译成32位，&lt;code&gt;-fno-stack-protector&lt;/code&gt;关闭stack canary检测，&lt;code&gt;-g&lt;/code&gt;方便gdb调试。&lt;/p&gt;
+
+&lt;p&gt;运行&lt;code&gt;./recholocal&lt;/code&gt;后通过命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ps -aux | grep recholocal
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看其进程号，通过&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;gdb atach pid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;来调试该进程。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;set follow-fork-mode child
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以使gdb在程序&lt;code&gt;fork()&lt;/code&gt;后跟随子进程。&lt;/p&gt;
+
+&lt;p&gt;在程序中找到&lt;code&gt;recvline()&lt;/code&gt;和&lt;code&gt;sendlen()&lt;/code&gt;，使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;objdump -d recholocal | grep recvline
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;获取地址，使用他们来对内存进行写和读。
+注意&lt;code&gt;recv_line&lt;/code&gt;最后以&lt;code&gt;\n&lt;/code&gt;结束。
+还有程序最开始调用的&lt;code&gt;sendstr()&lt;/code&gt;函数会将是将&lt;code&gt;payload&lt;/code&gt;的&lt;code&gt;strlen()&lt;/code&gt;长度发送，如果&lt;code&gt;payload&lt;/code&gt;中有&lt;code&gt;0x00&lt;/code&gt;就会被截断发送。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code&gt;objdump -x recholocal&lt;/code&gt;可以查看各个section的位置和布局，找到一个可读可写又足够大的section来存放我们的字符串参数，如&lt;code&gt;.bss&lt;/code&gt;或&lt;code&gt;.dynamic&lt;/code&gt;等。
+发现&lt;code&gt;.dynamic&lt;/code&gt;的位置是&lt;code&gt;0x0804a10c&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;为了对付ALSR，需要先知道&lt;code&gt;libc&lt;/code&gt;中某个函数的运行时地址，使用&lt;code&gt;sendlen()&lt;/code&gt;将其发送过来，再加上&lt;code&gt;system()&lt;/code&gt;相对这个函数的偏移，写入某个函数&lt;code&gt;got&lt;/code&gt;表项，在调用该函数就是相当于调用了&lt;code&gt;system()&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;objdump -R recholocal | grep __libc_start_main
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;发现&lt;code&gt;__libc_start_main()&lt;/code&gt;的&lt;code&gt;got&lt;/code&gt;表项地址为&lt;code&gt;0x0804a040&lt;/code&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ldd recholocal
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可发现本地链接库&lt;code&gt;libc.so.6&lt;/code&gt;的位置，对其&lt;code&gt;objdump&lt;/code&gt;后找到&lt;code&gt;__libc_start_main()&lt;/code&gt;和&lt;code&gt;__libc_system()&lt;/code&gt;的地址，计算其偏移。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code&gt;objdump -d recholocal | egrep &#39;pop|ret&#39;&lt;/code&gt;发现&lt;code&gt;ppppr&lt;/code&gt;如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;8048d1c:	5b                   	pop    %ebx
+8048d1d:	5e                   	pop    %esi
+8048d1e:	5f                   	pop    %edi
+8048d1f:	5d                   	pop    %ebp
+8048d20:	c3                   	ret   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在堆砌堆栈时需要使用，使用时截取需要部分即可。&lt;/p&gt;
+
+&lt;p&gt;本地跑通后将地址改为服务器端地址即可。&lt;/p&gt;
+
+&lt;p&gt;刚开始本来想利用&lt;a href=&#34;http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet&#34;&gt;这篇博客&lt;/a&gt;中的方法获取reverse shell，后来发现由于recho程序中将标准输入输出都复制到了socket中，所以只需&lt;code&gt;cat ～/flag&lt;/code&gt;然后再&lt;code&gt;read()&lt;/code&gt;出来即可。&lt;/p&gt;
+
+&lt;h3 id=&#34;第二题-weapon-shop&#34;&gt;第二题 weapon_shop&lt;/h3&gt;
+
+&lt;p&gt;这一题只有二进制文件，先使用IDA Pro反编译，按&lt;code&gt;F5&lt;/code&gt;可以看到部分C伪码，结合程序对函数进行理解。&lt;/p&gt;
+
+&lt;p&gt;可以看到该程序输入时都限制了长度，因此不方便&lt;code&gt;BOF&lt;/code&gt;。
+但是找到在输入&lt;code&gt;Credit Card Number&lt;/code&gt;时长度限制为&lt;code&gt;200Byte&lt;/code&gt;，而且写入了可执行的&lt;code&gt;.bss&lt;/code&gt;段，因此可以在这里写入一些&lt;code&gt;shellcode&lt;/code&gt;，地址为&lt;code&gt;0x0804b1e0&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;同时注意到在买武器过程中输入数字，使用了&lt;code&gt;strtol()&lt;/code&gt;函数，它会扫描字符串，跳过前面的空格，将后面的字符转换成数字。而函数只检查了第一个字符不是负号，以及不大于8，因此可以输入空格加一个任意负数。
+后面它使用数组起始地址加这个数得到的地址对其自增，因此输入一个合理的偏移量就可以对任意高于该数组起始地址的地址进行自增。
+该数组位于主循环函数的栈上，因此可以对主循环函数的返回地址改写位&lt;code&gt;shellcode&lt;/code&gt;所在的地址。
+注意该自增只增加一个字节，因此需要对返回地址每个字节分别自增。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;shellcode&lt;/code&gt;最后选取了拿到&lt;code&gt;/bin/sh&lt;/code&gt;的&lt;code&gt;shellcode&lt;/code&gt;。
+因此最后使用了&lt;code&gt;pwntools&lt;/code&gt;里的&lt;code&gt;interactive()&lt;/code&gt;函数和远端&lt;code&gt;shell&lt;/code&gt;进行交互。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>多个github账号的ssh key切换</title>
+      <link>https://dailydreamer.me/post/2015-10-30-ssh-config/</link>
+      <pubDate>Fri, 30 Oct 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-10-30-ssh-config/</guid>
+      <description>
+
+&lt;p&gt;当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。&lt;/p&gt;
+
+&lt;h2 id=&#34;github多个账号ssh-key切换&#34;&gt;github多个账号ssh key切换&lt;/h2&gt;
+
+&lt;h3 id=&#34;配置ssh的config文件&#34;&gt;配置ssh的config文件&lt;/h3&gt;
+
+&lt;p&gt;使用&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;youremail@xxx.com&amp;quot;&lt;/code&gt;生成两个ssh key之后，在~/.ssh/下添加一个config文件，内容如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Host github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+Host second.github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_second
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;设置远程仓库的ssh地址&#34;&gt;设置远程仓库的ssh地址&lt;/h3&gt;
+
+&lt;p&gt;只需要让ssh的目标主机地址变为你写的Host即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git remote add origin git@second.github.com:myname/myrepo.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;更加深入的利用ssh config文件可以参考&lt;a href=&#34;http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/&#34;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>禅与摩托车维修的艺术</title>
+      <link>https://dailydreamer.me/post/2015-08-04-Zen-and-the-Art-of-Motorcycle-Maintenance/</link>
+      <pubDate>Tue, 04 Aug 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-08-04-Zen-and-the-Art-of-Motorcycle-Maintenance/</guid>
+      <description>
+
+&lt;h2 id=&#34;第三章&#34;&gt;第三章&lt;/h2&gt;
+
+&lt;p&gt;科学就是现代的鬼神。
+过去人们使用鬼神解释自然现象，现代人们使用所谓的科学来解释。
+这些都只存在于人们心里，是对自然规律的一种认识和解释。&lt;/p&gt;
+
+&lt;h2 id=&#34;第四章&#34;&gt;第四章&lt;/h2&gt;
+
+&lt;p&gt;一个世纪前和小孩一起读古典的方式：读两句话，等他一连串的提问，然后回答他的问题。&lt;/p&gt;
+
+&lt;h2 id=&#34;第六章&#34;&gt;第六章&lt;/h2&gt;
+
+&lt;p&gt;使用二分法，将人类的认知分为古典的和浪漫的。
+古典的认知认为这个世界是由一些基本形式组成的；浪漫的认知则从表象来观察，主要的是情感而非事实。&lt;/p&gt;
+
+&lt;p&gt;斐德洛的古典中有名为分析的小刀。&lt;/p&gt;
+
+&lt;h2 id=&#34;第七章&#34;&gt;第七章&lt;/h2&gt;
+
+&lt;p&gt;我们选择性的筛选出感官接受的结果，浪漫的认知直接针对这个结果，而古典的认知使用分析的小刀对其进行分类，并且注重相互之间的联系。&lt;/p&gt;
+
+&lt;h2 id=&#34;第八章&#34;&gt;第八章&lt;/h2&gt;
+
+&lt;p&gt;摩托车的外观是浪漫的，但是内在的运作是纯古典的。
+他的外壳就是古典和浪漫的分界。&lt;/p&gt;
+
+&lt;p&gt;摩托车也是一种系统，正如政府和军队。
+只要架构系统的理性还在，系统就可以被轻易重新构建。&lt;/p&gt;
+
+&lt;h2 id=&#34;第九章&#34;&gt;第九章&lt;/h2&gt;
+
+&lt;p&gt;逻辑使你在系统中找到自己的路。逻辑有归纳法和演绎法。
+两种方法交替使用就能解决问题。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十章&#34;&gt;第十章&lt;/h2&gt;
+
+&lt;p&gt;前面铺垫了那么多，这一章开始渐渐接近了问题的核心。&lt;/p&gt;
+
+&lt;p&gt;在科学的殿堂中有许多深宅大院。
+有的人倾心科学是因为优越的智力，有的人则完全为了实用的目的。
+如果上帝派来的天使将上面两种人从殿中驱逐出去，那么殿里会空旷许多。
+那些获得天使青睐的人，有些古怪、沉默和孤独，除了同是不受欢迎的人外，彼此之间少有相似之处。
+斐德洛认为自己就是这样的人。
+所以当他提出科学困扰他的问题时，没有人真正关心。于是他开始了心灵探索的道路。&lt;/p&gt;
+
+&lt;p&gt;困扰他的问题是什么呢?&lt;/p&gt;
+
+&lt;p&gt;科学研究，或者说自然科学的研究，是通过观察现象做出假设然后实验证明得出结论。
+爱因斯坦认为，根据进化论所显示的，在历史上任何一刻，所有可想见的存在，总有一个会证明它比其他一切要优越。
+但是斐德洛认为现在由于眼界的广阔，假设出现的速度远大于验证他们的速度，因此科学真理持续的时间越来越短，很容易被后来验证的假设推翻。
+各种假设和定理的增加，把人从唯一绝对的真理，引向多元、摇摆不定、相对的世界，是造成社会和思想价值混乱的元凶。
+现在的理性结构不符合社会所需，然而在情感上空虚，在美学上没有任何表现。
+造成社会上一些人在整个文明的理性架构下，活的盲目而疏离，找寻不到答案。&lt;/p&gt;
+
+&lt;p&gt;我以为因为斐德洛是搞生物化学的，如果他从事过数学研究就会发现这个所有自然科学的根基是一门注重概念的演绎科学，不是使用实验证明假设，而是靠演绎。
+依靠最底下的公理构建起整个大树。
+每当物理学家走的飞快依靠直觉提出各种假设，数学总是跟在后面谨慎的证明。
+虽然偶尔出现过改变公理构建出不同大树的情况，但总体上没有这个问题。
+壮哉我大数学~&lt;/p&gt;
+
+&lt;h2 id=&#34;第十一章&#34;&gt;第十一章&lt;/h2&gt;
+
+&lt;p&gt;斐德洛通过哲学探索人类心灵的高山地带。&lt;/p&gt;
+
+&lt;p&gt;大卫·休谟的经验主义，认为我们的知识都来自于感官。
+但是会得出推论说整个世界出自于人的想象。&lt;/p&gt;
+
+&lt;p&gt;康德试图推翻经验主义。
+他认为我们人性之中有一种直觉，我们认为的现实，是直觉和感官接收到的讯息融合而成。
+我们通过感官接收到的讯息不断修正直觉，直觉也在过滤着感官接收到的讯息。&lt;/p&gt;
+
+&lt;p&gt;斐德洛认为康德的《纯粹理性批判》中有着属于理性自身的丑陋。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十二章&#34;&gt;第十二章&lt;/h2&gt;
+
+&lt;p&gt;斐德洛之后去了印度研究东方哲学，他的知识在那儿出现了混乱。
+他离开了印度，放弃了对理性的追求，念了新闻学位，结婚生子。&lt;/p&gt;
+
+&lt;p&gt;放下了之后，反而成熟的更快。
+于是他变成我们的作者又开始继续追寻，通过这次旅途。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十三章&#34;&gt;第十三章&lt;/h2&gt;
+
+&lt;p&gt;斐德洛说，真正的大学是心灵的世界，是多少世纪以来流传给我们的理性思想，大学的本质在于通过教授们流传下来的理性自身。
+物质的大学只是为真正的理性教会提供了生存的环境。&lt;/p&gt;
+
+&lt;p&gt;斐德洛因为对科学理性缺乏信心，所以才成为了理性教会的狂热研究者。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十四章&#34;&gt;第十四章&lt;/h2&gt;
+
+&lt;p&gt;科学没有和人的心灵连在一起，所以在盲目之中暴露出了丑陋的一面。
+解决的方法不是抛弃或否定理性，而是扩展理性的内涵。&lt;/p&gt;
+
+&lt;p&gt;哥伦布发现新大陆时也拓展了整个文化的根基，当时人们抛弃了中古世纪的价值观，接受理性的新世界。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十五章&#34;&gt;第十五章&lt;/h2&gt;
+
+&lt;p&gt;重返斐德洛教书的地方，探寻良质的意义。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十六章&#34;&gt;第十六章&lt;/h2&gt;
+
+&lt;p&gt;良质的第一部分，模仿是一种罪恶。
+是学校的教育造成了这一点，他试图取消分数和学位制度，但是并没有得到好的结果。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十七章&#34;&gt;第十七章&lt;/h2&gt;
+
+&lt;p&gt;良质是说一篇优秀的作品不需要任何规则，不需要任何理论，然而他指向某种东西，非常真实。
+不是模仿，而是內驱的创造。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十八章&#34;&gt;第十八章&lt;/h2&gt;
+
+&lt;p&gt;不去界定良质，不用理性去分析良质。使用理性来支持这一观点。&lt;/p&gt;
+
+&lt;p&gt;如果剥离良质，世界将不能正确运转，不值得活下去，因此良质是存在的。&lt;/p&gt;
+
+&lt;p&gt;良质同时存在于古典和浪漫两个世界中。由于没有定义，古典被迫用浪漫的观点去看良质。&lt;/p&gt;
+
+&lt;h2 id=&#34;第十九章&#34;&gt;第十九章&lt;/h2&gt;
+
+&lt;p&gt;良质既不属于人心的一部分，也不属于物质。&lt;/p&gt;
+
+&lt;p&gt;良质就是同时意识到主客观存在时所发生的事件。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十章&#34;&gt;第二十章&lt;/h2&gt;
+
+&lt;p&gt;&amp;ldquo;过去&amp;rdquo;只存在于我们的记忆之中，&amp;rdquo;未来&amp;rdquo;则存在于我们的计划之中，而只有&amp;rdquo;现在&amp;rdquo;才是惟一的真实。
+你理智上所意识到的那棵树，由于这一小段的时间的关系，便属于过去，因而对你来说并不真实。
+任何经由思想所意识到的总是存在于过去，因而都不真实。
+所以真实总是存在于你所看到的那一刹那，且在你还没有意识到之前。除此之外，没有别的真实。
+这种在意识之前的真实，就是斐德洛所谓的良质。
+由于所有经由思想所认知的事物必须来自于这一段思考前的真实，所以良质是因，而果才是所有的主体以及客体。&lt;/p&gt;
+
+&lt;p&gt;如果我们想用我们所创造的世界去涵盖、去刺激我们创造的源头，这是不可能的。
+这就是为什么良质无法被界定，如果我们去界定，我们所界定的就无法涵盖整体的良质。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十二章&#34;&gt;第二十二章&lt;/h2&gt;
+
+&lt;p&gt;彭加列说，“潜意识自我”注视着一个问题的一大串解决方案，但是只有有趣的可以闯进意识领域内。
+数学解答是由潜意识自我所选择的，是基于“数学之美”，数字与形式的和谐，以及几何学的优雅。
+彭加列说，这是一个所有数学家都知道的真实的美感，可是世俗者对此是如此无知以至于经常想笑。
+但是这和谐、这美丽，是它整个的核心。&lt;/p&gt;
+
+&lt;p&gt;上面一段话我理解为这就是数学的良质。
+作者将数学证明中创造性的部分归结为良质这一更加基本的概念，十分的新奇。&lt;/p&gt;
+
+&lt;p&gt;事实的预先选择并不是基于主观的、反覆无常的&amp;rdquo;任何你喜欢的东西&amp;rdquo;，而是基于良质，即实在自身。良质区别于主观和客观之外。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十四章&#34;&gt;第二十四章&lt;/h2&gt;
+
+&lt;p&gt;如果科技的根本问题在于，科技专家或是反科技的人都缺乏关心之情；
+而且，如果关心和良质是一体的两面，那么我们就可以推论出，今天在科技上出现的根本问题，就在于学科学的人和反科学的人，都缺乏在科学上洞悉良质的能力。&lt;/p&gt;
+
+&lt;p&gt;一个人在修理摩托车的时候，对车子的了解分分秒秒都在改变，因而得到了全新认识，其中蕴含了更多的良质。修理的人不会受限于传统的做法，因为他有足够理性的基础拒绝这些思想。
+真实不再是静态的，它不是让你决定是要去奋战还是打退堂鼓的思想，它们是会跟着你成长的思想。
+所以具有良质的真实，它的本质不再是静态的。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十五章&#34;&gt;第二十五章&lt;/h2&gt;
+
+&lt;p&gt;如果你想要高水准的表现，就必须具备鉴赏力以及达到目标的方法，也就是同时具有对良质的古典和浪漫的认知。&lt;/p&gt;
+
+&lt;p&gt;只有内心宁静，我们才能察觉到良质的存在。他超越了浪漫和古典的认知，将二者融合为一。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十六章&#34;&gt;第二十六章&lt;/h2&gt;
+
+&lt;p&gt;进取心，希腊人称之为热忱。
+以及其中的一些陷阱。&lt;/p&gt;
+
+&lt;h2 id=&#34;第二十七章及之后&#34;&gt;第二十七章及之后&lt;/h2&gt;
+
+&lt;p&gt;阐述了斐德洛和作者融合成长的心路历程，最后完成了对自己的救赎。&lt;/p&gt;
+
+&lt;h2 id=&#34;我的总结&#34;&gt;我的总结&lt;/h2&gt;
+
+&lt;p&gt;现在由于自然科学研究方法的问题，导致真理持续的时间原来越短，价值观变得多元化了。
+这时候就需要人们意识到除了古典和浪漫之外的良质，即对自己所做事务有一种热忱和鉴赏力，同时能够有做好他的技术，这样才不会造成价值观的混乱和生活的疏离感。
+感觉此时的中国和上世纪的美国面临着类似的问题，人们缺乏信仰，生活无价值无意义，盲目拜金等等问题，都是价值观混乱的表现。
+而作者通过自己内心之路的探求，提出了一种基于良质的解决方法，虽然道理容易理解，但是思考的过程十分严谨，令人信服，感觉收获颇丰。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elasticsearch on dailydreamer</title>
+    <link>https://dailydreamer.me/tags/elasticsearch/index.xml</link>
+    <description>Recent content in Elasticsearch on dailydreamer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://dailydreamer.me/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ElasticSearch搜索配置（2）</title>
+      <link>https://dailydreamer.me/post/2015-06-22-elasticsearch-config-2/</link>
+      <pubDate>Mon, 22 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-06-22-elasticsearch-config-2/</guid>
+      <description>
+
+&lt;p&gt;这次再来说说ElasticSearch的其他一些特性。&lt;/p&gt;
+
+&lt;h2 id=&#34;bulk&#34;&gt;Bulk&lt;/h2&gt;
+
+&lt;p&gt;使用Index进行索引是一次索引一条doc，而bulk提供了批量索引的功能，能够显著的减少索引时间。
+经过实际测试，对于1个100Mb约20K条doc，向远程服务器单节点发起索引的完成时间对比如下表。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;chunck_size&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;time/s&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;200&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;298.34&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;500&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;216.84&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;1000&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;169.64&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;2000&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;164.71&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;可以看出chunck_size在一个合适的区间时可以显著减少索引时间，而chunck_size的选取也和一个doc的大小有关。&lt;/p&gt;
+
+&lt;p&gt;这里是&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html&#34;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;ElasticSearch的python API中对bulk进行了封装，有&lt;code&gt;helpers.streaming_bulk&lt;/code&gt;和&lt;code&gt;helpers.bulk&lt;/code&gt;两个方法，&lt;a href=&#34;https://elasticsearch-py.readthedocs.org/en/master/helpers.html?highlight=bulk#elasticsearch.helpers.bulk&#34;&gt;官方文档&lt;/a&gt;在这。大致使用方法如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;for success, fail in helpers.streaming_bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000):
+    print &#39;success: &#39;, success
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;success, fail = helpers.bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中geDoc()是一个迭代器。
+这两个方法的区别在于bulk调用了streaming_bulk并将信息一起返回。&lt;/p&gt;
+
+&lt;h2 id=&#34;拼音搜索&#34;&gt;拼音搜索&lt;/h2&gt;
+
+&lt;p&gt;对于中文内容较多的索引，如果能够使用拼音搜索会十分方便。
+ElasticSearch有插件&lt;a href=&#34;https://github.com/medcl/elasticsearch-analysis-pinyin&#34;&gt;elasticsearch-analysis-pinyin&lt;/a&gt;可以实现这个功能。
+它可以将中文转化为拼音字母，在建立索引的时候就可以在倒排列表中使对应的拼音字母关联到包含中文的Doc上。&lt;/p&gt;
+
+&lt;p&gt;为了将拼音搜索的索引和IK分词的索引结合，需要用到另一个插件&lt;a href=&#34;https://github.com/yakaz/elasticsearch-analysis-combo/&#34;&gt;elasticsearch-analysis-combo&lt;/a&gt;。
+它可以将两个Analyzer的结果合并起来得到一个新的Analyzer。&lt;/p&gt;
+
+&lt;p&gt;基本的配置如下。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;index:
+  analysis:
+    analyzer:
+      ik:
+          alias: [news_analyzer_ik,ik_analyzer]
+          type: org.elasticsearch.index.analysis.IkAnalyzerProvider
+      ik_max_word:
+          type: ik
+          use_smart: false
+      ik_smart:
+          type: ik
+          use_smart: true
+      pinyin:
+        type: custom
+        tokenizer: standard
+        filter:
+         - standard 
+         - pinyin_filter
+         - lowercase         
+      combo:
+        type: combo
+        sub_analyzers: 
+         - ik
+         - pinyin
+    filter:
+      pinyin_filter : 
+        type : pinyin
+        first_letter : none
+        padding_char : &#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;先使用pinyin插件定义一个pinyin filter， &lt;code&gt;first_letter&lt;/code&gt;属性看是否得到拼音首字母缩写，&lt;code&gt;padding_char&lt;/code&gt;属性确定首字母缩写和全拼音的连接方式。
+然后定义一个custom的pinyin analyzer。tokenizer使用standard，将所有汉字词语分成单个字，filter先通过standard初步过滤，然后使用pinyin filter转成单个字的拼音，最后使用lowercase统一小写。&lt;/p&gt;
+
+&lt;p&gt;效果如下：&lt;/p&gt;
+
+&lt;p&gt;输入命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl -XGET &#39;http://localhost:9200/school_search_index/_analyze?analyzer=pinyin&amp;amp;pretty&#39; -d &#39;清华大学&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;得到结果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;tokens&amp;quot; : [ {
+    &amp;quot;token&amp;quot; : &amp;quot;qing&amp;quot;,
+    &amp;quot;start_offset&amp;quot; : 0,
+    &amp;quot;end_offset&amp;quot; : 1,
+    &amp;quot;type&amp;quot; : &amp;quot;&amp;lt;IDEOGRAPHIC&amp;gt;&amp;quot;,
+    &amp;quot;position&amp;quot; : 1
+  }, {
+    &amp;quot;token&amp;quot; : &amp;quot;hua&amp;quot;,
+    &amp;quot;start_offset&amp;quot; : 1,
+    &amp;quot;end_offset&amp;quot; : 2,
+    &amp;quot;type&amp;quot; : &amp;quot;&amp;lt;IDEOGRAPHIC&amp;gt;&amp;quot;,
+    &amp;quot;position&amp;quot; : 2
+  }, {
+    &amp;quot;token&amp;quot; : &amp;quot;da&amp;quot;,
+    &amp;quot;start_offset&amp;quot; : 2,
+    &amp;quot;end_offset&amp;quot; : 3,
+    &amp;quot;type&amp;quot; : &amp;quot;&amp;lt;IDEOGRAPHIC&amp;gt;&amp;quot;,
+    &amp;quot;position&amp;quot; : 3
+  }, {
+    &amp;quot;token&amp;quot; : &amp;quot;xue&amp;quot;,
+    &amp;quot;start_offset&amp;quot; : 3,
+    &amp;quot;end_offset&amp;quot; : 4,
+    &amp;quot;type&amp;quot; : &amp;quot;&amp;lt;IDEOGRAPHIC&amp;gt;&amp;quot;,
+    &amp;quot;position&amp;quot; : 4
+  } ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最后使用combo analyzer将两个analyzer合并。&lt;/p&gt;
+
+&lt;h2 id=&#34;自动补全&#34;&gt;自动补全&lt;/h2&gt;
+
+&lt;p&gt;搜索引擎的自动补全有两种类型。
+一种是基于你过去或者是其他人的热门的搜索历史进行补全，另一种是基于语言模型进行补全。&lt;/p&gt;
+
+&lt;p&gt;对于第一种根据搜索历史的补全，适用与拥有大量数据的搜索引擎。
+在ElasticSearch中可以使用&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters-completion.html&#34;&gt;Completion Suggester&lt;/a&gt;实现。
+由于不适用与用户数据较少的搜索引擎，便不细说，可以参考&lt;a href=&#34;http://blog.qbox.io/quick-and-dirty-autocomplete-with-elasticsearch-completion-suggest&#34;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;第二种基于语言模型的补全，可以使用类似于拼音搜索的实现方式，在建立索引的时候对一个单词string的所有substring都建立到包含该string的Doc的映射即可。
+但是需要注意的是这样会显著增加索引的大小。&lt;/p&gt;
+
+&lt;p&gt;在ElasticSearch中可以使用&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-ngram-tokenizer.html#analysis-ngram-tokenizer&#34;&gt;n-Gram Tokenizer&lt;/a&gt;或&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-ngram-tokenfilter.html&#34;&gt;n-Gram filter&lt;/a&gt;实现。
+具体可以参考&lt;a href=&#34;http://jontai.me/blog/2013/02/adding-autocomplete-to-an-elasticsearch-search-application/&#34;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ElasticSearch搜索配置（1）</title>
+      <link>https://dailydreamer.me/post/2015-06-05-elasticsearch-config-1/</link>
+      <pubDate>Fri, 05 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-06-05-elasticsearch-config-1/</guid>
+      <description>
+
+&lt;p&gt;最近在用ElasticSearch做一些搜索，来谈谈其中用到的一些特性。&lt;/p&gt;
+
+&lt;p&gt;ElasticSearch是基于Lucene的分布式包装，其中每一个分片或一个副本都是一个Lucene实例。
+ElasticSearch实现了很好的扩展性和冗余，自动负载均衡。可以通过Restful API与ElasticSearch集群交互。
+我使用的是&lt;a href=&#34;https://elasticsearch-py.readthedocs.org/en/master/&#34;&gt;python API&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;可以参考&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/guide/master/index.html&#34;&gt;ElasticSearch权威指南&lt;/a&gt;，讲解非常清楚。&lt;/p&gt;
+
+&lt;h2 id=&#34;建立索引&#34;&gt;建立索引&lt;/h2&gt;
+
+&lt;p&gt;建立索引的时候可以使用mapping建立对每个字段建立映射。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;mapping_body = {
+    &#39;mappings&#39;:{
+        &#39;tweet&#39;:{
+            &amp;quot;properties&amp;quot;:{
+                &#39;text&#39;:{&#39;type&#39;:&#39;string&#39;, &#39;index&#39;:&#39;analyzed&#39;, &#39;analyzer&#39;:&#39;ik_smart&#39;, &#39;similarity&#39;: &#39;BM25&#39;}
+            }
+        }
+    }
+}
+es.indices.create(index=&#39;test-index&#39;, body=mapping_body)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面为&amp;rsquo;test-index&amp;rsquo;的索引中&amp;rsquo;tweet&amp;rsquo;的type中&amp;rsquo;text&amp;rsquo;字段建立映射。&lt;/p&gt;
+
+&lt;p&gt;&amp;lsquo;index&amp;rsquo;设置为analyzed说明要先通过分析器，&amp;rsquo;analyzer&amp;rsquo;设置分析器为ik分词的智能粒度切分，默认为standard，不适合中文分词;&amp;lsquo;similarity&amp;rsquo;设置了相似度算法为BM25，默认为向量空间算法。&lt;/p&gt;
+
+&lt;p&gt;具体可以看&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html&#34;&gt;文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;查询&#34;&gt;查询&lt;/h2&gt;
+
+&lt;p&gt;查询可以通过ID来检索，但是作为一个搜索引擎，ElasticSearch提供了一种基于JSON的&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#34;&gt;DSL查询格式&lt;/a&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;search_body = {
+    &amp;quot;query&amp;quot;: {
+        &amp;quot;multi_match&amp;quot;: {
+            &amp;quot;query&amp;quot;:       &amp;quot;Hello世界&amp;quot;,
+            &amp;quot;type&amp;quot;:        &amp;quot;cross_fields&amp;quot;, 
+            &amp;quot;operator&amp;quot;:    &amp;quot;or&amp;quot;,
+            &amp;quot;fields&amp;quot;:      [ &amp;quot;author&amp;quot;, &amp;quot;text^2&amp;quot; ]
+        }
+     },
+    &#39;highlight&#39;:{
+        &#39;fields&#39;:{
+            &#39;author&#39;:{},
+            &#39;text&#39;:{}
+        }
+    }
+
+}
+res = es.search(index=&#39;test-index&#39;, doc_type=&#39;tweet&#39;, body=search_body)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;query&#34;&gt;Query&lt;/h3&gt;
+
+&lt;p&gt;上面的示例中使用了&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html&#34;&gt;multi match query&lt;/a&gt;来进行多字段查询，multi match query对fields中的每个field进行query查询。&lt;/p&gt;
+
+&lt;p&gt;&amp;lsquo;operator&amp;rsquo;定义了对查询结果进行的操作，&amp;rsquo;or&amp;rsquo;代表取并集。&lt;/p&gt;
+
+&lt;p&gt;fields中的&lt;code&gt;^&lt;/code&gt;代表对该字段进行boost，之后的值为浮点数，小于1表示减轻权重，否则加大权重。&lt;/p&gt;
+
+&lt;p&gt;&amp;lsquo;type&amp;rsquo;中的类型和适用场景见下表&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Explain&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;best_fields&lt;/td&gt;
+&lt;td&gt;(default) Finds documents which match any field, but uses the &lt;code&gt;_score&lt;/code&gt; from the best field. See best_fields.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;most_fields&lt;/td&gt;
+&lt;td&gt;Finds documents which match any field and combines the &lt;code&gt;_score&lt;/code&gt; from each field. See most_fields.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;cross_fields&lt;/td&gt;
+&lt;td&gt;Treats fields with the same analyzer as though they were one big field. Looks for each word in any field. See cross_fields.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;phrase&lt;/td&gt;
+&lt;td&gt;Runs a match_phrase query on each field and combines the &lt;code&gt;_score&lt;/code&gt; from each field. See phrase and phrase_prefix.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;phrase_prefix&lt;/td&gt;
+&lt;td&gt;Runs a match_phrase_prefix query on each field and combines the &lt;code&gt;_score&lt;/code&gt; from each field. See phrase and phrase_prefix.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;code&gt;cross_fields&lt;/code&gt;是将所有字段放在一起搜索，跟对&lt;code&gt;_all&lt;/code&gt;进行query相比它可以附加权重，但是效率略微低一点。&lt;/p&gt;
+
+&lt;p&gt;更加详细的type的使用情景可以看权威指南的&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/guide/current/_single_query_string.html&#34;&gt;Know Your Data&lt;/a&gt;一节。&lt;/p&gt;
+
+&lt;h3 id=&#34;function-score-query和script&#34;&gt;Function Score query和script&lt;/h3&gt;
+
+&lt;p&gt;如果需要吧离线算好的pagerank和在线查询的得分结合起来给结果排序，可以使用强大的&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-function-score-query.html&#34;&gt;Function Score query&lt;/a&gt;和&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting.html#_indexed_scripts&#34;&gt;script&lt;/a&gt;来做到这一点。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;&amp;quot;query&amp;quot;:{
+    &amp;quot;function_score&amp;quot;: {
+        &amp;quot;boost_mode&amp;quot;: &amp;quot;replace&amp;quot;,
+        &amp;quot;query&amp;quot;: {
+            &amp;quot;multi_match&amp;quot;: {
+                &amp;quot;query&amp;quot;:query,
+                &amp;quot;type&amp;quot;:&amp;quot;cross_fields&amp;quot;, 
+                &amp;quot;operator&amp;quot;:&amp;quot;or&amp;quot;,
+                &amp;quot;fields&amp;quot;:SEACHFIELDS
+            }
+         },
+        &amp;quot;script_score&amp;quot;: {
+            &amp;quot;lang&amp;quot;:&amp;quot;groovy&amp;quot;,
+            &amp;quot;params&amp;quot;: {
+                &amp;quot;pagerankField&amp;quot;: PAGERANK, 
+                &amp;quot;pagerankW&amp;quot;: PAGERANKW, 
+                &amp;quot;scoreW&amp;quot;: 1 - PAGERANKW
+            },
+            &amp;quot;script_file&amp;quot;: &amp;quot;school-search&amp;quot;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用&lt;code&gt;function_score&lt;/code&gt;将原query包裹起来，在&lt;code&gt;script_score&lt;/code&gt;中，&lt;code&gt;lang&lt;/code&gt;设置脚本语言，默认为groovy;&lt;code&gt;params&lt;/code&gt;设置脚本参数，&lt;code&gt;script_file&lt;/code&gt;指定脚本文件，脚本文件保存在&lt;code&gt;./config/scripts/&lt;/code&gt;下，不用写出后缀名，&lt;code&gt;config/scripts/group1/group2/test.py&lt;/code&gt;应该命名为&lt;code&gt;group1_group2_test&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;脚本内容类似下面&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-groovy&#34;&gt;_score * scoreW + doc[pagerankField].value * pagerankW
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中&lt;code&gt;_score&lt;/code&gt;是query得分，&lt;code&gt;doc[field_name]&lt;/code&gt;可以获得当前doc的field，也可在其中使用&lt;code&gt;parms&lt;/code&gt;中指定的参数。&lt;/p&gt;
+
+&lt;p&gt;还有一种使用脚本的方法是将其索引在一个特殊文件&lt;code&gt;.scripts&lt;/code&gt;中，但是由于这个功能曾经爆出漏洞，而且性能不如上面的方法，现在已经默认关闭，在此不再讨论。&lt;/p&gt;
+
+&lt;h3 id=&#34;highlight&#34;&gt;Highlight&lt;/h3&gt;
+
+&lt;p&gt;使用highlight可以在返回结果的&amp;rsquo;highlight&amp;rsquo;字段中对匹配词进行高亮，&amp;rsquo;fields&amp;rsquo;设置要高亮的field，还可以对高亮格式进行设置，默认为&lt;em&gt;&lt;/em&gt;。详细可以看&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-highlighting.html#_highlight_query&#34;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;filter&#34;&gt;Filter&lt;/h3&gt;
+
+&lt;p&gt;filter更像是数据库中的一些操作，不会返回_score值，只有满足条件才会被返回，但是相比query效率更高。详细可以看&lt;a href=&#34;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-filters.html&#34;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;有了这些基本能够满足简单的搜索需要了。&lt;/p&gt;
+
+&lt;p&gt;找到了一个翻译了一部分权威指南的Blog，记录在&lt;a href=&#34;http://blog.csdn.net/dm_vincent/article/details/41820537&#34;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>在AWS上配置ElasticSearch</title>
+      <link>https://dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/</link>
+      <pubDate>Tue, 02 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/</guid>
+      <description>
+
+&lt;p&gt;最近在AWS EC2上部署了ElasticSearch，感觉AWS的文档详细但稍显凌乱，在这里总结一下步骤。&lt;/p&gt;
+
+&lt;p&gt;首先注册AWS。注意你需要一张支持外币支付的信用卡。&lt;/p&gt;
+
+&lt;p&gt;然后创建IAM用户，并配置其权限和密钥对。
+可按照&lt;a href=&#34;http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html&#34;&gt;文档&lt;/a&gt;中的步骤来。
+注意为了使elasticsearch节点启动后能够自动发现别的节点，你可能需要在这一步为该用户而外设置read-only权限。&lt;/p&gt;
+
+&lt;p&gt;之后有两种方案，可以直接部署在&lt;a href=&#34;http://aws.amazon.com/cn/ec2/&#34;&gt;EC2&lt;/a&gt;上，价格便宜量又足。
+也可以部署在&lt;a href=&#34;http://aws.amazon.com/cn/elasticmapreduce/&#34;&gt;EMR&lt;/a&gt;上，获得Haddop的集群管理能力，方便扩展以及将来部署其它基于Haddop的程序。但是注意使用EMR除了支付EMR的计费还要支付其使用的EC2及S3等的计费。&lt;/p&gt;
+
+&lt;h2 id=&#34;部署在ec2上&#34;&gt;部署在EC2上&lt;/h2&gt;
+
+&lt;p&gt;进入EC2控制面板启动实例。
+如果你希望数据在EC2实例关闭后不丢失需要为其配置挂载EBS卷并将其存储至EBS中，详细见&lt;a href=&#34;http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/ebs-using-volumes.html&#34;&gt;文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;注意EBS卷最好在home/ec2-user/下新建目录挂载，上次我挂载在home/ec2-user/下结果不知道.ssh是存在那里的，然后就连接不上了。。。
+挂载完EBS卷后需要更改其权限使得普通用户可以读写文件。
+&lt;code&gt;sudo chmod 777 ./ -R&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;之后为其配置EIP来避免每次重启实例后IP地址改变。
+EIP是一个固定的共有IP，将其和一个EC2实例的私有IP绑定即可。
+这样也方便切换实例而IP不变。&lt;/p&gt;
+
+&lt;p&gt;最后即可ssh连接到EC2上然后安装ElasticSearch了。&lt;/p&gt;
+
+&lt;p&gt;安装好ElasticSearch之后还需安装&lt;a href=&#34;https://github.com/elastic/elasticsearch-cloud-aws&#34;&gt;elasticsearch-cloud-aws插件&lt;/a&gt;并配置才能实现自动Discovery。
+大致的配置如&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;# AWS discovery
+cloud.aws.access_key: KEY
+cloud.aws.secret_key: KEY
+
+plugin.mandatory: cloud-aws
+discovery.type: ec2
+discovery.zen.ping.multicast.enabled: false
+discovery.ec2.groups: &amp;quot;elasticsearch&amp;quot;
+
+discovery.ec2.availability_zones: &amp;quot;ap-northeast-1a&amp;quot;
+cloud.aws.region: &amp;quot;ap-northeast-1&amp;quot;
+
+discovery.ec2.host_type: &amp;quot;public_ip&amp;quot;
+network.publish_host: [PUBLIC_IP]
+
+discovery.ec2.ping_timeout: &amp;quot;30s&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;discovery.ec2.groups是你的EC2集群所在的安全组，注意用这种方式的设置会将必须该安全组中所有节点都启动ElasticSearch服务才行，否则会一直等待。
+如果不想这样可以使用Tag设置。&lt;/p&gt;
+
+&lt;p&gt;discovery.ec2.availability_zones一定要写对，否则节点会无法互相发现，不知道可以看EC2控制面版中有写。&lt;/p&gt;
+
+&lt;p&gt;network.publish_host是该节点的公网IP，可使用绑定的弹性IP。&lt;/p&gt;
+
+&lt;p&gt;更加详细的设置可以看&lt;a href=&#34;http://www.markbetz.net/2014/03/18/elasticsearch-discovery-in-ec2/&#34;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;有关部署的更加详细的步骤可以参考&lt;a href=&#34;http://pavelpolyakov.com/2014/08/13/elasticsearch-cluster-on-aws-part-1-preparing-environment/&#34;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;注意如果弹性IP更换了绑定的实例之后要ssh之前需要将原来保存在本地的host_key删除，使用命令&lt;code&gt;ssh-keygen -R hostname&lt;/code&gt;,否则会报Host key verification failed。&lt;/p&gt;
+
+&lt;h2 id=&#34;部署在emr上&#34;&gt;部署在EMR上&lt;/h2&gt;
+
+&lt;p&gt;安装AWS CLI。
+可按照&lt;a href=&#34;http://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-welcome.html&#34;&gt;文档&lt;/a&gt;安装并配置。&lt;/p&gt;
+
+&lt;p&gt;然后直接使用Amazon EMR的&lt;a href=&#34;https://github.com/awslabs/emr-bootstrap-actions/tree/master/elasticsearch&#34;&gt;bootstrp action脚本&lt;/a&gt;即可。
+这个仓库中还有其它基于Hadooop的软件的启动脚本，如spark，cascading等。&lt;/p&gt;
+
+&lt;p&gt;输入命令(相关参数可自行配置)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;aws emr create-cluster \
+--ec2-attributes KeyName=&amp;quot;&amp;lt;YOUR_EC2_KEYNAME&amp;gt;&amp;quot; \
+--log-uri=&amp;quot;&amp;lt;YOUR_LOGGING_BUCKET&amp;gt;&amp;quot; \
+--bootstrap-action \
+  Name=&amp;quot;Install ElasticSearch&amp;quot;,Path=&amp;quot;s3://support.elasticmapreduce/bootstrap-actions/other/elasticsearch_install.rb&amp;quot; \
+  Name=&amp;quot;Installkibanaginx&amp;quot;,Path=&amp;quot;s3://support.elasticmapreduce/bootstrap-actions/other/kibananginx_install.rb&amp;quot; \
+  Name=&amp;quot;Installlogstash&amp;quot;,Path=&amp;quot;s3://support.elasticmapreduce/bootstrap-actions/other/logstash_install.rb&amp;quot; \
+--ami-version=3.5.0 \
+--instance-count=3 \
+--instance-type=m1.medium \
+--name=&amp;quot;TestElasticSearch&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;即可启动一个3节点的elasticsearch集群，并安装kibana和logstash。&lt;/p&gt;
+
+&lt;p&gt;至此，ElasticSearch集群便部署完成了。Enjoy your search~&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
