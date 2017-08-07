@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on dailydreamer</title>
-    <link>https://dailydreamer.me/tags/web/index.xml</link>
+    <link>https://dailydreamer.me/tags/web/</link>
     <description>Recent content in Web on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <atom:link href="https://dailydreamer.me/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 May 2016 20:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://dailydreamer.me/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>WebRTC简介</title>
@@ -14,42 +17,13 @@
       <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
       
       <guid>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</guid>
-      <description>
-
-&lt;h2 id=&#34;webrtc-http-www-html5rocks-com-en-tutorials-webrtc-basics-简介&#34;&gt;&lt;a href=&#34;http://www.html5rocks.com/en/tutorials/webrtc/basics/&#34;&gt;WebRTC&lt;/a&gt;简介&lt;/h2&gt;
-
-&lt;p&gt;WebRTC是一种在浏览器中无需任何插件的点对点(P2P)实时视频、音频、数据交流协议，其中RTC是实时沟通(Real Time Communication)的缩写。
-过去，实时沟通昂贵且实现复杂，需要专用的视频和音频设备及技术，使得将其集成进已有服务昂贵且费时。
-后来，Google开源了Gmail和Hangouts中使用的RTC技术，并且参与W3C相关规范的制定。
-2011年，WebRTC第一个版本被实现。
-现在WebRTC技术已经被WhatsApp, Facebook Messenger等应用广泛使用。&lt;/p&gt;
-
-&lt;p&gt;WebRTC主要实现了3个API，&lt;code&gt;getUserMedia&lt;/code&gt;、&lt;code&gt;RTCPeerConnection&lt;/code&gt;和&lt;code&gt;RTCDataChannel&lt;/code&gt;。
-其中&lt;code&gt;getUserMedia&lt;/code&gt;定义了来获取设备上的视频(包括摄像头输入和屏幕输入等)、音频流的接口。&lt;code&gt;RTCPeerConnection&lt;/code&gt;定义了用于处理两个客户端之间的流数据的接口。&lt;code&gt;RTCDataChannel&lt;/code&gt;定义了用于处理两个客户端之间任意数据收发的接口。&lt;/p&gt;
-
-&lt;h2 id=&#34;使用webrtc过程&#34;&gt;使用WebRTC过程&lt;/h2&gt;
-
-&lt;p&gt;使用WebRTC时需要如下步骤：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;使用getUserMedia获取MediaStream流数据，此时可以用Constraints对MediaStream的帧率、宽、高等进行设置。&lt;/li&gt;
-&lt;li&gt;使用RTCPeerConnection初始化客户端session，将MediaStream附加到session上。&lt;/li&gt;
-&lt;li&gt;获取网络信息(如IP地址、端口等)，与其他客户端进行Signaling(信令交换)。
-该过程使用&lt;a href=&#34;https://en.wikipedia.org/wiki/Session_Description_Protocol&#34;&gt;SDP（Session Description Protocol）协议&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;Signaling交换流媒体数据信息(如编码、分辨率等)。&lt;/li&gt;
-&lt;li&gt;Signaling过程完成，直接点对点交换流媒体数据MediaStream。&lt;/li&gt;
-&lt;li&gt;(可选)建立RTCDataChannel进行数据交换。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;实际应用中，会遇到客户端处于防火墙或NAT之后等复杂情况，这时需要用到&lt;a href=&#34;http://en.wikipedia.org/wiki/STUN&#34;&gt;STUN协议&lt;/a&gt;或&lt;a href=&#34;https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT&#34;&gt;TURN协议&lt;/a&gt;等来实现防火墙和NAT穿透，获取真实的网络信息。&lt;/p&gt;
-
-&lt;p&gt;由于WebRTC在建立session之后流媒体数据是点对点传输，这样虽然很快，但是如果遇到大量客户端的视频会议等场景，客户端之间需要两两连接，对于客户端带宽要求很高。
-这时就需要&lt;a href=&#34;https://en.wikipedia.org/wiki/Multipoint_control_unit&#34;&gt;MCU(Multipoint Control Unit)&lt;/a&gt;来改变网络拓扑，节省带宽提高性能。&lt;/p&gt;
-
-&lt;p&gt;WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交换，如WebSocket或XMPP等。&lt;/p&gt;
-
-&lt;p&gt;由于WebRTC标准实现还未最终完全确定，各个浏览器都需开启实验性功能才能使用，可以考虑Chrome插件或者使用Electron封装成桌面程序的形式提供更好的用户体验。&lt;/p&gt;
-</description>
+      <description>WebRTC简介 WebRTC是一种在浏览器中无需任何插件的点对点(P2P)实时视频、音频、数据交流协议，其中RTC是实时沟通(Real Time Communication)的缩写。 过去，实时沟通昂贵且实现复杂，需要专用的视频和音频设备及技术，使得将其集成进已有服务昂贵且费时。 后来，Google开源了Gmail和Hangouts中使用的RTC技术，并且参与W3C相关规范的制定。 2011年，WebRTC第一个版本被实现。 现在WebRTC技术已经被WhatsApp, Facebook Messenger等应用广泛使用。
+WebRTC主要实现了3个API，getUserMedia、RTCPeerConnection和RTCDataChannel。 其中getUserMedia定义了来获取设备上的视频(包括摄像头输入和屏幕输入等)、音频流的接口。RTCPeerConnection定义了用于处理两个客户端之间的流数据的接口。RTCDataChannel定义了用于处理两个客户端之间任意数据收发的接口。
+使用WebRTC过程 使用WebRTC时需要如下步骤：
+ 使用getUserMedia获取MediaStream流数据，此时可以用Constraints对MediaStream的帧率、宽、高等进行设置。 使用RTCPeerConnection初始化客户端session，将MediaStream附加到session上。 获取网络信息(如IP地址、端口等)，与其他客户端进行Signaling(信令交换)。 该过程使用SDP（Session Description Protocol）协议。 Signaling交换流媒体数据信息(如编码、分辨率等)。 Signaling过程完成，直接点对点交换流媒体数据MediaStream。 (可选)建立RTCDataChannel进行数据交换。  实际应用中，会遇到客户端处于防火墙或NAT之后等复杂情况，这时需要用到STUN协议或TURN协议等来实现防火墙和NAT穿透，获取真实的网络信息。
+由于WebRTC在建立session之后流媒体数据是点对点传输，这样虽然很快，但是如果遇到大量客户端的视频会议等场景，客户端之间需要两两连接，对于客户端带宽要求很高。 这时就需要MCU(Multipoint Control Unit)来改变网络拓扑，节省带宽提高性能。
+WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交换，如WebSocket或XMPP等。
+由于WebRTC标准实现还未最终完全确定，各个浏览器都需开启实验性功能才能使用，可以考虑Chrome插件或者使用Electron封装成桌面程序的形式提供更好的用户体验。</description>
     </item>
     
     <item>
@@ -58,128 +32,12 @@
       <pubDate>Mon, 25 Apr 2016 20:00:00 +0800</pubDate>
       
       <guid>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</guid>
-      <description>
-
-&lt;h2 id=&#34;dom和html-javascript-css的关系&#34;&gt;DOM和HTML，JavaScript，CSS的关系&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction&#34;&gt;Document Object Model(DOM)&lt;/a&gt;是W3C制定的一种语言无关的面向对象的文档模型，规定了一组可编程的interface需要实现的属性和方法。
-HTML和XML文档实现了DOM，因此拥有面向对象的特性，其结构、样式、内容等可以被其他语言的DOM实现操纵。
-DOM Level 4是2015年的最新一版标准。&lt;/p&gt;
-
-&lt;p&gt;HTML中&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;元素中嵌入的JavaScript就是DOM的一种实现，如下所示：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var paragraphs = document.getElementsByTagName(&amp;quot;P&amp;quot;);
-// paragraphs[0] is the first &amp;lt;p&amp;gt; element
-// paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc.
-alert(paragraphs[0].nodeName);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;其中&lt;code&gt;document&lt;/code&gt;对象，&lt;code&gt;getElementsByTagName&lt;/code&gt;方法，&lt;code&gt;alert&lt;/code&gt;方法，&lt;code&gt;nodeName&lt;/code&gt;属性均是DOM标准规定的。&lt;/p&gt;
-
-&lt;p&gt;你也可以用其它语言操作DOM，如下的Python示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;# Python DOM example
-import xml.dom.minidom as m
-doc = m.parse(&amp;quot;test.xml&amp;quot;);
-doc.nodeName # DOM property of document object;
-p_list = doc.getElementsByTagName(&amp;quot;para&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var table = document.getElementById(&amp;quot;table&amp;quot;);
-var tableAttrs = table.attributes; // Node/Element interface
-for (var i = 0; i &amp;lt; tableAttrs.length; i++) {
-  // HTMLTableElement interface: border attribute
-  if(tableAttrs[i].nodeName.toLowerCase() == &amp;quot;border&amp;quot;)
-    table.border = &amp;quot;1&amp;quot;;
-}
-// HTMLTableElement interface: summary attribute
-table.summary = &amp;quot;note: increased border&amp;quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;attributes&lt;/code&gt;属性是DOM标准，&lt;code&gt;border&lt;/code&gt;和&lt;code&gt;summary&lt;/code&gt;属性是HTML标准。&lt;/p&gt;
-
-&lt;p&gt;其它XML的方言如SVG等也有实现DOM之外的标准。&lt;/p&gt;
-
-&lt;p&gt;CSS是一种为DOM文档标记样式的语言，而DOM Element种的style属性被解释为行内样式表。&lt;/p&gt;
-
-&lt;h2 id=&#34;dom-event&#34;&gt;DOM Event&lt;/h2&gt;
-
-&lt;p&gt;DOM Level 2中规定了基本的&lt;a href=&#34;https://www.w3.org/TR/DOM-Level-2-Events/events.html&#34;&gt;DOM Event Model&lt;/a&gt;，包括事件的处理流程以及注册方法等等。
-这里主要讲一下事件处理流程，感觉和WPF的事件机制很相似。&lt;/p&gt;
-
-&lt;h3 id=&#34;基本流程&#34;&gt;基本流程&lt;/h3&gt;
-
-&lt;p&gt;在DOM implementation中触发事件后，触发事件的元素EventTarget被指定给Event对象的target属性。
-如果该事件没有使用事件捕获和事件冒泡，那么所有的EventListener被执行后事件处理结束。
-如果使用了事件捕获或事件冒泡，那么事件传播过程如后文所示，依次执行过程中所有元素上注册的该事件的EventListener。
-执行过程是同步的，且一个EventListener内的异常不会影响后续EventListener的执行。&lt;/p&gt;
-
-&lt;h3 id=&#34;事件捕获-event-capture&#34;&gt;事件捕获(Event capture)&lt;/h3&gt;
-
-&lt;p&gt;事件捕获阶段，事件从DOM树的顶端元素，通常是Document，沿着EventTarget的祖先元素向EventTarget传播。
-设置addEventListener方法的useCapture属性为true可以使该EventListener在事件捕获阶段截获由其后代元素产生的相应事件，同时该EventListener在事件冒泡阶段不会再被触发。&lt;/p&gt;
-
-&lt;p&gt;注意和WPF等基于delegation的模型不同的是，截获的是后代元素的相应事件，这意味者如果EventTarget上的设置useCapture的EventListener不会被触发，因为自己不是自己的后代；
-并且指定的不是一个EventTarget，而是一种特定的事件类型，如果事件类型不同不会被触发。&lt;/p&gt;
-
-&lt;h3 id=&#34;事件冒泡-event-bubbling&#34;&gt;事件冒泡(Event bubbling)&lt;/h3&gt;
-
-&lt;p&gt;事件冒泡阶段，一开始和没有使用冒泡的事件一样，所有EventTarget上的EventListener都被执行。
-然后从EventTarget沿着DOM树，向其祖先元素传播，直到DOM树顶端，过程和事件捕获相反。
-设置了useCapture属性的EventListener不会在这一阶段被触发。&lt;/p&gt;
-
-&lt;p&gt;事件传播的链条在事件被触发时就已经确定，传播过程中DOM树的改变不影响传播过程。&lt;/p&gt;
-
-&lt;h3 id=&#34;stoppropagation&#34;&gt;stopPropagation&lt;/h3&gt;
-
-&lt;p&gt;在事件传播的过程中，如果一个EventListener调用了Event对象的stopPropagation方法，那么事件会停止传播，链条上后续元素的EventListener不会被触发。&lt;/p&gt;
-
-&lt;h3 id=&#34;preventdefault&#34;&gt;preventDefault&lt;/h3&gt;
-
-&lt;p&gt;一些事件被指定为cancelable。这些事件的DOM implementation通常都会有一些默认的事件处理方法。在这些事件上调用preventDefault方法可以阻止这些事件处理方法的执行。&lt;/p&gt;
-
-&lt;p&gt;如下例子展示了用preventDefault阻止非小写字母的输入。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-&amp;lt;title&amp;gt;preventDefault example&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;p&amp;gt;请输入一些字母,只允许小写字母.&amp;lt;/p&amp;gt;
-&amp;lt;form&amp;gt;
-&amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;my-textbox&amp;quot;/&amp;gt;
-&amp;lt;/form&amp;gt;
-&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
-function checkName(evt) {
-var charCode = evt.charCode;
-  if (charCode != 0) {
-    if (charCode &amp;lt; 97 || charCode &amp;gt; 122) {
-      evt.preventDefault();
-      alert(&amp;quot;只能输入小写字母.&amp;quot; + &amp;quot;\n&amp;quot;
-            + &amp;quot;charCode: &amp;quot; + charCode + &amp;quot;\n&amp;quot;
-      );
-    }
-  }
-}
-document.getElementById(&#39;my-textbox&#39;).addEventListener(
-    &#39;keypress&#39;, checkName, false
- );
-&amp;lt;/script&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;常用的mouseevent&#34;&gt;常用的MouseEvent&lt;/h3&gt;
-
-&lt;p&gt;有click，mousedown，mouseup，mouseover，mousemove，mouseout。&lt;/p&gt;
-
-&lt;p&gt;click是在同一屏幕位置的mousedown和mouseup先后依次触发后被触发。&lt;/p&gt;
-
-&lt;p&gt;MouseEvent都会冒泡，并且除mousemove外都Cancelable。&lt;/p&gt;
-</description>
+      <description>DOM和HTML，JavaScript，CSS的关系 Document Object Model(DOM)是W3C制定的一种语言无关的面向对象的文档模型，规定了一组可编程的interface需要实现的属性和方法。 HTML和XML文档实现了DOM，因此拥有面向对象的特性，其结构、样式、内容等可以被其他语言的DOM实现操纵。 DOM Level 4是2015年的最新一版标准。
+HTML中&amp;lt;script&amp;gt;元素中嵌入的JavaScript就是DOM的一种实现，如下所示：
+var paragraphs = document.getElementsByTagName(&amp;quot;P&amp;quot;); // paragraphs[0] is the first &amp;lt;p&amp;gt; element // paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc. alert(paragraphs[0].nodeName);  其中document对象，getElementsByTagName方法，alert方法，nodeName属性均是DOM标准规定的。
+你也可以用其它语言操作DOM，如下的Python示例：
+# Python DOM example import xml.dom.minidom as m doc = m.parse(&amp;quot;test.xml&amp;quot;); doc.nodeName # DOM property of document object; p_list = doc.getElementsByTagName(&amp;quot;para&amp;quot;);  HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：
+var table = document.getElementById(&amp;quot;table&amp;quot;); var tableAttrs = table.attributes; // Node/Element interface for (var i = 0; i &amp;lt; tableAttrs.</description>
     </item>
     
     <item>
@@ -188,170 +46,25 @@ document.getElementById(&#39;my-textbox&#39;).addEventListener(
       <pubDate>Thu, 14 Apr 2016 20:00:00 +0800</pubDate>
       
       <guid>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</guid>
-      <description>
-
-&lt;h2 id=&#34;html&#34;&gt;HTML&lt;/h2&gt;
-
-&lt;p&gt;block element块级元素，撑满一行&lt;/p&gt;
-
-&lt;p&gt;inline element行内元素，宽度包围内容&lt;/p&gt;
-
-&lt;h2 id=&#34;css原理&#34;&gt;CSS原理&lt;/h2&gt;
-
-&lt;h3 id=&#34;选择符&#34;&gt;选择符&lt;/h3&gt;
-
-&lt;p&gt;a, b {} 同时选中a和b&lt;/p&gt;
-
-&lt;p&gt;a b {} a是b的祖先元素时选中b&lt;/p&gt;
-
-&lt;p&gt;a &amp;gt; b {} a是b的父元素时选中b&lt;/p&gt;
-
-&lt;p&gt;a + b {} a紧邻b时选中b&lt;/p&gt;
-
-&lt;p&gt;a ~ b {} a和b是同胞时选中b&lt;/p&gt;
-
-&lt;p&gt;* {} 全部选中&lt;/p&gt;
-
-&lt;p&gt;.a {} 选中a类&lt;/p&gt;
-
-&lt;p&gt;#a {} 选中id为a&lt;/p&gt;
-
-&lt;p&gt;a.b {} 选中同时为a标签和b类&lt;/p&gt;
-
-&lt;p&gt;.a.b {} 选中同时为a类和b类&lt;/p&gt;
-
-&lt;p&gt;a[b] {} 选中a标签中带有b属性的&lt;/p&gt;
-
-&lt;p&gt;a[b=c] {} 选中a标签中b属性值为c的&lt;/p&gt;
-
-&lt;h4 id=&#34;伪类&#34;&gt;伪类&lt;/h4&gt;
-
-&lt;p&gt;a标签 a:link a:visited a:hover a:active&lt;/p&gt;
-
-&lt;p&gt;a:focus a:target&lt;/p&gt;
-
-&lt;p&gt;一组同胞元素中的第几个 a:first-child a:last-child a:nth-child(n) a:nth-child(odd) a:nth-child(even)&lt;/p&gt;
-
-&lt;h4 id=&#34;伪元素&#34;&gt;伪元素&lt;/h4&gt;
-
-&lt;p&gt;a::first-letter a::first-line&lt;/p&gt;
-
-&lt;p&gt;a::before a::after&lt;/p&gt;
-
-&lt;p&gt;搜索引擎不会索引伪元素&lt;/p&gt;
-
-&lt;h4 id=&#34;继承&#34;&gt;继承&lt;/h4&gt;
-
-&lt;p&gt;字体颜色等相关属性会继承，位置等相关属性不会继承&lt;/p&gt;
-
-&lt;h3 id=&#34;浏览器层叠样式表顺序&#34;&gt;浏览器层叠样式表顺序&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;浏览器默认&lt;/li&gt;
-&lt;li&gt;用户样式表&lt;/li&gt;
-&lt;li&gt;作者链接样式表（按链接先后顺序）&lt;/li&gt;
-&lt;li&gt;作者嵌入样式表&lt;/li&gt;
-&lt;li&gt;作者行内样式表&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;特指度：包含多少标签、类名、ID等（I-C-E三位数），特指度高的优先级高&lt;/p&gt;
-
-&lt;p&gt;特指度相同时顺序靠后的优先级高&lt;/p&gt;
-
-&lt;h3 id=&#34;css属性&#34;&gt;CSS属性&lt;/h3&gt;
-
-&lt;p&gt;文本值&lt;/p&gt;
-
-&lt;p&gt;数字值&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;px 像素&lt;/li&gt;
-&lt;li&gt;em 字体中M的宽度&lt;/li&gt;
-&lt;li&gt;ex 字体中x的高度&lt;/li&gt;
-&lt;li&gt;百分比&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;颜色值（颜色名，RGB，HSL，16进制）&lt;/p&gt;
-
-&lt;h2 id=&#34;定位元素&#34;&gt;定位元素&lt;/h2&gt;
-
-&lt;p&gt;垂直外边距叠加：垂直方向相邻两个box取margin较大的作为外边距&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;p {
-  font-size: 1em;
-  margin: .75em 30px;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如上排版文字最好垂直相对外边距，水平绝对外边距&lt;/p&gt;
-
-&lt;p&gt;给设定了宽度\高度的盒子加边框、内边距、外边距会使盒子更宽\更高。CSS3的box-sizing属性可以消除这一特点。&lt;/p&gt;
-
-&lt;h3 id=&#34;position&#34;&gt;position&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;static：普通文档流&lt;/li&gt;
-&lt;li&gt;relative: 仍然在文档流中，相对原来的box位置变化，原来box占据的位置不变&lt;/li&gt;
-&lt;li&gt;absolute：从文档流中脱出，会随页面滚动&lt;/li&gt;
-&lt;li&gt;fixed：从文档流中脱出，不会随页面滚动&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;定位上下文：带有非static position的最近祖先元素，默认是body。&lt;/p&gt;
-
-&lt;h3 id=&#34;display&#34;&gt;display&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;inline&lt;/li&gt;
-&lt;li&gt;block&lt;/li&gt;
-&lt;li&gt;none（空间会被回收）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;最近支持越来越好的flexbox布局，值得有空仔细研究。&lt;/p&gt;
-
-&lt;h3 id=&#34;background&#34;&gt;background&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;background-repeat&lt;/li&gt;
-&lt;li&gt;background-size&lt;/li&gt;
-&lt;li&gt;background-attachment&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;css3支持多张背景图片，先列出的在上层&lt;/p&gt;
-
-&lt;p&gt;背景渐变&lt;/p&gt;
-
-&lt;h2 id=&#34;字体和文本&#34;&gt;字体和文本&lt;/h2&gt;
-
-&lt;p&gt;em相对最近的被设置过字体的祖先大小&lt;/p&gt;
-
-&lt;p&gt;CSS3 rem相对root即body字体大小&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;text-indent&lt;/li&gt;
-&lt;li&gt;text-align&lt;/li&gt;
-&lt;li&gt;vertical-align: sub(下标) super(上标) top middle bottom&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Web字体&lt;/p&gt;
-
-&lt;h2 id=&#34;界面组件&#34;&gt;界面组件&lt;/h2&gt;
-
-&lt;p&gt;label的for属性可以把标签和控件关联起来&lt;/p&gt;
-
-&lt;p&gt;fieldset表单域&lt;/p&gt;
-
-&lt;p&gt;用section块级元素包裹label和input&lt;/p&gt;
-
-&lt;h2 id=&#34;响应式布局&#34;&gt;响应式布局&lt;/h2&gt;
-
-&lt;h3 id=&#34;媒体查询&#34;&gt;媒体查询&lt;/h3&gt;
-
-&lt;p&gt;媒体类型：all handled print screen 等&lt;/p&gt;
-
-&lt;p&gt;媒体特性：max-device-width max-width orientation&lt;/p&gt;
-
-&lt;p&gt;and not all 等逻辑运算符&lt;/p&gt;
-</description>
+      <description>HTML block element块级元素，撑满一行
+inline element行内元素，宽度包围内容
+CSS原理 选择符 a, b {} 同时选中a和b
+a b {} a是b的祖先元素时选中b
+a &amp;gt; b {} a是b的父元素时选中b
+a + b {} a紧邻b时选中b
+a ~ b {} a和b是同胞时选中b
+* {} 全部选中
+.a {} 选中a类
+#a {} 选中id为a
+a.b {} 选中同时为a标签和b类
+.a.b {} 选中同时为a类和b类
+a[b] {} 选中a标签中带有b属性的
+a[b=c] {} 选中a标签中b属性值为c的
+伪类 a标签 a:link a:visited a:hover a:active
+a:focus a:target
+一组同胞元素中的第几个 a:first-child a:last-child a:nth-child(n) a:nth-child(odd) a:nth-child(even)
+伪元素 a::first-letter a::first-line
+a::before a::after</description>
     </item>
     
     <item>
@@ -360,141 +73,19 @@ document.getElementById(&#39;my-textbox&#39;).addEventListener(
       <pubDate>Sat, 09 Apr 2016 20:00:00 +0800</pubDate>
       
       <guid>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</guid>
-      <description>
-
-&lt;p&gt;最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。
-为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。
-这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。&lt;/p&gt;
-
-&lt;h2 id=&#34;jwt-https-jwt-io-introduction&#34;&gt;&lt;a href=&#34;https://jwt.io/introduction/&#34;&gt;JWT&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。
-相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。
-相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。
-缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。&lt;/p&gt;
-
-&lt;p&gt;JWT由三部分组成，Header.Payload.Signature。&lt;/p&gt;
-
-&lt;h3 id=&#34;header&#34;&gt;Header&lt;/h3&gt;
-
-&lt;p&gt;Header包含签名算法和type，如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-  &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;,
-  &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Base64编码后即为Header。&lt;/p&gt;
-
-&lt;h3 id=&#34;payload&#34;&gt;Payload&lt;/h3&gt;
-
-&lt;p&gt;主体内容部分。有一些保留属性，如iss (issuer), exp (expiration time), sub (subject), aud (audience)等。也可以声明私有属性。&lt;/p&gt;
-
-&lt;p&gt;如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-  &amp;quot;sub&amp;quot;: &amp;quot;1234567890&amp;quot;,
-  &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;,
-  &amp;quot;admin&amp;quot;: true
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Base64编码后即为Payload。&lt;/p&gt;
-
-&lt;h3 id=&#34;signature&#34;&gt;Signature&lt;/h3&gt;
-
-&lt;p&gt;签名部分，生成过程如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;alg(
-  base64UrlEncode(header) + &amp;quot;.&amp;quot; +
-  base64UrlEncode(payload),
-  secret)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;其中alg为Header中声明的签名算法，常用的如SHA256等。
-结合secret校对签名可以保证JWT的完整性和不可伪造性。&lt;/p&gt;
-
-&lt;h3 id=&#34;身份验证过程&#34;&gt;身份验证过程&lt;/h3&gt;
-
-&lt;p&gt;后端API除了注册和登录外的需要身份验证的接口都对JWT签名进行验证，不通过则返回401 Unauthorized，保护API。
-用户注册登录后生成JWT返回用户，用户访问受保护的API时需要随请求发送JWT至服务器端。&lt;/p&gt;
-
-&lt;h2 id=&#34;两种常见的安全威胁&#34;&gt;两种常见的安全威胁&lt;/h2&gt;
-
-&lt;p&gt;接下来看看单页应用开发中几种常见的安全威胁：MITM(Man-In-The-Middle)，XSS(Cross-site scripting)和CSRF(Cross Site Request Forgery)。&lt;/p&gt;
-
-&lt;h3 id=&#34;mitm-https-www-owasp-org-index-php-man-in-the-middle-attack&#34;&gt;&lt;a href=&#34;https://www.owasp.org/index.php/Man-in-the-middle_attack&#34;&gt;MITM&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。
-这里我们在应用层主要使用SSL加密，即HTTPS防范它。
-在后端response的header的cookie设置&lt;code&gt;Secure&lt;/code&gt;字段，强制cookie使用HTTPS传输。&lt;/p&gt;
-
-&lt;h3 id=&#34;xss-https-www-owasp-org-index-php-cross-site-scripting-28xss-29&#34;&gt;&lt;a href=&#34;https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29&#34;&gt;XSS&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;XSS是指将恶意脚本注入站点，如在用户聊天框输入的地方输入如下内容&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=x onerror=&amp;quot;alert(XSS!)&amp;quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果不经过滤就显示内容，那么该网页就会执行被注入的脚本，弹出一个alert。&lt;/p&gt;
-
-&lt;p&gt;防范XSS的关键是不要信任任何用户提供的内容，对它们进行充分的过滤再使用。
-并且在后端response的header的cookie设置&lt;code&gt;HttpOnly&lt;/code&gt;字段，禁止浏览器Javascript脚本操作cookie。&lt;/p&gt;
-
-&lt;h3 id=&#34;csrf-https-www-owasp-org-index-php-cross-site-request-forgery-28csrf-29&#34;&gt;&lt;a href=&#34;https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29&#34;&gt;CSRF&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;CSRF利用了一个事实，即如&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;标签等发起的简单的GET请求是不被同源策略约束的。
-如果攻击者在他的页面中加入一个标签如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;http://example.com/api/user&amp;quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;引诱你访问这个界面后，该标签像example.com的user api发送GET请求，并且会附上你的example.com的cookie，那么攻击者就能得到你在example.com的user信息。&lt;/p&gt;
-
-&lt;p&gt;要防范CSRF，主要有两种方式。
-可以在后端的response的header中加入&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;白名单，限制跨域访问；
-或者使用一些Synchronizer Token技术。
-如在用户新建立一个sesseion时产生一个独有的Synchronizer Token，存储在表单的隐藏域、URL参数等地方，JWT的payload中也存储一份。
-然后每次请求时前端都通过Javascript脚本发送Synchronizer Token,而这个token攻击者无法获取（除非先进行XSS）。
-据此，后端就可以验证前端的身份非攻击者。&lt;/p&gt;
-
-&lt;h2 id=&#34;前端jwt存储&#34;&gt;前端JWT存储&lt;/h2&gt;
-
-&lt;p&gt;JWT存储有两种方式，localStorage和cookie。&lt;/p&gt;
-
-&lt;h3 id=&#34;localstorage&#34;&gt;localStorage&lt;/h3&gt;
-
-&lt;p&gt;后端返回JWT后，前端存储在localStorage中，每次请求时设置HTTP Authorization Header，使用Bearer scheme，如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;HTTP/1.1
-
-GET /api/user
-Host: example.com
-Authorization: Bearer Header.Payload.Signature
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;后端验证即可。&lt;/p&gt;
-
-&lt;p&gt;存储在localStorage的优点是不使用cookie，避免了JWT被MIMT和CSRF攻击。缺点时localStorage可以被Javascript访问，容易被XSS攻击。&lt;/p&gt;
-
-&lt;h3 id=&#34;cookie&#34;&gt;cookie&lt;/h3&gt;
-
-&lt;p&gt;后端response的header设置Set-Cookie，如下&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;HTTP/1.1 200 OK
-
-Set-Cookie: token=Header.Payload.Signature Secure; HttpOnly;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;前端发器跨域请求时，正确设置(见上一篇blog)后会同时附带cookie，后端验证即可。&lt;/p&gt;
-
-&lt;p&gt;存储在cookie的优点是在设置了&lt;code&gt;Secure; HttpOnly;&lt;/code&gt;后防范了XSS和MIMT攻击，但是容易收到CSRF攻击。&lt;/p&gt;
-
-&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-
-&lt;p&gt;JWT提供了一种很好的身份验证方式，至于存储在哪里向来有很多争论，这是一个权衡取舍的过程。&lt;/p&gt;
-</description>
+      <description>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。 这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。
+JWT JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。 相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。 相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。 缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。
+JWT由三部分组成，Header.Payload.Signature。
+Header Header包含签名算法和type，如下：
+{ &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;, &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot; }  Base64编码后即为Header。
+Payload 主体内容部分。有一些保留属性，如iss (issuer), exp (expiration time), sub (subject), aud (audience)等。也可以声明私有属性。
+如下：
+{ &amp;quot;sub&amp;quot;: &amp;quot;1234567890&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;, &amp;quot;admin&amp;quot;: true }  Base64编码后即为Payload。
+Signature 签名部分，生成过程如下：
+alg( base64UrlEncode(header) + &amp;quot;.&amp;quot; + base64UrlEncode(payload), secret)  其中alg为Header中声明的签名算法，常用的如SHA256等。 结合secret校对签名可以保证JWT的完整性和不可伪造性。
+身份验证过程 后端API除了注册和登录外的需要身份验证的接口都对JWT签名进行验证，不通过则返回401 Unauthorized，保护API。 用户注册登录后生成JWT返回用户，用户访问受保护的API时需要随请求发送JWT至服务器端。
+两种常见的安全威胁 接下来看看单页应用开发中几种常见的安全威胁：MITM(Man-In-The-Middle)，XSS(Cross-site scripting)和CSRF(Cross Site Request Forgery)。
+MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。 这里我们在应用层主要使用SSL加密，即HTTPS防范它。 在后端response的header的cookie设置Secure字段，强制cookie使用HTTPS传输。</description>
     </item>
     
     <item>
@@ -503,156 +94,9 @@ Set-Cookie: token=Header.Payload.Signature Secure; HttpOnly;
       <pubDate>Fri, 08 Apr 2016 20:00:00 +0800</pubDate>
       
       <guid>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
-      <description>
-
-&lt;h2 id=&#34;同源策略-https-developer-mozilla-org-en-us-docs-web-security-same-origin-policy&#34;&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy&#34;&gt;同源策略&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。
-这时前端和后端部署在不同的服务器上。
-而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。&lt;/p&gt;
-
-&lt;p&gt;同源是指协议+主机名+端口号全部相同，称为同源。
-详细见下表，是跟&amp;rdquo;&lt;a href=&#34;http://www.example.com/dir/page.html&amp;quot;做比较。&#34;&gt;http://www.example.com/dir/page.html&amp;quot;做比较。&lt;/a&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Compared URL&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Outcome&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Reason&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.example.com/dir/page2.html&#34;&gt;http://www.example.com/dir/page2.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Success&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Same protocol, host and port&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.example.com/dir2/other.html&#34;&gt;http://www.example.com/dir2/other.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Success&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Same protocol, host and port&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://username:password@www.example.com/dir2/other.html&#34;&gt;http://username:password@www.example.com/dir2/other.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Success&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Same protocol, host and port&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.example.com:81/dir/other.html&#34;&gt;http://www.example.com:81/dir/other.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Same protocol and host but different port&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://www.example.com/dir/other.html&#34;&gt;https://www.example.com/dir/other.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Different protocol&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://en.example.com/dir/other.html&#34;&gt;http://en.example.com/dir/other.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Different host&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://example.com/dir/other.html&#34;&gt;http://example.com/dir/other.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Different host (exact match required)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://v2.www.example.com/dir/other.html&#34;&gt;http://v2.www.example.com/dir/other.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Failure&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Different host (exact match required)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.example.com:80/dir/other.html&#34;&gt;http://www.example.com:80/dir/other.html&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Depends&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Port explicit. Depends on implementation in browser&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Javascript不能访问非同源下的资源，如cookie，localstorge等，这也意味着ajax请求后返回的数据会被浏览器认为是非同源而禁止Javascript操作。
-通常的解决方法有JSONP(JSON with Padding)和CORS(Cross-origin resource sharing)。
-当然如果要求实时性的话也可以考虑WebSocket协议，这点本文不展开。&lt;/p&gt;
-
-&lt;h2 id=&#34;jsonp-https-en-wikipedia-org-wiki-jsonp&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/JSONP&#34;&gt;JSONP&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;HTML标准里的&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签，它可以调用部署在CDN上或其他服务器上的非同源Javascript。
-JSONP实际上是利用了这一点，和服务器端约定，在发送请求时加入了一个回调函数的参数。
-如Jquery中设置参数&lt;code&gt;dataType: &amp;quot;jsonp&amp;quot;&lt;/code&gt;后，请求相当于插入页面如下标签&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script src=&amp;quot;http://www.example.net/api/example?callback=mycallback&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;服务器端返回的payload为&lt;code&gt;mycallback(data)&lt;/code&gt;，通过&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签执行，就完成了ajax请求。&lt;/p&gt;
-
-&lt;p&gt;JSONP的优点是实现简单，兼容性很好。
-缺点是只支持GET请求。&lt;/p&gt;
-
-&lt;h2 id=&#34;cors-https-developer-mozilla-org-en-us-docs-web-http-access-control-cors&#34;&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS&#34;&gt;CORS&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;CORS是W3C推荐的跨域HTTP请求的新机制，它可以支持如下请求：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;XMLHttpRequest(即ajax请求)&lt;/li&gt;
-&lt;li&gt;Web Fonts&lt;/li&gt;
-&lt;li&gt;WebGL textures&lt;/li&gt;
-&lt;li&gt;canvas中drawImage产生的Images/video frames&lt;/li&gt;
-&lt;li&gt;CSS&lt;/li&gt;
-&lt;li&gt;Scripts&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;简单请求&#34;&gt;简单请求&lt;/h3&gt;
-
-&lt;p&gt;简单请求，是指满足如下条件的请求：&lt;/p&gt;
-
-&lt;p&gt;只允许如下方法：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;GET&lt;/li&gt;
-&lt;li&gt;HEAD&lt;/li&gt;
-&lt;li&gt;POST&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;除了浏览器自动设置的属性（如Connection, User-Agent等), 只允许设置如下头部属性：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Accept&lt;/li&gt;
-&lt;li&gt;Accept-Language&lt;/li&gt;
-&lt;li&gt;Content-Language&lt;/li&gt;
-&lt;li&gt;Content-Type&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;只允许如下Content-Type值:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;application/x-www-form-urlencoded&lt;/li&gt;
-&lt;li&gt;multipart/form-data&lt;/li&gt;
-&lt;li&gt;text/plain&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;对于简单请求，要允许CORS，需要在后端返回的response的header中设置&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;允许前端服务器地址的ajax请求，可以使用通配符或白名单。
-如&lt;code&gt;Access-Control-Allow-Origin: *&lt;/code&gt;允许所有跨域请求，&lt;code&gt;Access-Control-Allow-Origin: http://example.com&lt;/code&gt;允许前端服务器example.com的跨域请求。&lt;/p&gt;
-
-&lt;p&gt;发送CORS跨域请求默认不带cookie。
-可以设置request的header中xhr对象&lt;code&gt;withCredentials: true&lt;/code&gt;一同发送cookie，同时后端返回的response的header中设置&lt;code&gt;Access-Control-Allow-Credentials: true&lt;/code&gt;接收cookie。
-注意使用cookie时&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;的值不能是通配符&lt;code&gt;*&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3 id=&#34;preflighted-requests&#34;&gt;Preflighted requests&lt;/h3&gt;
-
-&lt;p&gt;除了简单请求外的请求都是复杂请求。
-在发送复杂请求之前需要先发送一个OPTIONS方法的Preflighted requests，后端确认安全后再发送正式请求。
-具体设置可以参考&lt;a href=&#34;https://www.w3.org/TR/cors/&#34;&gt;W3C推荐标准&lt;/a&gt;。&lt;/p&gt;
-</description>
+      <description>同源策略 最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 这时前端和后端部署在不同的服务器上。 而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。
+同源是指协议+主机名+端口号全部相同，称为同源。 详细见下表，是跟&amp;rdquo;http://www.example.com/dir/page.html&amp;quot;做比较。
+   Compared URL Outcome Reason     http://www.example.com/dir/page2.html Success Same protocol, host and port   http://www.example.com/dir2/other.html Success Same protocol, host and port   http://username:password@www.example.com/dir2/other.html Success Same protocol, host and port   http://www.example.com:81/dir/other.html Failure Same protocol and host but different port   https://www.example.com/dir/other.html Failure Different protocol   http://en.example.com/dir/other.html Failure Different host   http://example.com/dir/other.html Failure Different host (exact match required)   http://v2.</description>
     </item>
     
   </channel>

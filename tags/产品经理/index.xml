@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>产品经理 on dailydreamer</title>
-    <link>https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/index.xml</link>
+    <link>https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/</link>
     <description>Recent content in 产品经理 on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <atom:link href="https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jun 2016 20:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>移动端体验</title>
@@ -14,105 +17,9 @@
       <pubDate>Thu, 16 Jun 2016 20:00:00 +0800</pubDate>
       
       <guid>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</guid>
-      <description>
-
-&lt;p&gt;前段时间在Edx上浏览了一门课程&lt;a href=&#34;https://courses.edx.org/courses/course-v1:MITx+21W.789.1x+1T2016/info&#34;&gt;Mobile Application Experiences&lt;/a&gt;，听课笔记记录如下。&lt;/p&gt;
-
-&lt;h2 id=&#34;come-up-an-idea&#34;&gt;Come up an idea&lt;/h2&gt;
-
-&lt;h3 id=&#34;research-method&#34;&gt;Research method&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;observation&lt;/li&gt;
-&lt;li&gt;location tour: park, office&amp;hellip;&lt;/li&gt;
-&lt;li&gt;contextual inquiring: working, workout&amp;hellip;&lt;/li&gt;
-&lt;li&gt;think aloud&lt;/li&gt;
-&lt;li&gt;diary logging: taking photo, recording video&amp;hellip; close to the time that happened&lt;/li&gt;
-&lt;li&gt;interview: ask last time they do something rather than the general situation&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;look at what they are frustrating to do. What kind of role the environment is playing.&lt;/p&gt;
-
-&lt;h3 id=&#34;analyze-data&#34;&gt;Analyze data&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;flow models: analyze how data flow transfer between subjects&lt;/li&gt;
-&lt;li&gt;conversation analyze: look at the conversation of subjects related to a subject&lt;/li&gt;
-&lt;li&gt;critical incident analyze: look at the place where people get stuck&lt;/li&gt;
-&lt;li&gt;affinity analyze&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&#34;affinity-analyze&#34;&gt;Affinity analyze&lt;/h4&gt;
-
-&lt;p&gt;From data(bottom up) to find themes.
-It cannot help you to prove a particular hypothesis because you only talk to a few people which can represent everyone.&lt;/p&gt;
-
-&lt;p&gt;This method is about discovery, not preconceived notions.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create Note: each post represent one idea.&lt;/li&gt;
-&lt;li&gt;Put up note&lt;/li&gt;
-&lt;li&gt;Use 3 hierarchies, users&amp;rsquo; exact quotes, users&amp;rsquo; one sentence summary, theme similar between users.&lt;/li&gt;
-&lt;li&gt;Group the notes use the similar theme&lt;/li&gt;
-&lt;li&gt;Come up with a design through the theme&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;identifying-gaps&#34;&gt;Identifying gaps&lt;/h3&gt;
-
-&lt;p&gt;listen from different source and board audience&lt;/p&gt;
-
-&lt;p&gt;build a quick prototype and give it to them&lt;/p&gt;
-
-&lt;h3 id=&#34;proposal&#34;&gt;Proposal&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;why you think the project need to be done&lt;/li&gt;
-&lt;li&gt;what your objects and design elements are&lt;/li&gt;
-&lt;li&gt;how do you test your projects if they have meet your objects.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;remember to allow people to navigate through your proposal easily&lt;/p&gt;
-
-&lt;h2 id=&#34;build-and-test-your-idea-with-paper-prototype&#34;&gt;Build and test your idea with paper prototype&lt;/h2&gt;
-
-&lt;h3 id=&#34;concept-modeling&#34;&gt;Concept modeling&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;before + after: how is life different with your app&lt;/li&gt;
-&lt;li&gt;user mental model: how do user think about the key part of your app&lt;/li&gt;
-&lt;li&gt;architecture model&lt;/li&gt;
-&lt;li&gt;user types&lt;/li&gt;
-&lt;li&gt;content types&lt;/li&gt;
-&lt;li&gt;service model: what are all the user touch point with your system&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;user-cases&#34;&gt;User cases&lt;/h3&gt;
-
-&lt;h3 id=&#34;structure-flow&#34;&gt;Structure(flow)&lt;/h3&gt;
-
-&lt;p&gt;How your product empower people&amp;rsquo;s work flow.&lt;/p&gt;
-
-&lt;h3 id=&#34;screen-design&#34;&gt;Screen design&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;where I am, where to go, how to get here&lt;/li&gt;
-&lt;li&gt;set expectations and provide feedback&lt;/li&gt;
-&lt;li&gt;ergonomic design&lt;/li&gt;
-&lt;li&gt;rely on recognition rather than recall&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;paper-prototype&#34;&gt;Paper prototype&lt;/h2&gt;
-
-&lt;p&gt;start with paper: people tend to critical of overall concept&lt;/p&gt;
-
-&lt;p&gt;then mock up screens: people tend to critical on design details&lt;/p&gt;
-
-&lt;h2 id=&#34;usability-testing&#34;&gt;Usability testing&lt;/h2&gt;
-
-&lt;p&gt;about 5 people can cover 80% situations&lt;/p&gt;
-
-&lt;p&gt;Role: moderator, computer, note taker and user.&lt;/p&gt;
-</description>
+      <description>前段时间在Edx上浏览了一门课程Mobile Application Experiences，听课笔记记录如下。
+Come up an idea Research method  observation location tour: park, office&amp;hellip; contextual inquiring: working, workout&amp;hellip; think aloud diary logging: taking photo, recording video&amp;hellip; close to the time that happened interview: ask last time they do something rather than the general situation  look at what they are frustrating to do. What kind of role the environment is playing.
+Analyze data  flow models: analyze how data flow transfer between subjects conversation analyze: look at the conversation of subjects related to a subject critical incident analyze: look at the place where people get stuck affinity analyze  Affinity analyze From data(bottom up) to find themes.</description>
     </item>
     
     <item>
@@ -121,338 +28,27 @@ It cannot help you to prove a particular hypothesis because you only talk to a f
       <pubDate>Sat, 25 Jul 2015 20:00:00 +0800</pubDate>
       
       <guid>https://dailydreamer.me/post/2015-07-25-product-manager/</guid>
-      <description>
-
-&lt;h2 id=&#34;写给-1到3岁的产品经理&#34;&gt;写给-1到3岁的产品经理&lt;/h2&gt;
-
-&lt;h3 id=&#34;我们到底是不是产品经理&#34;&gt;我们到底是不是产品经理&lt;/h3&gt;
-
-&lt;p&gt;产品是可以满足人需求的载体，商业产品在用户需求和商业目标之间平衡。&lt;/p&gt;
-
-&lt;p&gt;宝洁产生了产品经理的概念。&lt;/p&gt;
-
-&lt;p&gt;传统产品经理是品牌经理或产品市场经理，重在营销。&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;典型的传统行业&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;互联网、软件行业&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;行业形态&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;成熟行业&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;新兴行业&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;产品形态与成本结构&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;实物&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;虚拟物品&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;生命周期&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;几年&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;几个月&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;盈利模式&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;单一卖产品赚钱&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;多元盈利&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;用户心态&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;花钱买&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;免费用&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;互联网软件行业产品创新多，产品经理注重产品功能规划。&lt;/p&gt;
-
-&lt;p&gt;产品多为虚拟物品，因此注重需求分析和设计细节。&lt;/p&gt;
-
-&lt;p&gt;产品生命周期短，产品经理在项目完成度和产品质量间做平衡。&lt;/p&gt;
-
-&lt;p&gt;盈利模式更多元，靠用户数量，产品经理重视用户研究和用户需求。&lt;/p&gt;
-
-&lt;p&gt;用户免费用，更换成本小，用户是上帝，重视用户体验。&lt;/p&gt;
-
-&lt;p&gt;管理是在资源不足的情况下把事情做成的能力。而资源不足是常态，因此你已是产品经理。&lt;/p&gt;
-
-&lt;h3 id=&#34;我真的想做-怎么入行&#34;&gt;我真的想做，怎么入行&lt;/h3&gt;
-
-&lt;p&gt;喜欢做产品，并且不是站在用户角度，而是站在产品经理角度看待产品。&lt;/p&gt;
-
-&lt;p&gt;研究产品经理招聘广告并总形成调研报告。&lt;/p&gt;
-
-&lt;h2 id=&#34;一个需求的奋斗史&#34;&gt;一个需求的奋斗史&lt;/h2&gt;
-
-&lt;p&gt;用户研究-&amp;gt;需求采集-&amp;gt;需求分析-&amp;gt;需求筛选-&amp;gt;需求管理。&lt;/p&gt;
-
-&lt;h3 id=&#34;需求采集的大生产运功&#34;&gt;需求采集的大生产运功&lt;/h3&gt;
-
-&lt;p&gt;明确目标，明确采集方法，制定采集计划，执行采集，资料整理，然后进需求分析。&lt;/p&gt;
-
-&lt;p&gt;定性的说：用户访谈。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;为避免说的和做的不一致，可以尽量在用户和产品交互的场合下进行。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;要避免样本少，以偏概全。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;牢记访谈目的，不要太强势，也不要被用户代跑。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;避免一组固定的问题。这会让用户有被审问的感觉。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;首先关注目标，任务其次，多问为什么这么做。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;避免让用户成为设计师，用户的解决方案通常短浅片面(这个深有体会。。。)。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;避免讨论技术。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;鼓励讲故事。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;避免诱导性的问题。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;定量的说：调查问卷&lt;/p&gt;
-
-&lt;p&gt;用户访谈通常是开放性问题，调查问卷则是封闭式。&lt;/p&gt;
-
-&lt;p&gt;作答时间最好不要超过10分钟。开篇简单问题，需要思考的在中间，个人信息在最后。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;样本和目标群体可能有偏差。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;样本不能过少&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;问卷内容应该无引导性。答案的顺序也会对答案产生影响。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;定性的做：可用性测试&lt;/p&gt;
-
-&lt;p&gt;是UGC(用户产生内容)的实践。让用户使用原型产品发现设计中的可用性问题。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;可用性测试不能太晚。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;明确是测试产品，不是测试用户。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;可以使用Think aloud方法。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;一切错都是产品和我们的错。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;定量的做：数据分析&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;不要过于学术，讲究性价比。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;不要误读数据。提高统计水平；不要为了迎合某个观点取找数据。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;平时注意收集数据。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;需求采集人人有责&#34;&gt;需求采集人人有责&lt;/h3&gt;
-
-&lt;p&gt;从用户得到的一手需求，从销售和老板得到的二手需求。&lt;/p&gt;
-
-&lt;p&gt;单项需求卡片。&lt;/p&gt;
-
-&lt;p&gt;尽可能多的采集：现场调查，AB测试，卡片分类，自己提需求。&lt;/p&gt;
-
-&lt;h3 id=&#34;听用户的但不要照着做&#34;&gt;听用户的但不要照着做&lt;/h3&gt;
-
-&lt;p&gt;明确我们存在的价值：将用户需求转化为产品需求。&lt;/p&gt;
-
-&lt;p&gt;需求分析是一个分总分的过程，先透过用户需求看到本质，然后将本质分解为产品需求。&lt;/p&gt;
-
-&lt;p&gt;满足需求的三种方式，直接满足、降低理想、转移需求，最高境界是创造需求。&lt;/p&gt;
-
-&lt;p&gt;需求分析步骤：需求转化，确定基本属性，分析商业价值，初评实现难度，计算性价比。&lt;/p&gt;
-
-&lt;p&gt;性价比 = 商业价值 / 实现难度。&lt;/p&gt;
-
-&lt;h3 id=&#34;活下来的永远是少数&#34;&gt;活下来的永远是少数&lt;/h3&gt;
-
-&lt;p&gt;初创团队适合安产品线划分，产品经理权力大，单个产品得到保证；成熟企业适合按职能线划分，增加资源共享与团队交流学习。&lt;/p&gt;
-
-&lt;p&gt;商业需求文档：项目背景、商业价值、功能需求描述、非功能需求描述、资源评估、风险和对策。&lt;/p&gt;
-
-&lt;p&gt;少而精，吹走漏肥皂盒的故事。&lt;/p&gt;
-
-&lt;h2 id=&#34;项目坎坷的一生&#34;&gt;项目坎坷的一生&lt;/h2&gt;
-
-&lt;h3 id=&#34;从产品到项目&#34;&gt;从产品到项目&lt;/h3&gt;
-
-&lt;p&gt;产品是解决问题的东西，项目是一个过程，产品要一个个项目来实现。&lt;/p&gt;
-
-&lt;p&gt;产品经理靠想，做正确的事情；项目经理靠做，把事情做正确。&lt;/p&gt;
-
-&lt;p&gt;产品体验和项目难度的权衡。&lt;/p&gt;
-
-&lt;h3 id=&#34;一切从kick-off开始&#34;&gt;一切从Kick off开始&lt;/h3&gt;
-
-&lt;p&gt;团队组建、时间计划、沟通方式、誓师大会。&lt;/p&gt;
-
-&lt;h3 id=&#34;关键的青春期-又见需求&#34;&gt;关键的青春期，又见需求&lt;/h3&gt;
-
-&lt;p&gt;商业需求文档、市场需求文档、产品需求文档、功能详细说明。&lt;/p&gt;
-
-&lt;h3 id=&#34;成长-一步一个脚印&#34;&gt;成长，一步一个脚印&lt;/h3&gt;
-
-&lt;p&gt;需求评审过后进行需求冻结。&lt;/p&gt;
-
-&lt;h3 id=&#34;山寨级项目管理&#34;&gt;山寨级项目管理&lt;/h3&gt;
-
-&lt;p&gt;逐步建立自己的文档模板库。&lt;/p&gt;
-
-&lt;p&gt;逐步建立流程，就是把经常做的事情的好的方法固化下来。&lt;/p&gt;
-
-&lt;h2 id=&#34;我的产品-我的团队&#34;&gt;我的产品，我的团队&lt;/h2&gt;
-
-&lt;h3 id=&#34;大产品-大设计-大团队&#34;&gt;大产品，大设计，大团队&lt;/h3&gt;
-
-&lt;p&gt;所有和产品有关的事都是产品经理的事。&lt;/p&gt;
-
-&lt;h4 id=&#34;产品之大&#34;&gt;产品之大&lt;/h4&gt;
-
-&lt;p&gt;时间之大——产品生命周期：&lt;/p&gt;
-
-&lt;p&gt;不同时期的产品和市场用户都有其特点，最佳状态是彼此的完美配合。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://dailydreamer.me/images/产品生命周期里的五种用户群体.png&#34; alt=&#34;产品生命周期里的五种用户群体&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;空间之大——商业、产品、技术&lt;/p&gt;
-
-&lt;p&gt;公司的DNA：腾讯是产品主导，Google曾经是技术主导，阿里巴巴曾经是商业主导。&lt;/p&gt;
-
-&lt;h3 id=&#34;设计之大&#34;&gt;设计之大&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://dailydreamer.me/images/用户体验的要素.png&#34; alt=&#34;用户体验的要素&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;本能水平设计，能满足用户需求；行为水平设计，好用，交互便利；反思水平设计，情感化设计。&lt;/p&gt;
-
-&lt;h4 id=&#34;团队之大&#34;&gt;团队之大&lt;/h4&gt;
-
-&lt;p&gt;随着团队变大，分工要渐渐明晰，让各种人与各种事匹配。如客服到PD的接口人。&lt;/p&gt;
-
-&lt;p&gt;职能型组织和项目型组织，以及结合两者的矩阵型组织。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://dailydreamer.me/images/矩阵型组织.png&#34; alt=&#34;矩阵型组织&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;游走于商业和技术之间&#34;&gt;游走于商业和技术之间&lt;/h3&gt;
-
-&lt;p&gt;心思缜密的规划师，狭义的产品团队。&lt;/p&gt;
-
-&lt;p&gt;激情四射的设计师，精雕细琢的交互设计与敏捷开发的权衡取舍。&lt;/p&gt;
-
-&lt;p&gt;阴险狡诈的运营师。&lt;/p&gt;
-
-&lt;h3 id=&#34;商业团队-冲锋陷阵&#34;&gt;商业团队，冲锋陷阵&lt;/h3&gt;
-
-&lt;p&gt;版本细分的策略：做功能区分，打细分市场；策略性做出“炮灰版”。&lt;/p&gt;
-
-&lt;h3 id=&#34;技术团队-坚强后盾&#34;&gt;技术团队，坚强后盾&lt;/h3&gt;
-
-&lt;p&gt;如何与工程师合作：制定规则。如需求变更的流程。&lt;/p&gt;
-
-&lt;h3 id=&#34;容易被遗忘的角落&#34;&gt;容易被遗忘的角落&lt;/h3&gt;
-
-&lt;p&gt;最好的资源：老板。让老板做问答题-&amp;gt;让老板做选择题-&amp;gt;让老板做判断题。&lt;/p&gt;
-
-&lt;h3 id=&#34;大家好才是真的好&#34;&gt;大家好才是真的好&lt;/h3&gt;
-
-&lt;p&gt;产品经理的无授权领导：不为我所有，但为我所用。&lt;/p&gt;
-
-&lt;p&gt;既要领导，也要管理。&lt;/p&gt;
-
-&lt;p&gt;让团队开心，小礼物和团队活动。&lt;/p&gt;
-
-&lt;h2 id=&#34;别让灵魂更不上脚步&#34;&gt;别让灵魂更不上脚步&lt;/h2&gt;
-
-&lt;h3 id=&#34;触及产品的灵魂&#34;&gt;触及产品的灵魂&lt;/h3&gt;
-
-&lt;p&gt;应该做什么：以价值观为根基。&lt;/p&gt;
-
-&lt;p&gt;价值观、使命、愿景。在此之上构筑公司战略。&lt;/p&gt;
-
-&lt;h3 id=&#34;可行性分析三部曲&#34;&gt;可行性分析三部曲&lt;/h3&gt;
-
-&lt;p&gt;我们在哪儿：市场扫描(PEST)，竞品分析($APPEALS)，自我分析(SWOT)。&lt;/p&gt;
-
-&lt;p&gt;我们去哪儿：细分市场、目标用户、满足什么需求。&lt;/p&gt;
-
-&lt;h3 id=&#34;做吧-准备出发&#34;&gt;做吧，准备出发&lt;/h3&gt;
-
-&lt;p&gt;产品的路标规划。&lt;/p&gt;
-
-&lt;p&gt;不要试图在一个会议中解决很多问题。&lt;/p&gt;
-
-&lt;p&gt;大会决定小事 小会决定大事。&lt;/p&gt;
-
-&lt;p&gt;要想会议不流于形式，就把会议变成形式，会前做好关键人员的沟通。&lt;/p&gt;
-
-&lt;p&gt;罗伯特议事规则。所有人提意见，少数人讨论，一个人拍板。&lt;/p&gt;
-
-&lt;p&gt;会议记录，重点是会议决议与遗留问题。&lt;/p&gt;
-
-&lt;h3 id=&#34;kpi-kpi-kpi&#34;&gt;KPI!KPI!KPI!&lt;/h3&gt;
-
-&lt;p&gt;smart原则：具体，可度量，可实现，现实性，有时限。&lt;/p&gt;
-
-&lt;p&gt;远视者把目的当手段，近视者把手段当目的。&lt;/p&gt;
-
-&lt;p&gt;短期目标与长期目标的权衡，如成绩中上的同学比成绩最好的有出息。&lt;/p&gt;
-
-&lt;h3 id=&#34;本书的源头活水&#34;&gt;本书的源头活水&lt;/h3&gt;
-
-&lt;h2 id=&#34;产品经理的自我修养&#34;&gt;产品经理的自我修养&lt;/h2&gt;
-
-&lt;p&gt;爱生活让我们充满动力，有理想让我们目标明确，会思考让我们方法得当，能沟通让我们团队前进。&lt;/p&gt;
-
-&lt;h3 id=&#34;爱生活才会爱产品&#34;&gt;爱生活才会爱产品&lt;/h3&gt;
-
-&lt;p&gt;电子菜单用来数据收集和个性定制。&lt;/p&gt;
-
-&lt;p&gt;windows回收站当文件夹。。。&lt;/p&gt;
-
-&lt;h3 id=&#34;有理想-就不会变咸鱼&#34;&gt;有理想，就不会变咸鱼&lt;/h3&gt;
-
-&lt;p&gt;战略是公司的灵魂，理想是人的灵魂。&lt;/p&gt;
-
-&lt;p&gt;要做的事，想做的事，能做的事重合。&lt;/p&gt;
-
-&lt;p&gt;个人品牌建设。&lt;/p&gt;
-
-&lt;h3 id=&#34;会思考-活到老学到老&#34;&gt;会思考，活到老学到老&lt;/h3&gt;
-
-&lt;p&gt;注重方法和知识的积累。&lt;/p&gt;
-
-&lt;h3 id=&#34;能沟通-在什么山头唱什么歌&#34;&gt;能沟通，在什么山头唱什么歌&lt;/h3&gt;
-
-&lt;p&gt;销售卖产品，PD卖想法。&lt;/p&gt;
-
-&lt;p&gt;沟通不是为了说服，而是为了更好的认识世界。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://dailydreamer.me/images/四种一对一沟通方式的比较.png&#34; alt=&#34;四种一对一沟通方式的比较&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;产品经理主义&#34;&gt;产品经理主义&lt;/h3&gt;
-
-&lt;p&gt;为什么做，第5章战略。&lt;/p&gt;
-
-&lt;p&gt;做什么事，解决什么人的什么问题，第2章需求。&lt;/p&gt;
-
-&lt;p&gt;何时做、谁来做，第3、4章项目和团队。&lt;/p&gt;
-</description>
+      <description>写给-1到3岁的产品经理 我们到底是不是产品经理 产品是可以满足人需求的载体，商业产品在用户需求和商业目标之间平衡。
+宝洁产生了产品经理的概念。
+传统产品经理是品牌经理或产品市场经理，重在营销。
+   Type 典型的传统行业 互联网、软件行业     行业形态 成熟行业 新兴行业   产品形态与成本结构 实物 虚拟物品   生命周期 几年 几个月   盈利模式 单一卖产品赚钱 多元盈利   用户心态 花钱买 免费用    互联网软件行业产品创新多，产品经理注重产品功能规划。
+产品多为虚拟物品，因此注重需求分析和设计细节。
+产品生命周期短，产品经理在项目完成度和产品质量间做平衡。
+盈利模式更多元，靠用户数量，产品经理重视用户研究和用户需求。
+用户免费用，更换成本小，用户是上帝，重视用户体验。
+管理是在资源不足的情况下把事情做成的能力。而资源不足是常态，因此你已是产品经理。
+我真的想做，怎么入行 喜欢做产品，并且不是站在用户角度，而是站在产品经理角度看待产品。
+研究产品经理招聘广告并总形成调研报告。
+一个需求的奋斗史 用户研究-&amp;gt;需求采集-&amp;gt;需求分析-&amp;gt;需求筛选-&amp;gt;需求管理。
+需求采集的大生产运功 明确目标，明确采集方法，制定采集计划，执行采集，资料整理，然后进需求分析。
+定性的说：用户访谈。
+ 为避免说的和做的不一致，可以尽量在用户和产品交互的场合下进行。
+ 要避免样本少，以偏概全。
+ 牢记访谈目的，不要太强势，也不要被用户代跑。
+ 避免一组固定的问题。这会让用户有被审问的感觉。
+ 首先关注目标，任务其次，多问为什么这么做。
+ 避免让用户成为设计师，用户的解决方案通常短浅片面(这个深有体会。。。)。
+ 避免讨论技术。</description>
     </item>
     
   </channel>
