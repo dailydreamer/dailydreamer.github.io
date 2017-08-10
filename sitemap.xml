@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://dailydreamer.me/</loc>
-    <lastmod>2017-04-04T22:49:03+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</loc>
     <lastmod>2016-06-16T20:00:00+08:00</lastmod>
   </url>
@@ -165,6 +160,11 @@
     <loc>https://dailydreamer.me/tags/web/</loc>
     <lastmod>2016-05-25T20:00:00+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dailydreamer.me/</loc>
+    <lastmod>2017-08-07T23:45:43+08:00</lastmod>
   </url>
   
   <url>
