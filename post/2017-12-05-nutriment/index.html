@@ -11,8 +11,8 @@
 
 <link rel="shortcut icon" href="/images/avatar.jpg" />
 
-<meta name="keywords" content="ElasticSearch, 搜索">
-<title>ElasticSearch搜索配置（1）</title>
+<meta name="keywords" content="设计思维, Design Thinking">
+<title>Nutriment</title>
 
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
@@ -389,173 +389,146 @@ ga('send', 'pageview');
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2015-06-05">
-          ElasticSearch搜索配置（1）
-          <span class="posts-date">Jun, 2015</span> 
+        <h1 data-identifier="2017-12-05">
+          Nutriment
+          <span class="posts-date">Dec, 2017</span> 
         </h1>       
         <div class="tags">
           
-          <span class="tag is-medium" style="margin-left:0">编程</span>
+          <span class="tag is-medium" style="margin-left:0">读书笔记</span>
           
-          <span class="tag is-medium" style="margin-left:0">ElasticSearch</span>
+          <span class="tag is-medium" style="margin-left:0">产品经理</span>
           
         </div>
         
 
-<p>最近在用ElasticSearch做一些搜索，来谈谈其中用到的一些特性。</p>
+<p>Healthy Breakfast for Everyone.</p>
 
-<p>ElasticSearch是基于Lucene的分布式包装，其中每一个分片或一个副本都是一个Lucene实例。
-ElasticSearch实现了很好的扩展性和冗余，自动负载均衡。可以通过Restful API与ElasticSearch集群交互。
-我使用的是<a href="https://elasticsearch-py.readthedocs.org/en/master/">python API</a>。</p>
+<h2 id="introduction">Introduction</h2>
 
-<p>可以参考<a href="https://www.elastic.co/guide/en/elasticsearch/guide/master/index.html">ElasticSearch权威指南</a>，讲解非常清楚。</p>
+<p>Nutriment is a project that I developed with Ibtasam and Jay for MSTI Design Thinking Studio. We started from idea brainstorming and secondary research, we did primary research to refine our design question and to come up with design requirements, then user scenarios and core tasks were generated, finally we made a low fidelity prototype and conducted some tests to get user feedback.</p>
 
-<h2 id="建立索引">建立索引</h2>
+<p>Through this process, not only did I learned the toolset and methodology of design thinking, but also a mindset and a way of thinking a question. In the remain sections, I will go through the process we did and reflect my thoughts about it.</p>
 
-<p>建立索引的时候可以使用mapping建立对每个字段建立映射。</p>
+<h2 id="idea-brainstorming-and-secondary-research">Idea Brainstorming and Secondary Research</h2>
 
-<pre><code class="language-py">mapping_body = {
-    'mappings':{
-        'tweet':{
-            &quot;properties&quot;:{
-                'text':{'type':'string', 'index':'analyzed', 'analyzer':'ik_smart', 'similarity': 'BM25'}
-            }
-        }
-    }
-}
-es.indices.create(index='test-index', body=mapping_body)
-</code></pre>
+<h3 id="description">Description</h3>
 
-<p>上面为&rsquo;test-index&rsquo;的索引中&rsquo;tweet&rsquo;的type中&rsquo;text&rsquo;字段建立映射。</p>
+<p>In this phase, we started by introducing ourselves, because knowing and trusting each other is the key to build an effective team, and a good team is the key to a successful project. Then we brainstormed in the three domains we were given, transportation/ commuting, disaster preparedness and resilience and nutritional health. After first round of brainstorming, every one did some secondary research about the topics they brought up and conducted a second round brainstorming.</p>
 
-<p>&lsquo;index&rsquo;设置为analyzed说明要先通过分析器，&rsquo;analyzer&rsquo;设置分析器为ik分词的智能粒度切分，默认为standard，不适合中文分词;&lsquo;similarity&rsquo;设置了相似度算法为BM25，默认为向量空间算法。</p>
+<p><img src="/images/2017-12-05-nutriment/brainstorming.jpg" alt="Some sketches to show my ideas" />
+<em>Figure 1: Some Sketches to show my ideas</em></p>
 
-<p>具体可以看<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html">文档</a>。</p>
+<h3 id="secondary-research">Secondary research</h3>
 
-<h2 id="查询">查询</h2>
+<p>For the secondary research, I did the popular media research and publications research for the idea I brought up. My idea is a food delivery robot that can collaborate with delivery staff to increase the food deliver power at a low cost. It originated from the Chinese market and after the secondary research, I found that in America food delivery is not that popular and delivery staff usually use vehicles instead of special motor in China. So we decided not to pursue my idea.</p>
 
-<p>查询可以通过ID来检索，但是作为一个搜索引擎，ElasticSearch提供了一种基于JSON的<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">DSL查询格式</a>。</p>
+<p><img src="/images/2017-12-05-nutriment/secondary_research.png" alt="Secondary research result" />
+<em>Figure 2: Secondary research result</em></p>
 
-<pre><code class="language-py">search_body = {
-    &quot;query&quot;: {
-        &quot;multi_match&quot;: {
-            &quot;query&quot;:       &quot;Hello世界&quot;,
-            &quot;type&quot;:        &quot;cross_fields&quot;, 
-            &quot;operator&quot;:    &quot;or&quot;,
-            &quot;fields&quot;:      [ &quot;author&quot;, &quot;text^2&quot; ]
-        }
-     },
-    'highlight':{
-        'fields':{
-            'author':{},
-            'text':{}
-        }
-    }
+<h3 id="design-question">Design question</h3>
 
-}
-res = es.search(index='test-index', doc_type='tweet', body=search_body)
-</code></pre>
+<p>Finally, we settled down to the problem of breakfast skipping. How can we decrease breakfast skipping among young adults and working professionals who are short on time in the US.</p>
 
-<h3 id="query">Query</h3>
+<h3 id="reason-for-focusing-on-that-space">Reason for focusing on that space</h3>
 
-<p>上面的示例中使用了<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html">multi match query</a>来进行多字段查询，multi match query对fields中的每个field进行query查询。</p>
+<p>Other ideas are either hard to do primary research, or too technology-centric that is not suitable for this class, and we are all passionate about breakfast skipping problem because lots of our friends have this problem.</p>
 
-<p>&lsquo;operator&rsquo;定义了对查询结果进行的操作，&rsquo;or&rsquo;代表取并集。</p>
+<h3 id="role">Role</h3>
 
-<p>fields中的<code>^</code>代表对该字段进行boost，之后的值为浮点数，小于1表示减轻权重，否则加大权重。</p>
+<p>Everyone in this phase contributed their ideas and did the secondary research.</p>
 
-<p>&lsquo;type&rsquo;中的类型和适用场景见下表</p>
+<h3 id="reflection">Reflection</h3>
 
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Explain</th>
-</tr>
-</thead>
+<p>Find a right direction to work on is important to future project success. And come up with an idea that has huge value, hasn&rsquo;t done by others and can be done by us is really hard, especially for us students with limited experience. I think it is a good practice to write it down when you have thoughts about something and finally they will accumulate to a problem that is worth to solve.</p>
 
-<tbody>
-<tr>
-<td>best_fields</td>
-<td>(default) Finds documents which match any field, but uses the <code>_score</code> from the best field. See best_fields.</td>
-</tr>
+<p>Three of us are all from technical background. So it is easy for us to dive into the technical details too early. At that stage we already have an image of breakfast machine we want to make. Now I can see that it&rsquo;s important to not start from a technology solution.</p>
 
-<tr>
-<td>most_fields</td>
-<td>Finds documents which match any field and combines the <code>_score</code> from each field. See most_fields.</td>
-</tr>
+<h2 id="primary-research-and-requirements">Primary Research and Requirements</h2>
 
-<tr>
-<td>cross_fields</td>
-<td>Treats fields with the same analyzer as though they were one big field. Looks for each word in any field. See cross_fields.</td>
-</tr>
+<h3 id="description-1">Description</h3>
 
-<tr>
-<td>phrase</td>
-<td>Runs a match_phrase query on each field and combines the <code>_score</code> from each field. See phrase and phrase_prefix.</td>
-</tr>
+<p>In this phase, we conducted observations, some interviews and survey, then we generated our design requirements from the insights.</p>
 
-<tr>
-<td>phrase_prefix</td>
-<td>Runs a match_phrase_prefix query on each field and combines the <code>_score</code> from each field. See phrase and phrase_prefix.</td>
-</tr>
-</tbody>
-</table>
+<p>We observed our roommates or families living with us, combing with the interviews afterward, one of the important observation is that when the time is limited, women tend to make up rather than have a rich breakfast. This reveals that people have a priority in their mind in the morning. Our assumption is for those skipping breakfast, time is just an excuse and the real reason is the low priority of breakfast.</p>
 
-<p><code>cross_fields</code>是将所有字段放在一起搜索，跟对<code>_all</code>进行query相比它可以附加权重，但是效率略微低一点。</p>
+<p><img src="/images/2017-12-05-nutriment/affinity_analysis.png" alt="Affinity analysis" />
+<em>Figure 3: Affinity analysis</em></p>
 
-<p>更加详细的type的使用情景可以看权威指南的<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/_single_query_string.html">Know Your Data</a>一节。</p>
+<p>Then we conducted the survey contains some demographic questions and questions about reasons for breakfast skipping. We found out that people said the most common reasons for breakfast skipping are shortage in time, access to breakfast material and not in mood of cooking.</p>
 
-<h3 id="function-score-query和script">Function Score query和script</h3>
+<p><img src="/images/2017-12-05-nutriment/survey_result.png" alt="Some of the survey result" />
+<em>Figure 4: Some of the survey result</em></p>
 
-<p>如果需要吧离线算好的pagerank和在线查询的得分结合起来给结果排序，可以使用强大的<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-function-score-query.html">Function Score query</a>和<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting.html#_indexed_scripts">script</a>来做到这一点。</p>
+<h3 id="refined-design-questions-and-design-requirements">Refined design questions and design requirements</h3>
 
-<pre><code class="language-py">&quot;query&quot;:{
-    &quot;function_score&quot;: {
-        &quot;boost_mode&quot;: &quot;replace&quot;,
-        &quot;query&quot;: {
-            &quot;multi_match&quot;: {
-                &quot;query&quot;:query,
-                &quot;type&quot;:&quot;cross_fields&quot;, 
-                &quot;operator&quot;:&quot;or&quot;,
-                &quot;fields&quot;:SEACHFIELDS
-            }
-         },
-        &quot;script_score&quot;: {
-            &quot;lang&quot;:&quot;groovy&quot;,
-            &quot;params&quot;: {
-                &quot;pagerankField&quot;: PAGERANK, 
-                &quot;pagerankW&quot;: PAGERANKW, 
-                &quot;scoreW&quot;: 1 - PAGERANKW
-            },
-            &quot;script_file&quot;: &quot;school-search&quot;
-        }
-    }
-}
-</code></pre>
+<p>After looking into the results from our primary research, we refined our design questions to &ldquo;How can we decrease breakfast skipping among young adults who age between 18 to 34 years&rdquo;. The change is that we refined our target user to ages 18 to 34 based on our survey.</p>
 
-<p>使用<code>function_score</code>将原query包裹起来，在<code>script_score</code>中，<code>lang</code>设置脚本语言，默认为groovy;<code>params</code>设置脚本参数，<code>script_file</code>指定脚本文件，脚本文件保存在<code>./config/scripts/</code>下，不用写出后缀名，<code>config/scripts/group1/group2/test.py</code>应该命名为<code>group1_group2_test</code>。</p>
+<p>About design requirements, we summarized the insights from each research phase and did the affinity analysis to organize them into three categories, business, technology and user experience. We also combined some similar ones and brought up some new requirements to complement the whole process.</p>
 
-<p>脚本内容类似下面</p>
+<h3 id="role-1">Role</h3>
 
-<pre><code class="language-groovy">_score * scoreW + doc[pagerankField].value * pagerankW
-</code></pre>
+<p>I contributed lots of insights because my roommates are our typical target users and I learned a lot from the observations and interviews. I also make the team excited about the behavior change problem and the gamification idea which I will mention later. I came up with lots of survey questions and design requirements which are put into the final report.</p>
 
-<p>其中<code>_score</code>是query得分，<code>doc[field_name]</code>可以获得当前doc的field，也可在其中使用<code>parms</code>中指定的参数。</p>
+<h3 id="reflection-1">Reflection</h3>
 
-<p>还有一种使用脚本的方法是将其索引在一个特殊文件<code>.scripts</code>中，但是由于这个功能曾经爆出漏洞，而且性能不如上面的方法，现在已经默认关闭，在此不再讨论。</p>
+<p>Observations are not enough for our problems because usually morning activities are very private. Even it is my roommates I observed, I still cannot know what they did in their bedroom and restroom. So some interviews are conducted after the observation to get a whole picture of their morning activities. These methods are not universal, we need to adjust them according to our problems.</p>
 
-<h3 id="highlight">Highlight</h3>
+<p>When I finished the observations and survey, I assumed that for those skipping breakfast, time is just an excuse and the real reason is the low priority of breakfast. So in my mind, this is the pattern of behavior change problem: something is good for long-term but people do not have enough incentives at short-term to do so. I happen to have some knowledge about gamification, which is a theory that can shape people&rsquo;s behavior. Give them emotional incentives, instant feedback and make minor changes to their daily behavior may help them form a good habit.</p>
 
-<p>使用highlight可以在返回结果的&rsquo;highlight&rsquo;字段中对匹配词进行高亮，&rsquo;fields&rsquo;设置要高亮的field，还可以对高亮格式进行设置，默认为<em></em>。详细可以看<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-highlighting.html#_highlight_query">这里</a>。</p>
+<p>Meanwhile, I thought about some interesting ideas. One idea is that we can provide them the nearest Starbucks on their way to work. When they have breakfast there for several days, they will get more Starbucks credits. Another is that they can pay us some money for a breakfast weekly subscription. If they cannot have breakfast for the whole week, their money will be rewarded to those who have finished breakfast. They are also encouraged to share with their friends to engage in this challenge so that they may get money and show off to their friends.</p>
 
-<h3 id="filter">Filter</h3>
+<p>But after finishing the survey, the results could not support my assumption. What participants talked about are all objective reasons such as shortage in time, access to breakfast material, rather than the more important emotional needs that gamification want to address. I think it is because survey is not suitable for validating this kind of assumption. If I have more time next time, I will do more deeply interview to validate some emotional assumptions.</p>
 
-<p>filter更像是数据库中的一些操作，不会返回_score值，只有满足条件才会被返回，但是相比query效率更高。详细可以看<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-filters.html">这里</a>。</p>
+<h2 id="ideation">Ideation</h2>
 
-<p>有了这些基本能够满足简单的搜索需要了。</p>
+<h3 id="description-2">Description</h3>
 
-<p>找到了一个翻译了一部分权威指南的Blog，记录在<a href="http://blog.csdn.net/dm_vincent/article/details/41820537">这里</a>。</p>
+<p>With all the user requirements, we started to think about a solution. We thought about some solutions like the breakfast machine, the takeaway breakfast finding platform, the breakfast delivery platform and so on. None of them could meet all the user requirements. But some of the important requirements like the variety of breakfast choices and ready make food could only be met with breakfast delivery solution. So we decided to go to that direction.</p>
+
+<p><img src="/images/2017-12-05-nutriment/gamification.png" alt="Some sketches to show ideas" />
+<em>Figure 5: Some sketches to show ideas</em></p>
+
+<p>Then we divided the information from our previous core users and user requirements into three user scenarios and related some core tasks to them. We draw the storyboard to illustrate how our product can make users&rsquo; life better.</p>
+
+<p><img src="/images/2017-12-05-nutriment/ideation.png" alt="Story board" />
+<em>Figure 6: Story board</em></p>
+
+<h3 id="role-2">Role</h3>
+
+<p>I did some sketches, wrote one scenario. I also generated core tasks and technology components with others.</p>
+
+<h3 id="reflection-2">Reflection</h3>
+
+<p>As we correctly identified the user requirements, this phase actually went very well and smoothly. This may due to our team&rsquo;s engineer background, which make us very good at solving problems.</p>
+
+<h2 id="prototype-and-evaluation">Prototype and Evaluation</h2>
+
+<h3 id="description-3">Description</h3>
+
+<p>In this phase when we have our solution, we need to build a prototype and test it. Here is a link to our Balsamiq prototype <a href="https://balsamiq.cloud/sz5j2/pttb8/r2278">https://balsamiq.cloud/sz5j2/pttb8/r2278</a>.</p>
+
+<p>Since our core experience includes two stages, ordering with the app and get the package then cook it, we built a software interactive prototype and a physical prototype. We used Balsamiq to build a low fidelity wireframing prototype for the ordering stage because we want to test the usability of our core workflows. For the cooking stage, I made a physical box prototype and make user think it is the package we will delivery to them, to see the usability of our package design and interaction.</p>
+
+<p><img src="/images/2017-12-05-nutriment/prototype.png" alt="Prototype" />
+<em>Figure 7: Prototype</em></p>
+
+<p>Then we conducted the user testing with some of our target users. We gave them instructions and then observed them finished the tasks while thinking aloud. Basically, the result is positive and they can all get the tasks done. A lot of usability problems are also revealed from the evaluation, which may help us build a better product.</p>
+
+<p><img src="/images/2017-12-05-nutriment/evalution.png" alt="Evalution" />
+<em>Figure 8: Evalution</em></p>
+
+<h3 id="role-3">Role</h3>
+
+<p>I collaborated with Ibtasam building the app prototype using Balsamiq, made the box prototype, wrote the instructions and did some usability test.</p>
+
+<h3 id="reflection-3">Reflection</h3>
+
+<p>I found out that it is usually better to set a goal for the user and let them think aloud while pursuing this goal, rather than just give them too specific instructions. In this way, we can find out more usability problems of our prototype.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Design thinking actually is a mindset when facing a problem. I used to start thinking technology and solution too early, now I know that we need to kick these off and really think about what user needs. Always ask more whys about user&rsquo;s behavior, and think deeply about the dynamics of the whole system. Design thinking also gives us a toolset we can use to address these problems. We can select the most suitable ones to our problems. From this course, I get some experiences to use design thinking process in real world problems. It is always a mass in the real world, the process is iterative rather than the liner. All these knowledge and experiences will be super useful for my future projects.</p>
 
         <div id="disqus_thread"></div>
 <script type="text/javascript">

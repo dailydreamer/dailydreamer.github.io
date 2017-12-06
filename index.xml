@@ -6,10 +6,21 @@
     <description>Recent content in Welcome to Dailydreamer&#39;s Space on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 26 Aug 2017 10:47:29 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2017 02:25:44 -0800</lastBuildDate>
     
 	<atom:link href="https://dailydreamer.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nutriment</title>
+      <link>https://dailydreamer.me/post/2017-12-05-nutriment/</link>
+      <pubDate>Tue, 05 Dec 2017 02:25:44 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/post/2017-12-05-nutriment/</guid>
+      <description>Healthy Breakfast for Everyone.
+Introduction Nutriment is a project that I developed with Ibtasam and Jay for MSTI Design Thinking Studio. We started from idea brainstorming and secondary research, we did primary research to refine our design question and to come up with design requirements, then user scenarios and core tasks were generated, finally we made a low fidelity prototype and conducted some tests to get user feedback.
+Through this process, not only did I learned the toolset and methodology of design thinking, but also a mindset and a way of thinking a question.</description>
+    </item>
     
     <item>
       <title>大设计</title>
