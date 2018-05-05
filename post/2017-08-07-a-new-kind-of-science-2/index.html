@@ -639,22 +639,27 @@ ga('send', 'pageview');
 不过这种这种新的科学我认为更多的是一种新的视角，而不能代替现在的科学方法，尤其是在现在的科学方法能够极大的推动社会进步而这种新科学却让我们无能为力的时候。
 所以让我们心怀着这一科学假说，继续向更深层次的知识不断的探索吧。</p>
 
+        
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
+<script>
+    var disqus_config = function () {
     
     
-    if (window.location.hostname == "localhost")
-        return;
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'dailydreamer';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dailydreamer" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>      
     </article>
   </div>
