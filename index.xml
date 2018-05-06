@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome to Dailydreamer&#39;s Space on dailydreamer</title>
-    <link>dailydreamer.me/</link>
+    <link>https://dailydreamer.me/</link>
     <description>Recent content in Welcome to Dailydreamer&#39;s Space on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 28 Jan 2018 22:34:59 -0800</lastBuildDate>
     
-	<atom:link href="dailydreamer.me/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dailydreamer.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FoodGo, 层级式的配送小车</title>
-      <link>dailydreamer.me/post/2018-01-28-foodgo-autonomous-food-delivery/</link>
+      <link>https://dailydreamer.me/post/2018-01-28-foodgo-autonomous-food-delivery/</link>
       <pubDate>Sun, 28 Jan 2018 22:34:59 -0800</pubDate>
       
-      <guid>dailydreamer.me/post/2018-01-28-foodgo-autonomous-food-delivery/</guid>
+      <guid>https://dailydreamer.me/post/2018-01-28-foodgo-autonomous-food-delivery/</guid>
       <description>FoodGo是之前参加2017年GIX创新大赛美团点评组的项目，当时拿到了一等奖。 人力成本越来越高的今天，低工资的配送员的数量不能满足快速增长的外卖市场的需求，等待时间的加长严重影响了用户体验。 使用机器人来辅助配送成为一种可能。 FoodGo的创新点在于使用层级式的方式配送。 大车带着小车在大路上跑，在系统规划的地点放下小车，小车自动驾驶到用户指定的送餐地点等待用户，而大车可以直接开往下个地点。 这样一来占送一批单很大时间的末端配送和等待用户这一工作可以交给机器人来完成，成倍提升了运力。 而且这一方式以后可以升级为大车也无人驾驶，渐进式的方案更容易快速落地。 可以参考下面这个视频
  今天主要来讲讲实现原型时的一些技术问题。
 框架 为了快速迭代原型基于ROS和turtlebot kobuki进行实现。主要框架如图下所示
@@ -30,13 +30,14 @@ Rtabmap建图与定位 由于没有使用额外的地图API，需要自己建图
     
     <item>
       <title>过去失败的创业尝试</title>
-      <link>dailydreamer.me/post/2018-01-09-past-failed-experiences/</link>
+      <link>https://dailydreamer.me/post/2018-01-09-past-failed-experiences/</link>
       <pubDate>Tue, 09 Jan 2018 22:52:10 -0800</pubDate>
       
-      <guid>dailydreamer.me/post/2018-01-09-past-failed-experiences/</guid>
+      <guid>https://dailydreamer.me/post/2018-01-09-past-failed-experiences/</guid>
       <description>2018年到了，很多人都在朋友圈里发年终总结，我也整理了一下过去的照片，回忆起了本科的时候曾经有两次试图创业的经历。 虽然都无疾而终，但是现在想起还是有很多美好的回忆，以及接下来要跟大家分享的经验教训。
 Nutt Nutt 坚果健身是一个能收集器械健身数据的智能硬件。
- 当时是第一次参加创客比赛，抱着试一试的心态，但是因为优秀的团队合作和切中热点的题目，我们最后获得了2015年中美青年创客大赛的一等奖（这里也可以看见选择的重要性哈哈）。 这个比赛的级别很高，比赛之后接受了一些媒体采访宣传，还有机会去了湖南卫视的天天向上，也是第一次接触到了一些投资人，同时有一个硬件工厂想要和我们合作把这个项目落地。 在这一片喝彩的声中，我们就决定试一试。 现在想起其实缺少很多冷静的分析和思考。
+
+当时是第一次参加创客比赛，抱着试一试的心态，但是因为优秀的团队合作和切中热点的题目，我们最后获得了2015年中美青年创客大赛的一等奖（这里也可以看见选择的重要性哈哈）。 这个比赛的级别很高，比赛之后接受了一些媒体采访宣传，还有机会去了湖南卫视的天天向上，也是第一次接触到了一些投资人，同时有一个硬件工厂想要和我们合作把这个项目落地。 在这一片喝彩的声中，我们就决定试一试。 现在想起其实缺少很多冷静的分析和思考。
 其中细节按下不表。几点经验教训：
  中途受邀请准备很多展览、接待领导人参观，我们都没有拒绝。表面看起来风光，其实浪费了很多时间，而且大部分活动并没有带来任何的宣传效果，做的是无用功。 在过了最初的新鲜感之后，由于学业上的压力，以及合作方的不给力，团队的工作进度开始慢了下来，到最后的接近停滞。这期间团队之间没有像比赛那时侯一致的目标，但是并没有相互沟通清楚自己的期待和动机，导致了大家工作热情低下没有动力。  虽然最后项目没有做成，但是这也是我第一次接触设计思维的方法论，从此就在这条道路上探索了下去。
 Pootoo Pootoo是从我们实际的学习生活中来的。 大学中的学生辅导员工作中的很大时间都是用作一些低效率的反复通知和收发文件，当时想到如果能有一个App来帮他们做通知送达，文件自动收集规整，以及进一步可以是一个大学生知识分享平台就好了。
@@ -47,10 +48,10 @@ Pootoo Pootoo是从我们实际的学习生活中来的。 大学中的学生辅
     
     <item>
       <title>Nutriment</title>
-      <link>dailydreamer.me/post/2017-12-05-nutriment/</link>
+      <link>https://dailydreamer.me/post/2017-12-05-nutriment/</link>
       <pubDate>Tue, 05 Dec 2017 02:25:44 -0800</pubDate>
       
-      <guid>dailydreamer.me/post/2017-12-05-nutriment/</guid>
+      <guid>https://dailydreamer.me/post/2017-12-05-nutriment/</guid>
       <description>Healthy Breakfast for Everyone.
 Introduction Nutriment is a project that I developed with Ibtasam and Jay for MSTI Design Thinking Studio. We started from idea brainstorming and secondary research, we did primary research to refine our design question and to come up with design requirements, then user scenarios and core tasks were generated, finally we made a low fidelity prototype and conducted some tests to get user feedback.
 Through this process, not only did I learned the toolset and methodology of design thinking, but also a mindset and a way of thinking a question.</description>
@@ -58,10 +59,10 @@ Through this process, not only did I learned the toolset and methodology of desi
     
     <item>
       <title>大设计</title>
-      <link>dailydreamer.me/post/2017-08-26-the-grand-design/</link>
+      <link>https://dailydreamer.me/post/2017-08-26-the-grand-design/</link>
       <pubDate>Sat, 26 Aug 2017 10:47:29 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2017-08-26-the-grand-design/</guid>
+      <guid>https://dailydreamer.me/post/2017-08-26-the-grand-design/</guid>
       <description>自从高中收到一本作为生日礼物， 时隔多年重读霍金的《大设计》， 颇有感触，想记下一点东西。 《大设计》是一部关于近代物理学对终极问题的探索成果以及霍金对此的哲学思考的书， 英文书名《The Grand Design》更能体现这其中神圣而伟大的意味。 近代物理尤其是量子论的发展使得科学界对终极问题的认识远远领先于哲学界。 为什么存在实在之物而非一无所有？ 我们为什么存在？ 《大设计》试图站在科学的角度来解释这些问题。
 定律规则 定律的定义 我们的祖先使用神话和神学来解释这个世界， 甚至牛顿在发现了今天仍在被广泛使用的牛顿三大定律之后还认为是上帝设计了这些自然定律。 今天大多数科学家会说自然定律是一种基于观察到的规律以及为超过它所基于的直接情形提供预言的规则。 自然定律可以是在一族约定的条件下成立， 比如虽然我们现在知道牛顿定律在物体接近光速运动时必须被修正， 但是它依然提供了日常生活中很好的近似。
 如果自然由定律制约，那么
@@ -78,10 +79,10 @@ Through this process, not only did I learned the toolset and methodology of desi
     
     <item>
       <title>一种新科学(2)</title>
-      <link>dailydreamer.me/post/2017-08-07-a-new-kind-of-science-2/</link>
+      <link>https://dailydreamer.me/post/2017-08-07-a-new-kind-of-science-2/</link>
       <pubDate>Mon, 07 Aug 2017 23:45:43 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2017-08-07-a-new-kind-of-science-2/</guid>
+      <guid>https://dailydreamer.me/post/2017-08-07-a-new-kind-of-science-2/</guid>
       <description>摘要 本文是我在上次挖坑之后读完沃尔夫勒姆的著作《一种新科学》后的一些感想。 《一种新科学》是一本贡献和争议并存的书籍，它深入的探讨了元胞自动机的演化，也即计算复杂性而非传统科学方法中数学公式的复杂性，作为宇宙本质的一种可能性。 本文简述了该书的成书背景和内容，探讨了争议和贡献的部分。 《一种新科学》虽然是一种视野的开阔，但是离颠覆现有的科学研究方法还相去甚远。
 背景介绍 《一种新科学》是斯蒂芬·沃尔夫勒姆的一本长篇巨著。 在2002年5月14日发行之后的一个星期里，《一种新科学》初版五万册就全部销售一空，在亚马逊排行榜上一度高居榜首，成为2002年夏天最畅销的书。
 作者斯蒂芬·沃尔夫勒姆1959年出生于伦敦，父亲是相当成功的作家，母亲是牛津大学的哲学教授。 他幼年聪慧，13岁入伊顿公学，15岁发表首篇粒子物理方面的学术论文。 在获得牛津大学的奖学金并在牛津学习一年之后，即到了美国阿格纳国家实验室的理论高能物理小组工作。 1978年19岁的沃尔夫勒姆受著名物理学家穆雷·盖尔曼之邀去到加州理工学院，从事基本粒子物理学方面的研究，取得显著成就，一年内获得理论物理学博士学位。 1980年沃尔夫勒姆成为加州理工学院一员，与费曼共事。 1981年被授予麦克阿瑟“天才人物”奖，并成为该奖最年轻的获得者。之后他又到了爱因斯坦度过后半生的普林斯顿高级研究所工作，再后来又成为伊利诺斯大学的物理学、数学和计算机科学教授。
@@ -108,10 +109,10 @@ Through this process, not only did I learned the toolset and methodology of desi
     
     <item>
       <title>游戏化 Gamification</title>
-      <link>dailydreamer.me/post/2017-05-21-gamification/</link>
+      <link>https://dailydreamer.me/post/2017-05-21-gamification/</link>
       <pubDate>Sun, 21 May 2017 16:42:02 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2017-05-21-gamification/</guid>
+      <guid>https://dailydreamer.me/post/2017-05-21-gamification/</guid>
       <description>好久不写博客，把前端重写了一下之后又有了写点什么的冲动。 先把之前囤积的一些内容拿来充充数吧。 这篇是我在Coursera上浏览的一门课程Gamification的总结。 Gamification，译作游戏化，是用游戏元素和游戏设计思想去解决非游戏中的问题。 可以看到这里要解决的问题是非游戏的，只是运用了游戏中的元素和设计思想，所以不要一拍脑袋把游戏化等同于做一个游戏。
 那么我为什么对游戏化感兴趣呢，当然是喜欢打游戏啊摔是因为之前在做一个儿童坐姿检测和矫正的项目。 对于成人来说，事情比较简单，愿意去买这个产品的人，你只要提醒他，他便会自己注意改正姿势，事实上Amazon上一款畅销的产品正是这么做的。 但是儿童比较复杂，一般是家长或者学校老师买来产品然后督促他们使用，这时候他们很容易产生很强的逆反心理。 如果只是提醒甚至是惩罚的话，会加重他们的反抗心，比如你不盯着的时候他就不用，或者是伪造一些数据（这种事情我小时候也干过哈哈），这样就违背了产品的初心，削弱了客户价值。 所以一些短期的和长期的激励机制是很有必要的，而这正是游戏化可以做到的。 那么我们言归正传，看看课程里都讲了些什么。
 1. 什么是游戏化 游戏化就是用游戏元素和游戏设计思想去解决非游戏中的问题。 两个比较容易理解的例子，一个是Nike+，一个跑步App，使用各种徽章和等级来提升你跑步的激励； 另一个是Zombies Run，也是一个跑步App，设定是你处在一个充满僵尸的世界中，只有拼命奔跑才能拯救自己，比如跑的慢了就会听到僵尸离自己越来越近的声音，通过这种游戏设计来激励你完成跑步计划。
@@ -132,10 +133,10 @@ Through this process, not only did I learned the toolset and methodology of desi
     
     <item>
       <title>移动端体验</title>
-      <link>dailydreamer.me/post/2016-06-16-mobile-application-experience/</link>
+      <link>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</link>
       <pubDate>Thu, 16 Jun 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-06-16-mobile-application-experience/</guid>
+      <guid>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</guid>
       <description>前段时间在Edx上浏览了一门课程Mobile Application Experiences，听课笔记记录如下。
 Come up an idea Research method  observation location tour: park, office&amp;hellip; contextual inquiring: working, workout&amp;hellip; think aloud diary logging: taking photo, recording video&amp;hellip; close to the time that happened interview: ask last time they do something rather than the general situation  look at what they are frustrating to do. What kind of role the environment is playing.
 Analyze data  flow models: analyze how data flow transfer between subjects conversation analyze: look at the conversation of subjects related to a subject critical incident analyze: look at the place where people get stuck affinity analyze  Affinity analyze From data(bottom up) to find themes.</description>
@@ -143,10 +144,10 @@ Analyze data  flow models: analyze how data flow transfer between subjects conve
     
     <item>
       <title>买基金给我加薪</title>
-      <link>dailydreamer.me/post/2016-06-15-fund-tips/</link>
+      <link>https://dailydreamer.me/post/2016-06-15-fund-tips/</link>
       <pubDate>Wed, 15 Jun 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-06-15-fund-tips/</guid>
+      <guid>https://dailydreamer.me/post/2016-06-15-fund-tips/</guid>
       <description>一本有关基金的入门书籍，一些基本知识和理念。
 术语 选中长期绩效好的基金。
 所选择的基金公司不能只重视一只基金。
@@ -160,10 +161,10 @@ Analyze data  flow models: analyze how data flow transfer between subjects conve
     
     <item>
       <title>从函数式语言想到的</title>
-      <link>dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</link>
+      <link>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</link>
       <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</guid>
+      <guid>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</guid>
       <description>最近看了一本书Seven Languages in Seven Weeks。 原来一直都在面向对象编程，对函数式语言了解并不多，看完这本书之后还是很受启发，接触了许多不同语言的新的思想。
 各种编程范式 imperative programming 古老的编程范式，以冯诺以曼结构的机器思考的方式编程，如C语言。
 object oriented programming 现在正当年的主力编程范式，如Java、C#、ruby、python，以及深度融合了函数式思想但本质还是OOP的scala。
@@ -180,10 +181,10 @@ Haskell中的type class可以优雅的实现generics和polymorphism，并且可�
     
     <item>
       <title>WebRTC简介</title>
-      <link>dailydreamer.me/post/2016-05-25-webrtc-introduction/</link>
+      <link>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</link>
       <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-05-25-webrtc-introduction/</guid>
+      <guid>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</guid>
       <description>WebRTC简介 WebRTC是一种在浏览器中无需任何插件的点对点(P2P)实时视频、音频、数据交流协议，其中RTC是实时沟通(Real Time Communication)的缩写。 过去，实时沟通昂贵且实现复杂，需要专用的视频和音频设备及技术，使得将其集成进已有服务昂贵且费时。 后来，Google开源了Gmail和Hangouts中使用的RTC技术，并且参与W3C相关规范的制定。 2011年，WebRTC第一个版本被实现。 现在WebRTC技术已经被WhatsApp, Facebook Messenger等应用广泛使用。
 WebRTC主要实现了3个API，getUserMedia、RTCPeerConnection和RTCDataChannel。 其中getUserMedia定义了来获取设备上的视频(包括摄像头输入和屏幕输入等)、音频流的接口。RTCPeerConnection定义了用于处理两个客户端之间的流数据的接口。RTCDataChannel定义了用于处理两个客户端之间任意数据收发的接口。
 使用WebRTC过程 使用WebRTC时需要如下步骤：
@@ -195,10 +196,10 @@ WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交�
     
     <item>
       <title>读过的一些设计书籍</title>
-      <link>dailydreamer.me/post/2016-05-24-some-design-books/</link>
+      <link>https://dailydreamer.me/post/2016-05-24-some-design-books/</link>
       <pubDate>Tue, 24 May 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-05-24-some-design-books/</guid>
+      <guid>https://dailydreamer.me/post/2016-05-24-some-design-books/</guid>
       <description>最近翻了一下之前记的一些读书笔记，将读过的一些经典的设计书籍总结一下，记录在这里。
 不要让我思考 整本书都在传递一个强烈的概念：不要让我思考。用户不喜欢思考，比如用户阅读网页的方式是扫描，选择的时候抱着满意即可、勉强应付的心态。 强迫用户思考会使他们离开你的产品。
 下面是几个具体的优化：
@@ -216,10 +217,10 @@ WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交�
     
     <item>
       <title>DOM和DOM Event</title>
-      <link>dailydreamer.me/post/2016-04-25-dom-and-dom-event/</link>
+      <link>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</link>
       <pubDate>Mon, 25 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-04-25-dom-and-dom-event/</guid>
+      <guid>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</guid>
       <description>DOM和HTML，JavaScript，CSS的关系 Document Object Model(DOM)是W3C制定的一种语言无关的面向对象的文档模型，规定了一组可编程的interface需要实现的属性和方法。 HTML和XML文档实现了DOM，因此拥有面向对象的特性，其结构、样式、内容等可以被其他语言的DOM实现操纵。 DOM Level 4是2015年的最新一版标准。
 HTML中&amp;lt;script&amp;gt;元素中嵌入的JavaScript就是DOM的一种实现，如下所示：
 var paragraphs = document.getElementsByTagName(&amp;quot;P&amp;quot;); // paragraphs[0] is the first &amp;lt;p&amp;gt; element // paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc. alert(paragraphs[0].nodeName);  其中document对象，getElementsByTagName方法，alert方法，nodeName属性均是DOM标准规定的。
@@ -230,10 +231,10 @@ var table = document.getElementById(&amp;quot;table&amp;quot;); var tableAttrs =
     
     <item>
       <title>CSS Cheat Sheet</title>
-      <link>dailydreamer.me/post/2016-04-14-css-cheat-sheet/</link>
+      <link>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</link>
       <pubDate>Thu, 14 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-04-14-css-cheat-sheet/</guid>
+      <guid>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</guid>
       <description>HTML block element块级元素，撑满一行
 inline element行内元素，宽度包围内容
 CSS原理 选择符 a, b {} 同时选中a和b
@@ -257,10 +258,10 @@ a::before a::after</description>
     
     <item>
       <title>单页应用JWT身份认证</title>
-      <link>dailydreamer.me/post/2016-04-09-spa-jwt-auth/</link>
+      <link>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</link>
       <pubDate>Sat, 09 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-04-09-spa-jwt-auth/</guid>
+      <guid>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</guid>
       <description>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。 这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。
 JWT JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。 相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。 相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。 缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。
 JWT由三部分组成，Header.Payload.Signature。
@@ -278,10 +279,10 @@ MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，�
     
     <item>
       <title>CORS解决单页应用跨域问题</title>
-      <link>dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</link>
+      <link>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</link>
       <pubDate>Fri, 08 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
+      <guid>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
       <description>同源策略 最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 这时前端和后端部署在不同的服务器上。 而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。
 同源是指协议+主机名+端口号全部相同，称为同源。 详细见下表，是跟&amp;rdquo;http://www.example.com/dir/page.html&amp;quot;做比较。
    Compared URL Outcome Reason     http://www.example.com/dir/page2.html Success Same protocol, host and port   http://www.example.com/dir2/other.html Success Same protocol, host and port   http://username:password@www.example.com/dir2/other.html Success Same protocol, host and port   http://www.example.com:81/dir/other.html Failure Same protocol and host but different port   https://www.example.com/dir/other.html Failure Different protocol   http://en.example.com/dir/other.html Failure Different host   http://example.com/dir/other.html Failure Different host (exact match required)   http://v2.</description>
@@ -289,10 +290,10 @@ MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，�
     
     <item>
       <title>一种新科学</title>
-      <link>dailydreamer.me/post/2016-03-20-a-new-kind-of-science/</link>
+      <link>https://dailydreamer.me/post/2016-03-20-a-new-kind-of-science/</link>
       <pubDate>Sun, 20 Mar 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-03-20-a-new-kind-of-science/</guid>
+      <guid>https://dailydreamer.me/post/2016-03-20-a-new-kind-of-science/</guid>
       <description>本书作者是Mathematica之父Stephen Wolfram。 他在完成Mathematica后挣了一大笔钱，然后几十年一直在搞自己喜欢的研究和探索，最终著成本书（论经济基础对研究的重要性）。 虽然书中的研究缺少确实的证据而更多的是作者的猜测，但是以目前的科学也不足以证伪。 不过有计算复杂性科学家发过paper评判这种没有同行评阅和修改的出书模式，并且质疑了其内容的价值。 但是作为思路开阔一读也未尝不可。
 而且这本书实在是太长了，并且充满了各种论断但是缺少证据，最终没有看完，日后有机会再补完。
 The Foundation for a New Kind of Science 实际上系统理论没必要必须建立在传统数学规律之上。 使用传统数学规则经常无法使用简单的规则解释复杂的自然现象，但是遵从简单规律的程序却可以产生复杂的结果。
@@ -308,10 +309,10 @@ The need for a new intuition 细胞自动机的复杂性与我们认为一个复
     
     <item>
       <title>关键对话</title>
-      <link>dailydreamer.me/post/2016-03-07-difficult-conversation/</link>
+      <link>https://dailydreamer.me/post/2016-03-07-difficult-conversation/</link>
       <pubDate>Mon, 07 Mar 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-03-07-difficult-conversation/</guid>
+      <guid>https://dailydreamer.me/post/2016-03-07-difficult-conversation/</guid>
       <description>Difficult Conversation(关键对话)，是指让你感到害怕和焦虑的对话，比如家人间、情侣间的吵架，上下级间的工作安排等。 本书对这种对话进行了深入的剖析，将问题分解看透彻之后可以更好的处理这种对话。
 The problem 关键对话的结构：
  What happend
@@ -335,10 +336,10 @@ Abandon blame: map the contribution system blame是关于judging但是contributi
     
     <item>
       <title>神话的力量</title>
-      <link>dailydreamer.me/post/2016-01-13-power-of-myth/</link>
+      <link>https://dailydreamer.me/post/2016-01-13-power-of-myth/</link>
       <pubDate>Wed, 13 Jan 2016 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2016-01-13-power-of-myth/</guid>
+      <guid>https://dailydreamer.me/post/2016-01-13-power-of-myth/</guid>
       <description>前些年读过的一本很神奇的书，记下一些富有力量的话语，有机会要重新温习。
 善与恶 善恶是相对于你的立场而定的。 对某人来说是善，对其他人可能就是恶。 但对上帝而言，二者并无不同。 你扮演着自己的角色，即使在你了解他有多可怕后也不退缩，而能把它看成是神秘超越而美妙惊奇世界之前奏。
 生命最大的挑战之一，就是肯定你心里最讨厌的人或事。 你不能说不应该有毒蛇，因为那是生命的本来面目。 但是在行动中，假如你看到毒蛇咬人，你会杀了他。 那并不是否定蛇，而是对那个情景说不。
@@ -355,10 +356,10 @@ Abandon blame: map the contribution system blame是关于judging但是contributi
     
     <item>
       <title>一次与CTF的邂逅</title>
-      <link>dailydreamer.me/post/2015-11-23-meet-ctf/</link>
+      <link>https://dailydreamer.me/post/2015-11-23-meet-ctf/</link>
       <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-11-23-meet-ctf/</guid>
+      <guid>https://dailydreamer.me/post/2015-11-23-meet-ctf/</guid>
       <description>机缘巧合做了两道CTF二进制题目，谨以此为记。
 第一题 recho 主要参考这篇博客，ruby实现，也有人推荐了这篇python实现版，使用了pwntools。
 第一题中handle()函数buf大小256Byte，但是recv_line()函数接受用户输入没有限制长度，存在BOF漏洞可以利用。
@@ -380,10 +381,10 @@ objdump -d recholocal | grep recvline  获取地址，使用他们来对内存�
     
     <item>
       <title>多个github账号的ssh key切换</title>
-      <link>dailydreamer.me/post/2015-10-30-ssh-config/</link>
+      <link>https://dailydreamer.me/post/2015-10-30-ssh-config/</link>
       <pubDate>Fri, 30 Oct 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-10-30-ssh-config/</guid>
+      <guid>https://dailydreamer.me/post/2015-10-30-ssh-config/</guid>
       <description>当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。
 github多个账号ssh key切换 配置ssh的config文件 使用ssh-keygen -t rsa -C &amp;quot;youremail@xxx.com&amp;quot;生成两个ssh key之后，在~/.ssh/下添加一个config文件，内容如下:
 Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host second.github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_second  设置远程仓库的ssh地址 只需要让ssh的目标主机地址变为你写的Host即可。
@@ -392,10 +393,10 @@ git remote add origin git@second.github.com:myname/myrepo.git  更加深入的�
     
     <item>
       <title>禅与摩托车维修的艺术</title>
-      <link>dailydreamer.me/post/2015-08-04-zen-and-the-art-of-motorcycle-maintenance/</link>
+      <link>https://dailydreamer.me/post/2015-08-04-zen-and-the-art-of-motorcycle-maintenance/</link>
       <pubDate>Tue, 04 Aug 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-08-04-zen-and-the-art-of-motorcycle-maintenance/</guid>
+      <guid>https://dailydreamer.me/post/2015-08-04-zen-and-the-art-of-motorcycle-maintenance/</guid>
       <description>第三章 科学就是现代的鬼神。 过去人们使用鬼神解释自然现象，现代人们使用所谓的科学来解释。 这些都只存在于人们心里，是对自然规律的一种认识和解释。
 第四章 一个世纪前和小孩一起读古典的方式：读两句话，等他一连串的提问，然后回答他的问题。
 第六章 使用二分法，将人类的认知分为古典的和浪漫的。 古典的认知认为这个世界是由一些基本形式组成的；浪漫的认知则从表象来观察，主要的是情感而非事实。
@@ -426,10 +427,10 @@ git remote add origin git@second.github.com:myname/myrepo.git  更加深入的�
     
     <item>
       <title>人人都是产品经理</title>
-      <link>dailydreamer.me/post/2015-07-25-product-manager/</link>
+      <link>https://dailydreamer.me/post/2015-07-25-product-manager/</link>
       <pubDate>Sat, 25 Jul 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-07-25-product-manager/</guid>
+      <guid>https://dailydreamer.me/post/2015-07-25-product-manager/</guid>
       <description>写给-1到3岁的产品经理 我们到底是不是产品经理 产品是可以满足人需求的载体，商业产品在用户需求和商业目标之间平衡。
 宝洁产生了产品经理的概念。
 传统产品经理是品牌经理或产品市场经理，重在营销。
@@ -455,10 +456,10 @@ git remote add origin git@second.github.com:myname/myrepo.git  更加深入的�
     
     <item>
       <title>WPF全局隐藏鼠标</title>
-      <link>dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</link>
+      <link>https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</link>
       <pubDate>Mon, 29 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
+      <guid>https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
       <description>前些日子使用WPF实现了一个填平两个屏幕间缝隙的小程序，在那里面需要让光标在两个屏幕间的时候将其隐藏。 在一个程序内部隐藏鼠标很容易，在WPF中只需设置Mouse.OverrideCursor = Cursors.None。 但是当程序最小化后鼠标还能隐藏着实费了一番功夫。 大致有如下几种思路。
  将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看这里。 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐； 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！ 只有重启才能重新显示鼠标。
  要隐藏鼠标时将鼠标的位置一直设置在右下角。 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏； 同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。
@@ -468,10 +469,10 @@ git remote add origin git@second.github.com:myname/myrepo.git  更加深入的�
     
     <item>
       <title>UNIX编程艺术</title>
-      <link>dailydreamer.me/post/2015-06-28-unix-programming-art/</link>
+      <link>https://dailydreamer.me/post/2015-06-28-unix-programming-art/</link>
       <pubDate>Sun, 28 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-06-28-unix-programming-art/</guid>
+      <guid>https://dailydreamer.me/post/2015-06-28-unix-programming-art/</guid>
       <description>这本书极为经典，虽然后半部分的细节有些过时，但是前面的哲学影响深远且富有启发性。
 哲学 UNIX有它独有的文化和哲学，它富有生命力且影响深远。UNIX诞生于1969年，而今天化身为Linux、BSD、MacOS X等，应用广泛且强大。
 UNIX文件在字节层次上再无结构，文件删除了无法恢复，作业控制有欠精致，命名方式混乱。这些都是UNIX的缺点。
@@ -511,10 +512,10 @@ UNIX哲学起源与Ken Thompson早期关于如何设计一个服务接口简洁�
     
     <item>
       <title>Python解析XML与生成迭代器</title>
-      <link>dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</link>
+      <link>https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</link>
       <pubDate>Tue, 23 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</guid>
+      <guid>https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</guid>
       <description>这次来看看Python解析XML与生成迭代器。
 迭代器 使用yield操作符可以使一个函数变成迭代器。如下一段测试代码：
 def genTest(n): print 1 print 2 for i in range(3,n+1): yield i print n+1 print n+2 if __name__ == &#39;__main__&#39;: for i in genTest(5): print i  输出如下：
@@ -527,10 +528,10 @@ def readXMLET(filename): try: import xml.etree.cElementTree as ET except ImportE
     
     <item>
       <title>ElasticSearch搜索配置（2）</title>
-      <link>dailydreamer.me/post/2015-06-22-elasticsearch-config-2/</link>
+      <link>https://dailydreamer.me/post/2015-06-22-elasticsearch-config-2/</link>
       <pubDate>Mon, 22 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-06-22-elasticsearch-config-2/</guid>
+      <guid>https://dailydreamer.me/post/2015-06-22-elasticsearch-config-2/</guid>
       <description>这次再来说说ElasticSearch的其他一些特性。
 Bulk 使用Index进行索引是一次索引一条doc，而bulk提供了批量索引的功能，能够显著的减少索引时间。 经过实际测试，对于1个100Mb约20K条doc，向远程服务器单节点发起索引的完成时间对比如下表。
    chunck_size time/s     200 298.34   500 216.84   1000 169.64   2000 164.71    可以看出chunck_size在一个合适的区间时可以显著减少索引时间，而chunck_size的选取也和一个doc的大小有关。
@@ -545,10 +546,10 @@ index: analysis: analyzer: ik: alias: [news_analyzer_ik,ik_analyzer] type: org.<
     
     <item>
       <title>ElasticSearch搜索配置（1）</title>
-      <link>dailydreamer.me/post/2015-06-05-elasticsearch-config-1/</link>
+      <link>https://dailydreamer.me/post/2015-06-05-elasticsearch-config-1/</link>
       <pubDate>Fri, 05 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-06-05-elasticsearch-config-1/</guid>
+      <guid>https://dailydreamer.me/post/2015-06-05-elasticsearch-config-1/</guid>
       <description>最近在用ElasticSearch做一些搜索，来谈谈其中用到的一些特性。
 ElasticSearch是基于Lucene的分布式包装，其中每一个分片或一个副本都是一个Lucene实例。 ElasticSearch实现了很好的扩展性和冗余，自动负载均衡。可以通过Restful API与ElasticSearch集群交互。 我使用的是python API。
 可以参考ElasticSearch权威指南，讲解非常清楚。
@@ -562,10 +563,10 @@ search_body = { &amp;quot;query&amp;quot;: { &amp;quot;multi_match&amp;quot;: { 
     
     <item>
       <title>程序员修炼之道</title>
-      <link>dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/</link>
+      <link>https://dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/</link>
       <pubDate>Thu, 04 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/</guid>
+      <guid>https://dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/</guid>
       <description>这本书出版有些年头了，虽然其中的例子有些老旧，但是有些思想和哲学永远不会过时。
 注重实效的哲学 负责，提供各种选择，不找蹩脚的借口。
 避免软件腐烂，破窗效应，不要容忍破窗户。
@@ -617,10 +618,10 @@ DBC 按合约设计 前条件，后条件，类不变项。
     
     <item>
       <title>在AWS上配置ElasticSearch</title>
-      <link>dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/</link>
+      <link>https://dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/</link>
       <pubDate>Tue, 02 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/</guid>
+      <guid>https://dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/</guid>
       <description>最近在AWS EC2上部署了ElasticSearch，感觉AWS的文档详细但稍显凌乱，在这里总结一下步骤。
 首先注册AWS。注意你需要一张支持外币支付的信用卡。
 然后创建IAM用户，并配置其权限和密钥对。 可按照文档中的步骤来。 注意为了使elasticsearch节点启动后能够自动发现别的节点，你可能需要在这一步为该用户而外设置read-only权限。
