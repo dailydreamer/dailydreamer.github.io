@@ -17,9 +17,13 @@
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css" rel="stylesheet" type="text/css">
-<link href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
 
 
 <script>
@@ -47,6 +51,11 @@ ga('send', 'pageview');
         <i class="fa fa-github"></i>
       </span>
     </a>
+    <a class="nav-item" href="https://www.linkedin.com/in/dailydreamer/">
+      <span class="icon">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>        
+      </span>
+    </a>
     <a class="nav-item" href="/index.xml" type="application/rss+xml">
       <span class="icon">
         <i class="fa fa-rss"></i>
@@ -59,72 +68,92 @@ ga('send', 'pageview');
     <aside>
   <nav class="sidebar">
     <div id="tags__ul">
-      <a id="all_posts" class="tag is-primary">
+      <a id="all_posts" class="tag is-rounded is-primary">
         全部 
-        <span class="tag-count">24</span>
+        <span class="tag-count">30</span>
       </a>
       
-      <a id="编程" class="tag">
+      <a id="编程" class="tag is-rounded">
         编程 
-        <span class="tag-count">15</span>
+        <span class="tag-count">16</span>
       </a>
       
-      <a id="读书笔记" class="tag">
+      <a id="读书笔记" class="tag is-rounded">
         读书笔记 
-        <span class="tag-count">11</span>
+        <span class="tag-count">13</span>
       </a>
       
-      <a id="web" class="tag">
+      <a id="web" class="tag is-rounded">
         web 
         <span class="tag-count">5</span>
       </a>
       
-      <a id="elasticsearch" class="tag">
+      <a id="项目" class="tag is-rounded">
+        项目 
+        <span class="tag-count">5</span>
+      </a>
+      
+      <a id="产品经理" class="tag is-rounded">
+        产品经理 
+        <span class="tag-count">4</span>
+      </a>
+      
+      <a id="elasticsearch" class="tag is-rounded">
         elasticsearch 
         <span class="tag-count">3</span>
       </a>
       
-      <a id="编程语言" class="tag">
+      <a id="哲学" class="tag is-rounded">
+        哲学 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="科学" class="tag is-rounded">
+        科学 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="编程语言" class="tag is-rounded">
         编程语言 
         <span class="tag-count">3</span>
       </a>
       
-      <a id="产品经理" class="tag">
-        产品经理 
-        <span class="tag-count">2</span>
-      </a>
-      
-      <a id="哲学" class="tag">
-        哲学 
-        <span class="tag-count">2</span>
-      </a>
-      
-      <a id="心理学" class="tag">
+      <a id="心理学" class="tag is-rounded">
         心理学 
         <span class="tag-count">2</span>
       </a>
       
-      <a id="ssh" class="tag">
+      <a id="maker" class="tag is-rounded">
+        maker 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="ssh" class="tag is-rounded">
         ssh 
         <span class="tag-count">1</span>
       </a>
       
-      <a id="理财" class="tag">
+      <a id="创业" class="tag is-rounded">
+        创业 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="理财" class="tag is-rounded">
         理财 
         <span class="tag-count">1</span>
       </a>
       
-      <a id="科学" class="tag">
-        科学 
-        <span class="tag-count">1</span>
-      </a>
-      
-      <a id="系统安全" class="tag">
+      <a id="系统安全" class="tag is-rounded">
         系统安全 
         <span class="tag-count">1</span>
       </a>
       
-      <a id="设计" class="tag">
+      <a id="自动驾驶" class="tag is-rounded">
+        自动驾驶 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="设计" class="tag is-rounded">
         设计 
         <span class="tag-count">1</span>
       </a>
@@ -135,7 +164,61 @@ ga('send', 'pageview');
       <ul id="posts__ul" class="menu-list">
         
         
-        <li class="all_posts 读书笔记 心理学">
+        <li class="all_posts 项目 maker">
+          <a href="https://dailydreamer.me/post/2018-06-03-xlchain/">
+            <span class="posts-title">XLChain</span>
+            <span class="posts-date">Jun, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 项目 编程 自动驾驶">
+          <a href="https://dailydreamer.me/post/2018-01-28-foodgo-autonomous-food-delivery/">
+            <span class="posts-title">FoodGo, 层级式的配送小车</span>
+            <span class="posts-date">Jan, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 产品经理 项目 创业">
+          <a href="https://dailydreamer.me/post/2018-01-09-past-failed-experiences/">
+            <span class="posts-title">过去失败的创业尝试</span>
+            <span class="posts-date">Jan, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 项目 产品经理">
+          <a href="https://dailydreamer.me/post/2017-12-05-nutriment/">
+            <span class="posts-title">Nutriment</span>
+            <span class="posts-date">Dec, 2017</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 科学 哲学">
+          <a href="https://dailydreamer.me/post/2017-08-26-the-grand-design/">
+            <span class="posts-title">大设计</span>
+            <span class="posts-date">Aug, 2017</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 科学">
+          <a href="https://dailydreamer.me/post/2017-08-07-a-new-kind-of-science-2/">
+            <span class="posts-title">一种新科学(2)</span>
+            <span class="posts-date">Aug, 2017</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 项目 心理学">
           <a href="https://dailydreamer.me/post/2017-05-21-gamification/">
             <span class="posts-title">游戏化 Gamification</span>
             <span class="posts-date">May, 2017</span>
@@ -271,7 +354,7 @@ ga('send', 'pageview');
         
         
         <li class="all_posts 读书笔记 哲学">
-          <a href="https://dailydreamer.me/post/2015-08-04-Zen-and-the-Art-of-Motorcycle-Maintenance/">
+          <a href="https://dailydreamer.me/post/2015-08-04-zen-and-the-art-of-motorcycle-maintenance/">
             <span class="posts-title">禅与摩托车维修的艺术</span>
             <span class="posts-date">Aug, 2015</span>
           </a>
@@ -358,7 +441,17 @@ ga('send', 'pageview');
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2015-08-04">禅与摩托车维修的艺术</h1>
+        <h1 data-identifier="2015-08-04">
+          禅与摩托车维修的艺术
+          <span class="posts-date">Aug, 2015</span> 
+        </h1>       
+        <div class="tags">
+          
+          <span class="tag is-medium" style="margin-left:0">读书笔记</span>
+          
+          <span class="tag is-medium" style="margin-left:0">哲学</span>
+          
+        </div>
         
 
 <h2 id="第三章">第三章</h2>
@@ -539,22 +632,27 @@ ga('send', 'pageview');
 感觉此时的中国和上世纪的美国面临着类似的问题，人们缺乏信仰，生活无价值无意义，盲目拜金等等问题，都是价值观混乱的表现。
 而作者通过自己内心之路的探求，提出了一种基于良质的解决方法，虽然道理容易理解，但是思考的过程十分严谨，令人信服，感觉收获颇丰。</p>
 
+        
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
+<script>
+    var disqus_config = function () {
     
     
-    if (window.location.hostname == "localhost")
-        return;
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'dailydreamer';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dailydreamer" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">Comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>      
     </article>
   </div>

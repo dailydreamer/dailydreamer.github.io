@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dailydreamer.me/post/2018-06-03-xlchain/</loc>
+    <lastmod>2018-06-03T22:00:00-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dailydreamer.me/post/2018-01-28-foodgo-autonomous-food-delivery/</loc>
     <lastmod>2018-01-28T22:34:59-08:00</lastmod>
   </url>
@@ -159,8 +164,14 @@
   </url>
   
   <url>
+    <loc>https://dailydreamer.me/tags/maker/</loc>
+    <lastmod>2018-06-03T22:00:00-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://dailydreamer.me/post/</loc>
-    <lastmod>2018-01-28T22:34:59-08:00</lastmod>
+    <lastmod>2018-06-03T22:00:00-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -184,7 +195,7 @@
   
   <url>
     <loc>https://dailydreamer.me/</loc>
-    <lastmod>2018-01-28T22:34:59-08:00</lastmod>
+    <lastmod>2018-06-03T22:00:00-08:00</lastmod>
   </url>
   
   <url>
@@ -261,7 +272,7 @@
   
   <url>
     <loc>https://dailydreamer.me/tags/%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2018-01-28T22:34:59-08:00</lastmod>
+    <lastmod>2018-06-03T22:00:00-08:00</lastmod>
     <priority>0</priority>
   </url>
   
