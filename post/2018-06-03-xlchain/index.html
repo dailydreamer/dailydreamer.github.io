@@ -477,7 +477,7 @@ ga('send', 'pageview');
 <img src="/images/2018-06-03-xlchain/block_diagram.png" alt="Block Diagram" />
 <em>Block Diagram</em></p>
 
-<p>Two parts we have are two blocks and the base. As can be seen in the video, the chain on base is original light white LED state, and the start block is green LED state, while the end block is white LED state. When two blocks are put on to the base. The RFID tag in the start block will be read by the RFID reader in the base. Then the chain on the base will start to shine green LED one by one, and finally after 5 rounds show green LED state on the whole chain. When the green LED at the end of chain lights on, the light sensor in the end block will sense that, which will trigger the end block to green LED state.</p>
+<p>Two parts we have are two blocks and the base. As can be seen in the video, the chain on base is originally white LED state, and the start block is green LED state, while the end block is white LED state. When two blocks are put on to the base, RFID tag in the start block will be read by the RFID reader in the base. Then the chain on the base will start to shine green LED one by one, and finally after 5 rounds show green LED state on the whole chain. When the green LED at the end of chain lights on, the light sensor in the end block will sense that, which will trigger the end block to green LED state.</p>
 
 <p>The detail implementation method will be shown in the Appendix separately.</p>
 
@@ -529,7 +529,7 @@ This is about fit test, one of the most time consuming part of the project. Only
 <p><img src="/images/2018-06-03-xlchain/endblock_board.png" alt="Endblock Schematics Layouts" />
 <em>Endblock Schematics Layouts</em></p>
 
-<p>Arduino code of start block. It just light the green LED all the time.</p>
+<p>Arduino code of start block. It just lights on the green LED all the time.</p>
 
 <pre><code class="language-cpp">#include &lt;Adafruit_NeoPixel.h&gt;
 
@@ -560,7 +560,7 @@ void showGreenLED() {
 }
 </code></pre>
 
-<p>Arduino code of end block. It light on the white LED initially. When the light sensor sense the LED on the chain light up, it will become the same green LED as the start block.</p>
+<p>Arduino code of end block. It is the white LED state initially. When the light sensor sense the LED on the chain lights on, it will become the same green LED as the start block.</p>
 
 <pre><code class="language-cpp">#include &lt;Adafruit_NeoPixel.h&gt;
 
@@ -634,7 +634,7 @@ void showGreenLED() {
 <p><img src="/images/2018-06-03-xlchain/base_board.png" alt="Base Schematics Layouts" />
 <em>Base Schematics Layouts</em></p>
 
-<p>Arduino code of base. Basically initially it light white led, if it read RFID tag, it will ring green led for 5 times one by one and then become all green LED.</p>
+<p>Arduino code of base. Basically initially it lights on white led, if it read RFID tag, it will ring green led for 5 times one by one and then become all green LED.</p>
 
 <pre><code class="language-cpp">/*
    --------------------------------------------------------------------------------------------------------------------
