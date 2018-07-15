@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.31.1" />
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +11,8 @@
 
 <link rel="shortcut icon" href="/images/avatar.jpg" />
 
-<meta name="keywords" content="">
-<title>Welcome to Dailydreamer&#39;s Space</title>
+<meta name="keywords" content="WPF, 鼠标">
+<title>WPF全局隐藏鼠标</title>
 
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
@@ -469,18 +468,73 @@ ga('send', 'pageview');
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2018-07-13">
-          Welcome to Dailydreamer&#39;s Space
-          <span class="posts-date">Jul, 2018</span> 
+        <h1 data-identifier="2015-06-29">
+          WPF全局隐藏鼠标
+          <span class="posts-date">Jun, 2015</span> 
         </h1>       
         <div class="tags">
           
+          <span class="tag is-medium" style="margin-left:0">编程</span>
+          
+          <span class="tag is-medium" style="margin-left:0">编程语言</span>
+          
         </div>
-        
+        <p>前些日子使用WPF实现了一个填平两个屏幕间缝隙的小程序，在那里面需要让光标在两个屏幕间的时候将其隐藏。
+在一个程序内部隐藏鼠标很容易，在WPF中只需设置<code>Mouse.OverrideCursor = Cursors.None</code>。
+但是当程序最小化后鼠标还能隐藏着实费了一番功夫。
+大致有如下几种思路。</p>
 
-<p><img src="/images/journey.jpg" alt="journey" /></p>
+<ol>
+<li><p>将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看<a href="http://stackoverflow.com/questions/10541014/hiding-system-cursor">这里</a>。
+但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐；
+而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！
+只有重启才能重新显示鼠标。</p></li>
 
-<h3 id="we-walk-until-the-path-is-done-in-wind-and-sand-and-setting-sun">We walk until the path is done, in wind and sand and setting sun.</h3>
+<li><p>要隐藏鼠标时将鼠标的位置一直设置在右下角。
+这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏；
+同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。</p></li>
+
+<li><p>最后终于找到了一种十分讨巧的方法。
+就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。
+大致代码如下：</p></li>
+</ol>
+
+<pre><code class="language-cs">Window cursorWin;
+private void cursorWinInit()
+{
+    cursorWin = new Window();
+    cursorWin.Left = bound - (W + hideBuffer);
+    cursorWin.Top = 0;
+    cursorWin.Width = 2 * (W + hideBuffer);
+    cursorWin.Height = maxHeight;
+    cursorWin.ShowInTaskbar = false;            //禁止在任务栏显示
+    cursorWin.WindowStyle = WindowStyle.None;   //无边框
+    cursorWin.AllowsTransparency = true;        //透明
+    cursorWin.Topmost = true;                   //置顶
+    cursorWin.Background = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));     //透明
+}
+private void myHideCursor()
+{
+    cursorWin.Dispatcher.Invoke(
+        new Action(
+            delegate
+            {
+                cursorWin.Show();
+                Mouse.OverrideCursor = Cursors.None;
+            }));
+}
+
+private void myShowCursor()
+{
+    cursorWin.Dispatcher.Invoke(
+        new Action(
+            delegate
+            {
+                cursorWin.Hide();
+                Mouse.OverrideCursor = null;
+            }));
+}
+</code></pre>
 
         
         <div id="disqus_thread"></div>

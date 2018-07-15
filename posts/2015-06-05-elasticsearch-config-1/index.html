@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.31.1" />
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +11,8 @@
 
 <link rel="shortcut icon" href="/images/avatar.jpg" />
 
-<meta name="keywords" content="">
-<title>Welcome to Dailydreamer&#39;s Space</title>
+<meta name="keywords" content="ElasticSearch, 搜索">
+<title>ElasticSearch搜索配置（1）</title>
 
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
@@ -469,18 +468,171 @@ ga('send', 'pageview');
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2018-07-13">
-          Welcome to Dailydreamer&#39;s Space
-          <span class="posts-date">Jul, 2018</span> 
+        <h1 data-identifier="2015-06-05">
+          ElasticSearch搜索配置（1）
+          <span class="posts-date">Jun, 2015</span> 
         </h1>       
         <div class="tags">
+          
+          <span class="tag is-medium" style="margin-left:0">编程</span>
           
         </div>
         
 
-<p><img src="/images/journey.jpg" alt="journey" /></p>
+<p>最近在用ElasticSearch做一些搜索，来谈谈其中用到的一些特性。</p>
 
-<h3 id="we-walk-until-the-path-is-done-in-wind-and-sand-and-setting-sun">We walk until the path is done, in wind and sand and setting sun.</h3>
+<p>ElasticSearch是基于Lucene的分布式包装，其中每一个分片或一个副本都是一个Lucene实例。
+ElasticSearch实现了很好的扩展性和冗余，自动负载均衡。可以通过Restful API与ElasticSearch集群交互。
+我使用的是<a href="https://elasticsearch-py.readthedocs.org/en/master/">python API</a>。</p>
+
+<p>可以参考<a href="https://www.elastic.co/guide/en/elasticsearch/guide/master/index.html">ElasticSearch权威指南</a>，讲解非常清楚。</p>
+
+<h2 id="建立索引">建立索引</h2>
+
+<p>建立索引的时候可以使用mapping建立对每个字段建立映射。</p>
+
+<pre><code class="language-py">mapping_body = {
+    'mappings':{
+        'tweet':{
+            &quot;properties&quot;:{
+                'text':{'type':'string', 'index':'analyzed', 'analyzer':'ik_smart', 'similarity': 'BM25'}
+            }
+        }
+    }
+}
+es.indices.create(index='test-index', body=mapping_body)
+</code></pre>
+
+<p>上面为&rsquo;test-index&rsquo;的索引中&rsquo;tweet&rsquo;的type中&rsquo;text&rsquo;字段建立映射。</p>
+
+<p>&lsquo;index&rsquo;设置为analyzed说明要先通过分析器，&rsquo;analyzer&rsquo;设置分析器为ik分词的智能粒度切分，默认为standard，不适合中文分词;&lsquo;similarity&rsquo;设置了相似度算法为BM25，默认为向量空间算法。</p>
+
+<p>具体可以看<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html">文档</a>。</p>
+
+<h2 id="查询">查询</h2>
+
+<p>查询可以通过ID来检索，但是作为一个搜索引擎，ElasticSearch提供了一种基于JSON的<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">DSL查询格式</a>。</p>
+
+<pre><code class="language-py">search_body = {
+    &quot;query&quot;: {
+        &quot;multi_match&quot;: {
+            &quot;query&quot;:       &quot;Hello世界&quot;,
+            &quot;type&quot;:        &quot;cross_fields&quot;, 
+            &quot;operator&quot;:    &quot;or&quot;,
+            &quot;fields&quot;:      [ &quot;author&quot;, &quot;text^2&quot; ]
+        }
+     },
+    'highlight':{
+        'fields':{
+            'author':{},
+            'text':{}
+        }
+    }
+
+}
+res = es.search(index='test-index', doc_type='tweet', body=search_body)
+</code></pre>
+
+<h3 id="query">Query</h3>
+
+<p>上面的示例中使用了<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html">multi match query</a>来进行多字段查询，multi match query对fields中的每个field进行query查询。</p>
+
+<p>&lsquo;operator&rsquo;定义了对查询结果进行的操作，&rsquo;or&rsquo;代表取并集。</p>
+
+<p>fields中的<code>^</code>代表对该字段进行boost，之后的值为浮点数，小于1表示减轻权重，否则加大权重。</p>
+
+<p>&lsquo;type&rsquo;中的类型和适用场景见下表</p>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Explain</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>best_fields</td>
+<td>(default) Finds documents which match any field, but uses the <code>_score</code> from the best field. See best_fields.</td>
+</tr>
+
+<tr>
+<td>most_fields</td>
+<td>Finds documents which match any field and combines the <code>_score</code> from each field. See most_fields.</td>
+</tr>
+
+<tr>
+<td>cross_fields</td>
+<td>Treats fields with the same analyzer as though they were one big field. Looks for each word in any field. See cross_fields.</td>
+</tr>
+
+<tr>
+<td>phrase</td>
+<td>Runs a match_phrase query on each field and combines the <code>_score</code> from each field. See phrase and phrase_prefix.</td>
+</tr>
+
+<tr>
+<td>phrase_prefix</td>
+<td>Runs a match_phrase_prefix query on each field and combines the <code>_score</code> from each field. See phrase and phrase_prefix.</td>
+</tr>
+</tbody>
+</table>
+
+<p><code>cross_fields</code>是将所有字段放在一起搜索，跟对<code>_all</code>进行query相比它可以附加权重，但是效率略微低一点。</p>
+
+<p>更加详细的type的使用情景可以看权威指南的<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/_single_query_string.html">Know Your Data</a>一节。</p>
+
+<h3 id="function-score-query和script">Function Score query和script</h3>
+
+<p>如果需要吧离线算好的pagerank和在线查询的得分结合起来给结果排序，可以使用强大的<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-function-score-query.html">Function Score query</a>和<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting.html#_indexed_scripts">script</a>来做到这一点。</p>
+
+<pre><code class="language-py">&quot;query&quot;:{
+    &quot;function_score&quot;: {
+        &quot;boost_mode&quot;: &quot;replace&quot;,
+        &quot;query&quot;: {
+            &quot;multi_match&quot;: {
+                &quot;query&quot;:query,
+                &quot;type&quot;:&quot;cross_fields&quot;, 
+                &quot;operator&quot;:&quot;or&quot;,
+                &quot;fields&quot;:SEACHFIELDS
+            }
+         },
+        &quot;script_score&quot;: {
+            &quot;lang&quot;:&quot;groovy&quot;,
+            &quot;params&quot;: {
+                &quot;pagerankField&quot;: PAGERANK, 
+                &quot;pagerankW&quot;: PAGERANKW, 
+                &quot;scoreW&quot;: 1 - PAGERANKW
+            },
+            &quot;script_file&quot;: &quot;school-search&quot;
+        }
+    }
+}
+</code></pre>
+
+<p>使用<code>function_score</code>将原query包裹起来，在<code>script_score</code>中，<code>lang</code>设置脚本语言，默认为groovy;<code>params</code>设置脚本参数，<code>script_file</code>指定脚本文件，脚本文件保存在<code>./config/scripts/</code>下，不用写出后缀名，<code>config/scripts/group1/group2/test.py</code>应该命名为<code>group1_group2_test</code>。</p>
+
+<p>脚本内容类似下面</p>
+
+<pre><code class="language-groovy">_score * scoreW + doc[pagerankField].value * pagerankW
+</code></pre>
+
+<p>其中<code>_score</code>是query得分，<code>doc[field_name]</code>可以获得当前doc的field，也可在其中使用<code>parms</code>中指定的参数。</p>
+
+<p>还有一种使用脚本的方法是将其索引在一个特殊文件<code>.scripts</code>中，但是由于这个功能曾经爆出漏洞，而且性能不如上面的方法，现在已经默认关闭，在此不再讨论。</p>
+
+<h3 id="highlight">Highlight</h3>
+
+<p>使用highlight可以在返回结果的&rsquo;highlight&rsquo;字段中对匹配词进行高亮，&rsquo;fields&rsquo;设置要高亮的field，还可以对高亮格式进行设置，默认为<em></em>。详细可以看<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-highlighting.html#_highlight_query">这里</a>。</p>
+
+<h3 id="filter">Filter</h3>
+
+<p>filter更像是数据库中的一些操作，不会返回_score值，只有满足条件才会被返回，但是相比query效率更高。详细可以看<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-filters.html">这里</a>。</p>
+
+<p>有了这些基本能够满足简单的搜索需要了。</p>
+
+<p>找到了一个翻译了一部分权威指南的Blog，记录在<a href="http://blog.csdn.net/dm_vincent/article/details/41820537">这里</a>。</p>
 
         
         <div id="disqus_thread"></div>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="dailydreamer的小空间">
+
+
+<link rel="shortcut icon" href="/images/avatar.jpg" />
+
+<meta name="keywords" content="UNIX">
+<title>UNIX编程艺术</title>
+
+<link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
+<link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-75912368-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+  <nav class="nav has-shadow">
+  <div class="nav-left">
+    <span id="toggle__menu" class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <a href="/index.html" class="nav-item">Dailydreamer's Space</a>
+  </div>
+
+  <div class="nav-center">
+    <a class="nav-item" href="https://github.com/dailydreamer">
+      <span class="icon">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+    <a class="nav-item" href="https://www.linkedin.com/in/dailydreamer/">
+      <span class="icon">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>        
+      </span>
+    </a>
+    <a class="nav-item" href="/index.xml" type="application/rss+xml">
+      <span class="icon">
+        <i class="fa fa-rss"></i>
+      </span>
+    </a>
+  </div>
+</nav>      
+
+  <div id="container">
+    <aside>
+  <nav class="sidebar">
+    <div id="tags__ul">
+      <a id="all_posts" class="tag is-rounded is-primary">
+        全部 
+        <span class="tag-count">33</span>
+      </a>
+      
+      <a id="编程" class="tag is-rounded">
+        编程 
+        <span class="tag-count">16</span>
+      </a>
+      
+      <a id="读书笔记" class="tag is-rounded">
+        读书笔记 
+        <span class="tag-count">15</span>
+      </a>
+      
+      <a id="项目" class="tag is-rounded">
+        项目 
+        <span class="tag-count">6</span>
+      </a>
+      
+      <a id="web" class="tag is-rounded">
+        web 
+        <span class="tag-count">5</span>
+      </a>
+      
+      <a id="产品经理" class="tag is-rounded">
+        产品经理 
+        <span class="tag-count">5</span>
+      </a>
+      
+      <a id="心理学" class="tag is-rounded">
+        心理学 
+        <span class="tag-count">4</span>
+      </a>
+      
+      <a id="哲学" class="tag is-rounded">
+        哲学 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="科学" class="tag is-rounded">
+        科学 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="编程语言" class="tag is-rounded">
+        编程语言 
+        <span class="tag-count">3</span>
+      </a>
+      
+      <a id="maker" class="tag is-rounded">
+        maker 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="ssh" class="tag is-rounded">
+        ssh 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="创业" class="tag is-rounded">
+        创业 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="理财" class="tag is-rounded">
+        理财 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="系统安全" class="tag is-rounded">
+        系统安全 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="自动驾驶" class="tag is-rounded">
+        自动驾驶 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="行业" class="tag is-rounded">
+        行业 
+        <span class="tag-count">1</span>
+      </a>
+      
+      <a id="设计" class="tag is-rounded">
+        设计 
+        <span class="tag-count">1</span>
+      </a>
+      
+    </div>
+
+    <div class="menu">
+      <ul id="posts__ul" class="menu-list">
+        
+        
+        <li class="all_posts 读书笔记 心理学">
+          <a href="https://dailydreamer.me/posts/2018-07-13-poor-charlie/">
+            <span class="posts-title">穷查理宝典</span>
+            <span class="posts-date">Jul, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 心理学">
+          <a href="https://dailydreamer.me/posts/2018-06-13-principles/">
+            <span class="posts-title">原则</span>
+            <span class="posts-date">Jun, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 项目 产品经理 行业">
+          <a href="https://dailydreamer.me/posts/2018-06-13-apparel-sales-prediction/">
+            <span class="posts-title">智慧服装</span>
+            <span class="posts-date">Jun, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 项目 maker">
+          <a href="https://dailydreamer.me/posts/2018-06-03-xlchain/">
+            <span class="posts-title">XLChain</span>
+            <span class="posts-date">Jun, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 项目 编程 自动驾驶">
+          <a href="https://dailydreamer.me/posts/2018-01-28-foodgo-autonomous-food-delivery/">
+            <span class="posts-title">FoodGo, 层级式的配送小车</span>
+            <span class="posts-date">Jan, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 产品经理 项目 创业">
+          <a href="https://dailydreamer.me/posts/2018-01-09-past-failed-experiences/">
+            <span class="posts-title">过去失败的创业尝试</span>
+            <span class="posts-date">Jan, 2018</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 项目 产品经理">
+          <a href="https://dailydreamer.me/posts/2017-12-05-nutriment/">
+            <span class="posts-title">Nutriment</span>
+            <span class="posts-date">Dec, 2017</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 科学 哲学">
+          <a href="https://dailydreamer.me/posts/2017-08-26-the-grand-design/">
+            <span class="posts-title">大设计</span>
+            <span class="posts-date">Aug, 2017</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 科学">
+          <a href="https://dailydreamer.me/posts/2017-08-07-a-new-kind-of-science-2/">
+            <span class="posts-title">一种新科学(2)</span>
+            <span class="posts-date">Aug, 2017</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 项目 心理学">
+          <a href="https://dailydreamer.me/posts/2017-05-21-gamification/">
+            <span class="posts-title">游戏化 Gamification</span>
+            <span class="posts-date">May, 2017</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 产品经理">
+          <a href="https://dailydreamer.me/posts/2016-06-16-mobile-application-experience/">
+            <span class="posts-title">移动端体验</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 理财">
+          <a href="https://dailydreamer.me/posts/2016-06-15-fund-tips/">
+            <span class="posts-title">买基金给我加薪</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/posts/2016-06-09-inspired-by-functional-programing-language/">
+            <span class="posts-title">从函数式语言想到的</span>
+            <span class="posts-date">Jun, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/">
+            <span class="posts-title">WebRTC简介</span>
+            <span class="posts-date">May, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 设计">
+          <a href="https://dailydreamer.me/posts/2016-05-24-some-design-books/">
+            <span class="posts-title">读过的一些设计书籍</span>
+            <span class="posts-date">May, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/">
+            <span class="posts-title">DOM和DOM Event</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/">
+            <span class="posts-title">CSS Cheat Sheet</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/">
+            <span class="posts-title">单页应用JWT身份认证</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 web">
+          <a href="https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/">
+            <span class="posts-title">CORS解决单页应用跨域问题</span>
+            <span class="posts-date">Apr, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 科学">
+          <a href="https://dailydreamer.me/posts/2016-03-20-a-new-kind-of-science/">
+            <span class="posts-title">一种新科学</span>
+            <span class="posts-date">Mar, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 心理学">
+          <a href="https://dailydreamer.me/posts/2016-03-07-difficult-conversation/">
+            <span class="posts-title">关键对话</span>
+            <span class="posts-date">Mar, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 哲学">
+          <a href="https://dailydreamer.me/posts/2016-01-13-power-of-myth/">
+            <span class="posts-title">神话的力量</span>
+            <span class="posts-date">Jan, 2016</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 系统安全">
+          <a href="https://dailydreamer.me/posts/2015-11-23-meet-ctf/">
+            <span class="posts-title">一次与CTF的邂逅</span>
+            <span class="posts-date">Nov, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 ssh">
+          <a href="https://dailydreamer.me/posts/2015-10-30-ssh-config/">
+            <span class="posts-title">多个github账号的ssh key切换</span>
+            <span class="posts-date">Oct, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 哲学">
+          <a href="https://dailydreamer.me/posts/2015-08-04-zen-and-the-art-of-motorcycle-maintenance/">
+            <span class="posts-title">禅与摩托车维修的艺术</span>
+            <span class="posts-date">Aug, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 产品经理">
+          <a href="https://dailydreamer.me/posts/2015-07-25-product-manager/">
+            <span class="posts-title">人人都是产品经理</span>
+            <span class="posts-date">Jul, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/">
+            <span class="posts-title">WPF全局隐藏鼠标</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 编程">
+          <a href="https://dailydreamer.me/posts/2015-06-28-unix-programming-art/">
+            <span class="posts-title">UNIX编程艺术</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程 编程语言">
+          <a href="https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/">
+            <span class="posts-title">Python解析XML与生成迭代器</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程">
+          <a href="https://dailydreamer.me/posts/2015-06-22-elasticsearch-config-2/">
+            <span class="posts-title">ElasticSearch搜索配置（2）</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程">
+          <a href="https://dailydreamer.me/posts/2015-06-05-elasticsearch-config-1/">
+            <span class="posts-title">ElasticSearch搜索配置（1）</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 读书笔记 编程">
+          <a href="https://dailydreamer.me/posts/2015-06-04-a-pragmatic-programmer/">
+            <span class="posts-title">程序员修炼之道</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="all_posts 编程">
+          <a href="https://dailydreamer.me/posts/2015-06-02-config-elasticsearch-on-aws/">
+            <span class="posts-title">在AWS上配置ElasticSearch</span>
+            <span class="posts-date">Jun, 2015</span>
+          </a>
+        </li>
+        
+        
+        
+        
+      </ul>
+    </div>
+  </nav>
+</aside>
+    <article>
+      <div class="content post">
+        <h1 data-identifier="2015-06-28">
+          UNIX编程艺术
+          <span class="posts-date">Jun, 2015</span> 
+        </h1>       
+        <div class="tags">
+          
+          <span class="tag is-medium" style="margin-left:0">读书笔记</span>
+          
+          <span class="tag is-medium" style="margin-left:0">编程</span>
+          
+        </div>
+        
+
+<p>这本书极为经典，虽然后半部分的细节有些过时，但是前面的哲学影响深远且富有启发性。</p>
+
+<h2 id="哲学">哲学</h2>
+
+<p>UNIX有它独有的文化和哲学，它富有生命力且影响深远。UNIX诞生于1969年，而今天化身为Linux、BSD、MacOS X等，应用广泛且强大。</p>
+
+<p>UNIX文件在字节层次上再无结构，文件删除了无法恢复，作业控制有欠精致，命名方式混乱。这些都是UNIX的缺点。</p>
+
+<p>最大的争议在于，<strong>提供机制，而不是策略</strong>。
+比如X Window，提供一套极端通用的图形操作，将界面的观感(策略)推后到应用层。
+这使得UNIX可以提供很多行为选项和令人眼花缭乱的定制功能。
+然而它的代价就是当用户“可以”设置自己的策略时，他们“必须”设置自己的策略。
+这使得UNIX失去了很多非技术用户，但是策略相对短寿，机制才会长存。
+只提供机制才能使得UNIX长久保鲜。</p>
+
+<p>同时，UNIX还有着及其丰富和优秀的外围文化。
+开源软件，跨平台可移植和开放标准(IEEE的可移植操作系统标准POS很快被大家加后缀变成了POSIX)，Internet和TCP/IP协议，开源社区，从头到脚的灵活性(在其他系统中，完成设计者预见的任务容易，但是设计者没有预料到的就很难)，以及UNIX hack很有乐趣。</p>
+
+<p>UNIX哲学起源与Ken Thompson早期关于如何设计一个服务接口简洁、小巧精干的操作系统的思考，一路成长且博采众长。
+UNIX管道的发明人Doug Mcllroy总结，UNIX哲学是一个程序只做一件事，并做好。程序要能协作。
+程序要能处理文本流，因为这是最通用的接口。整体上，UNIX哲学可以概括为一下几点：</p>
+
+<ul>
+<li><p><strong>模块原则</strong>：使用简洁的接口拼合简单的部件</p>
+
+<p>编制复杂软件而又不至于一败涂地的唯一非方法就是降低其整体复杂度，用清晰的接口把若干简单的模块组合成一个复杂的软件。</p></li>
+
+<li><p><strong>清晰原则</strong>：清晰胜于机巧</p>
+
+<p>些程序时，要想到你不是写给计算机看，而是写给人看的。优雅而清晰的代码不仅不容易崩溃，而且更易于让后来的修改者立刻理解。</p></li>
+
+<li><p><strong>组合原则</strong>：设计时考虑拼接</p>
+
+<p>在输入输出方面，UNIX传统极力提倡采用简单、文本化、面向流、设备无关的格式，否则很难和其它程序衔接。要想让程序具有组合性，就要使程序彼此独立。</p></li>
+
+<li><p><strong>分离原则</strong>：策略同机制分离，接口同引擎分离</p>
+
+<p>策略短寿，机制长存。在探索新策略的时候尽量不要打破机制，这样也可以为机制编写更好的测试。</p>
+
+<p>在GUI之外也可以应用这个原则，如Emacs编辑器使用内嵌的脚本语言Lisp解释器来控制用C编写的编辑原语操作。</p></li>
+
+<li><p><strong>简洁原则</strong>：设计要简洁，复杂度要低</p>
+
+<p>复杂的东西代价更高，bug更多。以简洁为美，总设法将程序系统分解成几个能够协作的小部分。</p></li>
+
+<li><p><strong>透明性原则</strong>：设计要可见，以便审查和调试。</p>
+
+<p>透明性是说一眼能看出软件是在做什么以及怎样做的，显见性是说程序带有监视和显示内部状态的功能。尽早设置调试选项。</p></li>
+
+<li><p><strong>健壮原则</strong>：健壮源于透明与简洁</p>
+
+<p>健壮性指在超出设计者预想外的条件下也能运行良好。</p></li>
+
+<li><p><strong>表示原则</strong>：把知识叠入数据以求逻辑质朴而健壮。</p>
+
+<p>数据比变成逻辑更容易驾驭。主动将代码的复杂度转移到数据之中去。</p></li>
+
+<li><p><strong>通俗原则</strong>：接口设计避免标新立异</p></li>
+
+<li><p><strong>缄默原则</strong>：如果一个程序没什么好说的，就保持沉默</p>
+
+<p>只输出重要的东西。</p></li>
+
+<li><p><strong>补救原则</strong>：出现异常时，马上退出并给出足量错误信息</p>
+
+<p>“宽容的收，谨慎的发”。</p></li>
+
+<li><p><strong>经济原则</strong>：宁花机器一分，不花程序员一秒</p></li>
+
+<li><p><strong>生成原则</strong>：避免手工hack，尽量编写程序去生成程序</p></li>
+
+<li><p><strong>优化原则</strong>：雕琢之前先有型</p>
+
+<p>先制作原型，再精雕细琢。从原型中寻找通过牺牲最小局部简洁性而获得较大性能提升的地方。</p></li>
+
+<li><p><strong>多样原则</strong>：绝不相信所谓“不二法门”断言</p></li>
+
+<li><p><strong>扩展原则</strong>：设计着眼未来，未来总比预想的快</p>
+
+<p>一言以蔽之，就是KISS，Keep it simple and stupid。</p></li>
+</ul>
+
+<h2 id="历史-双流记">历史————双流记</h2>
+
+<p>忘记过去的人，注定要重蹈覆辙。</p>
+
+<h2 id="对比-unix哲学同其他哲学的比较">对比：UNIX哲学同其他哲学的比较</h2>
+
+<p>UNIX风格，一切皆文件，以及在此之上的管道概念。</p>
+
+<p>UNIX中，进程生成代价低，并且有简便的进程间通讯。使得众多小工具、管道和过滤器组成了一个均衡系统。
+而反UNIX系统必须编写庞大的单个程序，并且进程间通讯要知晓彼此的细节，否则就只能采取低效不安去的方式。</p>
+
+<p>UNIX中内部边界清晰。
+有多用户权限，以及把设计关键安全性的功能限制在尽可能小的可信代码块上。
+即使shell也不是什么特权程序。</p>
+
+<p>UNIX文件不是靠后缀名识别的，没有文件属性，但是可以通过magic number来识别文件。
+文件属性在管道中会引发棘手的问题，对文件属性的支持会使程序员使用不透明的文件格式。</p>
+
+<p>如果不像UNIX强调CLI命令行界面，那么程序设计不会考虑以未预料的方式合作，难以实现远程系统管理，守护进程难以实现。</p>
+
+<p>UNIX开发门槛很低，有大量廉价工具和简单接口，开创了轻松编程的先河。</p>
+
+<h2 id="模块性-保持清晰-保持简洁">模块性，保持清晰，保持简洁</h2>
+
+<h3 id="封装和最佳模块大小">封装和最佳模块大小</h3>
+
+<p>模块太小时，复杂性全在于接口，阅读代码需要知道大量接口。模块太大时，模块内部代码bug太多。这都不是很好。</p>
+
+<h3 id="紧凑型和正交性">紧凑型和正交性</h3>
+
+<p>紧凑性是指一个设计内否装进人脑，有经验的用户是否不需要手册。
+不要有内部功能冗余，否则会出现功能子集成为“方言”，“方言”之间相互不能理解。</p>
+
+<p>正交性是说每一个动作只改变一件事而不影响其他。正交性缩短了测试和开发的时间。重构的原则性目标就是提高正交性。</p>
+
+<p>任何一个知识点在系统内都应当有一个唯一、权威的描述。</p>
+
+<p>围绕“解决一个定义明确的问题”的强核心算法组织设计，避免臆断和捏造。</p>
+
+<h3 id="软件是多层的">软件是多层的</h3>
+
+<p>纯粹自顶向下设计和自底向上设计都不好，可以结合使用。
+但是需要胶合层来协调策略和机制。</p>
+
+<p>C语言作为结构汇编程序是薄胶合层的经典代表。
+完美之道，不在无可增加，而在无可减少。</p>
+
+<p>UNIX强烈倾向于把程序分解成由胶合层连接的库集合。</p>
+
+<p>OO经常被过分推崇为解决软件复杂性的唯一方法，这违背了多样性原则。</p>
+
+<p>OO在其取得成功的领域(GUI，仿真，图形)之所以成功的主要原因之一是因为在这些领域里很难弄错类型的问题本体。</p>
+
+<h2 id="文本化-好协议产生好实践">文本化：好协议产生好实践</h2>
+
+<h3 id="文本化的重要性">文本化的重要性</h3>
+
+<p>文本流非常通用，并且通过压缩文本可以有很好的性能。</p>
+
+<p>二进制格式限制了位数，文本可拓展性更强。</p>
+
+<h3 id="数据文件元格式">数据文件元格式</h3>
+
+<p>尽可能使用元格式而不是标新立异。</p>
+
+<p>DSV，分隔符分隔值。如/etc/password用冒号分隔，反斜杠转义。</p>
+
+<p>RFC 822，电子邮件格式。HTTP1.1也是这种格式。属性每行一个，冒号接空白结束。</p>
+
+<p>Cookie-Jar和Record-Jar，用%%\n结束。</p>
+
+<p>XML，适合复杂数据格式，但是不能被传统UNIX工具解析。</p>
+
+<p>UNIX文本文件的约定：</p>
+
+<ul>
+<li><p>如果可能，以换行符结束的每一行只存一个记录。</p></li>
+
+<li><p>如果可能，每行不超过80个字符。</p></li>
+
+<li><p>使用#引入注释。</p></li>
+
+<li><p>支持反斜杠约定。</p></li>
+
+<li><p>使用冒号或连续空白作为分隔符。</p></li>
+
+<li><p>不要过分区别TAB和空格(令人头疼的python缩进)。</p></li>
+
+<li><p>对于复杂的记录，使用节格式。使用%%\n作为分隔符。并支持连续行(如Cookie-Jar)。</p></li>
+
+<li><p>包含版本号，或将格式设计成相互独立的自描述字节块(如PNG)。</p></li>
+
+<li><p>不要仅对文件的一部分进行压缩或二进制编码。</p></li>
+</ul>
+
+<h3 id="应用协议设计">应用协议设计</h3>
+
+<p>//TODO 留着以后看。。。</p>
+
+<h2 id="透明性-来点儿光">透明性，来点儿光</h2>
+
+<p>透明性是说知道程序在干什么，可显性是说知道程序怎么干的。</p>
+
+<p>优雅的代码不仅正确而且显然正确。优雅的代码不仅将算法传递给计算机而且将见解传递和信心传递给阅读代码的人。</p>
+
+<p>编写透明可显的系统节省的精力，将来可能就是自己的财富。</p>
+
+<h3 id="为透明性和可显性设计">为透明性和可显性设计</h3>
+
+<p>要追求代码的透明，最有效的方法很简单，就是不要在具体操作的代码上加上太多抽象层。</p>
+
+<p>可以默认隐藏细节，但不要使其无法被访问。</p>
+
+<p>反例，不透明的Windows注册表，注册表蠕变。</p>
+
+<h3 id="为可维护性设计">为可维护性设计</h3>
+
+<p>选择简单的算法，提供开发者手册。</p>
+
+<h2 id="多道程序设计-分离进程为独立的功能">多道程序设计：分离进程为独立的功能</h2>
+
+<p>做单件事并做好。</p>
+
+<p>真正挑战的不是协议语法而是协议逻辑。</p>
+
+<h3 id="从性能调整中分离复杂度控制">从性能调整中分离复杂度控制</h3>
+
+<p>除非万不得已(性能太差)尽量避免使用线程。</p>
+
+<p>将程序划分成多个子进程可以使需要特权的代码块尽量少。</p>
+
+<h3 id="unix-ipc方法分类">UNIX IPC方法分类</h3>
+
+<p>将任务转给专门程序。UNIX shellout。</p>
+
+<p>管道，重定向和过滤器。</p>
+
+<ul>
+<li><p>管道中所有阶段程序都是并发执行的。</p></li>
+
+<li><p>管道的缺点或局限是单向性。</p></li>
+</ul>
+
+<p>包装器。</p>
+
+<ul>
+<li><p>隐藏shell管线的复杂细节。</p></li>
+
+<li><p>安全性包装器。</p></li>
+</ul>
+
+<p>从进程。</p>
+
+<p>对等进程间通信。</p>
+
+<ul>
+<li><p>临时文件。用文件名包含$$，即PID保证文件名唯一。</p></li>
+
+<li><p>信号。需要信号的程序会向var/run写入pidfile。</p></li>
+
+<li><p>套接字。</p></li>
+
+<li><p>共享内存。</p></li>
+</ul>
+
+<h3 id="要避免的问题和方法">要避免的问题和方法</h3>
+
+<p>废弃的UNIX IPC方法。</p>
+
+<p>远程过程调用。不够透明可显。</p>
+
+<p>线程。同步互斥锁开销大且bug多。</p>
+
+<h2 id="微型语言-寻找唱歌的音符">微型语言：寻找唱歌的音符</h2>
+
+<p>更高级的语言可以使用更少的行数完成更多任务，也意味着更少的bug。</p>
+
+<p>UNIX包容小型的、为专门领域特制、大量减少程序行数的语言。</p>
+
+<p>//TODO 留着以后看。。。</p>
+
+<h2 id="生成-提升规格说明的层次">生成：提升规格说明的层次</h2>
+
+<p>尽可能把设计的复杂度从代码转移到数据中去。</p>
+
+<h2 id="配置-迈出正确的第一步">配置：迈出正确的第一步</h2>
+
+<h3 id="什么应该是可配置的">什么应该是可配置的</h3>
+
+<p>对于能够进行可靠检测的东西，就不要提供配置开关。</p>
+
+<p>提高程序适应能力，除非这样做会产生超过0.7秒延时。</p>
+
+<p>增加一个配置选项，就会减少测试覆盖率。</p>
+
+<h3 id="配置在哪里">配置在哪里</h3>
+
+<p>局部覆盖全局。</p>
+
+<p>使用同参数选项预期寿命最匹配的机制。</p>
+
+<h3 id="命令行选项">命令行选项</h3>
+
+<p>传统UNIX风格如<code>-ab</code>。</p>
+
+<p>GNU风格如`<code>--a --b</code></p>
+
+<h2 id="接口-unix环境下的用户接口设计模式">接口：UNIX环境下的用户接口设计模式</h2>
+
+<p>最小立异原则。新颖性提高了用户与接口最初几次的交互成本。仔细掂量你的折衷。</p>
+
+<p>提倡以共生和委派策略提高代码复用，降低复杂度。</p>
+
+<p>UNIX接口历史。面向行的，面向字符阵列的，和基于X的。</p>
+
+<p>接口设计在这些条件间权衡：简洁，表现力，易用，透明，脚本化能力。</p>
+
+<p>现代接口应当既支持CLI又支持可视接口，它们各有优缺点。</p>
+
+<p>UNIX程序员愿意使接口富有表现力和可配置。</p>
+
+<p>接口设计模式：</p>
+
+<ul>
+<li><p>过滤器：catlike型，宽进严出，不需要的也不丢弃，绝不增加无用数据。</p></li>
+
+<li><p>canstrip模式，如clear。</p></li>
+
+<li><p>源模式，如ls。</p></li>
+
+<li><p>引擎和接口分离。MVC模式。</p></li>
+
+<li><p>基于语言的接口。</p></li>
+
+<li><p>等等各种模式。</p></li>
+</ul>
+
+<p>网页浏览器作为通用前端，避免了后端大量GUI冗余代码。</p>
+
+<h2 id="优化">优化</h2>
+
+<p>知道何时不去优化。</p>
+
+<p>最有效的优化往往是优化以外的事情，如清晰干净的设计。</p>
+
+<p>最强大的优化技术是不优化。摩尔定律的指数效应。不值得为常数项优化。</p>
+
+<p>先估量，后优化。明确瓶颈所在，使用性能评估工具。</p>
+
+<p>小即是美，尽量将核心代码和数据结构放进缓存。</p>
+
+<p>降低延时。可以批处理、重叠操作、缓存。</p>
+
+<h2 id="复杂度-尽可能简单-但别简单过了头">复杂度：尽可能简单，但别简单过了头</h2>
+
+<h3 id="谈谈复杂度">谈谈复杂度</h3>
+
+<p>程序员在意实现的复杂度，用户在意界面或接口的复杂度，第三个标准是代码总行数。</p>
+
+<p>接口复杂度和实现复杂度需要折衷。</p>
+
+<p>旧学派UNIX唯一的框架就是重定向、管道和shell，而Emacs将非常多的文本缓冲区和援助进程同文件系统统一在一起，大大超越shell框架。</p>
+
+<p>选择需要管理的上下文环境，并且按照边界所允许的最小化方式构建程序。只有实证其他方法行不通时才编写大程序。</p>
+
+<h2 id="语言-c还是非c">语言：C还是非C</h2>
+
+<p>C的内存管理是复杂性和错误的深渊。</p>
+
+<p>真实世界中的程序往往受I/O、网络等的影响远大于CPU的影响。</p>
+
+<p>shell即使一种最早的解释型语言，高级shell编程可以混合各个语言。</p>
+
+<p>C语言资源效率接近机器语言，但是编程是资源管理的炼狱。</p>
+
+<p>C++最佳之处是编译效率以及面向对象和泛型编程的结合，最糟之处是它太过怪异复杂，其设计者承认他不指望任何一个程序员能够完全掌握C++。</p>
+
+<p>shell最佳之处在书写小型程序自然快捷，不用安装，但是不适合大型程序，并且不好移植。</p>
+
+<p>Perl最佳之处是作为加强shell的强力胶合程序，但是Perl有些部分很丑陋。</p>
+
+<p>Python清晰易读，易学易用，容易和C结合，但是效率相对低下。</p>
+
+<p>Java移植性好，效率较高，面向对象，但是爹不好。。。</p>
+
+<h2 id="工具-开发的战术">工具：开发的战术</h2>
+
+<p>讲解了各种UNIX开发工具，但是太过陈旧了。</p>
+
+<h2 id="重用-论不要重新发明轮子">重用：论不要重新发明轮子</h2>
+
+<p>透明性是重用的关键。</p>
+
+<p>开源后换工作也可以使用原来的代码。</p>
+
+<p>编写开源软件的人往往自己也使用，并且开源社区不会羞于抓bug。</p>
+
+<h3 id="许可证问题">许可证问题</h3>
+
+<p>OSD，OSI Cerified Open Source认证标志的法律定义，是最好的自由软件定义。所有标准许可证都满足他。</p>
+
+<p>MIT，BSD，GPL，MPL等等。</p>
+
+<h2 id="可移植性-软件可移植性与遵循标准">可移植性：软件可移植性与遵循标准</h2>
+
+<h2 id="文档-向网络世界阐释代码">文档：向网络世界阐释代码</h2>
+
+<h2 id="开放源码-在unix新社区中编程">开放源码：在UNIX新社区中编程</h2>
+
+<p>开发源码的规则很简单：</p>
+
+<ul>
+<li><p>源码公开</p></li>
+
+<li><p>尽早发布，经常发布</p></li>
+
+<li><p>给贡献以表扬</p></li>
+</ul>
+
+<p>开源开发利用散布在互联网上，而且主要通过email和网络文档交流的大型程序员团队。一般有核心开发者或核心开发组来指导项目。</p>
+
+<p>代码质量很难判断，开发者通常通过提交质量来评估补丁。</p>
+
+<h2 id="未来-危机与机遇">未来：危机与机遇</h2>
+
+<h3 id="plan-9-未来之路">PLAN 9， 未来之路</h3>
+
+<p>所有挂载的文件服务器都具备相同的类文件系统接口。</p>
+
+<p>PLAN 9 失败了，说明更优秀方案的最危险敌人，就是一个现存的足够优秀的架构。</p>
+
+<h3 id="unix设计中的问题">UNIX设计中的问题</h3>
+
+<p>UNIX文件就是一大袋字节。</p>
+
+<p>UNIX对GUI支持孱弱。</p>
+
+<p>文件删除不可撤销。</p>
+
+<p>UNIX假定文件系统是静态的。Linux改进了这一点，具有文件和目录更改通知功能。</p>
+
+<p>作业控制设计拙劣。</p>
+
+<p>UNIX API没有使用异常。</p>
+
+<h3 id="unix环境问题">UNIX环境问题</h3>
+
+<h3 id="unix文化问题">UNIX文化问题</h3>
+
+<h3 id="信任的理由">信任的理由</h3>
+
+<p>迄今为止，打赌UNIX玩家会输的人总是聪明一时糊涂一世。我们能赢————只要我们想赢。</p>
+
+        
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dailydreamer" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>      
+    </article>
+  </div>
+
+  <script src="/js/zepto.min.js"></script>
+<script src="/js/script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/languages/yaml.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>  
+</body>
+</html>

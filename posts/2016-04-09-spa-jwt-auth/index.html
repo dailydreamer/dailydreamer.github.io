@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.31.1" />
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +11,8 @@
 
 <link rel="shortcut icon" href="/images/avatar.jpg" />
 
-<meta name="keywords" content="">
-<title>Welcome to Dailydreamer&#39;s Space</title>
+<meta name="keywords" content="身份认证, JWT, XSS, CSRF">
+<title>单页应用JWT身份认证</title>
 
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
@@ -469,18 +468,151 @@ ga('send', 'pageview');
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2018-07-13">
-          Welcome to Dailydreamer&#39;s Space
-          <span class="posts-date">Jul, 2018</span> 
+        <h1 data-identifier="2016-04-09">
+          单页应用JWT身份认证
+          <span class="posts-date">Apr, 2016</span> 
         </h1>       
         <div class="tags">
+          
+          <span class="tag is-medium" style="margin-left:0">编程</span>
+          
+          <span class="tag is-medium" style="margin-left:0">WEB</span>
           
         </div>
         
 
-<p><img src="/images/journey.jpg" alt="journey" /></p>
+<p>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。
+为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。
+这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。</p>
 
-<h3 id="we-walk-until-the-path-is-done-in-wind-and-sand-and-setting-sun">We walk until the path is done, in wind and sand and setting sun.</h3>
+<h2 id="jwt-https-jwt-io-introduction"><a href="https://jwt.io/introduction/">JWT</a></h2>
+
+<p>JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。
+相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。
+相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。
+缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。</p>
+
+<p>JWT由三部分组成，Header.Payload.Signature。</p>
+
+<h3 id="header">Header</h3>
+
+<p>Header包含签名算法和type，如下：</p>
+
+<pre><code class="language-json">{
+  &quot;alg&quot;: &quot;HS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+}
+</code></pre>
+
+<p>Base64编码后即为Header。</p>
+
+<h3 id="payload">Payload</h3>
+
+<p>主体内容部分。有一些保留属性，如iss (issuer), exp (expiration time), sub (subject), aud (audience)等。也可以声明私有属性。</p>
+
+<p>如下：</p>
+
+<pre><code class="language-json">{
+  &quot;sub&quot;: &quot;1234567890&quot;,
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;admin&quot;: true
+}
+</code></pre>
+
+<p>Base64编码后即为Payload。</p>
+
+<h3 id="signature">Signature</h3>
+
+<p>签名部分，生成过程如下：</p>
+
+<pre><code class="language-js">alg(
+  base64UrlEncode(header) + &quot;.&quot; +
+  base64UrlEncode(payload),
+  secret)
+</code></pre>
+
+<p>其中alg为Header中声明的签名算法，常用的如SHA256等。
+结合secret校对签名可以保证JWT的完整性和不可伪造性。</p>
+
+<h3 id="身份验证过程">身份验证过程</h3>
+
+<p>后端API除了注册和登录外的需要身份验证的接口都对JWT签名进行验证，不通过则返回401 Unauthorized，保护API。
+用户注册登录后生成JWT返回用户，用户访问受保护的API时需要随请求发送JWT至服务器端。</p>
+
+<h2 id="两种常见的安全威胁">两种常见的安全威胁</h2>
+
+<p>接下来看看单页应用开发中几种常见的安全威胁：MITM(Man-In-The-Middle)，XSS(Cross-site scripting)和CSRF(Cross Site Request Forgery)。</p>
+
+<h3 id="mitm-https-www-owasp-org-index-php-man-in-the-middle-attack"><a href="https://www.owasp.org/index.php/Man-in-the-middle_attack">MITM</a></h3>
+
+<p>MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。
+这里我们在应用层主要使用SSL加密，即HTTPS防范它。
+在后端response的header的cookie设置<code>Secure</code>字段，强制cookie使用HTTPS传输。</p>
+
+<h3 id="xss-https-www-owasp-org-index-php-cross-site-scripting-28xss-29"><a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29">XSS</a></h3>
+
+<p>XSS是指将恶意脚本注入站点，如在用户聊天框输入的地方输入如下内容</p>
+
+<pre><code class="language-html">&lt;img src=x onerror=&quot;alert(XSS!)&quot;/&gt;
+</code></pre>
+
+<p>如果不经过滤就显示内容，那么该网页就会执行被注入的脚本，弹出一个alert。</p>
+
+<p>防范XSS的关键是不要信任任何用户提供的内容，对它们进行充分的过滤再使用。
+并且在后端response的header的cookie设置<code>HttpOnly</code>字段，禁止浏览器Javascript脚本操作cookie。</p>
+
+<h3 id="csrf-https-www-owasp-org-index-php-cross-site-request-forgery-28csrf-29"><a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29">CSRF</a></h3>
+
+<p>CSRF利用了一个事实，即如<code>&lt;img&gt;</code>标签等发起的简单的GET请求是不被同源策略约束的。
+如果攻击者在他的页面中加入一个标签如下：</p>
+
+<pre><code class="language-html">&lt;img src=&quot;http://example.com/api/user&quot;/&gt;
+</code></pre>
+
+<p>引诱你访问这个界面后，该标签像example.com的user api发送GET请求，并且会附上你的example.com的cookie，那么攻击者就能得到你在example.com的user信息。</p>
+
+<p>要防范CSRF，主要有两种方式。
+可以在后端的response的header中加入<code>Access-Control-Allow-Origin</code>白名单，限制跨域访问；
+或者使用一些Synchronizer Token技术。
+如在用户新建立一个sesseion时产生一个独有的Synchronizer Token，存储在表单的隐藏域、URL参数等地方，JWT的payload中也存储一份。
+然后每次请求时前端都通过Javascript脚本发送Synchronizer Token,而这个token攻击者无法获取（除非先进行XSS）。
+据此，后端就可以验证前端的身份非攻击者。</p>
+
+<h2 id="前端jwt存储">前端JWT存储</h2>
+
+<p>JWT存储有两种方式，localStorage和cookie。</p>
+
+<h3 id="localstorage">localStorage</h3>
+
+<p>后端返回JWT后，前端存储在localStorage中，每次请求时设置HTTP Authorization Header，使用Bearer scheme，如下：</p>
+
+<pre><code class="language-http">HTTP/1.1
+
+GET /api/user
+Host: example.com
+Authorization: Bearer Header.Payload.Signature
+</code></pre>
+
+<p>后端验证即可。</p>
+
+<p>存储在localStorage的优点是不使用cookie，避免了JWT被MIMT和CSRF攻击。缺点时localStorage可以被Javascript访问，容易被XSS攻击。</p>
+
+<h3 id="cookie">cookie</h3>
+
+<p>后端response的header设置Set-Cookie，如下</p>
+
+<pre><code class="language-http">HTTP/1.1 200 OK
+
+Set-Cookie: token=Header.Payload.Signature Secure; HttpOnly;
+</code></pre>
+
+<p>前端发器跨域请求时，正确设置(见上一篇blog)后会同时附带cookie，后端验证即可。</p>
+
+<p>存储在cookie的优点是在设置了<code>Secure; HttpOnly;</code>后防范了XSS和MIMT攻击，但是容易收到CSRF攻击。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>JWT提供了一种很好的身份验证方式，至于存储在哪里向来有很多争论，这是一个权衡取舍的过程。</p>
 
         
         <div id="disqus_thread"></div>

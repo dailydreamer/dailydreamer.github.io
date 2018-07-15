@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.31.1" />
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +11,8 @@
 
 <link rel="shortcut icon" href="/images/avatar.jpg" />
 
-<meta name="keywords" content="">
-<title>Welcome to Dailydreamer&#39;s Space</title>
+<meta name="keywords" content="CSS">
+<title>CSS Cheat Sheet</title>
 
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
@@ -469,18 +468,180 @@ ga('send', 'pageview');
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2018-07-13">
-          Welcome to Dailydreamer&#39;s Space
-          <span class="posts-date">Jul, 2018</span> 
+        <h1 data-identifier="2016-04-14">
+          CSS Cheat Sheet
+          <span class="posts-date">Apr, 2016</span> 
         </h1>       
         <div class="tags">
+          
+          <span class="tag is-medium" style="margin-left:0">编程</span>
+          
+          <span class="tag is-medium" style="margin-left:0">WEB</span>
           
         </div>
         
 
-<p><img src="/images/journey.jpg" alt="journey" /></p>
+<h2 id="html">HTML</h2>
 
-<h3 id="we-walk-until-the-path-is-done-in-wind-and-sand-and-setting-sun">We walk until the path is done, in wind and sand and setting sun.</h3>
+<p>block element块级元素，撑满一行</p>
+
+<p>inline element行内元素，宽度包围内容</p>
+
+<h2 id="css原理">CSS原理</h2>
+
+<h3 id="选择符">选择符</h3>
+
+<p>a, b {} 同时选中a和b</p>
+
+<p>a b {} a是b的祖先元素时选中b</p>
+
+<p>a &gt; b {} a是b的父元素时选中b</p>
+
+<p>a + b {} a紧邻b时选中b</p>
+
+<p>a ~ b {} a和b是同胞时选中b</p>
+
+<p>* {} 全部选中</p>
+
+<p>.a {} 选中a类</p>
+
+<p>#a {} 选中id为a</p>
+
+<p>a.b {} 选中同时为a标签和b类</p>
+
+<p>.a.b {} 选中同时为a类和b类</p>
+
+<p>a[b] {} 选中a标签中带有b属性的</p>
+
+<p>a[b=c] {} 选中a标签中b属性值为c的</p>
+
+<h4 id="伪类">伪类</h4>
+
+<p>a标签 a:link a:visited a:hover a:active</p>
+
+<p>a:focus a:target</p>
+
+<p>一组同胞元素中的第几个 a:first-child a:last-child a:nth-child(n) a:nth-child(odd) a:nth-child(even)</p>
+
+<h4 id="伪元素">伪元素</h4>
+
+<p>a::first-letter a::first-line</p>
+
+<p>a::before a::after</p>
+
+<p>搜索引擎不会索引伪元素</p>
+
+<h4 id="继承">继承</h4>
+
+<p>字体颜色等相关属性会继承，位置等相关属性不会继承</p>
+
+<h3 id="浏览器层叠样式表顺序">浏览器层叠样式表顺序</h3>
+
+<ol>
+<li>浏览器默认</li>
+<li>用户样式表</li>
+<li>作者链接样式表（按链接先后顺序）</li>
+<li>作者嵌入样式表</li>
+<li>作者行内样式表</li>
+</ol>
+
+<p>特指度：包含多少标签、类名、ID等（I-C-E三位数），特指度高的优先级高</p>
+
+<p>特指度相同时顺序靠后的优先级高</p>
+
+<h3 id="css属性">CSS属性</h3>
+
+<p>文本值</p>
+
+<p>数字值</p>
+
+<ol>
+<li>px 像素</li>
+<li>em 字体中M的宽度</li>
+<li>ex 字体中x的高度</li>
+<li>百分比</li>
+</ol>
+
+<p>颜色值（颜色名，RGB，HSL，16进制）</p>
+
+<h2 id="定位元素">定位元素</h2>
+
+<p>垂直外边距叠加：垂直方向相邻两个box取margin较大的作为外边距</p>
+
+<pre><code class="language-css">p {
+  font-size: 1em;
+  margin: .75em 30px;
+}
+</code></pre>
+
+<p>如上排版文字最好垂直相对外边距，水平绝对外边距</p>
+
+<p>给设定了宽度\高度的盒子加边框、内边距、外边距会使盒子更宽\更高。CSS3的box-sizing属性可以消除这一特点。</p>
+
+<h3 id="position">position</h3>
+
+<ol>
+<li>static：普通文档流</li>
+<li>relative: 仍然在文档流中，相对原来的box位置变化，原来box占据的位置不变</li>
+<li>absolute：从文档流中脱出，会随页面滚动</li>
+<li>fixed：从文档流中脱出，不会随页面滚动</li>
+</ol>
+
+<p>定位上下文：带有非static position的最近祖先元素，默认是body。</p>
+
+<h3 id="display">display</h3>
+
+<ol>
+<li>inline</li>
+<li>block</li>
+<li>none（空间会被回收）</li>
+</ol>
+
+<p>最近支持越来越好的flexbox布局，值得有空仔细研究。</p>
+
+<h3 id="background">background</h3>
+
+<ol>
+<li>background-repeat</li>
+<li>background-size</li>
+<li>background-attachment</li>
+</ol>
+
+<p>css3支持多张背景图片，先列出的在上层</p>
+
+<p>背景渐变</p>
+
+<h2 id="字体和文本">字体和文本</h2>
+
+<p>em相对最近的被设置过字体的祖先大小</p>
+
+<p>CSS3 rem相对root即body字体大小</p>
+
+<ol>
+<li>text-indent</li>
+<li>text-align</li>
+<li>vertical-align: sub(下标) super(上标) top middle bottom</li>
+</ol>
+
+<p>Web字体</p>
+
+<h2 id="界面组件">界面组件</h2>
+
+<p>label的for属性可以把标签和控件关联起来</p>
+
+<p>fieldset表单域</p>
+
+<p>用section块级元素包裹label和input</p>
+
+<h2 id="响应式布局">响应式布局</h2>
+
+<h3 id="媒体查询">媒体查询</h3>
+
+<p>媒体类型：all handled print screen 等</p>
+
+<p>媒体特性：max-device-width max-width orientation</p>
+
+<p>and not all 等逻辑运算符</p>
 
         
         <div id="disqus_thread"></div>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.31.1" />
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +11,8 @@
 
 <link rel="shortcut icon" href="/images/avatar.jpg" />
 
-<meta name="keywords" content="">
-<title>Welcome to Dailydreamer&#39;s Space</title>
+<meta name="keywords" content="ssh">
+<title>多个github账号的ssh key切换</title>
 
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
@@ -469,18 +468,45 @@ ga('send', 'pageview');
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2018-07-13">
-          Welcome to Dailydreamer&#39;s Space
-          <span class="posts-date">Jul, 2018</span> 
+        <h1 data-identifier="2015-10-30">
+          多个github账号的ssh key切换
+          <span class="posts-date">Oct, 2015</span> 
         </h1>       
         <div class="tags">
+          
+          <span class="tag is-medium" style="margin-left:0">编程</span>
+          
+          <span class="tag is-medium" style="margin-left:0">ssh</span>
           
         </div>
         
 
-<p><img src="/images/journey.jpg" alt="journey" /></p>
+<p>当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。</p>
 
-<h3 id="we-walk-until-the-path-is-done-in-wind-and-sand-and-setting-sun">We walk until the path is done, in wind and sand and setting sun.</h3>
+<h2 id="github多个账号ssh-key切换">github多个账号ssh key切换</h2>
+
+<h3 id="配置ssh的config文件">配置ssh的config文件</h3>
+
+<p>使用<code>ssh-keygen -t rsa -C &quot;youremail@xxx.com&quot;</code>生成两个ssh key之后，在~/.ssh/下添加一个config文件，内容如下:</p>
+
+<pre><code>Host github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+Host second.github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_second
+</code></pre>
+
+<h3 id="设置远程仓库的ssh地址">设置远程仓库的ssh地址</h3>
+
+<p>只需要让ssh的目标主机地址变为你写的Host即可。</p>
+
+<pre><code class="language-sh">git remote add origin git@second.github.com:myname/myrepo.git
+</code></pre>
+
+<p>更加深入的利用ssh config文件可以参考<a href="http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/">这篇文章</a>。</p>
 
         
         <div id="disqus_thread"></div>

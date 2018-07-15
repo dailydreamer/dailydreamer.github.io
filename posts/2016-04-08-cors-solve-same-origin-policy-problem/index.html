@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.31.1" />
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,8 +11,8 @@
 
 <link rel="shortcut icon" href="/images/avatar.jpg" />
 
-<meta name="keywords" content="">
-<title>Welcome to Dailydreamer&#39;s Space</title>
+<meta name="keywords" content="同源策略, JSONP, CORS">
+<title>CORS解决单页应用跨域问题</title>
 
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
@@ -469,18 +468,166 @@ ga('send', 'pageview');
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2018-07-13">
-          Welcome to Dailydreamer&#39;s Space
-          <span class="posts-date">Jul, 2018</span> 
+        <h1 data-identifier="2016-04-08">
+          CORS解决单页应用跨域问题
+          <span class="posts-date">Apr, 2016</span> 
         </h1>       
         <div class="tags">
+          
+          <span class="tag is-medium" style="margin-left:0">编程</span>
+          
+          <span class="tag is-medium" style="margin-left:0">WEB</span>
           
         </div>
         
 
-<p><img src="/images/journey.jpg" alt="journey" /></p>
+<h2 id="同源策略-https-developer-mozilla-org-en-us-docs-web-security-same-origin-policy"><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">同源策略</a></h2>
 
-<h3 id="we-walk-until-the-path-is-done-in-wind-and-sand-and-setting-sun">We walk until the path is done, in wind and sand and setting sun.</h3>
+<p>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。
+这时前端和后端部署在不同的服务器上。
+而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。</p>
+
+<p>同源是指协议+主机名+端口号全部相同，称为同源。
+详细见下表，是跟&rdquo;<a href="http://www.example.com/dir/page.html&quot;做比较。">http://www.example.com/dir/page.html&quot;做比较。</a></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Compared URL</th>
+<th align="left">Outcome</th>
+<th align="left">Reason</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="http://www.example.com/dir/page2.html">http://www.example.com/dir/page2.html</a></td>
+<td align="left">Success</td>
+<td align="left">Same protocol, host and port</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://www.example.com/dir2/other.html">http://www.example.com/dir2/other.html</a></td>
+<td align="left">Success</td>
+<td align="left">Same protocol, host and port</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://username:password@www.example.com/dir2/other.html">http://username:password@www.example.com/dir2/other.html</a></td>
+<td align="left">Success</td>
+<td align="left">Same protocol, host and port</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://www.example.com:81/dir/other.html">http://www.example.com:81/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Same protocol and host but different port</td>
+</tr>
+
+<tr>
+<td align="left"><a href="https://www.example.com/dir/other.html">https://www.example.com/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Different protocol</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://en.example.com/dir/other.html">http://en.example.com/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Different host</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://example.com/dir/other.html">http://example.com/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Different host (exact match required)</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://v2.www.example.com/dir/other.html">http://v2.www.example.com/dir/other.html</a></td>
+<td align="left">Failure</td>
+<td align="left">Different host (exact match required)</td>
+</tr>
+
+<tr>
+<td align="left"><a href="http://www.example.com:80/dir/other.html">http://www.example.com:80/dir/other.html</a></td>
+<td align="left">Depends</td>
+<td align="left">Port explicit. Depends on implementation in browser</td>
+</tr>
+</tbody>
+</table>
+
+<p>Javascript不能访问非同源下的资源，如cookie，localstorge等，这也意味着ajax请求后返回的数据会被浏览器认为是非同源而禁止Javascript操作。
+通常的解决方法有JSONP(JSON with Padding)和CORS(Cross-origin resource sharing)。
+当然如果要求实时性的话也可以考虑WebSocket协议，这点本文不展开。</p>
+
+<h2 id="jsonp-https-en-wikipedia-org-wiki-jsonp"><a href="https://en.wikipedia.org/wiki/JSONP">JSONP</a></h2>
+
+<p>HTML标准里的<code>&lt;script&gt;</code>标签，它可以调用部署在CDN上或其他服务器上的非同源Javascript。
+JSONP实际上是利用了这一点，和服务器端约定，在发送请求时加入了一个回调函数的参数。
+如Jquery中设置参数<code>dataType: &quot;jsonp&quot;</code>后，请求相当于插入页面如下标签</p>
+
+<pre><code class="language-html">&lt;script src=&quot;http://www.example.net/api/example?callback=mycallback&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>服务器端返回的payload为<code>mycallback(data)</code>，通过<code>&lt;script&gt;</code>标签执行，就完成了ajax请求。</p>
+
+<p>JSONP的优点是实现简单，兼容性很好。
+缺点是只支持GET请求。</p>
+
+<h2 id="cors-https-developer-mozilla-org-en-us-docs-web-http-access-control-cors"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS</a></h2>
+
+<p>CORS是W3C推荐的跨域HTTP请求的新机制，它可以支持如下请求：</p>
+
+<ul>
+<li>XMLHttpRequest(即ajax请求)</li>
+<li>Web Fonts</li>
+<li>WebGL textures</li>
+<li>canvas中drawImage产生的Images/video frames</li>
+<li>CSS</li>
+<li>Scripts</li>
+</ul>
+
+<h3 id="简单请求">简单请求</h3>
+
+<p>简单请求，是指满足如下条件的请求：</p>
+
+<p>只允许如下方法：</p>
+
+<ul>
+<li>GET</li>
+<li>HEAD</li>
+<li>POST</li>
+</ul>
+
+<p>除了浏览器自动设置的属性（如Connection, User-Agent等), 只允许设置如下头部属性：</p>
+
+<ul>
+<li>Accept</li>
+<li>Accept-Language</li>
+<li>Content-Language</li>
+<li>Content-Type</li>
+</ul>
+
+<p>只允许如下Content-Type值:</p>
+
+<ul>
+<li>application/x-www-form-urlencoded</li>
+<li>multipart/form-data</li>
+<li>text/plain</li>
+</ul>
+
+<p>对于简单请求，要允许CORS，需要在后端返回的response的header中设置<code>Access-Control-Allow-Origin</code>允许前端服务器地址的ajax请求，可以使用通配符或白名单。
+如<code>Access-Control-Allow-Origin: *</code>允许所有跨域请求，<code>Access-Control-Allow-Origin: http://example.com</code>允许前端服务器example.com的跨域请求。</p>
+
+<p>发送CORS跨域请求默认不带cookie。
+可以设置request的header中xhr对象<code>withCredentials: true</code>一同发送cookie，同时后端返回的response的header中设置<code>Access-Control-Allow-Credentials: true</code>接收cookie。
+注意使用cookie时<code>Access-Control-Allow-Origin</code>的值不能是通配符<code>*</code>。</p>
+
+<h3 id="preflighted-requests">Preflighted requests</h3>
+
+<p>除了简单请求外的请求都是复杂请求。
+在发送复杂请求之前需要先发送一个OPTIONS方法的Preflighted requests，后端确认安全后再发送正式请求。
+具体设置可以参考<a href="https://www.w3.org/TR/cors/">W3C推荐标准</a>。</p>
 
         
         <div id="disqus_thread"></div>
