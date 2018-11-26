@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</loc>
+    <lastmod>2018-11-25T17:43:19-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dailydreamer.me/posts/2018-11-20-lessons-of-history/</loc>
     <lastmod>2018-11-20T07:33:02-08:00</lastmod>
   </url>
@@ -185,7 +190,7 @@
   
   <url>
     <loc>https://dailydreamer.me/posts/</loc>
-    <lastmod>2018-11-20T07:33:02-08:00</lastmod>
+    <lastmod>2018-11-25T17:43:19-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -209,7 +214,7 @@
   
   <url>
     <loc>https://dailydreamer.me/</loc>
-    <lastmod>2018-11-20T07:33:02-08:00</lastmod>
+    <lastmod>2018-11-25T17:43:19-08:00</lastmod>
   </url>
   
   <url>
@@ -256,13 +261,13 @@
   
   <url>
     <loc>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2018-01-28T22:34:59-08:00</lastmod>
+    <lastmod>2018-11-25T17:43:19-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2016-06-09T20:00:00+08:00</lastmod>
+    <lastmod>2018-11-25T17:43:19-08:00</lastmod>
     <priority>0</priority>
   </url>
   
