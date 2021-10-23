@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>读书笔记 on dailydreamer</title>
-    <link>https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
-    <description>Recent content in 读书笔记 on dailydreamer</description>
+    <title>Posts on dailydreamer</title>
+    <link>https://dailydreamer.me/posts/</link>
+    <description>Recent content in Posts on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 24 Oct 2021 00:19:53 +0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Oct 2021 00:19:53 +0800</lastBuildDate><atom:link href="https://dailydreamer.me/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>探秘意识 - 读《我是谁或什么》</title>
       <link>https://dailydreamer.me/posts/2021-10-24-the-minds-i/</link>
@@ -35,6 +35,27 @@
 在牛顿力学的时代，物理法则和结果都是决定性的。虽然量子力学的发现带来了概率描述的结果，不过这并不影响物理法则的决定性，而这种结果的概率分布中也并没有留下自由意志影响的余地。所以在世界的角度看，如果有一位全知的造物主的话，他会残酷地掷骰子，摆弄着不存在自由意志的我们。
 然而巧妙的是，意识是一个如此不对等的现象，即使是造物主也不能妨碍我们意识到自己是有自由意志的。模拟出一个带有自由意志的自我模型，对人类的生存、繁衍、发展，对我们合理化的行动，都是有着积极的意义的。只有意识到自己的主观能动性，意识到美好的生活可以通过努力奋斗得到，我们才会对当下所得感到满足，对明天所期充满希望，即使我只是我身体里的一场梦。
 所以真正重要的是，我们是否感到有自由意志。人本无自由意志，正如人生本无意义。是我们不懈地追求，最终赋予这段旅程以意义。哪怕这个残酷的世界糟糕透顶，只要继续踏上旅程，就能感受到街边飘来的花香，午后温暖的阳光，这些小小的幸福的断片；当然也会有面对未知的恐惧，脸上划过的泪水，这些更加丰满的体验。旅途本身就是奖励，而这正是我们的自由意志，是我们无悔的选择。</description>
+    </item>
+    
+    <item>
+      <title>Python 并发模型</title>
+      <link>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</link>
+      <pubDate>Sun, 25 Nov 2018 17:43:19 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</guid>
+      <description>同步的I/O操作会白白消耗很多时钟周期，因此许多编程语言都提供了并发模型来实现异步I/O。今天简单介绍一下Python中的并发模型。
+开始之前先澄清一下并发和并行的关系。并发（Concurrency）是指一次处理很多事情，而并行（Parallelism）是指同时做很多事情。并发是处理问题的一种方式，而并行则必须由硬件支持。
+Multi-thread 多线程是最传统的并发模型之一，线程之间通过共享内存来通信，通过互斥锁来防止对临界区域同时读写。
+曾经以为由于CPython在实现上采用了GIL（Global Interpreter Lock）来保证线程安全，导致其多线程模型基本不可用。后来了解到Python标准库里所有阻塞I/O函数都会释放GIL，自己编写的函数也可以通过C扩展来释放GIL。所以Python多线程模型在I/O密集型程序中是完全可用的。对于计算密集型程序，可以使用有类似接口的多进程模型处理。
+但是多线程模型有一些缺点：
+ 一个线程可能在任何时候被打断，需要上锁，导致很难理解 线程的存储和切换负担相对协程还是较重  为了解决这些问题，Python 3.4引入了asyncio的协程模型。
+asyncio Python的asyncio使用轻量级的协程作为调度单位，因此可以达到更高并发。同时协程运行过程中天然被保护，必须显示交出控制权（yeild）给其它协程运行，否则不会被打断。
+Python的asyncio非常类似于Node.js的Event loop + Async/Await。 Node.js曾尝试使用回调函数并发模型，但是最后因为回调地狱走向了Async/Await。相比于回调，Async/Await还解决了回调context丢失，不好错误处理的问题。
+但是asyncio给Python带来了新的问题：生态的分裂。协程链最后会被asyncio的API驱动，比如loop.run_until_compelte()；而协程链最开始总是被异步I/O API发起，比如asyncio.sleep()或aiohttp.request()。因此要使用asyncio框架，则需要生态中的所有部分如Web框架、数据库驱动、消息队列、各种客户端等全部用协程重写。目前来看Python的asyncio生态还是不够成熟。
+Go Model 当然，其它语言也有着很多不同类型的并发模型。写到这里不得不提一下Golang，作为近些年来热度不断上升的语言，它的并发模型有其独到之处。
+Golang实现了CSP（communicating sequential processes) Model。它使用轻量级协程和runtime中的调度器来实现并发，即使其I/O函数是同步的。当一个goroutine阻塞时，runtime调度器会自动切换到其它goroutine，这有点类似于轻量级的多线程模型。不同于多线程模型的是goroutines之间通过channel传递信息通信，而非共享内存，这样来保证同一时间只有一个goroutine访问一个临界区域。正如Rob所说，“Do not communicate by sharing memory; instead, share memory by communicating.”
+虽然Golang也存在其它问题，尤其是跟Erlang实现的Actor Model对比时，但是它的成功是显而易见的。
+结语 本文回顾了Python中不同的并发模型，简略提到了Golang中的并发模型。从来没有一个最好的语言和并发模型，只有最适合的。虽然Golang的高性能和高并发很吸引人，Python的优雅、灵活、快速开发则是其长盛不衰的原因。</description>
     </item>
     
     <item>
@@ -101,6 +122,78 @@ Ray通过一系列的心理测评，给每个员工制作公开的“个性棒�
 对于目标的看法 Ray一语道破本质：“把赚钱作为你的目标是没有意义的，因为金钱并没有固有的价值，金钱的价值来自它能买到的东西，但金钱并不能买到一切。更聪明的做法是，先确定你真正想要什么，你真正的目标是什么，然后想想你为了得到这些目标需要做什么”。很多人将赚钱作为自己的小目标其实是缺少对于自己的觉察，亦或是懒得去思考自己真正在乎的是什么，就随波逐流的将赚钱作为自己的目标。诚然这是非常稳妥的一种方式，但是不面对自己本心，跟提线的木偶又有什么区别呢？
 那么人们真正想要的是什么呢？Ray有一个观察：“一个东西要好，就必须符合现实的规律，并促进整体的进化，这能带来最大的回报。这种持续地追求学习和改进的动力，让人类天生地对进步感到快乐，对快速进步感到兴奋。尽管大多数人觉得他们是在追求能让自己快乐的东西（玩具、大房子、金钱、地位等），但这些只能带来小的满足，远远无法与进步能给大多数人带去的长期的满足感相比”。Ray试图从进化的角度去解释人们对价值感的追求，也是一个新颖的看法。
 结语 以上就是我的一点感悟。Ray因为儿子曾患双相人格障碍而接触心理学，在这些原则中心理学的影子无处不在。相信能够把系统化的心理学运用在实际企业管理中去，也将是一个机遇吧。</description>
+    </item>
+    
+    <item>
+      <title>智慧服装</title>
+      <link>https://dailydreamer.me/posts/2018-06-13-apparel-sales-prediction/</link>
+      <pubDate>Wed, 13 Jun 2018 00:30:35 -0700</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-06-13-apparel-sales-prediction/</guid>
+      <description>在GIX的第二年，在探索中思考，在痛苦中学习，一个重要的收获之一就是有了自己的第一个愿景：用新技术给传统行业赋能。技术是我的热爱，而接触不同的行业又能极大的满足我对世界的好奇，同时国内的很多传统行业正处在数字化智能化转型的生死快跑中。今天来讲讲服装行业的机会。
+现在直销服装品牌的一件服装的生命周期为：设计 -&amp;gt; 计划 -&amp;gt; 采购 -&amp;gt; 生产 -&amp;gt; 物流 -&amp;gt; 销售 -&amp;gt; 客户。跟一切买来东西加工后卖出去的生意（比如零售、投资等等）一样，对需求的预测是一切后续行动（配货、调货、补货等）的核心。需求预测的过少，会损失潜在的销售机会；预测过多，会导致库存积压，严重甚至会资金链断裂。
+预测可以分为三个维度：场（总盘，区域，店），时间（年，季度，周），商品（总盘，大类，SKU）。不同维度的预测能辅助不同程度的决策（如年度财务规划，季度商品计划，销售时的调拨补货计划等）。
+我们走访了几个自营品牌，现在基本是靠店长来手动做这些计划。通过POS机和ERP系统的销量、库存信息，总结出一些规则如畅销滞销款、库销比等等，结合店长自身的经验做出决策，之后复盘帮助店长成长。
+算法驱动的预测相比传统手工预测有如下几个好处：
+ 准确性可靠性高。人类就像莫比乌斯环上的蚂蚁，在螺旋中不断前行。纵观历史的长河，很多事情都是一再重复的发生，而人类局限于自己的尺度，很多时候并不能对事物发展的趋势进行很好的判断。在面对大量的数据时，甚至不可能在有效时间内做出判断。同时，人很难避免情绪的影响，而情绪会极大程度影响判断。 可复制性强。手工预测依赖店长的个人能力，会随着店长的流失被带走；而且店长时间有限，很难兼顾全部商品。 可持续改进。算法可以根据数据反馈持续改进，将店长的智慧永存。  同时算法驱动的预测也有其局限性（比如很难进行涉及潮流趋势的商品计划），因此实际执行时，我们会按由易到难的顺序慢慢改进，先预测现货服装，再预测期货服装销量。
+后续工作可以有根据预测的销量规划调拨补货的行动，基于视觉的服装自动打标，联动到生产的智能工厂，联动到销售的智能店铺等，我们做过一些初期的探索，有很大的想象空间。</description>
+    </item>
+    
+    <item>
+      <title>XLChain</title>
+      <link>https://dailydreamer.me/posts/2018-06-03-xlchain/</link>
+      <pubDate>Sun, 03 Jun 2018 22:00:00 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-06-03-xlchain/</guid>
+      <description>Overview This is a course project of our Fabrication and Physical Prototyping course, implemented by Xincheng Li and Chengxi Xia. Blockchain is a hot topic recently, but only very few people know the theory behind it. This project want to introduce the simple mechanism of blockchain leveraging the tangible object interaction, under the constraint of the course requirement.
+XLCahin
+We&amp;rsquo;ve already seen some interesting visualization about blockchain, like ethviewer, etc. Though it is inspiring to see these digital visualization, tangible visualization would be more fun to play with, thus easy to accept by broader range of people, especially young children.</description>
+    </item>
+    
+    <item>
+      <title>FoodGo, 层级式的配送小车</title>
+      <link>https://dailydreamer.me/posts/2018-01-28-foodgo-autonomous-food-delivery/</link>
+      <pubDate>Sun, 28 Jan 2018 22:34:59 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-01-28-foodgo-autonomous-food-delivery/</guid>
+      <description>FoodGo是之前参加2017年GIX创新大赛美团点评组的项目，当时拿到了一等奖。 人力成本越来越高的今天，低工资的配送员的数量不能满足快速增长的外卖市场的需求，等待时间的加长严重影响了用户体验。 使用机器人来辅助配送成为一种可能。 FoodGo的创新点在于使用层级式的方式配送。 大车带着小车在大路上跑，在系统规划的地点放下小车，小车自动驾驶到用户指定的送餐地点等待用户，而大车可以直接开往下个地点。 这样一来占送一批单很大时间的末端配送和等待用户这一工作可以交给机器人来完成，成倍提升了运力。 而且这一方式以后可以升级为大车也无人驾驶，渐进式的方案更容易快速落地。 可以参考下面这个视频
+今天主要来讲讲实现原型时的一些技术问题。
+框架 为了快速迭代原型基于ROS和turtlebot kobuki进行实现。主要框架如图下所示
+主要有四部分，sensor数据的处理，rtabmap SLAM框架，path planner以及controller。 Sensor使用了ZED的双目摄像头。选用双目是因为RGBD摄像头在室外环境无法使用，而Lidar价格过于昂贵。 选用ZED是因为虽然它基线较短在室外场景远距离精度有限，但是它便宜并且有完善的驱动，虽然最后被驱动坑了很多。。。下文会提到。 SLAM框架选择了rtabmap因为它在ROS上提供了完整的建图定位工具链，适合快速开发原型。 Path planner和controller直接选用ROS提供的move_base，它使用了dijkstra算法作为global planner，DWA算法作为local planner。
+传感器及处理 这部分本来的理想情况是使用ZED的驱动直接获取深度信息，但是问题来了，ZED的驱动必须要cuda库，而我的笔记本没有GPU。。。 所以这部分只能利用ROS的一些库自己实现了。 ZED摄像头在Ubuntu 16.04下能被系统驱动识别显示为 /dev/video* (*的数值取决于你的其他video设备)，而在Ubuntu 14.04的驱动下还无法识别，当时为了这个还重装了系统。。。 然后我fork了一个开源的ZED CPU驱动，做了一些小修改。 它使用OpenCV的ROS bridge将图片读入ROS，将它们发布成左右两个ROS topic并作时间同步。 然后使用ROS的stereo_image_proc包undistorting原始图像并且算出disparity map。
+一开始我使用了ZED出厂的校准参数，结果stereo image proc报错opencv assert failed。 后来使用ROS的camera calibration包重新校准了一下就没有问题了。
+有时候CPU的计算能力不足以使用stereo image proc将每帧图像都实时undistorting，就会出现发布的undistorting后的左右图片丢帧，这时候rtabmap有一个参数approx sync可以大致对齐stereo camera的时间戳。
+当时还遇到了一个问题，就是robot坐标系base link到摄像头坐标系camera link是一个平移，但是摄像头坐标系到实际的图像坐标系是有一个别扭的旋转的，因为它们安排x y z轴的指向并不一样。 当时忽略了这一点导致建出来的图是旋转的，困扰了一阵子。 具体如何旋转可以参考这个回答。
+Rtabmap建图与定位 由于没有使用额外的地图API，需要自己建图来导航。 ROS的move base接受grid map，一般的SLAM算法实现中没有集成生成grid map的方法，这也是选择rtabmap的一个重要原因。 建图建好之后存进一个sqlite数据库中，rtabmap从数据库中读取grid map并发布出来，通过处理ZED摄像头的双目图像，发布机器人的tf。 同时rtabmap还有point cloud xyz模块可以过滤从ZED生成的点云数据，找到地平面然后聚类地平面以上的障碍物。有了tf，grid map和障碍物点云数据，就可以使用ROS的move base进行导航和避障了。
+总结 一个简单的使用双目摄像头的导航避障小车就实现完成了。 使用双目对障碍物的检测有时会存在误报的情况，可以成为一个可改善的方向。</description>
+    </item>
+    
+    <item>
+      <title>过去失败的创业尝试</title>
+      <link>https://dailydreamer.me/posts/2018-01-09-past-failed-experiences/</link>
+      <pubDate>Tue, 09 Jan 2018 22:52:10 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-01-09-past-failed-experiences/</guid>
+      <description>07/19/2018 Update：这半年自己也成长了不少，今天回过头来看这篇文章，发现自己忽略了很重要的一个失败因素：有效的团队。之前大家更像是一个group，虽然在一起玩的很开心，但是并没有真正花时间去build effective team。group和team的差异在于team在行动之前，会花时间建立大家都认同的价值观和行为准则，并形成team charter指导日后的工作。我个人非常在乎的原则是绝对透明，这意味着及时而坦诚的沟通自己的想法和顾虑，想想看来在之前的团队其实这点做的并不是很好。认识到这点后我在新团队尝试实践这个原则，取得了很好的效果。
+ 2018年到了，很多人都在朋友圈里发年终总结，我也整理了一下过去的照片，回忆起了本科的时候曾经有两次试图创业的经历。 虽然都无疾而终，但是现在想起还是有很多美好的回忆，以及接下来要跟大家分享的经验教训。
+Nutt Nutt 坚果健身是一个能收集器械健身数据的智能硬件。
+当时是第一次参加创客比赛，抱着试一试的心态，但是因为优秀的团队合作和切中热点的题目，我们最后获得了2015年中美青年创客大赛的一等奖（这里也可以看见选择的重要性哈哈）。 这个比赛的级别很高，比赛之后接受了一些媒体采访宣传，还有机会去了湖南卫视的天天向上，也是第一次接触到了一些投资人，同时有一个硬件工厂想要和我们合作把这个项目落地。 在这一片喝彩的声中，我们就决定试一试。 现在想起其实缺少很多冷静的分析和思考。
+其中细节按下不表。几点经验教训：
+ 中途受邀请准备很多展览、接待领导人参观，我们都没有拒绝。表面看起来风光，其实浪费了很多时间，而且大部分活动并没有带来任何的宣传效果，做的是无用功。 在过了最初的新鲜感之后，由于学业上的压力，以及合作方的不给力，团队的工作进度开始慢了下来，到最后的接近停滞。这期间团队之间没有像比赛那时侯一致的目标，但是并没有相互沟通清楚自己的期待和动机，导致了大家工作热情低下没有动力。  虽然最后项目没有做成，但是这也是我第一次接触设计思维的方法论，从此就在这条道路上探索了下去。
+Pootoo Pootoo是从我们实际的学习生活中来的。 大学中的学生辅导员工作中的很大时间都是用作一些低效率的反复通知和收发文件，当时想到如果能有一个App来帮他们做通知送达，文件自动收集规整，以及进一步可以是一个大学生知识分享平台就好了。
+细节还是有机会再说，经验教训：
+ 辅导员的效率工具对于辅导员还有学生来说都是一个使用频次比较低的东西，大概在一周一到两次，想要从这里切入做成知识分享平台有难度。 辅导员和大学生并没有很强的付费倾向，现在的这种方式对他们来说也可以接受，说明这是一个痒点并不是痛点。 在2016年，移动流量红利基本已经过去，这种类型的App想要融资难度比较大。 技术选型的时候，太执着于当前最新“最好”的技术，而没有考虑到团队的熟悉程度和学习成本，没有根据商业需求来技术选型，导致最后开发周期过长。  可以说这次尝试创业让我更加了解了现实世界的运行规则，技术和产品并不是一切。 虽然作为一个创业者可以对技术和产品有自己的坚持，但是作为公司来讲这些都只是为商业在服务，如何做好这其中的权衡是需要慢慢体会的。
+结语 Learn from fail. 这次记录下来之前项目的经验教训，是为了以后自己不会再犯同样的错误。嗯，黄金圣斗士不会被同样的招式打败第二次。</description>
+    </item>
+    
+    <item>
+      <title>Nutriment</title>
+      <link>https://dailydreamer.me/posts/2017-12-05-nutriment/</link>
+      <pubDate>Tue, 05 Dec 2017 02:25:44 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2017-12-05-nutriment/</guid>
+      <description>Introduction Nutriment is a project that I developed with Ibtasam and Jay for MSTI Design Thinking Studio. We started from idea brainstorming and secondary research, we did primary research to refine our design question and to come up with design requirements, then user scenarios and core tasks were generated, finally we made a low fidelity prototype and conducted some tests to get user feedback.
+Through this process, not only did I learned the toolset and methodology of design thinking, but also a mindset and a way of thinking a question.</description>
     </item>
     
     <item>
@@ -207,6 +300,41 @@ Analyze data  flow models: analyze how data flow transfer between subjects conve
     </item>
     
     <item>
+      <title>从函数式语言想到的</title>
+      <link>https://dailydreamer.me/posts/2016-06-09-inspired-by-functional-programing-language/</link>
+      <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2016-06-09-inspired-by-functional-programing-language/</guid>
+      <description>最近看了一本书Seven Languages in Seven Weeks。 原来一直都在面向对象编程，对函数式语言了解并不多，看完这本书之后还是很受启发，接触了许多不同语言的新的思想。
+各种编程范式 imperative programming 古老的编程范式，以冯诺以曼结构的机器思考的方式编程，如C语言。
+object oriented programming 现在正当年的主力编程范式，如Java、C#、ruby、python，以及深度融合了函数式思想但本质还是OOP的scala。
+它的分支Prototype-based programming，如JavaScript，是一种十分灵活的编程方式。 没有Class定义，所有的Object都以另一个Object为prototype，可以很灵活的改变原型链上的Object的数据和方法。
+logic programming 面向推理逻辑的特定编程范式，是一种高等级的抽象，如prolog，声明定义和推导即可得出特定问题的答案。
+functional programming 被认为是下一代的编程范式。 函数式编程范式基于lambda calculus的思想，很早就在大名鼎鼎Lisp中出现。 其核心思想是认为一切程序都可以由纯函数组成，纯函数没有副作用，输入一样则输出必然一样； 所有数据结构都是immutable的，其值不能被改变。
+早年由于我们的计算机架构是冯诺以曼结构，其基本操作都是基于副作用的，因此这种函数式编程带来的性能上的极大损失使其没有像命令式编程一样成为主流语言。 现在随着计算机性能的提升以及相关理论和实现的完善，函数式编程的思想带来的好处逐渐体现，并且也积极的影响着其它现在的主流语言。 同时涌现了一批为了兼容现有平台而作出一定妥协的”过渡性语言”，如Scala（Better Java）、Clojure（JVM上的Lisp）、F#（.Net上的OCaml）。
+函数式语言的积极影响 基于immutable思想的数据结构 immutable带来的好处是程序的结果更加的可以预测，变量不会在你看不见的地方被偷偷改变。 而且在多核的并行架构下Immutable能够避免复杂的状态和逻辑维护，使程序更加高效简单。
+过去Lisp中主要的immutable数据结构是List,在某些情况下这种数据结构的性能非常糟糕（如查找是O(n)）。 而现在一些精巧复杂的树状的数据结构可以兼顾immutable和性能（以一定的存储空间为代价），如Ideal Hash Trees中的Hash array mapped trie(HAMT)。 这篇文章详细讲解了Clojure中的Persistent Vectors（虽然叫Vector但只是接口一样，实际这货是个树）的实现原理。 它基于HAMT，能够在保持immutable维护过去状态以供回滚的同时达到增加、更新、查找都为O(1)的性能。 知乎上的这个讨论介绍了一些其它的相关数据结构。
+基于immutable的系统 Nix OS是一种使用Nix packager manager的纯函数式思想的系统。 Nix packager manager也可以在Linux和Mac OS X上使用。 它将每一个软件包都独立开来，升级软件的时候不会影响原来已经安装好的其它版本的该软件，使得软件可以轻松回滚，并且不会出现由于版本导致的各种问题，是ruby的RVM，node.js的NVM，python的virtualenv等等软件所解决问题的终极解决方案。
+类型 Haskell拥有强大的类型系统。 static type是指其编译时进行类型检查，strong type是指其类型检查要求类型严格匹配。 配合type inference，Haskell的类型系统做到了你不需要时感受不到，需要清晰接口时可以显示声明。 它永远在保障着程序的正确性，不会产生JavaScript中一些被人广泛诟病的错误（这个视频我笑了好久。。。）。 Scala中也有type inference，但是由于JVM的限制功能很有限。
+Haskell中的type class可以优雅的实现generics和polymorphism，并且可以避免很多OOP中因为不能把函数作为一等公民传递（高阶函数）而造成的臃肿的设计模式。 Julia中multiple dispatch更进一步，根据每个参数的类型不同调用不同的函数实现，更符合直觉，且避免了OOP中dynamic dispatch的动态查找带来的性能损失。</description>
+    </item>
+    
+    <item>
+      <title>WebRTC简介</title>
+      <link>https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/</link>
+      <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/</guid>
+      <description>WebRTC简介 WebRTC是一种在浏览器中无需任何插件的点对点(P2P)实时视频、音频、数据交流协议，其中RTC是实时沟通(Real Time Communication)的缩写。 过去，实时沟通昂贵且实现复杂，需要专用的视频和音频设备及技术，使得将其集成进已有服务昂贵且费时。 后来，Google开源了Gmail和Hangouts中使用的RTC技术，并且参与W3C相关规范的制定。 2011年，WebRTC第一个版本被实现。 现在WebRTC技术已经被WhatsApp, Facebook Messenger等应用广泛使用。
+WebRTC主要实现了3个API，getUserMedia、RTCPeerConnection和RTCDataChannel。 其中getUserMedia定义了来获取设备上的视频(包括摄像头输入和屏幕输入等)、音频流的接口。RTCPeerConnection定义了用于处理两个客户端之间的流数据的接口。RTCDataChannel定义了用于处理两个客户端之间任意数据收发的接口。
+使用WebRTC过程 使用WebRTC时需要如下步骤：
+ 使用getUserMedia获取MediaStream流数据，此时可以用Constraints对MediaStream的帧率、宽、高等进行设置。 使用RTCPeerConnection初始化客户端session，将MediaStream附加到session上。 获取网络信息(如IP地址、端口等)，与其他客户端进行Signaling(信令交换)。 该过程使用SDP（Session Description Protocol）协议。 Signaling交换流媒体数据信息(如编码、分辨率等)。 Signaling过程完成，直接点对点交换流媒体数据MediaStream。 (可选)建立RTCDataChannel进行数据交换。  实际应用中，会遇到客户端处于防火墙或NAT之后等复杂情况，这时需要用到STUN协议或TURN协议等来实现防火墙和NAT穿透，获取真实的网络信息。
+由于WebRTC在建立session之后流媒体数据是点对点传输，这样虽然很快，但是如果遇到大量客户端的视频会议等场景，客户端之间需要两两连接，对于客户端带宽要求很高。 这时就需要MCU(Multipoint Control Unit)来改变网络拓扑，节省带宽提高性能。
+WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交换，如WebSocket或XMPP等。
+由于WebRTC标准实现还未最终完全确定，各个浏览器都需开启实验性功能才能使用，可以考虑Chrome插件或者使用Electron封装成桌面程序的形式提供更好的用户体验。</description>
+    </item>
+    
+    <item>
       <title>读过的一些设计书籍</title>
       <link>https://dailydreamer.me/posts/2016-05-24-some-design-books/</link>
       <pubDate>Tue, 24 May 2016 20:00:00 +0800</pubDate>
@@ -225,6 +353,81 @@ Analyze data  flow models: analyze how data flow transfer between subjects conve
 原研哉说，设计师在其受众头脑中创建一种信息建筑，受众通过视觉听觉味觉触觉等感官信息，以及被外界重新唤醒的记忆来构建信息建筑。
 原研哉对书和纸的看法：书作为一种存储信息的媒介可能有诸多不便。 但是如果我们好好观察一下信息与个人的关系，会发现重要的其实是我们能多深入的理解信息。 就书而言，我们会有更愉快的用户体验，我们会更中意于那些以适当重量和质地的材料呈现的信息。 这可能就像食物与人类的关系一样。 因为电子媒介的兴起，纸终于能做他该做的事情了——充当一种本性迷人的材料。
 他还是无印良品咨询委员会委员。 无印良品的理念是无设计的设计，简单，追求的不是这个好而是这样就好。</description>
+    </item>
+    
+    <item>
+      <title>DOM和DOM Event</title>
+      <link>https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/</link>
+      <pubDate>Mon, 25 Apr 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/</guid>
+      <description>DOM和HTML，JavaScript，CSS的关系 Document Object Model(DOM)是W3C制定的一种语言无关的面向对象的文档模型，规定了一组可编程的interface需要实现的属性和方法。 HTML和XML文档实现了DOM，因此拥有面向对象的特性，其结构、样式、内容等可以被其他语言的DOM实现操纵。 DOM Level 4是2015年的最新一版标准。
+HTML中&amp;lt;script&amp;gt;元素中嵌入的JavaScript就是DOM的一种实现，如下所示：
+var paragraphs = document.getElementsByTagName(&amp;#34;P&amp;#34;); // paragraphs[0] is the first &amp;lt;p&amp;gt; element // paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc. alert(paragraphs[0].nodeName); 其中document对象，getElementsByTagName方法，alert方法，nodeName属性均是DOM标准规定的。
+你也可以用其它语言操作DOM，如下的Python示例：
+# Python DOM example import xml.dom.minidom as m doc = m.parse(&amp;#34;test.xml&amp;#34;); doc.nodeName # DOM property of document object; p_list = doc.getElementsByTagName(&amp;#34;para&amp;#34;); HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：
+var table = document.getElementById(&amp;#34;table&amp;#34;); var tableAttrs = table.attributes; // Node/Element interface for (var i = 0; i &amp;lt; tableAttrs.</description>
+    </item>
+    
+    <item>
+      <title>CSS Cheat Sheet</title>
+      <link>https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/</link>
+      <pubDate>Thu, 14 Apr 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/</guid>
+      <description>HTML block element块级元素，撑满一行
+inline element行内元素，宽度包围内容
+CSS原理 选择符 a, b {} 同时选中a和b
+a b {} a是b的祖先元素时选中b
+a &amp;gt; b {} a是b的父元素时选中b
+a + b {} a紧邻b时选中b
+a ~ b {} a和b是同胞时选中b
+* {} 全部选中
+.a {} 选中a类
+#a {} 选中id为a
+a.b {} 选中同时为a标签和b类
+.a.b {} 选中同时为a类和b类
+a[b] {} 选中a标签中带有b属性的
+a[b=c] {} 选中a标签中b属性值为c的
+伪类 a标签 a:link a:visited a:hover a:active
+a:focus a:target
+一组同胞元素中的第几个 a:first-child a:last-child a:nth-child(n) a:nth-child(odd) a:nth-child(even)
+伪元素 a::first-letter a::first-line
+a::before a::after</description>
+    </item>
+    
+    <item>
+      <title>单页应用JWT身份认证</title>
+      <link>https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/</link>
+      <pubDate>Sat, 09 Apr 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/</guid>
+      <description>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。 这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。
+JWT JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。 相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。 相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。 缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。
+JWT由三部分组成，Header.Payload.Signature。
+Header Header包含签名算法和type，如下：
+{ &amp;#34;alg&amp;#34;: &amp;#34;HS256&amp;#34;, &amp;#34;typ&amp;#34;: &amp;#34;JWT&amp;#34; } Base64编码后即为Header。
+Payload 主体内容部分。有一些保留属性，如iss (issuer), exp (expiration time), sub (subject), aud (audience)等。也可以声明私有属性。
+如下：
+{ &amp;#34;sub&amp;#34;: &amp;#34;1234567890&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;John Doe&amp;#34;, &amp;#34;admin&amp;#34;: true } Base64编码后即为Payload。
+Signature 签名部分，生成过程如下：
+alg( base64UrlEncode(header) + &amp;#34;.&amp;#34; + base64UrlEncode(payload), secret) 其中alg为Header中声明的签名算法，常用的如SHA256等。 结合secret校对签名可以保证JWT的完整性和不可伪造性。
+身份验证过程 后端API除了注册和登录外的需要身份验证的接口都对JWT签名进行验证，不通过则返回401 Unauthorized，保护API。 用户注册登录后生成JWT返回用户，用户访问受保护的API时需要随请求发送JWT至服务器端。
+两种常见的安全威胁 接下来看看单页应用开发中几种常见的安全威胁：MITM(Man-In-The-Middle)，XSS(Cross-site scripting)和CSRF(Cross Site Request Forgery)。
+MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。 这里我们在应用层主要使用SSL加密，即HTTPS防范它。 在后端response的header的cookie设置Secure字段，强制cookie使用HTTPS传输。
+XSS XSS是指将恶意脚本注入站点，如在用户聊天框输入的地方输入如下内容
+&amp;lt;img src=x onerror=&amp;#34;alert(XSS!</description>
+    </item>
+    
+    <item>
+      <title>CORS解决单页应用跨域问题</title>
+      <link>https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/</link>
+      <pubDate>Fri, 08 Apr 2016 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
+      <description>同源策略 最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 这时前端和后端部署在不同的服务器上。 而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。
+同源是指协议+主机名+端口号全部相同，称为同源。 详细见下表，是跟&amp;quot;http://www.example.com/dir/page.html&amp;quot;做比较。
+   Compared URL Outcome Reason     http://www.example.com/dir/page2.html Success Same protocol, host and port   http://www.example.com/dir2/other.html Success Same protocol, host and port   http://username:password@www.example.com/dir2/other.html Success Same protocol, host and port   http://www.example.com:81/dir/other.html Failure Same protocol and host but different port   https://www.example.com/dir/other.html Failure Different protocol   http://en.example.com/dir/other.html Failure Different host   http://example.com/dir/other.html Failure Different host (exact match required)   http://v2.</description>
     </item>
     
     <item>
@@ -294,6 +497,44 @@ Abandon blame: map the contribution system blame是关于judging但是contributi
     </item>
     
     <item>
+      <title>一次与CTF的邂逅</title>
+      <link>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</link>
+      <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</guid>
+      <description>机缘巧合做了两道CTF二进制题目，谨以此为记。
+第一题 recho 主要参考这篇博客，ruby实现，也有人推荐了这篇python实现版，使用了pwntools。
+第一题中handle()函数buf大小256Byte，但是recv_line()函数接受用户输入没有限制长度，存在BOF漏洞可以利用。
+为了方便本地调试，将源代码中关于drop_priv()相关函数去除后，本地编译。
+为了能够在64位linux上编译和执行32位文件，需要安装32位环境。以Ubuntu14.04为例，执行
+sudo dpkg --add-architecture i386 sudo apt-get update sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib 即可。
+编译时使用命令
+gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c 注意使用-m32参数编译成32位，-fno-stack-protector关闭stack canary检测，-g方便gdb调试。
+运行./recholocal后通过命令
+ps -aux | grep recholocal 查看其进程号，通过
+gdb atach pid 来调试该进程。
+set follow-fork-mode child 可以使gdb在程序fork()后跟随子进程。
+在程序中找到recvline()和sendlen()，使用
+objdump -d recholocal | grep recvline 获取地址，使用他们来对内存进行写和读。 注意recv_line最后以\n结束。 还有程序最开始调用的sendstr()函数会将是将payload的strlen()长度发送，如果payload中有0x00就会被截断发送。
+使用objdump -x recholocal可以查看各个section的位置和布局，找到一个可读可写又足够大的section来存放我们的字符串参数，如.bss或.dynamic等。 发现.dynamic的位置是0x0804a10c。
+为了对付ALSR，需要先知道libc中某个函数的运行时地址，使用sendlen()将其发送过来，再加上system()相对这个函数的偏移，写入某个函数got表项，在调用该函数就是相当于调用了system()。
+使用
+objdump -R recholocal | grep __libc_start_main 发现__libc_start_main()的got表项地址为0x0804a040。</description>
+    </item>
+    
+    <item>
+      <title>多个github账号的ssh key切换</title>
+      <link>https://dailydreamer.me/posts/2015-10-30-ssh-config/</link>
+      <pubDate>Fri, 30 Oct 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2015-10-30-ssh-config/</guid>
+      <description>当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。
+github多个账号ssh key切换 配置ssh的config文件 使用ssh-keygen -t rsa -C &amp;quot;youremail@xxx.com&amp;quot;生成两个ssh key之后，在~/.ssh/下添加一个config文件，内容如下:
+Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host second.github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_second 设置远程仓库的ssh地址 只需要让ssh的目标主机地址变为你写的Host即可。
+git remote add origin git@second.github.com:myname/myrepo.git 更加深入的利用ssh config文件可以参考这篇文章。</description>
+    </item>
+    
+    <item>
       <title>禅与摩托车维修的艺术</title>
       <link>https://dailydreamer.me/posts/2015-08-04-zen-and-the-art-of-motorcycle-maintenance/</link>
       <pubDate>Tue, 04 Aug 2015 20:00:00 +0800</pubDate>
@@ -356,6 +597,19 @@ Abandon blame: map the contribution system blame是关于judging但是contributi
     </item>
     
     <item>
+      <title>WPF全局隐藏鼠标</title>
+      <link>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</link>
+      <pubDate>Mon, 29 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
+      <description>前些日子使用WPF实现了一个填平两个屏幕间缝隙的小程序，在那里面需要让光标在两个屏幕间的时候将其隐藏。 在一个程序内部隐藏鼠标很容易，在WPF中只需设置Mouse.OverrideCursor = Cursors.None。 但是当程序最小化后鼠标还能隐藏着实费了一番功夫。 大致有如下几种思路。
+  将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看这里。 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐； 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！ 只有重启才能重新显示鼠标。
+  要隐藏鼠标时将鼠标的位置一直设置在右下角。 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏； 同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。
+  最后终于找到了一种十分讨巧的方法。 就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。 大致代码如下：
+  Window cursorWin; private void cursorWinInit() { cursorWin = new Window(); cursorWin.Left = bound - (W + hideBuffer); cursorWin.Top = 0; cursorWin.Width = 2 * (W + hideBuffer); cursorWin.Height = maxHeight; cursorWin.ShowInTaskbar = false; //禁止在任务栏显示  cursorWin.WindowStyle = WindowStyle.None; //无边框  cursorWin.AllowsTransparency = true; //透明  cursorWin.Topmost = true; //置顶  cursorWin.</description>
+    </item>
+    
+    <item>
       <title>UNIX编程艺术</title>
       <link>https://dailydreamer.me/posts/2015-06-28-unix-programming-art/</link>
       <pubDate>Sun, 28 Jun 2015 20:00:00 +0800</pubDate>
@@ -391,6 +645,58 @@ UNIX哲学起源与Ken Thompson早期关于如何设计一个服务接口简洁�
 “宽容的收，谨慎的发”。
   经济原则：宁花机器一分，不花程序员一秒
   生成原则：避免手工hack，尽量编写程序去生成程序</description>
+    </item>
+    
+    <item>
+      <title>Python解析XML与生成迭代器</title>
+      <link>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</link>
+      <pubDate>Tue, 23 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</guid>
+      <description>这次来看看Python解析XML与生成迭代器。
+迭代器 使用yield操作符可以使一个函数变成迭代器。如下一段测试代码：
+def genTest(n): print 1 print 2 for i in range(3,n+1): yield i print n+1 print n+2 if __name__ == &amp;#39;__main__&amp;#39;: for i in genTest(5): print i 输出如下：
+1 2 3 4 5 6 7 可以看出第一次调用genTest()时执行了1,2位置的代码。 之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。
+Python解析XML Python解析XML有许多种方法，它们各有特色。
+ElementTree ElementTree是python xml解析的一种轻量级实现。 它将XMl文件读取到内存中以一棵树的形式存储。 它速度快且方便使用，但是不能读取不规范的XMl文件，并且会一次将XML文件解析入内存。 因此适合解析一些小型的XML文件。 cElementTree是它的一个C优化过的版本。
+示例代码如下：
+def readXMLET(filename): try: import xml.etree.cElementTree as ET except ImportError: import xml.etree.ElementTree as ET tree = ET.ElementTree(file=filename) print &amp;#39;read finish!&amp;#39; root = tree.</description>
+    </item>
+    
+    <item>
+      <title>ElasticSearch搜索配置（2）</title>
+      <link>https://dailydreamer.me/posts/2015-06-22-elasticsearch-config-2/</link>
+      <pubDate>Mon, 22 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2015-06-22-elasticsearch-config-2/</guid>
+      <description>这次再来说说ElasticSearch的其他一些特性。
+Bulk 使用Index进行索引是一次索引一条doc，而bulk提供了批量索引的功能，能够显著的减少索引时间。 经过实际测试，对于1个100Mb约20K条doc，向远程服务器单节点发起索引的完成时间对比如下表。
+   chunck_size time/s     200 298.34   500 216.84   1000 169.64   2000 164.71    可以看出chunck_size在一个合适的区间时可以显著减少索引时间，而chunck_size的选取也和一个doc的大小有关。
+这里是官方文档。
+ElasticSearch的python API中对bulk进行了封装，有helpers.streaming_bulk和helpers.bulk两个方法，官方文档在这。大致使用方法如下：
+for success, fail in helpers.streaming_bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000): print &amp;#39;success: &amp;#39;, success success, fail = helpers.bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000) 其中geDoc()是一个迭代器。 这两个方法的区别在于bulk调用了streaming_bulk并将信息一起返回。
+拼音搜索 对于中文内容较多的索引，如果能够使用拼音搜索会十分方便。 ElasticSearch有插件elasticsearch-analysis-pinyin可以实现这个功能。 它可以将中文转化为拼音字母，在建立索引的时候就可以在倒排列表中使对应的拼音字母关联到包含中文的Doc上。
+为了将拼音搜索的索引和IK分词的索引结合，需要用到另一个插件elasticsearch-analysis-combo。 它可以将两个Analyzer的结果合并起来得到一个新的Analyzer。
+基本的配置如下。
+index: analysis: analyzer: ik: alias: [news_analyzer_ik,ik_analyzer] type: org.</description>
+    </item>
+    
+    <item>
+      <title>ElasticSearch搜索配置（1）</title>
+      <link>https://dailydreamer.me/posts/2015-06-05-elasticsearch-config-1/</link>
+      <pubDate>Fri, 05 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2015-06-05-elasticsearch-config-1/</guid>
+      <description>最近在用ElasticSearch做一些搜索，来谈谈其中用到的一些特性。
+ElasticSearch是基于Lucene的分布式包装，其中每一个分片或一个副本都是一个Lucene实例。 ElasticSearch实现了很好的扩展性和冗余，自动负载均衡。可以通过Restful API与ElasticSearch集群交互。 我使用的是python API。
+可以参考ElasticSearch权威指南，讲解非常清楚。
+建立索引 建立索引的时候可以使用mapping建立对每个字段建立映射。
+mapping_body = { &amp;#39;mappings&amp;#39;:{ &amp;#39;tweet&amp;#39;:{ &amp;#34;properties&amp;#34;:{ &amp;#39;text&amp;#39;:{&amp;#39;type&amp;#39;:&amp;#39;string&amp;#39;, &amp;#39;index&amp;#39;:&amp;#39;analyzed&amp;#39;, &amp;#39;analyzer&amp;#39;:&amp;#39;ik_smart&amp;#39;, &amp;#39;similarity&amp;#39;: &amp;#39;BM25&amp;#39;} } } } } es.indices.create(index=&amp;#39;test-index&amp;#39;, body=mapping_body) 上面为&amp;rsquo;test-index&amp;rsquo;的索引中&amp;rsquo;tweet&amp;rsquo;的type中&amp;rsquo;text&amp;rsquo;字段建立映射。
+&amp;lsquo;index&amp;rsquo;设置为analyzed说明要先通过分析器，&amp;lsquo;analyzer&amp;rsquo;设置分析器为ik分词的智能粒度切分，默认为standard，不适合中文分词;&amp;lsquo;similarity&amp;rsquo;设置了相似度算法为BM25，默认为向量空间算法。
+具体可以看文档。
+查询 查询可以通过ID来检索，但是作为一个搜索引擎，ElasticSearch提供了一种基于JSON的DSL查询格式。
+search_body = { &amp;#34;query&amp;#34;: { &amp;#34;multi_match&amp;#34;: { &amp;#34;query&amp;#34;: &amp;#34;Hello世界&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;cross_fields&amp;#34;, &amp;#34;operator&amp;#34;: &amp;#34;or&amp;#34;, &amp;#34;fields&amp;#34;: [ &amp;#34;author&amp;#34;, &amp;#34;text^2&amp;#34; ] } }, &amp;#39;highlight&amp;#39;:{ &amp;#39;fields&amp;#39;:{ &amp;#39;author&amp;#39;:{}, &amp;#39;text&amp;#39;:{} } } } res = es.search(index=&amp;#39;test-index&amp;#39;, doc_type=&amp;#39;tweet&amp;#39;, body=search_body) Query 上面的示例中使用了multi match query来进行多字段查询，multi match query对fields中的每个field进行query查询。
+&amp;lsquo;operator&amp;rsquo;定义了对查询结果进行的操作，&amp;lsquo;or&amp;rsquo;代表取并集。</description>
     </item>
     
     <item>
@@ -446,6 +752,32 @@ DBC 按合约设计 前条件，后条件，类不变项。
 早测试，常测试，自动测试。
 温和的超出用户的期望。与用户交流期望。
 在你的作品上签名。这是责任和荣耀的表现。</description>
+    </item>
+    
+    <item>
+      <title>在AWS上配置ElasticSearch</title>
+      <link>https://dailydreamer.me/posts/2015-06-02-config-elasticsearch-on-aws/</link>
+      <pubDate>Tue, 02 Jun 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2015-06-02-config-elasticsearch-on-aws/</guid>
+      <description>最近在AWS EC2上部署了ElasticSearch，感觉AWS的文档详细但稍显凌乱，在这里总结一下步骤。
+首先注册AWS。注意你需要一张支持外币支付的信用卡。
+然后创建IAM用户，并配置其权限和密钥对。 可按照文档中的步骤来。 注意为了使elasticsearch节点启动后能够自动发现别的节点，你可能需要在这一步为该用户而外设置read-only权限。
+之后有两种方案，可以直接部署在EC2上，价格便宜量又足。 也可以部署在EMR上，获得Haddop的集群管理能力，方便扩展以及将来部署其它基于Haddop的程序。但是注意使用EMR除了支付EMR的计费还要支付其使用的EC2及S3等的计费。
+部署在EC2上 进入EC2控制面板启动实例。 如果你希望数据在EC2实例关闭后不丢失需要为其配置挂载EBS卷并将其存储至EBS中，详细见文档。
+注意EBS卷最好在home/ec2-user/下新建目录挂载，上次我挂载在home/ec2-user/下结果不知道.ssh是存在那里的，然后就连接不上了。。。 挂载完EBS卷后需要更改其权限使得普通用户可以读写文件。 sudo chmod 777 ./ -R
+之后为其配置EIP来避免每次重启实例后IP地址改变。 EIP是一个固定的共有IP，将其和一个EC2实例的私有IP绑定即可。 这样也方便切换实例而IP不变。
+最后即可ssh连接到EC2上然后安装ElasticSearch了。
+安装好ElasticSearch之后还需安装elasticsearch-cloud-aws插件并配置才能实现自动Discovery。 大致的配置如
+# AWS discovery cloud.aws.access_key: KEY cloud.aws.secret_key: KEY plugin.mandatory: cloud-aws discovery.type: ec2 discovery.zen.ping.multicast.enabled: false discovery.ec2.groups: &amp;#34;elasticsearch&amp;#34; discovery.ec2.availability_zones: &amp;#34;ap-northeast-1a&amp;#34; cloud.aws.region: &amp;#34;ap-northeast-1&amp;#34; discovery.ec2.host_type: &amp;#34;public_ip&amp;#34; network.publish_host: [PUBLIC_IP] discovery.ec2.ping_timeout: &amp;#34;30s&amp;#34; discovery.ec2.groups是你的EC2集群所在的安全组，注意用这种方式的设置会将必须该安全组中所有节点都启动ElasticSearch服务才行，否则会一直等待。 如果不想这样可以使用Tag设置。
+discovery.ec2.availability_zones一定要写对，否则节点会无法互相发现，不知道可以看EC2控制面版中有写。
+network.publish_host是该节点的公网IP，可使用绑定的弹性IP。
+更加详细的设置可以看这里。
+有关部署的更加详细的步骤可以参考这里。
+注意如果弹性IP更换了绑定的实例之后要ssh之前需要将原来保存在本地的host_key删除，使用命令ssh-keygen -R hostname,否则会报Host key verification failed。
+部署在EMR上 安装AWS CLI。 可按照文档安装并配置。
+然后直接使用Amazon EMR的bootstrp action脚本即可。 这个仓库中还有其它基于Hadooop的软件的启动脚本，如spark，cascading等。
+输入命令(相关参数可自行配置)</description>
     </item>
     
   </channel>

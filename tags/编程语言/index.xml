@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程语言 on dailydreamer</title>
@@ -6,17 +6,34 @@
     <description>Recent content in 编程语言 on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Jun 2016 20:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 25 Nov 2018 17:43:19 -0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 并发模型</title>
+      <link>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</link>
+      <pubDate>Sun, 25 Nov 2018 17:43:19 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</guid>
+      <description>同步的I/O操作会白白消耗很多时钟周期，因此许多编程语言都提供了并发模型来实现异步I/O。今天简单介绍一下Python中的并发模型。
+开始之前先澄清一下并发和并行的关系。并发（Concurrency）是指一次处理很多事情，而并行（Parallelism）是指同时做很多事情。并发是处理问题的一种方式，而并行则必须由硬件支持。
+Multi-thread 多线程是最传统的并发模型之一，线程之间通过共享内存来通信，通过互斥锁来防止对临界区域同时读写。
+曾经以为由于CPython在实现上采用了GIL（Global Interpreter Lock）来保证线程安全，导致其多线程模型基本不可用。后来了解到Python标准库里所有阻塞I/O函数都会释放GIL，自己编写的函数也可以通过C扩展来释放GIL。所以Python多线程模型在I/O密集型程序中是完全可用的。对于计算密集型程序，可以使用有类似接口的多进程模型处理。
+但是多线程模型有一些缺点：
+ 一个线程可能在任何时候被打断，需要上锁，导致很难理解 线程的存储和切换负担相对协程还是较重  为了解决这些问题，Python 3.4引入了asyncio的协程模型。
+asyncio Python的asyncio使用轻量级的协程作为调度单位，因此可以达到更高并发。同时协程运行过程中天然被保护，必须显示交出控制权（yeild）给其它协程运行，否则不会被打断。
+Python的asyncio非常类似于Node.js的Event loop + Async/Await。 Node.js曾尝试使用回调函数并发模型，但是最后因为回调地狱走向了Async/Await。相比于回调，Async/Await还解决了回调context丢失，不好错误处理的问题。
+但是asyncio给Python带来了新的问题：生态的分裂。协程链最后会被asyncio的API驱动，比如loop.run_until_compelte()；而协程链最开始总是被异步I/O API发起，比如asyncio.sleep()或aiohttp.request()。因此要使用asyncio框架，则需要生态中的所有部分如Web框架、数据库驱动、消息队列、各种客户端等全部用协程重写。目前来看Python的asyncio生态还是不够成熟。
+Go Model 当然，其它语言也有着很多不同类型的并发模型。写到这里不得不提一下Golang，作为近些年来热度不断上升的语言，它的并发模型有其独到之处。
+Golang实现了CSP（communicating sequential processes) Model。它使用轻量级协程和runtime中的调度器来实现并发，即使其I/O函数是同步的。当一个goroutine阻塞时，runtime调度器会自动切换到其它goroutine，这有点类似于轻量级的多线程模型。不同于多线程模型的是goroutines之间通过channel传递信息通信，而非共享内存，这样来保证同一时间只有一个goroutine访问一个临界区域。正如Rob所说，“Do not communicate by sharing memory; instead, share memory by communicating.”
+虽然Golang也存在其它问题，尤其是跟Erlang实现的Actor Model对比时，但是它的成功是显而易见的。
+结语 本文回顾了Python中不同的并发模型，简略提到了Golang中的并发模型。从来没有一个最好的语言和并发模型，只有最适合的。虽然Golang的高性能和高并发很吸引人，Python的优雅、灵活、快速开发则是其长盛不衰的原因。</description>
+    </item>
     
     <item>
       <title>从函数式语言想到的</title>
-      <link>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</link>
+      <link>https://dailydreamer.me/posts/2016-06-09-inspired-by-functional-programing-language/</link>
       <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</guid>
+      <guid>https://dailydreamer.me/posts/2016-06-09-inspired-by-functional-programing-language/</guid>
       <description>最近看了一本书Seven Languages in Seven Weeks。 原来一直都在面向对象编程，对函数式语言了解并不多，看完这本书之后还是很受启发，接触了许多不同语言的新的思想。
 各种编程范式 imperative programming 古老的编程范式，以冯诺以曼结构的机器思考的方式编程，如C语言。
 object oriented programming 现在正当年的主力编程范式，如Java、C#、ruby、python，以及深度融合了函数式思想但本质还是OOP的scala。
@@ -33,31 +50,31 @@ Haskell中的type class可以优雅的实现generics和polymorphism，并且可�
     
     <item>
       <title>WPF全局隐藏鼠标</title>
-      <link>https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</link>
+      <link>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</link>
       <pubDate>Mon, 29 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
       <description>前些日子使用WPF实现了一个填平两个屏幕间缝隙的小程序，在那里面需要让光标在两个屏幕间的时候将其隐藏。 在一个程序内部隐藏鼠标很容易，在WPF中只需设置Mouse.OverrideCursor = Cursors.None。 但是当程序最小化后鼠标还能隐藏着实费了一番功夫。 大致有如下几种思路。
- 将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看这里。 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐； 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！ 只有重启才能重新显示鼠标。
- 要隐藏鼠标时将鼠标的位置一直设置在右下角。 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏； 同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。
- 最后终于找到了一种十分讨巧的方法。 就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。 大致代码如下：
-  Window cursorWin; private void cursorWinInit() { cursorWin = new Window(); cursorWin.Left = bound - (W + hideBuffer); cursorWin.Top = 0; cursorWin.Width = 2 * (W + hideBuffer); cursorWin.Height = maxHeight; cursorWin.ShowInTaskbar = false; //禁止在任务栏显示 cursorWin.WindowStyle = WindowStyle.None; //无边框 cursorWin.AllowsTransparency = true; //透明 cursorWin.Topmost = true; //置顶 cursorWin.Background = new SolidColorBrush(Color.</description>
+  将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看这里。 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐； 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！ 只有重启才能重新显示鼠标。
+  要隐藏鼠标时将鼠标的位置一直设置在右下角。 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏； 同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。
+  最后终于找到了一种十分讨巧的方法。 就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。 大致代码如下：
+  Window cursorWin; private void cursorWinInit() { cursorWin = new Window(); cursorWin.Left = bound - (W + hideBuffer); cursorWin.Top = 0; cursorWin.Width = 2 * (W + hideBuffer); cursorWin.Height = maxHeight; cursorWin.ShowInTaskbar = false; //禁止在任务栏显示  cursorWin.WindowStyle = WindowStyle.None; //无边框  cursorWin.AllowsTransparency = true; //透明  cursorWin.Topmost = true; //置顶  cursorWin.</description>
     </item>
     
     <item>
       <title>Python解析XML与生成迭代器</title>
-      <link>https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</link>
+      <link>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</link>
       <pubDate>Tue, 23 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</guid>
       <description>这次来看看Python解析XML与生成迭代器。
 迭代器 使用yield操作符可以使一个函数变成迭代器。如下一段测试代码：
-def genTest(n): print 1 print 2 for i in range(3,n+1): yield i print n+1 print n+2 if __name__ == &#39;__main__&#39;: for i in genTest(5): print i  输出如下：
-1 2 3 4 5 6 7  可以看出第一次调用genTest()时执行了1,2位置的代码。 之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。
+def genTest(n): print 1 print 2 for i in range(3,n+1): yield i print n+1 print n+2 if __name__ == &amp;#39;__main__&amp;#39;: for i in genTest(5): print i 输出如下：
+1 2 3 4 5 6 7 可以看出第一次调用genTest()时执行了1,2位置的代码。 之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。
 Python解析XML Python解析XML有许多种方法，它们各有特色。
 ElementTree ElementTree是python xml解析的一种轻量级实现。 它将XMl文件读取到内存中以一棵树的形式存储。 它速度快且方便使用，但是不能读取不规范的XMl文件，并且会一次将XML文件解析入内存。 因此适合解析一些小型的XML文件。 cElementTree是它的一个C优化过的版本。
 示例代码如下：
-def readXMLET(filename): try: import xml.etree.cElementTree as ET except ImportError: import xml.etree.ElementTree as ET tree = ET.ElementTree(file=filename) print &#39;read finish!</description>
+def readXMLET(filename): try: import xml.etree.cElementTree as ET except ImportError: import xml.etree.ElementTree as ET tree = ET.ElementTree(file=filename) print &amp;#39;read finish!&amp;#39; root = tree.</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>设计 on dailydreamer</title>
@@ -6,17 +6,13 @@
     <description>Recent content in 设计 on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 24 May 2016 20:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://dailydreamer.me/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 24 May 2016 20:00:00 +0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>读过的一些设计书籍</title>
-      <link>https://dailydreamer.me/post/2016-05-24-some-design-books/</link>
+      <link>https://dailydreamer.me/posts/2016-05-24-some-design-books/</link>
       <pubDate>Tue, 24 May 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-05-24-some-design-books/</guid>
+      <guid>https://dailydreamer.me/posts/2016-05-24-some-design-books/</guid>
       <description>最近翻了一下之前记的一些读书笔记，将读过的一些经典的设计书籍总结一下，记录在这里。
 不要让我思考 整本书都在传递一个强烈的概念：不要让我思考。用户不喜欢思考，比如用户阅读网页的方式是扫描，选择的时候抱着满意即可、勉强应付的心态。 强迫用户思考会使他们离开你的产品。
 下面是几个具体的优化：

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>系统安全 on dailydreamer</title>
@@ -6,34 +6,31 @@
     <description>Recent content in 系统安全 on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Nov 2015 20:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 23 Nov 2015 20:00:00 +0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一次与CTF的邂逅</title>
-      <link>https://dailydreamer.me/post/2015-11-23-meet-ctf/</link>
+      <link>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</link>
       <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-11-23-meet-ctf/</guid>
+      <guid>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</guid>
       <description>机缘巧合做了两道CTF二进制题目，谨以此为记。
 第一题 recho 主要参考这篇博客，ruby实现，也有人推荐了这篇python实现版，使用了pwntools。
 第一题中handle()函数buf大小256Byte，但是recv_line()函数接受用户输入没有限制长度，存在BOF漏洞可以利用。
 为了方便本地调试，将源代码中关于drop_priv()相关函数去除后，本地编译。
 为了能够在64位linux上编译和执行32位文件，需要安装32位环境。以Ubuntu14.04为例，执行
-sudo dpkg --add-architecture i386 sudo apt-get update sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib  即可。
+sudo dpkg --add-architecture i386 sudo apt-get update sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib 即可。
 编译时使用命令
-gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c  注意使用-m32参数编译成32位，-fno-stack-protector关闭stack canary检测，-g方便gdb调试。
+gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c 注意使用-m32参数编译成32位，-fno-stack-protector关闭stack canary检测，-g方便gdb调试。
 运行./recholocal后通过命令
-ps -aux | grep recholocal  查看其进程号，通过
-gdb atach pid  来调试该进程。
-set follow-fork-mode child  可以使gdb在程序fork()后跟随子进程。
+ps -aux | grep recholocal 查看其进程号，通过
+gdb atach pid 来调试该进程。
+set follow-fork-mode child 可以使gdb在程序fork()后跟随子进程。
 在程序中找到recvline()和sendlen()，使用
-objdump -d recholocal | grep recvline  获取地址，使用他们来对内存进行写和读。 注意recv_line最后以\n结束。 还有程序最开始调用的sendstr()函数会将是将payload的strlen()长度发送，如果payload中有0x00就会被截断发送。
+objdump -d recholocal | grep recvline 获取地址，使用他们来对内存进行写和读。 注意recv_line最后以\n结束。 还有程序最开始调用的sendstr()函数会将是将payload的strlen()长度发送，如果payload中有0x00就会被截断发送。
 使用objdump -x recholocal可以查看各个section的位置和布局，找到一个可读可写又足够大的section来存放我们的字符串参数，如.bss或.dynamic等。 发现.dynamic的位置是0x0804a10c。
 为了对付ALSR，需要先知道libc中某个函数的运行时地址，使用sendlen()将其发送过来，再加上system()相对这个函数的偏移，写入某个函数got表项，在调用该函数就是相当于调用了system()。
-使用</description>
+使用
+objdump -R recholocal | grep __libc_start_main 发现__libc_start_main()的got表项地址为0x0804a040。</description>
     </item>
     
   </channel>

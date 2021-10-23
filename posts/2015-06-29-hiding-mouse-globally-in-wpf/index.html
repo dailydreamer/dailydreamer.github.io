@@ -26,12 +26,16 @@
 </script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-75912368-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-75912368-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </head>
 <body>
@@ -70,7 +74,7 @@ ga('send', 'pageview');
     <div id="tags__ul">
       <a id="all_posts" class="tag is-rounded is-primary">
         全部 
-        <span class="tag-count">35</span>
+        <span class="tag-count">36</span>
       </a>
       
       <a id="编程" class="tag is-rounded">
@@ -80,7 +84,7 @@ ga('send', 'pageview');
       
       <a id="读书笔记" class="tag is-rounded">
         读书笔记 
-        <span class="tag-count">16</span>
+        <span class="tag-count">17</span>
       </a>
       
       <a id="项目" class="tag is-rounded">
@@ -162,6 +166,17 @@ ga('send', 'pageview');
 
     <div class="menu">
       <ul id="posts__ul" class="menu-list">
+        
+        
+        
+        
+        <li class="all_posts 读书笔记">
+          <a href="https://dailydreamer.me/posts/2021-10-24-the-minds-i/">
+            <span class="posts-title">探秘意识 - 读《我是谁或什么》</span>
+            <span class="posts-date">Oct, 2021</span>
+          </a>
+        </li>
+        
         
         
         <li class="all_posts 编程 编程语言">
@@ -478,8 +493,6 @@ ga('send', 'pageview');
         </li>
         
         
-        
-        
       </ul>
     </div>
   </nav>
@@ -501,62 +514,63 @@ ga('send', 'pageview');
 在一个程序内部隐藏鼠标很容易，在WPF中只需设置<code>Mouse.OverrideCursor = Cursors.None</code>。
 但是当程序最小化后鼠标还能隐藏着实费了一番功夫。
 大致有如下几种思路。</p>
-
 <ol>
-<li><p>将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看<a href="http://stackoverflow.com/questions/10541014/hiding-system-cursor">这里</a>。
+<li>
+<p>将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看<a href="http://stackoverflow.com/questions/10541014/hiding-system-cursor">这里</a>。
 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐；
 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！
-只有重启才能重新显示鼠标。</p></li>
-
-<li><p>要隐藏鼠标时将鼠标的位置一直设置在右下角。
+只有重启才能重新显示鼠标。</p>
+</li>
+<li>
+<p>要隐藏鼠标时将鼠标的位置一直设置在右下角。
 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏；
-同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。</p></li>
-
-<li><p>最后终于找到了一种十分讨巧的方法。
+同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。</p>
+</li>
+<li>
+<p>最后终于找到了一种十分讨巧的方法。
 就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。
-大致代码如下：</p></li>
+大致代码如下：</p>
+</li>
 </ol>
-
-<pre><code class="language-cs">Window cursorWin;
-private void cursorWinInit()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs">Window cursorWin;
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> cursorWinInit()
 {
-    cursorWin = new Window();
+    cursorWin = <span style="color:#66d9ef">new</span> Window();
     cursorWin.Left = bound - (W + hideBuffer);
-    cursorWin.Top = 0;
-    cursorWin.Width = 2 * (W + hideBuffer);
+    cursorWin.Top = <span style="color:#ae81ff">0</span>;
+    cursorWin.Width = <span style="color:#ae81ff">2</span> * (W + hideBuffer);
     cursorWin.Height = maxHeight;
-    cursorWin.ShowInTaskbar = false;            //禁止在任务栏显示
-    cursorWin.WindowStyle = WindowStyle.None;   //无边框
-    cursorWin.AllowsTransparency = true;        //透明
-    cursorWin.Topmost = true;                   //置顶
-    cursorWin.Background = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));     //透明
-}
-private void myHideCursor()
+    cursorWin.ShowInTaskbar = <span style="color:#66d9ef">false</span>;            <span style="color:#75715e">//禁止在任务栏显示
+</span><span style="color:#75715e"></span>    cursorWin.WindowStyle = WindowStyle.None;   <span style="color:#75715e">//无边框
+</span><span style="color:#75715e"></span>    cursorWin.AllowsTransparency = <span style="color:#66d9ef">true</span>;        <span style="color:#75715e">//透明
+</span><span style="color:#75715e"></span>    cursorWin.Topmost = <span style="color:#66d9ef">true</span>;                   <span style="color:#75715e">//置顶
+</span><span style="color:#75715e"></span>    cursorWin.Background = <span style="color:#66d9ef">new</span> SolidColorBrush(Color.FromArgb(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>));     <span style="color:#75715e">//透明
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> myHideCursor()
 {
     cursorWin.Dispatcher.Invoke(
-        new Action(
-            delegate
+        <span style="color:#66d9ef">new</span> Action(
+            <span style="color:#66d9ef">delegate</span>
             {
                 cursorWin.Show();
                 Mouse.OverrideCursor = Cursors.None;
             }));
 }
 
-private void myShowCursor()
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> myShowCursor()
 {
     cursorWin.Dispatcher.Invoke(
-        new Action(
-            delegate
+        <span style="color:#66d9ef">new</span> Action(
+            <span style="color:#66d9ef">delegate</span>
             {
                 cursorWin.Hide();
-                Mouse.OverrideCursor = null;
+                Mouse.OverrideCursor = <span style="color:#66d9ef">null</span>;
             }));
 }
-</code></pre>
-
+</code></pre></div>
         
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

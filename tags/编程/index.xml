@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程 on dailydreamer</title>
@@ -6,17 +6,52 @@
     <description>Recent content in 编程 on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Jun 2016 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Nov 2018 17:43:19 -0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 并发模型</title>
+      <link>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</link>
+      <pubDate>Sun, 25 Nov 2018 17:43:19 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</guid>
+      <description>同步的I/O操作会白白消耗很多时钟周期，因此许多编程语言都提供了并发模型来实现异步I/O。今天简单介绍一下Python中的并发模型。
+开始之前先澄清一下并发和并行的关系。并发（Concurrency）是指一次处理很多事情，而并行（Parallelism）是指同时做很多事情。并发是处理问题的一种方式，而并行则必须由硬件支持。
+Multi-thread 多线程是最传统的并发模型之一，线程之间通过共享内存来通信，通过互斥锁来防止对临界区域同时读写。
+曾经以为由于CPython在实现上采用了GIL（Global Interpreter Lock）来保证线程安全，导致其多线程模型基本不可用。后来了解到Python标准库里所有阻塞I/O函数都会释放GIL，自己编写的函数也可以通过C扩展来释放GIL。所以Python多线程模型在I/O密集型程序中是完全可用的。对于计算密集型程序，可以使用有类似接口的多进程模型处理。
+但是多线程模型有一些缺点：
+ 一个线程可能在任何时候被打断，需要上锁，导致很难理解 线程的存储和切换负担相对协程还是较重  为了解决这些问题，Python 3.4引入了asyncio的协程模型。
+asyncio Python的asyncio使用轻量级的协程作为调度单位，因此可以达到更高并发。同时协程运行过程中天然被保护，必须显示交出控制权（yeild）给其它协程运行，否则不会被打断。
+Python的asyncio非常类似于Node.js的Event loop + Async/Await。 Node.js曾尝试使用回调函数并发模型，但是最后因为回调地狱走向了Async/Await。相比于回调，Async/Await还解决了回调context丢失，不好错误处理的问题。
+但是asyncio给Python带来了新的问题：生态的分裂。协程链最后会被asyncio的API驱动，比如loop.run_until_compelte()；而协程链最开始总是被异步I/O API发起，比如asyncio.sleep()或aiohttp.request()。因此要使用asyncio框架，则需要生态中的所有部分如Web框架、数据库驱动、消息队列、各种客户端等全部用协程重写。目前来看Python的asyncio生态还是不够成熟。
+Go Model 当然，其它语言也有着很多不同类型的并发模型。写到这里不得不提一下Golang，作为近些年来热度不断上升的语言，它的并发模型有其独到之处。
+Golang实现了CSP（communicating sequential processes) Model。它使用轻量级协程和runtime中的调度器来实现并发，即使其I/O函数是同步的。当一个goroutine阻塞时，runtime调度器会自动切换到其它goroutine，这有点类似于轻量级的多线程模型。不同于多线程模型的是goroutines之间通过channel传递信息通信，而非共享内存，这样来保证同一时间只有一个goroutine访问一个临界区域。正如Rob所说，“Do not communicate by sharing memory; instead, share memory by communicating.”
+虽然Golang也存在其它问题，尤其是跟Erlang实现的Actor Model对比时，但是它的成功是显而易见的。
+结语 本文回顾了Python中不同的并发模型，简略提到了Golang中的并发模型。从来没有一个最好的语言和并发模型，只有最适合的。虽然Golang的高性能和高并发很吸引人，Python的优雅、灵活、快速开发则是其长盛不衰的原因。</description>
+    </item>
     
-	<atom:link href="https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>FoodGo, 层级式的配送小车</title>
+      <link>https://dailydreamer.me/posts/2018-01-28-foodgo-autonomous-food-delivery/</link>
+      <pubDate>Sun, 28 Jan 2018 22:34:59 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-01-28-foodgo-autonomous-food-delivery/</guid>
+      <description>FoodGo是之前参加2017年GIX创新大赛美团点评组的项目，当时拿到了一等奖。 人力成本越来越高的今天，低工资的配送员的数量不能满足快速增长的外卖市场的需求，等待时间的加长严重影响了用户体验。 使用机器人来辅助配送成为一种可能。 FoodGo的创新点在于使用层级式的方式配送。 大车带着小车在大路上跑，在系统规划的地点放下小车，小车自动驾驶到用户指定的送餐地点等待用户，而大车可以直接开往下个地点。 这样一来占送一批单很大时间的末端配送和等待用户这一工作可以交给机器人来完成，成倍提升了运力。 而且这一方式以后可以升级为大车也无人驾驶，渐进式的方案更容易快速落地。 可以参考下面这个视频
+今天主要来讲讲实现原型时的一些技术问题。
+框架 为了快速迭代原型基于ROS和turtlebot kobuki进行实现。主要框架如图下所示
+主要有四部分，sensor数据的处理，rtabmap SLAM框架，path planner以及controller。 Sensor使用了ZED的双目摄像头。选用双目是因为RGBD摄像头在室外环境无法使用，而Lidar价格过于昂贵。 选用ZED是因为虽然它基线较短在室外场景远距离精度有限，但是它便宜并且有完善的驱动，虽然最后被驱动坑了很多。。。下文会提到。 SLAM框架选择了rtabmap因为它在ROS上提供了完整的建图定位工具链，适合快速开发原型。 Path planner和controller直接选用ROS提供的move_base，它使用了dijkstra算法作为global planner，DWA算法作为local planner。
+传感器及处理 这部分本来的理想情况是使用ZED的驱动直接获取深度信息，但是问题来了，ZED的驱动必须要cuda库，而我的笔记本没有GPU。。。 所以这部分只能利用ROS的一些库自己实现了。 ZED摄像头在Ubuntu 16.04下能被系统驱动识别显示为 /dev/video* (*的数值取决于你的其他video设备)，而在Ubuntu 14.04的驱动下还无法识别，当时为了这个还重装了系统。。。 然后我fork了一个开源的ZED CPU驱动，做了一些小修改。 它使用OpenCV的ROS bridge将图片读入ROS，将它们发布成左右两个ROS topic并作时间同步。 然后使用ROS的stereo_image_proc包undistorting原始图像并且算出disparity map。
+一开始我使用了ZED出厂的校准参数，结果stereo image proc报错opencv assert failed。 后来使用ROS的camera calibration包重新校准了一下就没有问题了。
+有时候CPU的计算能力不足以使用stereo image proc将每帧图像都实时undistorting，就会出现发布的undistorting后的左右图片丢帧，这时候rtabmap有一个参数approx sync可以大致对齐stereo camera的时间戳。
+当时还遇到了一个问题，就是robot坐标系base link到摄像头坐标系camera link是一个平移，但是摄像头坐标系到实际的图像坐标系是有一个别扭的旋转的，因为它们安排x y z轴的指向并不一样。 当时忽略了这一点导致建出来的图是旋转的，困扰了一阵子。 具体如何旋转可以参考这个回答。
+Rtabmap建图与定位 由于没有使用额外的地图API，需要自己建图来导航。 ROS的move base接受grid map，一般的SLAM算法实现中没有集成生成grid map的方法，这也是选择rtabmap的一个重要原因。 建图建好之后存进一个sqlite数据库中，rtabmap从数据库中读取grid map并发布出来，通过处理ZED摄像头的双目图像，发布机器人的tf。 同时rtabmap还有point cloud xyz模块可以过滤从ZED生成的点云数据，找到地平面然后聚类地平面以上的障碍物。有了tf，grid map和障碍物点云数据，就可以使用ROS的move base进行导航和避障了。
+总结 一个简单的使用双目摄像头的导航避障小车就实现完成了。 使用双目对障碍物的检测有时会存在误报的情况，可以成为一个可改善的方向。</description>
+    </item>
     
     <item>
       <title>从函数式语言想到的</title>
-      <link>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</link>
+      <link>https://dailydreamer.me/posts/2016-06-09-inspired-by-functional-programing-language/</link>
       <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-06-09-inspired-by-functional-programing-language/</guid>
+      <guid>https://dailydreamer.me/posts/2016-06-09-inspired-by-functional-programing-language/</guid>
       <description>最近看了一本书Seven Languages in Seven Weeks。 原来一直都在面向对象编程，对函数式语言了解并不多，看完这本书之后还是很受启发，接触了许多不同语言的新的思想。
 各种编程范式 imperative programming 古老的编程范式，以冯诺以曼结构的机器思考的方式编程，如C语言。
 object oriented programming 现在正当年的主力编程范式，如Java、C#、ruby、python，以及深度融合了函数式思想但本质还是OOP的scala。
@@ -33,10 +68,10 @@ Haskell中的type class可以优雅的实现generics和polymorphism，并且可�
     
     <item>
       <title>WebRTC简介</title>
-      <link>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</link>
+      <link>https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/</link>
       <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</guid>
+      <guid>https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/</guid>
       <description>WebRTC简介 WebRTC是一种在浏览器中无需任何插件的点对点(P2P)实时视频、音频、数据交流协议，其中RTC是实时沟通(Real Time Communication)的缩写。 过去，实时沟通昂贵且实现复杂，需要专用的视频和音频设备及技术，使得将其集成进已有服务昂贵且费时。 后来，Google开源了Gmail和Hangouts中使用的RTC技术，并且参与W3C相关规范的制定。 2011年，WebRTC第一个版本被实现。 现在WebRTC技术已经被WhatsApp, Facebook Messenger等应用广泛使用。
 WebRTC主要实现了3个API，getUserMedia、RTCPeerConnection和RTCDataChannel。 其中getUserMedia定义了来获取设备上的视频(包括摄像头输入和屏幕输入等)、音频流的接口。RTCPeerConnection定义了用于处理两个客户端之间的流数据的接口。RTCDataChannel定义了用于处理两个客户端之间任意数据收发的接口。
 使用WebRTC过程 使用WebRTC时需要如下步骤：
@@ -48,24 +83,24 @@ WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交�
     
     <item>
       <title>DOM和DOM Event</title>
-      <link>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</link>
+      <link>https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/</link>
       <pubDate>Mon, 25 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</guid>
+      <guid>https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/</guid>
       <description>DOM和HTML，JavaScript，CSS的关系 Document Object Model(DOM)是W3C制定的一种语言无关的面向对象的文档模型，规定了一组可编程的interface需要实现的属性和方法。 HTML和XML文档实现了DOM，因此拥有面向对象的特性，其结构、样式、内容等可以被其他语言的DOM实现操纵。 DOM Level 4是2015年的最新一版标准。
 HTML中&amp;lt;script&amp;gt;元素中嵌入的JavaScript就是DOM的一种实现，如下所示：
-var paragraphs = document.getElementsByTagName(&amp;quot;P&amp;quot;); // paragraphs[0] is the first &amp;lt;p&amp;gt; element // paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc. alert(paragraphs[0].nodeName);  其中document对象，getElementsByTagName方法，alert方法，nodeName属性均是DOM标准规定的。
+var paragraphs = document.getElementsByTagName(&amp;#34;P&amp;#34;); // paragraphs[0] is the first &amp;lt;p&amp;gt; element // paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc. alert(paragraphs[0].nodeName); 其中document对象，getElementsByTagName方法，alert方法，nodeName属性均是DOM标准规定的。
 你也可以用其它语言操作DOM，如下的Python示例：
-# Python DOM example import xml.dom.minidom as m doc = m.parse(&amp;quot;test.xml&amp;quot;); doc.nodeName # DOM property of document object; p_list = doc.getElementsByTagName(&amp;quot;para&amp;quot;);  HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：
-var table = document.getElementById(&amp;quot;table&amp;quot;); var tableAttrs = table.attributes; // Node/Element interface for (var i = 0; i &amp;lt; tableAttrs.</description>
+# Python DOM example import xml.dom.minidom as m doc = m.parse(&amp;#34;test.xml&amp;#34;); doc.nodeName # DOM property of document object; p_list = doc.getElementsByTagName(&amp;#34;para&amp;#34;); HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：
+var table = document.getElementById(&amp;#34;table&amp;#34;); var tableAttrs = table.attributes; // Node/Element interface for (var i = 0; i &amp;lt; tableAttrs.</description>
     </item>
     
     <item>
       <title>CSS Cheat Sheet</title>
-      <link>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</link>
+      <link>https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/</link>
       <pubDate>Thu, 14 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</guid>
+      <guid>https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/</guid>
       <description>HTML block element块级元素，撑满一行
 inline element行内元素，宽度包围内容
 CSS原理 选择符 a, b {} 同时选中a和b
@@ -89,157 +124,155 @@ a::before a::after</description>
     
     <item>
       <title>单页应用JWT身份认证</title>
-      <link>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</link>
+      <link>https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/</link>
       <pubDate>Sat, 09 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</guid>
+      <guid>https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/</guid>
       <description>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。 这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。
 JWT JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。 相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。 相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。 缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。
 JWT由三部分组成，Header.Payload.Signature。
 Header Header包含签名算法和type，如下：
-{ &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;, &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot; }  Base64编码后即为Header。
+{ &amp;#34;alg&amp;#34;: &amp;#34;HS256&amp;#34;, &amp;#34;typ&amp;#34;: &amp;#34;JWT&amp;#34; } Base64编码后即为Header。
 Payload 主体内容部分。有一些保留属性，如iss (issuer), exp (expiration time), sub (subject), aud (audience)等。也可以声明私有属性。
 如下：
-{ &amp;quot;sub&amp;quot;: &amp;quot;1234567890&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;, &amp;quot;admin&amp;quot;: true }  Base64编码后即为Payload。
+{ &amp;#34;sub&amp;#34;: &amp;#34;1234567890&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;John Doe&amp;#34;, &amp;#34;admin&amp;#34;: true } Base64编码后即为Payload。
 Signature 签名部分，生成过程如下：
-alg( base64UrlEncode(header) + &amp;quot;.&amp;quot; + base64UrlEncode(payload), secret)  其中alg为Header中声明的签名算法，常用的如SHA256等。 结合secret校对签名可以保证JWT的完整性和不可伪造性。
+alg( base64UrlEncode(header) + &amp;#34;.&amp;#34; + base64UrlEncode(payload), secret) 其中alg为Header中声明的签名算法，常用的如SHA256等。 结合secret校对签名可以保证JWT的完整性和不可伪造性。
 身份验证过程 后端API除了注册和登录外的需要身份验证的接口都对JWT签名进行验证，不通过则返回401 Unauthorized，保护API。 用户注册登录后生成JWT返回用户，用户访问受保护的API时需要随请求发送JWT至服务器端。
 两种常见的安全威胁 接下来看看单页应用开发中几种常见的安全威胁：MITM(Man-In-The-Middle)，XSS(Cross-site scripting)和CSRF(Cross Site Request Forgery)。
-MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。 这里我们在应用层主要使用SSL加密，即HTTPS防范它。 在后端response的header的cookie设置Secure字段，强制cookie使用HTTPS传输。</description>
+MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。 这里我们在应用层主要使用SSL加密，即HTTPS防范它。 在后端response的header的cookie设置Secure字段，强制cookie使用HTTPS传输。
+XSS XSS是指将恶意脚本注入站点，如在用户聊天框输入的地方输入如下内容
+&amp;lt;img src=x onerror=&amp;#34;alert(XSS!</description>
     </item>
     
     <item>
       <title>CORS解决单页应用跨域问题</title>
-      <link>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</link>
+      <link>https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/</link>
       <pubDate>Fri, 08 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
+      <guid>https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
       <description>同源策略 最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 这时前端和后端部署在不同的服务器上。 而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。
-同源是指协议+主机名+端口号全部相同，称为同源。 详细见下表，是跟&amp;rdquo;http://www.example.com/dir/page.html&amp;quot;做比较。
+同源是指协议+主机名+端口号全部相同，称为同源。 详细见下表，是跟&amp;quot;http://www.example.com/dir/page.html&amp;quot;做比较。
    Compared URL Outcome Reason     http://www.example.com/dir/page2.html Success Same protocol, host and port   http://www.example.com/dir2/other.html Success Same protocol, host and port   http://username:password@www.example.com/dir2/other.html Success Same protocol, host and port   http://www.example.com:81/dir/other.html Failure Same protocol and host but different port   https://www.example.com/dir/other.html Failure Different protocol   http://en.example.com/dir/other.html Failure Different host   http://example.com/dir/other.html Failure Different host (exact match required)   http://v2.</description>
     </item>
     
     <item>
       <title>一次与CTF的邂逅</title>
-      <link>https://dailydreamer.me/post/2015-11-23-meet-ctf/</link>
+      <link>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</link>
       <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-11-23-meet-ctf/</guid>
+      <guid>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</guid>
       <description>机缘巧合做了两道CTF二进制题目，谨以此为记。
 第一题 recho 主要参考这篇博客，ruby实现，也有人推荐了这篇python实现版，使用了pwntools。
 第一题中handle()函数buf大小256Byte，但是recv_line()函数接受用户输入没有限制长度，存在BOF漏洞可以利用。
 为了方便本地调试，将源代码中关于drop_priv()相关函数去除后，本地编译。
 为了能够在64位linux上编译和执行32位文件，需要安装32位环境。以Ubuntu14.04为例，执行
-sudo dpkg --add-architecture i386 sudo apt-get update sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib  即可。
+sudo dpkg --add-architecture i386 sudo apt-get update sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib 即可。
 编译时使用命令
-gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c  注意使用-m32参数编译成32位，-fno-stack-protector关闭stack canary检测，-g方便gdb调试。
+gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c 注意使用-m32参数编译成32位，-fno-stack-protector关闭stack canary检测，-g方便gdb调试。
 运行./recholocal后通过命令
-ps -aux | grep recholocal  查看其进程号，通过
-gdb atach pid  来调试该进程。
-set follow-fork-mode child  可以使gdb在程序fork()后跟随子进程。
+ps -aux | grep recholocal 查看其进程号，通过
+gdb atach pid 来调试该进程。
+set follow-fork-mode child 可以使gdb在程序fork()后跟随子进程。
 在程序中找到recvline()和sendlen()，使用
-objdump -d recholocal | grep recvline  获取地址，使用他们来对内存进行写和读。 注意recv_line最后以\n结束。 还有程序最开始调用的sendstr()函数会将是将payload的strlen()长度发送，如果payload中有0x00就会被截断发送。
+objdump -d recholocal | grep recvline 获取地址，使用他们来对内存进行写和读。 注意recv_line最后以\n结束。 还有程序最开始调用的sendstr()函数会将是将payload的strlen()长度发送，如果payload中有0x00就会被截断发送。
 使用objdump -x recholocal可以查看各个section的位置和布局，找到一个可读可写又足够大的section来存放我们的字符串参数，如.bss或.dynamic等。 发现.dynamic的位置是0x0804a10c。
 为了对付ALSR，需要先知道libc中某个函数的运行时地址，使用sendlen()将其发送过来，再加上system()相对这个函数的偏移，写入某个函数got表项，在调用该函数就是相当于调用了system()。
-使用</description>
+使用
+objdump -R recholocal | grep __libc_start_main 发现__libc_start_main()的got表项地址为0x0804a040。</description>
     </item>
     
     <item>
       <title>多个github账号的ssh key切换</title>
-      <link>https://dailydreamer.me/post/2015-10-30-ssh-config/</link>
+      <link>https://dailydreamer.me/posts/2015-10-30-ssh-config/</link>
       <pubDate>Fri, 30 Oct 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-10-30-ssh-config/</guid>
+      <guid>https://dailydreamer.me/posts/2015-10-30-ssh-config/</guid>
       <description>当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。
 github多个账号ssh key切换 配置ssh的config文件 使用ssh-keygen -t rsa -C &amp;quot;youremail@xxx.com&amp;quot;生成两个ssh key之后，在~/.ssh/下添加一个config文件，内容如下:
-Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host second.github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_second  设置远程仓库的ssh地址 只需要让ssh的目标主机地址变为你写的Host即可。
-git remote add origin git@second.github.com:myname/myrepo.git  更加深入的利用ssh config文件可以参考这篇文章。</description>
+Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host second.github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_second 设置远程仓库的ssh地址 只需要让ssh的目标主机地址变为你写的Host即可。
+git remote add origin git@second.github.com:myname/myrepo.git 更加深入的利用ssh config文件可以参考这篇文章。</description>
     </item>
     
     <item>
       <title>WPF全局隐藏鼠标</title>
-      <link>https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</link>
+      <link>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</link>
       <pubDate>Mon, 29 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
       <description>前些日子使用WPF实现了一个填平两个屏幕间缝隙的小程序，在那里面需要让光标在两个屏幕间的时候将其隐藏。 在一个程序内部隐藏鼠标很容易，在WPF中只需设置Mouse.OverrideCursor = Cursors.None。 但是当程序最小化后鼠标还能隐藏着实费了一番功夫。 大致有如下几种思路。
- 将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看这里。 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐； 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！ 只有重启才能重新显示鼠标。
- 要隐藏鼠标时将鼠标的位置一直设置在右下角。 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏； 同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。
- 最后终于找到了一种十分讨巧的方法。 就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。 大致代码如下：
-  Window cursorWin; private void cursorWinInit() { cursorWin = new Window(); cursorWin.Left = bound - (W + hideBuffer); cursorWin.Top = 0; cursorWin.Width = 2 * (W + hideBuffer); cursorWin.Height = maxHeight; cursorWin.ShowInTaskbar = false; //禁止在任务栏显示 cursorWin.WindowStyle = WindowStyle.None; //无边框 cursorWin.AllowsTransparency = true; //透明 cursorWin.Topmost = true; //置顶 cursorWin.Background = new SolidColorBrush(Color.</description>
+  将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看这里。 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐； 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！ 只有重启才能重新显示鼠标。
+  要隐藏鼠标时将鼠标的位置一直设置在右下角。 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏； 同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。
+  最后终于找到了一种十分讨巧的方法。 就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。 大致代码如下：
+  Window cursorWin; private void cursorWinInit() { cursorWin = new Window(); cursorWin.Left = bound - (W + hideBuffer); cursorWin.Top = 0; cursorWin.Width = 2 * (W + hideBuffer); cursorWin.Height = maxHeight; cursorWin.ShowInTaskbar = false; //禁止在任务栏显示  cursorWin.WindowStyle = WindowStyle.None; //无边框  cursorWin.AllowsTransparency = true; //透明  cursorWin.Topmost = true; //置顶  cursorWin.</description>
     </item>
     
     <item>
       <title>UNIX编程艺术</title>
-      <link>https://dailydreamer.me/post/2015-06-28-unix-programming-art/</link>
+      <link>https://dailydreamer.me/posts/2015-06-28-unix-programming-art/</link>
       <pubDate>Sun, 28 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-28-unix-programming-art/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-28-unix-programming-art/</guid>
       <description>这本书极为经典，虽然后半部分的细节有些过时，但是前面的哲学影响深远且富有启发性。
 哲学 UNIX有它独有的文化和哲学，它富有生命力且影响深远。UNIX诞生于1969年，而今天化身为Linux、BSD、MacOS X等，应用广泛且强大。
 UNIX文件在字节层次上再无结构，文件删除了无法恢复，作业控制有欠精致，命名方式混乱。这些都是UNIX的缺点。
 最大的争议在于，提供机制，而不是策略。 比如X Window，提供一套极端通用的图形操作，将界面的观感(策略)推后到应用层。 这使得UNIX可以提供很多行为选项和令人眼花缭乱的定制功能。 然而它的代价就是当用户“可以”设置自己的策略时，他们“必须”设置自己的策略。 这使得UNIX失去了很多非技术用户，但是策略相对短寿，机制才会长存。 只提供机制才能使得UNIX长久保鲜。
 同时，UNIX还有着及其丰富和优秀的外围文化。 开源软件，跨平台可移植和开放标准(IEEE的可移植操作系统标准POS很快被大家加后缀变成了POSIX)，Internet和TCP/IP协议，开源社区，从头到脚的灵活性(在其他系统中，完成设计者预见的任务容易，但是设计者没有预料到的就很难)，以及UNIX hack很有乐趣。
 UNIX哲学起源与Ken Thompson早期关于如何设计一个服务接口简洁、小巧精干的操作系统的思考，一路成长且博采众长。 UNIX管道的发明人Doug Mcllroy总结，UNIX哲学是一个程序只做一件事，并做好。程序要能协作。 程序要能处理文本流，因为这是最通用的接口。整体上，UNIX哲学可以概括为一下几点：
- 模块原则：使用简洁的接口拼合简单的部件
+  模块原则：使用简洁的接口拼合简单的部件
 编制复杂软件而又不至于一败涂地的唯一非方法就是降低其整体复杂度，用清晰的接口把若干简单的模块组合成一个复杂的软件。
- 清晰原则：清晰胜于机巧
+  清晰原则：清晰胜于机巧
 些程序时，要想到你不是写给计算机看，而是写给人看的。优雅而清晰的代码不仅不容易崩溃，而且更易于让后来的修改者立刻理解。
- 组合原则：设计时考虑拼接
+  组合原则：设计时考虑拼接
 在输入输出方面，UNIX传统极力提倡采用简单、文本化、面向流、设备无关的格式，否则很难和其它程序衔接。要想让程序具有组合性，就要使程序彼此独立。
- 分离原则：策略同机制分离，接口同引擎分离
+  分离原则：策略同机制分离，接口同引擎分离
 策略短寿，机制长存。在探索新策略的时候尽量不要打破机制，这样也可以为机制编写更好的测试。
 在GUI之外也可以应用这个原则，如Emacs编辑器使用内嵌的脚本语言Lisp解释器来控制用C编写的编辑原语操作。
- 简洁原则：设计要简洁，复杂度要低
+  简洁原则：设计要简洁，复杂度要低
 复杂的东西代价更高，bug更多。以简洁为美，总设法将程序系统分解成几个能够协作的小部分。
- 透明性原则：设计要可见，以便审查和调试。
+  透明性原则：设计要可见，以便审查和调试。
 透明性是说一眼能看出软件是在做什么以及怎样做的，显见性是说程序带有监视和显示内部状态的功能。尽早设置调试选项。
- 健壮原则：健壮源于透明与简洁
+  健壮原则：健壮源于透明与简洁
 健壮性指在超出设计者预想外的条件下也能运行良好。
- 表示原则：把知识叠入数据以求逻辑质朴而健壮。
+  表示原则：把知识叠入数据以求逻辑质朴而健壮。
 数据比变成逻辑更容易驾驭。主动将代码的复杂度转移到数据之中去。
- 通俗原则：接口设计避免标新立异
- 缄默原则：如果一个程序没什么好说的，就保持沉默
+  通俗原则：接口设计避免标新立异
+  缄默原则：如果一个程序没什么好说的，就保持沉默
 只输出重要的东西。
- 补救原则：出现异常时，马上退出并给出足量错误信息
+  补救原则：出现异常时，马上退出并给出足量错误信息
 “宽容的收，谨慎的发”。
- 经济原则：宁花机器一分，不花程序员一秒
- 生成原则：避免手工hack，尽量编写程序去生成程序
- 优化原则：雕琢之前先有型
-先制作原型，再精雕细琢。从原型中寻找通过牺牲最小局部简洁性而获得较大性能提升的地方。
- 多样原则：绝不相信所谓“不二法门”断言
- 扩展原则：设计着眼未来，未来总比预想的快
-一言以蔽之，就是KISS，Keep it simple and stupid。</description>
+  经济原则：宁花机器一分，不花程序员一秒
+  生成原则：避免手工hack，尽量编写程序去生成程序</description>
     </item>
     
     <item>
       <title>Python解析XML与生成迭代器</title>
-      <link>https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</link>
+      <link>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</link>
       <pubDate>Tue, 23 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-23-python-yeild-and-parse-xml/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</guid>
       <description>这次来看看Python解析XML与生成迭代器。
 迭代器 使用yield操作符可以使一个函数变成迭代器。如下一段测试代码：
-def genTest(n): print 1 print 2 for i in range(3,n+1): yield i print n+1 print n+2 if __name__ == &#39;__main__&#39;: for i in genTest(5): print i  输出如下：
-1 2 3 4 5 6 7  可以看出第一次调用genTest()时执行了1,2位置的代码。 之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。
+def genTest(n): print 1 print 2 for i in range(3,n+1): yield i print n+1 print n+2 if __name__ == &amp;#39;__main__&amp;#39;: for i in genTest(5): print i 输出如下：
+1 2 3 4 5 6 7 可以看出第一次调用genTest()时执行了1,2位置的代码。 之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。
 Python解析XML Python解析XML有许多种方法，它们各有特色。
 ElementTree ElementTree是python xml解析的一种轻量级实现。 它将XMl文件读取到内存中以一棵树的形式存储。 它速度快且方便使用，但是不能读取不规范的XMl文件，并且会一次将XML文件解析入内存。 因此适合解析一些小型的XML文件。 cElementTree是它的一个C优化过的版本。
 示例代码如下：
-def readXMLET(filename): try: import xml.etree.cElementTree as ET except ImportError: import xml.etree.ElementTree as ET tree = ET.ElementTree(file=filename) print &#39;read finish!</description>
+def readXMLET(filename): try: import xml.etree.cElementTree as ET except ImportError: import xml.etree.ElementTree as ET tree = ET.ElementTree(file=filename) print &amp;#39;read finish!&amp;#39; root = tree.</description>
     </item>
     
     <item>
       <title>ElasticSearch搜索配置（2）</title>
-      <link>https://dailydreamer.me/post/2015-06-22-elasticsearch-config-2/</link>
+      <link>https://dailydreamer.me/posts/2015-06-22-elasticsearch-config-2/</link>
       <pubDate>Mon, 22 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-22-elasticsearch-config-2/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-22-elasticsearch-config-2/</guid>
       <description>这次再来说说ElasticSearch的其他一些特性。
 Bulk 使用Index进行索引是一次索引一条doc，而bulk提供了批量索引的功能，能够显著的减少索引时间。 经过实际测试，对于1个100Mb约20K条doc，向远程服务器单节点发起索引的完成时间对比如下表。
    chunck_size time/s     200 298.34   500 216.84   1000 169.64   2000 164.71    可以看出chunck_size在一个合适的区间时可以显著减少索引时间，而chunck_size的选取也和一个doc的大小有关。
 这里是官方文档。
 ElasticSearch的python API中对bulk进行了封装，有helpers.streaming_bulk和helpers.bulk两个方法，官方文档在这。大致使用方法如下：
-for success, fail in helpers.streaming_bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000): print &#39;success: &#39;, success  success, fail = helpers.bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000)  其中geDoc()是一个迭代器。 这两个方法的区别在于bulk调用了streaming_bulk并将信息一起返回。
+for success, fail in helpers.streaming_bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000): print &amp;#39;success: &amp;#39;, success success, fail = helpers.bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000) 其中geDoc()是一个迭代器。 这两个方法的区别在于bulk调用了streaming_bulk并将信息一起返回。
 拼音搜索 对于中文内容较多的索引，如果能够使用拼音搜索会十分方便。 ElasticSearch有插件elasticsearch-analysis-pinyin可以实现这个功能。 它可以将中文转化为拼音字母，在建立索引的时候就可以在倒排列表中使对应的拼音字母关联到包含中文的Doc上。
 为了将拼音搜索的索引和IK分词的索引结合，需要用到另一个插件elasticsearch-analysis-combo。 它可以将两个Analyzer的结果合并起来得到一个新的Analyzer。
 基本的配置如下。
@@ -248,27 +281,28 @@ index: analysis: analyzer: ik: alias: [news_analyzer_ik,ik_analyzer] type: org.<
     
     <item>
       <title>ElasticSearch搜索配置（1）</title>
-      <link>https://dailydreamer.me/post/2015-06-05-elasticsearch-config-1/</link>
+      <link>https://dailydreamer.me/posts/2015-06-05-elasticsearch-config-1/</link>
       <pubDate>Fri, 05 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-05-elasticsearch-config-1/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-05-elasticsearch-config-1/</guid>
       <description>最近在用ElasticSearch做一些搜索，来谈谈其中用到的一些特性。
 ElasticSearch是基于Lucene的分布式包装，其中每一个分片或一个副本都是一个Lucene实例。 ElasticSearch实现了很好的扩展性和冗余，自动负载均衡。可以通过Restful API与ElasticSearch集群交互。 我使用的是python API。
 可以参考ElasticSearch权威指南，讲解非常清楚。
 建立索引 建立索引的时候可以使用mapping建立对每个字段建立映射。
-mapping_body = { &#39;mappings&#39;:{ &#39;tweet&#39;:{ &amp;quot;properties&amp;quot;:{ &#39;text&#39;:{&#39;type&#39;:&#39;string&#39;, &#39;index&#39;:&#39;analyzed&#39;, &#39;analyzer&#39;:&#39;ik_smart&#39;, &#39;similarity&#39;: &#39;BM25&#39;} } } } } es.indices.create(index=&#39;test-index&#39;, body=mapping_body)  上面为&amp;rsquo;test-index&amp;rsquo;的索引中&amp;rsquo;tweet&amp;rsquo;的type中&amp;rsquo;text&amp;rsquo;字段建立映射。
-&amp;lsquo;index&amp;rsquo;设置为analyzed说明要先通过分析器，&amp;rsquo;analyzer&amp;rsquo;设置分析器为ik分词的智能粒度切分，默认为standard，不适合中文分词;&amp;lsquo;similarity&amp;rsquo;设置了相似度算法为BM25，默认为向量空间算法。
+mapping_body = { &amp;#39;mappings&amp;#39;:{ &amp;#39;tweet&amp;#39;:{ &amp;#34;properties&amp;#34;:{ &amp;#39;text&amp;#39;:{&amp;#39;type&amp;#39;:&amp;#39;string&amp;#39;, &amp;#39;index&amp;#39;:&amp;#39;analyzed&amp;#39;, &amp;#39;analyzer&amp;#39;:&amp;#39;ik_smart&amp;#39;, &amp;#39;similarity&amp;#39;: &amp;#39;BM25&amp;#39;} } } } } es.indices.create(index=&amp;#39;test-index&amp;#39;, body=mapping_body) 上面为&amp;rsquo;test-index&amp;rsquo;的索引中&amp;rsquo;tweet&amp;rsquo;的type中&amp;rsquo;text&amp;rsquo;字段建立映射。
+&amp;lsquo;index&amp;rsquo;设置为analyzed说明要先通过分析器，&amp;lsquo;analyzer&amp;rsquo;设置分析器为ik分词的智能粒度切分，默认为standard，不适合中文分词;&amp;lsquo;similarity&amp;rsquo;设置了相似度算法为BM25，默认为向量空间算法。
 具体可以看文档。
 查询 查询可以通过ID来检索，但是作为一个搜索引擎，ElasticSearch提供了一种基于JSON的DSL查询格式。
-search_body = { &amp;quot;query&amp;quot;: { &amp;quot;multi_match&amp;quot;: { &amp;quot;query&amp;quot;: &amp;quot;Hello世界&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;cross_fields&amp;quot;, &amp;quot;operator&amp;quot;: &amp;quot;or&amp;quot;, &amp;quot;fields&amp;quot;: [ &amp;quot;author&amp;quot;, &amp;quot;text^2&amp;quot; ] } }, &#39;highlight&#39;:{ &#39;fields&#39;:{ &#39;author&#39;:{}, &#39;text&#39;:{} } } } res = es.search(index=&#39;test-index&#39;, doc_type=&#39;tweet&#39;, body=search_body)  Query 上面的示例中使用了multi match query来进行多字段查询，multi match query对fields中的每个field进行query查询。</description>
+search_body = { &amp;#34;query&amp;#34;: { &amp;#34;multi_match&amp;#34;: { &amp;#34;query&amp;#34;: &amp;#34;Hello世界&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;cross_fields&amp;#34;, &amp;#34;operator&amp;#34;: &amp;#34;or&amp;#34;, &amp;#34;fields&amp;#34;: [ &amp;#34;author&amp;#34;, &amp;#34;text^2&amp;#34; ] } }, &amp;#39;highlight&amp;#39;:{ &amp;#39;fields&amp;#39;:{ &amp;#39;author&amp;#39;:{}, &amp;#39;text&amp;#39;:{} } } } res = es.search(index=&amp;#39;test-index&amp;#39;, doc_type=&amp;#39;tweet&amp;#39;, body=search_body) Query 上面的示例中使用了multi match query来进行多字段查询，multi match query对fields中的每个field进行query查询。
+&amp;lsquo;operator&amp;rsquo;定义了对查询结果进行的操作，&amp;lsquo;or&amp;rsquo;代表取并集。</description>
     </item>
     
     <item>
       <title>程序员修炼之道</title>
-      <link>https://dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/</link>
+      <link>https://dailydreamer.me/posts/2015-06-04-a-pragmatic-programmer/</link>
       <pubDate>Thu, 04 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-04-a-pragmatic-programmer/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-04-a-pragmatic-programmer/</guid>
       <description>这本书出版有些年头了，虽然其中的例子有些老旧，但是有些思想和哲学永远不会过时。
 注重实效的哲学 负责，提供各种选择，不找蹩脚的借口。
 避免软件腐烂，破窗效应，不要容忍破窗户。
@@ -320,10 +354,10 @@ DBC 按合约设计 前条件，后条件，类不变项。
     
     <item>
       <title>在AWS上配置ElasticSearch</title>
-      <link>https://dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/</link>
+      <link>https://dailydreamer.me/posts/2015-06-02-config-elasticsearch-on-aws/</link>
       <pubDate>Tue, 02 Jun 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-06-02-config-elasticsearch-on-aws/</guid>
+      <guid>https://dailydreamer.me/posts/2015-06-02-config-elasticsearch-on-aws/</guid>
       <description>最近在AWS EC2上部署了ElasticSearch，感觉AWS的文档详细但稍显凌乱，在这里总结一下步骤。
 首先注册AWS。注意你需要一张支持外币支付的信用卡。
 然后创建IAM用户，并配置其权限和密钥对。 可按照文档中的步骤来。 注意为了使elasticsearch节点启动后能够自动发现别的节点，你可能需要在这一步为该用户而外设置read-only权限。
@@ -333,14 +367,15 @@ DBC 按合约设计 前条件，后条件，类不变项。
 之后为其配置EIP来避免每次重启实例后IP地址改变。 EIP是一个固定的共有IP，将其和一个EC2实例的私有IP绑定即可。 这样也方便切换实例而IP不变。
 最后即可ssh连接到EC2上然后安装ElasticSearch了。
 安装好ElasticSearch之后还需安装elasticsearch-cloud-aws插件并配置才能实现自动Discovery。 大致的配置如
-# AWS discovery cloud.aws.access_key: KEY cloud.aws.secret_key: KEY plugin.mandatory: cloud-aws discovery.type: ec2 discovery.zen.ping.multicast.enabled: false discovery.ec2.groups: &amp;quot;elasticsearch&amp;quot; discovery.ec2.availability_zones: &amp;quot;ap-northeast-1a&amp;quot; cloud.aws.region: &amp;quot;ap-northeast-1&amp;quot; discovery.ec2.host_type: &amp;quot;public_ip&amp;quot; network.publish_host: [PUBLIC_IP] discovery.ec2.ping_timeout: &amp;quot;30s&amp;quot;  discovery.ec2.groups是你的EC2集群所在的安全组，注意用这种方式的设置会将必须该安全组中所有节点都启动ElasticSearch服务才行，否则会一直等待。 如果不想这样可以使用Tag设置。
+# AWS discovery cloud.aws.access_key: KEY cloud.aws.secret_key: KEY plugin.mandatory: cloud-aws discovery.type: ec2 discovery.zen.ping.multicast.enabled: false discovery.ec2.groups: &amp;#34;elasticsearch&amp;#34; discovery.ec2.availability_zones: &amp;#34;ap-northeast-1a&amp;#34; cloud.aws.region: &amp;#34;ap-northeast-1&amp;#34; discovery.ec2.host_type: &amp;#34;public_ip&amp;#34; network.publish_host: [PUBLIC_IP] discovery.ec2.ping_timeout: &amp;#34;30s&amp;#34; discovery.ec2.groups是你的EC2集群所在的安全组，注意用这种方式的设置会将必须该安全组中所有节点都启动ElasticSearch服务才行，否则会一直等待。 如果不想这样可以使用Tag设置。
 discovery.ec2.availability_zones一定要写对，否则节点会无法互相发现，不知道可以看EC2控制面版中有写。
 network.publish_host是该节点的公网IP，可使用绑定的弹性IP。
 更加详细的设置可以看这里。
 有关部署的更加详细的步骤可以参考这里。
 注意如果弹性IP更换了绑定的实例之后要ssh之前需要将原来保存在本地的host_key删除，使用命令ssh-keygen -R hostname,否则会报Host key verification failed。
 部署在EMR上 安装AWS CLI。 可按照文档安装并配置。
-然后直接使用Amazon EMR的bootstrp action脚本即可。 这个仓库中还有其它基于Hadooop的软件的启动脚本，如spark，cascading等。</description>
+然后直接使用Amazon EMR的bootstrp action脚本即可。 这个仓库中还有其它基于Hadooop的软件的启动脚本，如spark，cascading等。
+输入命令(相关参数可自行配置)</description>
     </item>
     
   </channel>

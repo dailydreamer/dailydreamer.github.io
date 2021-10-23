@@ -26,12 +26,16 @@
 </script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-75912368-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-75912368-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </head>
 <body>
@@ -70,7 +74,7 @@ ga('send', 'pageview');
     <div id="tags__ul">
       <a id="all_posts" class="tag is-rounded is-primary">
         全部 
-        <span class="tag-count">35</span>
+        <span class="tag-count">36</span>
       </a>
       
       <a id="编程" class="tag is-rounded">
@@ -80,7 +84,7 @@ ga('send', 'pageview');
       
       <a id="读书笔记" class="tag is-rounded">
         读书笔记 
-        <span class="tag-count">16</span>
+        <span class="tag-count">17</span>
       </a>
       
       <a id="项目" class="tag is-rounded">
@@ -162,6 +166,17 @@ ga('send', 'pageview');
 
     <div class="menu">
       <ul id="posts__ul" class="menu-list">
+        
+        
+        
+        
+        <li class="all_posts 读书笔记">
+          <a href="https://dailydreamer.me/posts/2021-10-24-the-minds-i/">
+            <span class="posts-title">探秘意识 - 读《我是谁或什么》</span>
+            <span class="posts-date">Oct, 2021</span>
+          </a>
+        </li>
+        
         
         
         <li class="all_posts 编程 编程语言">
@@ -478,8 +493,6 @@ ga('send', 'pageview');
         </li>
         
         
-        
-        
       </ul>
     </div>
   </nav>
@@ -497,14 +510,9 @@ ga('send', 'pageview');
           <span class="tag is-medium" style="margin-left:0">产品经理</span>
           
         </div>
-        
-
-<p>前段时间在Edx上浏览了一门课程<a href="https://courses.edx.org/courses/course-v1:MITx+21W.789.1x+1T2016/info">Mobile Application Experiences</a>，听课笔记记录如下。</p>
-
+        <p>前段时间在Edx上浏览了一门课程<a href="https://courses.edx.org/courses/course-v1:MITx+21W.789.1x+1T2016/info">Mobile Application Experiences</a>，听课笔记记录如下。</p>
 <h2 id="come-up-an-idea">Come up an idea</h2>
-
 <h3 id="research-method">Research method</h3>
-
 <ol>
 <li>observation</li>
 <li>location tour: park, office&hellip;</li>
@@ -513,53 +521,37 @@ ga('send', 'pageview');
 <li>diary logging: taking photo, recording video&hellip; close to the time that happened</li>
 <li>interview: ask last time they do something rather than the general situation</li>
 </ol>
-
 <p>look at what they are frustrating to do. What kind of role the environment is playing.</p>
-
 <h3 id="analyze-data">Analyze data</h3>
-
 <ol>
 <li>flow models: analyze how data flow transfer between subjects</li>
 <li>conversation analyze: look at the conversation of subjects related to a subject</li>
 <li>critical incident analyze: look at the place where people get stuck</li>
 <li>affinity analyze</li>
 </ol>
-
 <h4 id="affinity-analyze">Affinity analyze</h4>
-
 <p>From data(bottom up) to find themes.
 It cannot help you to prove a particular hypothesis because you only talk to a few people which can represent everyone.</p>
-
 <p>This method is about discovery, not preconceived notions.</p>
-
 <ol>
 <li>Create Note: each post represent one idea.</li>
 <li>Put up note</li>
-<li>Use 3 hierarchies, users&rsquo; exact quotes, users&rsquo; one sentence summary, theme similar between users.</li>
+<li>Use 3 hierarchies, users' exact quotes, users' one sentence summary, theme similar between users.</li>
 <li>Group the notes use the similar theme</li>
 <li>Come up with a design through the theme</li>
 </ol>
-
 <h3 id="identifying-gaps">Identifying gaps</h3>
-
 <p>listen from different source and board audience</p>
-
 <p>build a quick prototype and give it to them</p>
-
 <h3 id="proposal">Proposal</h3>
-
 <ol>
 <li>why you think the project need to be done</li>
 <li>what your objects and design elements are</li>
 <li>how do you test your projects if they have meet your objects.</li>
 </ol>
-
 <p>remember to allow people to navigate through your proposal easily</p>
-
 <h2 id="build-and-test-your-idea-with-paper-prototype">Build and test your idea with paper prototype</h2>
-
 <h3 id="concept-modeling">Concept modeling</h3>
-
 <ol>
 <li>before + after: how is life different with your app</li>
 <li>user mental model: how do user think about the key part of your app</li>
@@ -568,37 +560,26 @@ It cannot help you to prove a particular hypothesis because you only talk to a f
 <li>content types</li>
 <li>service model: what are all the user touch point with your system</li>
 </ol>
-
 <h3 id="user-cases">User cases</h3>
-
-<h3 id="structure-flow">Structure(flow)</h3>
-
+<h3 id="structureflow">Structure(flow)</h3>
 <p>How your product empower people&rsquo;s work flow.</p>
-
 <h3 id="screen-design">Screen design</h3>
-
 <ol>
 <li>where I am, where to go, how to get here</li>
 <li>set expectations and provide feedback</li>
 <li>ergonomic design</li>
 <li>rely on recognition rather than recall</li>
 </ol>
-
 <h2 id="paper-prototype">Paper prototype</h2>
-
 <p>start with paper: people tend to critical of overall concept</p>
-
 <p>then mock up screens: people tend to critical on design details</p>
-
 <h2 id="usability-testing">Usability testing</h2>
-
 <p>about 5 people can cover 80% situations</p>
-
 <p>Role: moderator, computer, note taker and user.</p>
 
         
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

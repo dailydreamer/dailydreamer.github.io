@@ -26,12 +26,16 @@
 </script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-75912368-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-75912368-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </head>
 <body>
@@ -70,7 +74,7 @@ ga('send', 'pageview');
     <div id="tags__ul">
       <a id="all_posts" class="tag is-rounded is-primary">
         全部 
-        <span class="tag-count">35</span>
+        <span class="tag-count">36</span>
       </a>
       
       <a id="编程" class="tag is-rounded">
@@ -80,7 +84,7 @@ ga('send', 'pageview');
       
       <a id="读书笔记" class="tag is-rounded">
         读书笔记 
-        <span class="tag-count">16</span>
+        <span class="tag-count">17</span>
       </a>
       
       <a id="项目" class="tag is-rounded">
@@ -162,6 +166,17 @@ ga('send', 'pageview');
 
     <div class="menu">
       <ul id="posts__ul" class="menu-list">
+        
+        
+        
+        
+        <li class="all_posts 读书笔记">
+          <a href="https://dailydreamer.me/posts/2021-10-24-the-minds-i/">
+            <span class="posts-title">探秘意识 - 读《我是谁或什么》</span>
+            <span class="posts-date">Oct, 2021</span>
+          </a>
+        </li>
+        
         
         
         <li class="all_posts 编程 编程语言">
@@ -478,8 +493,6 @@ ga('send', 'pageview');
         </li>
         
         
-        
-        
       </ul>
     </div>
   </nav>
@@ -497,118 +510,95 @@ ga('send', 'pageview');
           <span class="tag is-medium" style="margin-left:0">编程语言</span>
           
         </div>
-        
-
-<p>这次来看看Python解析XML与生成迭代器。</p>
-
+        <p>这次来看看Python解析XML与生成迭代器。</p>
 <h2 id="迭代器">迭代器</h2>
-
 <p>使用yield操作符可以使一个函数变成迭代器。如下一段测试代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">genTest</span>(n):
+  print <span style="color:#ae81ff">1</span>
+  print <span style="color:#ae81ff">2</span>
+  <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>,n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+    <span style="color:#66d9ef">yield</span> i
+  print n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+  print n<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>
 
-<pre><code class="language-py">def genTest(n):
-  print 1
-  print 2
-  for i in range(3,n+1):
-    yield i
-  print n+1
-  print n+2
-
-if __name__ == '__main__':
-  for i in genTest(5):
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+  <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> genTest(<span style="color:#ae81ff">5</span>):
     print i
-</code></pre>
-
-<p>输出如下：</p>
-
-<pre><code class="language-sh">1
-2
-3
-4
-5
-6
-7
-</code></pre>
-
-<p>可以看出第一次调用genTest()时执行了1,2位置的代码。
+</code></pre></div><p>输出如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">4</span>
+<span style="color:#ae81ff">5</span>
+<span style="color:#ae81ff">6</span>
+<span style="color:#ae81ff">7</span>
+</code></pre></div><p>可以看出第一次调用genTest()时执行了1,2位置的代码。
 之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。</p>
-
 <h2 id="python解析xml">Python解析XML</h2>
-
 <p>Python解析XML有许多种方法，它们各有特色。</p>
-
 <h3 id="elementtree">ElementTree</h3>
-
 <p><a href="https://docs.python.org/2/library/xml.etree.elementtree.html">ElementTree</a>是python xml解析的一种轻量级实现。
 它将XMl文件读取到内存中以一棵树的形式存储。
 它速度快且方便使用，但是不能读取不规范的XMl文件，并且会一次将XML文件解析入内存。
 因此适合解析一些小型的XML文件。
 cElementTree是它的一个C优化过的版本。</p>
-
 <p>示例代码如下：</p>
-
-<pre><code class="language-py">def readXMLET(filename):
-  try:
-    import xml.etree.cElementTree as ET
-  except ImportError:
-    import xml.etree.ElementTree as ET
-  tree = ET.ElementTree(file=filename)
-  print 'read finish!'
-  root = tree.getroot()
-  for child in root:
-    yield child.tag, child.attrib
-</code></pre>
-
-<h3 id="beautifulsoup-parser">BeautifulSoup Parser</h3>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">readXMLET</span>(filename):
+  <span style="color:#66d9ef">try</span>:
+    <span style="color:#f92672">import</span> xml.etree.cElementTree <span style="color:#66d9ef">as</span> ET
+  <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ImportError</span>:
+    <span style="color:#f92672">import</span> xml.etree.ElementTree <span style="color:#66d9ef">as</span> ET
+  tree <span style="color:#f92672">=</span> ET<span style="color:#f92672">.</span>ElementTree(file<span style="color:#f92672">=</span>filename)
+  print <span style="color:#e6db74">&#39;read finish!&#39;</span>
+  root <span style="color:#f92672">=</span> tree<span style="color:#f92672">.</span>getroot()
+  <span style="color:#66d9ef">for</span> child <span style="color:#f92672">in</span> root:
+    <span style="color:#66d9ef">yield</span> child<span style="color:#f92672">.</span>tag, child<span style="color:#f92672">.</span>attrib
+</code></pre></div><h3 id="beautifulsoup-parser">BeautifulSoup Parser</h3>
 <p>刚提到ElementTree不能读取不规范的XML，<a href="http://lxml.de/elementsoup.html">BeautifulSoup Parser</a>则可以，它试图修复XML中的不规范成分。
 但是由于使用了正则表达式，相对的它的效率会低于ElementTree。</p>
-
 <p>示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">readXMLlxml</span>(filename):
+  <span style="color:#f92672">from</span> lxml.html <span style="color:#f92672">import</span> soupparser
 
-<pre><code class="language-py">def readXMLlxml(filename):
-  from lxml.html import soupparser
-
-  tree = soupparser.parse(filename)
-  root = tree.getroot()
-  for child in root:
-    yield child.tag, child.attrib
-</code></pre>
-
-<h3 id="sax">SAX</h3>
-
+  tree <span style="color:#f92672">=</span> soupparser<span style="color:#f92672">.</span>parse(filename)
+  root <span style="color:#f92672">=</span> tree<span style="color:#f92672">.</span>getroot()
+  <span style="color:#66d9ef">for</span> child <span style="color:#f92672">in</span> root:
+    <span style="color:#66d9ef">yield</span> child<span style="color:#f92672">.</span>tag, child<span style="color:#f92672">.</span>attrib
+</code></pre></div><h3 id="sax">SAX</h3>
 <p>前面两种方法都是将XML一次以一棵树的形式读入内存中。
 若是XML文件较大的话这种方式会非常慢且消耗内存。
 <a href="https://docs.python.org/2/library/xml.sax.html">SAX</a>则是以一种异步的方式处理它遇到的XML标签，而不是将其一次全部解析，因此比较适合体积很大的XML文件。
 但是它不会记得之前处理过的标签算是一个缺点。</p>
-
 <p>你需要继承xml.sax.ContentHandler类，然后在解析的时候将这个类的实例传入即可。</p>
-
 <p>这个类有如下方法：</p>
-
 <ul>
-<li><p>characters(content)方法：调用时机为从行开始，遇到标签之前，存在字符，content的值为这些字符串；从一个标签，遇到下一个标签之前， 存在字符，content的值为这些字符串；从一个标签，遇到行结束符之前，存在字符，content的值为这些字符串。标签可以是开始标签，也可以是结束标签。</p></li>
-
-<li><p>startDocument()方法：文档启动的时候调用。</p></li>
-
-<li><p>endDocument()方法：解析器到达文档结尾时调用。</p></li>
-
-<li><p>startElement(name, attrs)方法：遇到XML开始标签时调用，name是标签的名字，attrs是标签的属性值字典。</p></li>
-
-<li><p>endElement(name)方法：遇到XML结束标签时调用。</p></li>
+<li>
+<p>characters(content)方法：调用时机为从行开始，遇到标签之前，存在字符，content的值为这些字符串；从一个标签，遇到下一个标签之前， 存在字符，content的值为这些字符串；从一个标签，遇到行结束符之前，存在字符，content的值为这些字符串。标签可以是开始标签，也可以是结束标签。</p>
+</li>
+<li>
+<p>startDocument()方法：文档启动的时候调用。</p>
+</li>
+<li>
+<p>endDocument()方法：解析器到达文档结尾时调用。</p>
+</li>
+<li>
+<p>startElement(name, attrs)方法：遇到XML开始标签时调用，name是标签的名字，attrs是标签的属性值字典。</p>
+</li>
+<li>
+<p>endElement(name)方法：遇到XML结束标签时调用。</p>
+</li>
 </ul>
-
 <p>示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">resHandler</span>(xml<span style="color:#f92672">.</span>sax<span style="color:#f92672">.</span>ContentHandler):
+  <span style="color:#66d9ef">def</span> __init__(self):
+    self<span style="color:#f92672">.</span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 
-<pre><code class="language-py">class resHandler(xml.sax.ContentHandler):
-  def __init__(self):
-    self.count = 0
-
-  def startElement(self, tag, attrib):
-    if tag == 'doc':
-      self.count += 1
-      if self.count % 1000 == 0:
-        print self.count
-      doc = {
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">startElement</span>(self, tag, attrib):
+    <span style="color:#66d9ef">if</span> tag <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;doc&#39;</span>:
+      self<span style="color:#f92672">.</span>count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>count <span style="color:#f92672">%</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        print self<span style="color:#f92672">.</span>count
+      doc <span style="color:#f92672">=</span> {
         TAG:tag,
         TITLE:attrib[TITLE],
         ANCHOR:attrib[ANCHOR],
@@ -618,15 +608,14 @@ cElementTree是它的一个C优化过的版本。</p>
       }
       print doc
 
-def readXMLSAX(filename):
-  parser = xml.sax.make_parser()
-  parser.setContentHandler(resHandler())
-  parser.parse(filename)
-</code></pre>
-
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">readXMLSAX</span>(filename):
+  parser <span style="color:#f92672">=</span> xml<span style="color:#f92672">.</span>sax<span style="color:#f92672">.</span>make_parser()
+  parser<span style="color:#f92672">.</span>setContentHandler(resHandler())
+  parser<span style="color:#f92672">.</span>parse(filename)
+</code></pre></div>
         
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

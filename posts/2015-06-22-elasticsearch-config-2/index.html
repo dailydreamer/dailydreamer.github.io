@@ -26,12 +26,16 @@
 </script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-75912368-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-75912368-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </head>
 <body>
@@ -70,7 +74,7 @@ ga('send', 'pageview');
     <div id="tags__ul">
       <a id="all_posts" class="tag is-rounded is-primary">
         全部 
-        <span class="tag-count">35</span>
+        <span class="tag-count">36</span>
       </a>
       
       <a id="编程" class="tag is-rounded">
@@ -80,7 +84,7 @@ ga('send', 'pageview');
       
       <a id="读书笔记" class="tag is-rounded">
         读书笔记 
-        <span class="tag-count">16</span>
+        <span class="tag-count">17</span>
       </a>
       
       <a id="项目" class="tag is-rounded">
@@ -162,6 +166,17 @@ ga('send', 'pageview');
 
     <div class="menu">
       <ul id="posts__ul" class="menu-list">
+        
+        
+        
+        
+        <li class="all_posts 读书笔记">
+          <a href="https://dailydreamer.me/posts/2021-10-24-the-minds-i/">
+            <span class="posts-title">探秘意识 - 读《我是谁或什么》</span>
+            <span class="posts-date">Oct, 2021</span>
+          </a>
+        </li>
+        
         
         
         <li class="all_posts 编程 编程语言">
@@ -478,8 +493,6 @@ ga('send', 'pageview');
         </li>
         
         
-        
-        
       </ul>
     </div>
   </nav>
@@ -495,165 +508,128 @@ ga('send', 'pageview');
           <span class="tag is-medium" style="margin-left:0">编程</span>
           
         </div>
-        
-
-<p>这次再来说说ElasticSearch的其他一些特性。</p>
-
+        <p>这次再来说说ElasticSearch的其他一些特性。</p>
 <h2 id="bulk">Bulk</h2>
-
 <p>使用Index进行索引是一次索引一条doc，而bulk提供了批量索引的功能，能够显著的减少索引时间。
 经过实际测试，对于1个100Mb约20K条doc，向远程服务器单节点发起索引的完成时间对比如下表。</p>
-
 <table>
 <thead>
 <tr>
-<th align="center">chunck_size</th>
-<th align="center">time/s</th>
+<th style="text-align:center">chunck_size</th>
+<th style="text-align:center">time/s</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">200</td>
-<td align="center">298.34</td>
+<td style="text-align:center">200</td>
+<td style="text-align:center">298.34</td>
 </tr>
-
 <tr>
-<td align="center">500</td>
-<td align="center">216.84</td>
+<td style="text-align:center">500</td>
+<td style="text-align:center">216.84</td>
 </tr>
-
 <tr>
-<td align="center">1000</td>
-<td align="center">169.64</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">169.64</td>
 </tr>
-
 <tr>
-<td align="center">2000</td>
-<td align="center">164.71</td>
+<td style="text-align:center">2000</td>
+<td style="text-align:center">164.71</td>
 </tr>
 </tbody>
 </table>
-
 <p>可以看出chunck_size在一个合适的区间时可以显著减少索引时间，而chunck_size的选取也和一个doc的大小有关。</p>
-
 <p>这里是<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html">官方文档</a>。</p>
-
 <p>ElasticSearch的python API中对bulk进行了封装，有<code>helpers.streaming_bulk</code>和<code>helpers.bulk</code>两个方法，<a href="https://elasticsearch-py.readthedocs.org/en/master/helpers.html?highlight=bulk#elasticsearch.helpers.bulk">官方文档</a>在这。大致使用方法如下：</p>
-
-<pre><code class="language-py">for success, fail in helpers.streaming_bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000):
-    print 'success: ', success
-</code></pre>
-
-<pre><code class="language-py">success, fail = helpers.bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000)
-</code></pre>
-
-<p>其中geDoc()是一个迭代器。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">for</span> success, fail <span style="color:#f92672">in</span> helpers<span style="color:#f92672">.</span>streaming_bulk(es, genDoc(filename), index<span style="color:#f92672">=</span>INDEX, doc_type<span style="color:#f92672">=</span>DOCTYPE, chunk_size<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>):
+	print <span style="color:#e6db74">&#39;success: &#39;</span>, success
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">success, fail <span style="color:#f92672">=</span> helpers<span style="color:#f92672">.</span>bulk(es, genDoc(filename), index<span style="color:#f92672">=</span>INDEX, doc_type<span style="color:#f92672">=</span>DOCTYPE, chunk_size<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>)
+</code></pre></div><p>其中geDoc()是一个迭代器。
 这两个方法的区别在于bulk调用了streaming_bulk并将信息一起返回。</p>
-
 <h2 id="拼音搜索">拼音搜索</h2>
-
 <p>对于中文内容较多的索引，如果能够使用拼音搜索会十分方便。
 ElasticSearch有插件<a href="https://github.com/medcl/elasticsearch-analysis-pinyin">elasticsearch-analysis-pinyin</a>可以实现这个功能。
 它可以将中文转化为拼音字母，在建立索引的时候就可以在倒排列表中使对应的拼音字母关联到包含中文的Doc上。</p>
-
 <p>为了将拼音搜索的索引和IK分词的索引结合，需要用到另一个插件<a href="https://github.com/yakaz/elasticsearch-analysis-combo/">elasticsearch-analysis-combo</a>。
 它可以将两个Analyzer的结果合并起来得到一个新的Analyzer。</p>
-
 <p>基本的配置如下。</p>
-
-<pre><code class="language-yml">index:
-  analysis:
-    analyzer:
-      ik:
-          alias: [news_analyzer_ik,ik_analyzer]
-          type: org.elasticsearch.index.analysis.IkAnalyzerProvider
-      ik_max_word:
-          type: ik
-          use_smart: false
-      ik_smart:
-          type: ik
-          use_smart: true
-      pinyin:
-        type: custom
-        tokenizer: standard
-        filter:
-         - standard 
-         - pinyin_filter
-         - lowercase         
-      combo:
-        type: combo
-        sub_analyzers: 
-         - ik
-         - pinyin
-    filter:
-      pinyin_filter : 
-        type : pinyin
-        first_letter : none
-        padding_char : ''
-</code></pre>
-
-<p>先使用pinyin插件定义一个pinyin filter， <code>first_letter</code>属性看是否得到拼音首字母缩写，<code>padding_char</code>属性确定首字母缩写和全拼音的连接方式。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">index</span>:
+  <span style="color:#f92672">analysis</span>:
+    <span style="color:#f92672">analyzer</span>:
+      <span style="color:#f92672">ik</span>:
+          <span style="color:#f92672">alias</span>: [<span style="color:#ae81ff">news_analyzer_ik,ik_analyzer]</span>
+          <span style="color:#f92672">type</span>: <span style="color:#ae81ff">org.elasticsearch.index.analysis.IkAnalyzerProvider</span>
+      <span style="color:#f92672">ik_max_word</span>:
+          <span style="color:#f92672">type</span>: <span style="color:#ae81ff">ik</span>
+          <span style="color:#f92672">use_smart</span>: <span style="color:#66d9ef">false</span>
+      <span style="color:#f92672">ik_smart</span>:
+          <span style="color:#f92672">type</span>: <span style="color:#ae81ff">ik</span>
+          <span style="color:#f92672">use_smart</span>: <span style="color:#66d9ef">true</span>
+      <span style="color:#f92672">pinyin</span>:
+        <span style="color:#f92672">type</span>: <span style="color:#ae81ff">custom</span>
+        <span style="color:#f92672">tokenizer</span>: <span style="color:#ae81ff">standard</span>
+        <span style="color:#f92672">filter</span>:
+         - <span style="color:#ae81ff">standard </span>
+         - <span style="color:#ae81ff">pinyin_filter</span>
+         - <span style="color:#ae81ff">lowercase         </span>
+      <span style="color:#f92672">combo</span>:
+        <span style="color:#f92672">type</span>: <span style="color:#ae81ff">combo</span>
+        <span style="color:#f92672">sub_analyzers</span>: 
+         - <span style="color:#ae81ff">ik</span>
+         - <span style="color:#ae81ff">pinyin</span>
+    <span style="color:#f92672">filter</span>:
+      <span style="color:#f92672">pinyin_filter </span>: 
+        <span style="color:#f92672">type </span>: <span style="color:#ae81ff">pinyin</span>
+        <span style="color:#f92672">first_letter </span>: <span style="color:#ae81ff">none</span>
+        <span style="color:#f92672">padding_char </span>: <span style="color:#e6db74">&#39;&#39;</span>
+</code></pre></div><p>先使用pinyin插件定义一个pinyin filter， <code>first_letter</code>属性看是否得到拼音首字母缩写，<code>padding_char</code>属性确定首字母缩写和全拼音的连接方式。
 然后定义一个custom的pinyin analyzer。tokenizer使用standard，将所有汉字词语分成单个字，filter先通过standard初步过滤，然后使用pinyin filter转成单个字的拼音，最后使用lowercase统一小写。</p>
-
 <p>效果如下：</p>
-
 <p>输入命令</p>
-
-<pre><code class="language-sh">curl -XGET 'http://localhost:9200/school_search_index/_analyze?analyzer=pinyin&amp;pretty' -d '清华大学'
-</code></pre>
-
-<p>得到结果</p>
-
-<pre><code class="language-json">{
-  &quot;tokens&quot; : [ {
-    &quot;token&quot; : &quot;qing&quot;,
-    &quot;start_offset&quot; : 0,
-    &quot;end_offset&quot; : 1,
-    &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,
-    &quot;position&quot; : 1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -XGET <span style="color:#e6db74">&#39;http://localhost:9200/school_search_index/_analyze?analyzer=pinyin&amp;pretty&#39;</span> -d <span style="color:#e6db74">&#39;清华大学&#39;</span>
+</code></pre></div><p>得到结果</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;tokens&#34;</span> : [ {
+    <span style="color:#f92672">&#34;token&#34;</span> : <span style="color:#e6db74">&#34;qing&#34;</span>,
+    <span style="color:#f92672">&#34;start_offset&#34;</span> : <span style="color:#ae81ff">0</span>,
+    <span style="color:#f92672">&#34;end_offset&#34;</span> : <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;type&#34;</span> : <span style="color:#e6db74">&#34;&lt;IDEOGRAPHIC&gt;&#34;</span>,
+    <span style="color:#f92672">&#34;position&#34;</span> : <span style="color:#ae81ff">1</span>
   }, {
-    &quot;token&quot; : &quot;hua&quot;,
-    &quot;start_offset&quot; : 1,
-    &quot;end_offset&quot; : 2,
-    &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,
-    &quot;position&quot; : 2
+    <span style="color:#f92672">&#34;token&#34;</span> : <span style="color:#e6db74">&#34;hua&#34;</span>,
+    <span style="color:#f92672">&#34;start_offset&#34;</span> : <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;end_offset&#34;</span> : <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;type&#34;</span> : <span style="color:#e6db74">&#34;&lt;IDEOGRAPHIC&gt;&#34;</span>,
+    <span style="color:#f92672">&#34;position&#34;</span> : <span style="color:#ae81ff">2</span>
   }, {
-    &quot;token&quot; : &quot;da&quot;,
-    &quot;start_offset&quot; : 2,
-    &quot;end_offset&quot; : 3,
-    &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,
-    &quot;position&quot; : 3
+    <span style="color:#f92672">&#34;token&#34;</span> : <span style="color:#e6db74">&#34;da&#34;</span>,
+    <span style="color:#f92672">&#34;start_offset&#34;</span> : <span style="color:#ae81ff">2</span>,
+    <span style="color:#f92672">&#34;end_offset&#34;</span> : <span style="color:#ae81ff">3</span>,
+    <span style="color:#f92672">&#34;type&#34;</span> : <span style="color:#e6db74">&#34;&lt;IDEOGRAPHIC&gt;&#34;</span>,
+    <span style="color:#f92672">&#34;position&#34;</span> : <span style="color:#ae81ff">3</span>
   }, {
-    &quot;token&quot; : &quot;xue&quot;,
-    &quot;start_offset&quot; : 3,
-    &quot;end_offset&quot; : 4,
-    &quot;type&quot; : &quot;&lt;IDEOGRAPHIC&gt;&quot;,
-    &quot;position&quot; : 4
+    <span style="color:#f92672">&#34;token&#34;</span> : <span style="color:#e6db74">&#34;xue&#34;</span>,
+    <span style="color:#f92672">&#34;start_offset&#34;</span> : <span style="color:#ae81ff">3</span>,
+    <span style="color:#f92672">&#34;end_offset&#34;</span> : <span style="color:#ae81ff">4</span>,
+    <span style="color:#f92672">&#34;type&#34;</span> : <span style="color:#e6db74">&#34;&lt;IDEOGRAPHIC&gt;&#34;</span>,
+    <span style="color:#f92672">&#34;position&#34;</span> : <span style="color:#ae81ff">4</span>
   } ]
 }
-</code></pre>
-
-<p>最后使用combo analyzer将两个analyzer合并。</p>
-
+</code></pre></div><p>最后使用combo analyzer将两个analyzer合并。</p>
 <h2 id="自动补全">自动补全</h2>
-
 <p>搜索引擎的自动补全有两种类型。
 一种是基于你过去或者是其他人的热门的搜索历史进行补全，另一种是基于语言模型进行补全。</p>
-
 <p>对于第一种根据搜索历史的补全，适用与拥有大量数据的搜索引擎。
 在ElasticSearch中可以使用<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters-completion.html">Completion Suggester</a>实现。
 由于不适用与用户数据较少的搜索引擎，便不细说，可以参考<a href="http://blog.qbox.io/quick-and-dirty-autocomplete-with-elasticsearch-completion-suggest">这篇文章</a>。</p>
-
 <p>第二种基于语言模型的补全，可以使用类似于拼音搜索的实现方式，在建立索引的时候对一个单词string的所有substring都建立到包含该string的Doc的映射即可。
 但是需要注意的是这样会显著增加索引的大小。</p>
-
 <p>在ElasticSearch中可以使用<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-ngram-tokenizer.html#analysis-ngram-tokenizer">n-Gram Tokenizer</a>或<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-ngram-tokenfilter.html">n-Gram filter</a>实现。
 具体可以参考<a href="http://jontai.me/blog/2013/02/adding-autocomplete-to-an-elasticsearch-search-application/">这篇文章</a>。</p>
 
         
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

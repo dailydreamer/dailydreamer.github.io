@@ -26,12 +26,16 @@
 </script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-75912368-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-75912368-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </head>
 <body>
@@ -70,7 +74,7 @@ ga('send', 'pageview');
     <div id="tags__ul">
       <a id="all_posts" class="tag is-rounded is-primary">
         全部 
-        <span class="tag-count">35</span>
+        <span class="tag-count">36</span>
       </a>
       
       <a id="编程" class="tag is-rounded">
@@ -80,7 +84,7 @@ ga('send', 'pageview');
       
       <a id="读书笔记" class="tag is-rounded">
         读书笔记 
-        <span class="tag-count">16</span>
+        <span class="tag-count">17</span>
       </a>
       
       <a id="项目" class="tag is-rounded">
@@ -162,6 +166,17 @@ ga('send', 'pageview');
 
     <div class="menu">
       <ul id="posts__ul" class="menu-list">
+        
+        
+        
+        
+        <li class="all_posts 读书笔记">
+          <a href="https://dailydreamer.me/posts/2021-10-24-the-minds-i/">
+            <span class="posts-title">探秘意识 - 读《我是谁或什么》</span>
+            <span class="posts-date">Oct, 2021</span>
+          </a>
+        </li>
+        
         
         
         <li class="all_posts 编程 编程语言">
@@ -478,8 +493,6 @@ ga('send', 'pageview');
         </li>
         
         
-        
-        
       </ul>
     </div>
   </nav>
@@ -497,64 +510,34 @@ ga('send', 'pageview');
           <span class="tag is-medium" style="margin-left:0">WEB</span>
           
         </div>
-        
-
-<h2 id="html">HTML</h2>
-
+        <h2 id="html">HTML</h2>
 <p>block element块级元素，撑满一行</p>
-
 <p>inline element行内元素，宽度包围内容</p>
-
 <h2 id="css原理">CSS原理</h2>
-
 <h3 id="选择符">选择符</h3>
-
 <p>a, b {} 同时选中a和b</p>
-
 <p>a b {} a是b的祖先元素时选中b</p>
-
 <p>a &gt; b {} a是b的父元素时选中b</p>
-
 <p>a + b {} a紧邻b时选中b</p>
-
 <p>a ~ b {} a和b是同胞时选中b</p>
-
 <p>* {} 全部选中</p>
-
 <p>.a {} 选中a类</p>
-
 <p>#a {} 选中id为a</p>
-
 <p>a.b {} 选中同时为a标签和b类</p>
-
 <p>.a.b {} 选中同时为a类和b类</p>
-
 <p>a[b] {} 选中a标签中带有b属性的</p>
-
 <p>a[b=c] {} 选中a标签中b属性值为c的</p>
-
 <h4 id="伪类">伪类</h4>
-
 <p>a标签 a:link a:visited a:hover a:active</p>
-
 <p>a:focus a:target</p>
-
 <p>一组同胞元素中的第几个 a:first-child a:last-child a:nth-child(n) a:nth-child(odd) a:nth-child(even)</p>
-
 <h4 id="伪元素">伪元素</h4>
-
 <p>a::first-letter a::first-line</p>
-
 <p>a::before a::after</p>
-
 <p>搜索引擎不会索引伪元素</p>
-
 <h4 id="继承">继承</h4>
-
 <p>字体颜色等相关属性会继承，位置等相关属性不会继承</p>
-
 <h3 id="浏览器层叠样式表顺序">浏览器层叠样式表顺序</h3>
-
 <ol>
 <li>浏览器默认</li>
 <li>用户样式表</li>
@@ -562,108 +545,71 @@ ga('send', 'pageview');
 <li>作者嵌入样式表</li>
 <li>作者行内样式表</li>
 </ol>
-
 <p>特指度：包含多少标签、类名、ID等（I-C-E三位数），特指度高的优先级高</p>
-
 <p>特指度相同时顺序靠后的优先级高</p>
-
 <h3 id="css属性">CSS属性</h3>
-
 <p>文本值</p>
-
 <p>数字值</p>
-
 <ol>
 <li>px 像素</li>
 <li>em 字体中M的宽度</li>
 <li>ex 字体中x的高度</li>
 <li>百分比</li>
 </ol>
-
 <p>颜色值（颜色名，RGB，HSL，16进制）</p>
-
 <h2 id="定位元素">定位元素</h2>
-
 <p>垂直外边距叠加：垂直方向相邻两个box取margin较大的作为外边距</p>
-
-<pre><code class="language-css">p {
-  font-size: 1em;
-  margin: .75em 30px;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">p</span> {
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">.75</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
 }
-</code></pre>
-
-<p>如上排版文字最好垂直相对外边距，水平绝对外边距</p>
-
+</code></pre></div><p>如上排版文字最好垂直相对外边距，水平绝对外边距</p>
 <p>给设定了宽度\高度的盒子加边框、内边距、外边距会使盒子更宽\更高。CSS3的box-sizing属性可以消除这一特点。</p>
-
 <h3 id="position">position</h3>
-
 <ol>
 <li>static：普通文档流</li>
 <li>relative: 仍然在文档流中，相对原来的box位置变化，原来box占据的位置不变</li>
 <li>absolute：从文档流中脱出，会随页面滚动</li>
 <li>fixed：从文档流中脱出，不会随页面滚动</li>
 </ol>
-
 <p>定位上下文：带有非static position的最近祖先元素，默认是body。</p>
-
 <h3 id="display">display</h3>
-
 <ol>
 <li>inline</li>
 <li>block</li>
 <li>none（空间会被回收）</li>
 </ol>
-
 <p>最近支持越来越好的flexbox布局，值得有空仔细研究。</p>
-
 <h3 id="background">background</h3>
-
 <ol>
 <li>background-repeat</li>
 <li>background-size</li>
 <li>background-attachment</li>
 </ol>
-
 <p>css3支持多张背景图片，先列出的在上层</p>
-
 <p>背景渐变</p>
-
 <h2 id="字体和文本">字体和文本</h2>
-
 <p>em相对最近的被设置过字体的祖先大小</p>
-
 <p>CSS3 rem相对root即body字体大小</p>
-
 <ol>
 <li>text-indent</li>
 <li>text-align</li>
 <li>vertical-align: sub(下标) super(上标) top middle bottom</li>
 </ol>
-
 <p>Web字体</p>
-
 <h2 id="界面组件">界面组件</h2>
-
 <p>label的for属性可以把标签和控件关联起来</p>
-
 <p>fieldset表单域</p>
-
 <p>用section块级元素包裹label和input</p>
-
 <h2 id="响应式布局">响应式布局</h2>
-
 <h3 id="媒体查询">媒体查询</h3>
-
 <p>媒体类型：all handled print screen 等</p>
-
 <p>媒体特性：max-device-width max-width orientation</p>
-
 <p>and not all 等逻辑运算符</p>
 
         
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

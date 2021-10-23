@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on dailydreamer</title>
@@ -6,62 +6,112 @@
     <description>Recent content in Tags on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 22 Jun 2015 20:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://dailydreamer.me/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Oct 2021 00:19:53 +0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Elasticsearch</title>
-      <link>https://dailydreamer.me/tags/elasticsearch/</link>
-      <pubDate>Mon, 22 Jun 2015 20:00:00 +0800</pubDate>
+      <title>读书笔记</title>
+      <link>https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 24 Oct 2021 00:19:53 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/tags/elasticsearch/</guid>
+      <guid>https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ssh</title>
-      <link>https://dailydreamer.me/tags/ssh/</link>
-      <pubDate>Fri, 30 Oct 2015 20:00:00 +0800</pubDate>
+      <title>编程</title>
+      <link>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Sun, 25 Nov 2018 17:43:19 -0800</pubDate>
       
-      <guid>https://dailydreamer.me/tags/ssh/</guid>
+      <guid>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Web</title>
-      <link>https://dailydreamer.me/tags/web/</link>
-      <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
+      <title>编程语言</title>
+      <link>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Sun, 25 Nov 2018 17:43:19 -0800</pubDate>
       
-      <guid>https://dailydreamer.me/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>产品经理</title>
-      <link>https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/</link>
-      <pubDate>Thu, 16 Jun 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>哲学</title>
-      <link>https://dailydreamer.me/tags/%E5%93%B2%E5%AD%A6/</link>
-      <pubDate>Wed, 13 Jan 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/tags/%E5%93%B2%E5%AD%A6/</guid>
+      <guid>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>心理学</title>
       <link>https://dailydreamer.me/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</link>
-      <pubDate>Sun, 21 May 2017 16:42:02 +0800</pubDate>
+      <pubDate>Fri, 13 Jul 2018 22:34:47 -0700</pubDate>
       
       <guid>https://dailydreamer.me/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>产品经理</title>
+      <link>https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/</link>
+      <pubDate>Wed, 13 Jun 2018 00:30:35 -0700</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>行业</title>
+      <link>https://dailydreamer.me/tags/%E8%A1%8C%E4%B8%9A/</link>
+      <pubDate>Wed, 13 Jun 2018 00:30:35 -0700</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/%E8%A1%8C%E4%B8%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>项目</title>
+      <link>https://dailydreamer.me/tags/%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Wed, 13 Jun 2018 00:30:35 -0700</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/%E9%A1%B9%E7%9B%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maker</title>
+      <link>https://dailydreamer.me/tags/maker/</link>
+      <pubDate>Sun, 03 Jun 2018 22:00:00 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/maker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自动驾驶</title>
+      <link>https://dailydreamer.me/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</link>
+      <pubDate>Sun, 28 Jan 2018 22:34:59 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>创业</title>
+      <link>https://dailydreamer.me/tags/%E5%88%9B%E4%B8%9A/</link>
+      <pubDate>Tue, 09 Jan 2018 22:52:10 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/%E5%88%9B%E4%B8%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>哲学</title>
+      <link>https://dailydreamer.me/tags/%E5%93%B2%E5%AD%A6/</link>
+      <pubDate>Sat, 26 Aug 2017 10:47:29 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/%E5%93%B2%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>科学</title>
+      <link>https://dailydreamer.me/tags/%E7%A7%91%E5%AD%A6/</link>
+      <pubDate>Sat, 26 Aug 2017 10:47:29 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/%E7%A7%91%E5%AD%A6/</guid>
       <description></description>
     </item>
     
@@ -75,38 +125,11 @@
     </item>
     
     <item>
-      <title>科学</title>
-      <link>https://dailydreamer.me/tags/%E7%A7%91%E5%AD%A6/</link>
-      <pubDate>Mon, 07 Aug 2017 23:45:43 +0800</pubDate>
+      <title>WEB</title>
+      <link>https://dailydreamer.me/tags/web/</link>
+      <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/tags/%E7%A7%91%E5%AD%A6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>系统安全</title>
-      <link>https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</link>
-      <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>编程</title>
-      <link>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B/</link>
-      <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>编程语言</title>
-      <link>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+      <guid>https://dailydreamer.me/tags/web/</guid>
       <description></description>
     </item>
     
@@ -120,11 +143,20 @@
     </item>
     
     <item>
-      <title>读书笔记</title>
-      <link>https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Mon, 07 Aug 2017 23:45:43 +0800</pubDate>
+      <title>系统安全</title>
+      <link>https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</link>
+      <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://dailydreamer.me/tags/ssh/</link>
+      <pubDate>Fri, 30 Oct 2015 20:00:00 +0800</pubDate>
+      
+      <guid>https://dailydreamer.me/tags/ssh/</guid>
       <description></description>
     </item>
     

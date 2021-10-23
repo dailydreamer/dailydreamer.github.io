@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web on dailydreamer</title>
+    <title>WEB on dailydreamer</title>
     <link>https://dailydreamer.me/tags/web/</link>
-    <description>Recent content in Web on dailydreamer</description>
+    <description>Recent content in WEB on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 May 2016 20:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://dailydreamer.me/tags/web/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 May 2016 20:00:00 +0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebRTC简介</title>
-      <link>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</link>
+      <link>https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/</link>
       <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-05-25-webrtc-introduction/</guid>
+      <guid>https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/</guid>
       <description>WebRTC简介 WebRTC是一种在浏览器中无需任何插件的点对点(P2P)实时视频、音频、数据交流协议，其中RTC是实时沟通(Real Time Communication)的缩写。 过去，实时沟通昂贵且实现复杂，需要专用的视频和音频设备及技术，使得将其集成进已有服务昂贵且费时。 后来，Google开源了Gmail和Hangouts中使用的RTC技术，并且参与W3C相关规范的制定。 2011年，WebRTC第一个版本被实现。 现在WebRTC技术已经被WhatsApp, Facebook Messenger等应用广泛使用。
 WebRTC主要实现了3个API，getUserMedia、RTCPeerConnection和RTCDataChannel。 其中getUserMedia定义了来获取设备上的视频(包括摄像头输入和屏幕输入等)、音频流的接口。RTCPeerConnection定义了用于处理两个客户端之间的流数据的接口。RTCDataChannel定义了用于处理两个客户端之间任意数据收发的接口。
 使用WebRTC过程 使用WebRTC时需要如下步骤：
@@ -28,24 +24,24 @@ WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交�
     
     <item>
       <title>DOM和DOM Event</title>
-      <link>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</link>
+      <link>https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/</link>
       <pubDate>Mon, 25 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-04-25-dom-and-dom-event/</guid>
+      <guid>https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/</guid>
       <description>DOM和HTML，JavaScript，CSS的关系 Document Object Model(DOM)是W3C制定的一种语言无关的面向对象的文档模型，规定了一组可编程的interface需要实现的属性和方法。 HTML和XML文档实现了DOM，因此拥有面向对象的特性，其结构、样式、内容等可以被其他语言的DOM实现操纵。 DOM Level 4是2015年的最新一版标准。
 HTML中&amp;lt;script&amp;gt;元素中嵌入的JavaScript就是DOM的一种实现，如下所示：
-var paragraphs = document.getElementsByTagName(&amp;quot;P&amp;quot;); // paragraphs[0] is the first &amp;lt;p&amp;gt; element // paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc. alert(paragraphs[0].nodeName);  其中document对象，getElementsByTagName方法，alert方法，nodeName属性均是DOM标准规定的。
+var paragraphs = document.getElementsByTagName(&amp;#34;P&amp;#34;); // paragraphs[0] is the first &amp;lt;p&amp;gt; element // paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc. alert(paragraphs[0].nodeName); 其中document对象，getElementsByTagName方法，alert方法，nodeName属性均是DOM标准规定的。
 你也可以用其它语言操作DOM，如下的Python示例：
-# Python DOM example import xml.dom.minidom as m doc = m.parse(&amp;quot;test.xml&amp;quot;); doc.nodeName # DOM property of document object; p_list = doc.getElementsByTagName(&amp;quot;para&amp;quot;);  HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：
-var table = document.getElementById(&amp;quot;table&amp;quot;); var tableAttrs = table.attributes; // Node/Element interface for (var i = 0; i &amp;lt; tableAttrs.</description>
+# Python DOM example import xml.dom.minidom as m doc = m.parse(&amp;#34;test.xml&amp;#34;); doc.nodeName # DOM property of document object; p_list = doc.getElementsByTagName(&amp;#34;para&amp;#34;); HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：
+var table = document.getElementById(&amp;#34;table&amp;#34;); var tableAttrs = table.attributes; // Node/Element interface for (var i = 0; i &amp;lt; tableAttrs.</description>
     </item>
     
     <item>
       <title>CSS Cheat Sheet</title>
-      <link>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</link>
+      <link>https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/</link>
       <pubDate>Thu, 14 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-04-14-css-cheat-sheet/</guid>
+      <guid>https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/</guid>
       <description>HTML block element块级元素，撑满一行
 inline element行内元素，宽度包围内容
 CSS原理 选择符 a, b {} 同时选中a和b
@@ -69,33 +65,35 @@ a::before a::after</description>
     
     <item>
       <title>单页应用JWT身份认证</title>
-      <link>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</link>
+      <link>https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/</link>
       <pubDate>Sat, 09 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-04-09-spa-jwt-auth/</guid>
+      <guid>https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/</guid>
       <description>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。 这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。
 JWT JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。 相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。 相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。 缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。
 JWT由三部分组成，Header.Payload.Signature。
 Header Header包含签名算法和type，如下：
-{ &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;, &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot; }  Base64编码后即为Header。
+{ &amp;#34;alg&amp;#34;: &amp;#34;HS256&amp;#34;, &amp;#34;typ&amp;#34;: &amp;#34;JWT&amp;#34; } Base64编码后即为Header。
 Payload 主体内容部分。有一些保留属性，如iss (issuer), exp (expiration time), sub (subject), aud (audience)等。也可以声明私有属性。
 如下：
-{ &amp;quot;sub&amp;quot;: &amp;quot;1234567890&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;, &amp;quot;admin&amp;quot;: true }  Base64编码后即为Payload。
+{ &amp;#34;sub&amp;#34;: &amp;#34;1234567890&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;John Doe&amp;#34;, &amp;#34;admin&amp;#34;: true } Base64编码后即为Payload。
 Signature 签名部分，生成过程如下：
-alg( base64UrlEncode(header) + &amp;quot;.&amp;quot; + base64UrlEncode(payload), secret)  其中alg为Header中声明的签名算法，常用的如SHA256等。 结合secret校对签名可以保证JWT的完整性和不可伪造性。
+alg( base64UrlEncode(header) + &amp;#34;.&amp;#34; + base64UrlEncode(payload), secret) 其中alg为Header中声明的签名算法，常用的如SHA256等。 结合secret校对签名可以保证JWT的完整性和不可伪造性。
 身份验证过程 后端API除了注册和登录外的需要身份验证的接口都对JWT签名进行验证，不通过则返回401 Unauthorized，保护API。 用户注册登录后生成JWT返回用户，用户访问受保护的API时需要随请求发送JWT至服务器端。
 两种常见的安全威胁 接下来看看单页应用开发中几种常见的安全威胁：MITM(Man-In-The-Middle)，XSS(Cross-site scripting)和CSRF(Cross Site Request Forgery)。
-MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。 这里我们在应用层主要使用SSL加密，即HTTPS防范它。 在后端response的header的cookie设置Secure字段，强制cookie使用HTTPS传输。</description>
+MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。 这里我们在应用层主要使用SSL加密，即HTTPS防范它。 在后端response的header的cookie设置Secure字段，强制cookie使用HTTPS传输。
+XSS XSS是指将恶意脚本注入站点，如在用户聊天框输入的地方输入如下内容
+&amp;lt;img src=x onerror=&amp;#34;alert(XSS!</description>
     </item>
     
     <item>
       <title>CORS解决单页应用跨域问题</title>
-      <link>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</link>
+      <link>https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/</link>
       <pubDate>Fri, 08 Apr 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
+      <guid>https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
       <description>同源策略 最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 这时前端和后端部署在不同的服务器上。 而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。
-同源是指协议+主机名+端口号全部相同，称为同源。 详细见下表，是跟&amp;rdquo;http://www.example.com/dir/page.html&amp;quot;做比较。
+同源是指协议+主机名+端口号全部相同，称为同源。 详细见下表，是跟&amp;quot;http://www.example.com/dir/page.html&amp;quot;做比较。
    Compared URL Outcome Reason     http://www.example.com/dir/page2.html Success Same protocol, host and port   http://www.example.com/dir2/other.html Success Same protocol, host and port   http://username:password@www.example.com/dir2/other.html Success Same protocol, host and port   http://www.example.com:81/dir/other.html Failure Same protocol and host but different port   https://www.example.com/dir/other.html Failure Different protocol   http://en.example.com/dir/other.html Failure Different host   http://example.com/dir/other.html Failure Different host (exact match required)   http://v2.</description>
     </item>
     

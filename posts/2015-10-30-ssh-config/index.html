@@ -26,12 +26,16 @@
 </script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-75912368-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-75912368-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 </head>
 <body>
@@ -70,7 +74,7 @@ ga('send', 'pageview');
     <div id="tags__ul">
       <a id="all_posts" class="tag is-rounded is-primary">
         全部 
-        <span class="tag-count">35</span>
+        <span class="tag-count">36</span>
       </a>
       
       <a id="编程" class="tag is-rounded">
@@ -80,7 +84,7 @@ ga('send', 'pageview');
       
       <a id="读书笔记" class="tag is-rounded">
         读书笔记 
-        <span class="tag-count">16</span>
+        <span class="tag-count">17</span>
       </a>
       
       <a id="项目" class="tag is-rounded">
@@ -162,6 +166,17 @@ ga('send', 'pageview');
 
     <div class="menu">
       <ul id="posts__ul" class="menu-list">
+        
+        
+        
+        
+        <li class="all_posts 读书笔记">
+          <a href="https://dailydreamer.me/posts/2021-10-24-the-minds-i/">
+            <span class="posts-title">探秘意识 - 读《我是谁或什么》</span>
+            <span class="posts-date">Oct, 2021</span>
+          </a>
+        </li>
+        
         
         
         <li class="all_posts 编程 编程语言">
@@ -478,8 +493,6 @@ ga('send', 'pageview');
         </li>
         
         
-        
-        
       </ul>
     </div>
   </nav>
@@ -497,17 +510,11 @@ ga('send', 'pageview');
           <span class="tag is-medium" style="margin-left:0">ssh</span>
           
         </div>
-        
-
-<p>当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。</p>
-
+        <p>当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。</p>
 <h2 id="github多个账号ssh-key切换">github多个账号ssh key切换</h2>
-
 <h3 id="配置ssh的config文件">配置ssh的config文件</h3>
-
 <p>使用<code>ssh-keygen -t rsa -C &quot;youremail@xxx.com&quot;</code>生成两个ssh key之后，在~/.ssh/下添加一个config文件，内容如下:</p>
-
-<pre><code>Host github.com
+<pre tabindex="0"><code>Host github.com
   HostName github.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_rsa
@@ -515,20 +522,14 @@ Host second.github.com
   HostName github.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_rsa_second
-</code></pre>
-
-<h3 id="设置远程仓库的ssh地址">设置远程仓库的ssh地址</h3>
-
+</code></pre><h3 id="设置远程仓库的ssh地址">设置远程仓库的ssh地址</h3>
 <p>只需要让ssh的目标主机地址变为你写的Host即可。</p>
-
-<pre><code class="language-sh">git remote add origin git@second.github.com:myname/myrepo.git
-</code></pre>
-
-<p>更加深入的利用ssh config文件可以参考<a href="http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/">这篇文章</a>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git remote add origin git@second.github.com:myname/myrepo.git
+</code></pre></div><p>更加深入的利用ssh config文件可以参考<a href="http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/">这篇文章</a>。</p>
 
         
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

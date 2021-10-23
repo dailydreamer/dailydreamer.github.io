@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>产品经理 on dailydreamer</title>
@@ -6,17 +6,56 @@
     <description>Recent content in 产品经理 on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Jun 2016 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 13 Jun 2018 00:30:35 -0700</lastBuildDate><atom:link href="https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>智慧服装</title>
+      <link>https://dailydreamer.me/posts/2018-06-13-apparel-sales-prediction/</link>
+      <pubDate>Wed, 13 Jun 2018 00:30:35 -0700</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-06-13-apparel-sales-prediction/</guid>
+      <description>在GIX的第二年，在探索中思考，在痛苦中学习，一个重要的收获之一就是有了自己的第一个愿景：用新技术给传统行业赋能。技术是我的热爱，而接触不同的行业又能极大的满足我对世界的好奇，同时国内的很多传统行业正处在数字化智能化转型的生死快跑中。今天来讲讲服装行业的机会。
+现在直销服装品牌的一件服装的生命周期为：设计 -&amp;gt; 计划 -&amp;gt; 采购 -&amp;gt; 生产 -&amp;gt; 物流 -&amp;gt; 销售 -&amp;gt; 客户。跟一切买来东西加工后卖出去的生意（比如零售、投资等等）一样，对需求的预测是一切后续行动（配货、调货、补货等）的核心。需求预测的过少，会损失潜在的销售机会；预测过多，会导致库存积压，严重甚至会资金链断裂。
+预测可以分为三个维度：场（总盘，区域，店），时间（年，季度，周），商品（总盘，大类，SKU）。不同维度的预测能辅助不同程度的决策（如年度财务规划，季度商品计划，销售时的调拨补货计划等）。
+我们走访了几个自营品牌，现在基本是靠店长来手动做这些计划。通过POS机和ERP系统的销量、库存信息，总结出一些规则如畅销滞销款、库销比等等，结合店长自身的经验做出决策，之后复盘帮助店长成长。
+算法驱动的预测相比传统手工预测有如下几个好处：
+ 准确性可靠性高。人类就像莫比乌斯环上的蚂蚁，在螺旋中不断前行。纵观历史的长河，很多事情都是一再重复的发生，而人类局限于自己的尺度，很多时候并不能对事物发展的趋势进行很好的判断。在面对大量的数据时，甚至不可能在有效时间内做出判断。同时，人很难避免情绪的影响，而情绪会极大程度影响判断。 可复制性强。手工预测依赖店长的个人能力，会随着店长的流失被带走；而且店长时间有限，很难兼顾全部商品。 可持续改进。算法可以根据数据反馈持续改进，将店长的智慧永存。  同时算法驱动的预测也有其局限性（比如很难进行涉及潮流趋势的商品计划），因此实际执行时，我们会按由易到难的顺序慢慢改进，先预测现货服装，再预测期货服装销量。
+后续工作可以有根据预测的销量规划调拨补货的行动，基于视觉的服装自动打标，联动到生产的智能工厂，联动到销售的智能店铺等，我们做过一些初期的探索，有很大的想象空间。</description>
+    </item>
     
-	<atom:link href="https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>过去失败的创业尝试</title>
+      <link>https://dailydreamer.me/posts/2018-01-09-past-failed-experiences/</link>
+      <pubDate>Tue, 09 Jan 2018 22:52:10 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2018-01-09-past-failed-experiences/</guid>
+      <description>07/19/2018 Update：这半年自己也成长了不少，今天回过头来看这篇文章，发现自己忽略了很重要的一个失败因素：有效的团队。之前大家更像是一个group，虽然在一起玩的很开心，但是并没有真正花时间去build effective team。group和team的差异在于team在行动之前，会花时间建立大家都认同的价值观和行为准则，并形成team charter指导日后的工作。我个人非常在乎的原则是绝对透明，这意味着及时而坦诚的沟通自己的想法和顾虑，想想看来在之前的团队其实这点做的并不是很好。认识到这点后我在新团队尝试实践这个原则，取得了很好的效果。
+ 2018年到了，很多人都在朋友圈里发年终总结，我也整理了一下过去的照片，回忆起了本科的时候曾经有两次试图创业的经历。 虽然都无疾而终，但是现在想起还是有很多美好的回忆，以及接下来要跟大家分享的经验教训。
+Nutt Nutt 坚果健身是一个能收集器械健身数据的智能硬件。
+当时是第一次参加创客比赛，抱着试一试的心态，但是因为优秀的团队合作和切中热点的题目，我们最后获得了2015年中美青年创客大赛的一等奖（这里也可以看见选择的重要性哈哈）。 这个比赛的级别很高，比赛之后接受了一些媒体采访宣传，还有机会去了湖南卫视的天天向上，也是第一次接触到了一些投资人，同时有一个硬件工厂想要和我们合作把这个项目落地。 在这一片喝彩的声中，我们就决定试一试。 现在想起其实缺少很多冷静的分析和思考。
+其中细节按下不表。几点经验教训：
+ 中途受邀请准备很多展览、接待领导人参观，我们都没有拒绝。表面看起来风光，其实浪费了很多时间，而且大部分活动并没有带来任何的宣传效果，做的是无用功。 在过了最初的新鲜感之后，由于学业上的压力，以及合作方的不给力，团队的工作进度开始慢了下来，到最后的接近停滞。这期间团队之间没有像比赛那时侯一致的目标，但是并没有相互沟通清楚自己的期待和动机，导致了大家工作热情低下没有动力。  虽然最后项目没有做成，但是这也是我第一次接触设计思维的方法论，从此就在这条道路上探索了下去。
+Pootoo Pootoo是从我们实际的学习生活中来的。 大学中的学生辅导员工作中的很大时间都是用作一些低效率的反复通知和收发文件，当时想到如果能有一个App来帮他们做通知送达，文件自动收集规整，以及进一步可以是一个大学生知识分享平台就好了。
+细节还是有机会再说，经验教训：
+ 辅导员的效率工具对于辅导员还有学生来说都是一个使用频次比较低的东西，大概在一周一到两次，想要从这里切入做成知识分享平台有难度。 辅导员和大学生并没有很强的付费倾向，现在的这种方式对他们来说也可以接受，说明这是一个痒点并不是痛点。 在2016年，移动流量红利基本已经过去，这种类型的App想要融资难度比较大。 技术选型的时候，太执着于当前最新“最好”的技术，而没有考虑到团队的熟悉程度和学习成本，没有根据商业需求来技术选型，导致最后开发周期过长。  可以说这次尝试创业让我更加了解了现实世界的运行规则，技术和产品并不是一切。 虽然作为一个创业者可以对技术和产品有自己的坚持，但是作为公司来讲这些都只是为商业在服务，如何做好这其中的权衡是需要慢慢体会的。
+结语 Learn from fail. 这次记录下来之前项目的经验教训，是为了以后自己不会再犯同样的错误。嗯，黄金圣斗士不会被同样的招式打败第二次。</description>
+    </item>
     
+    <item>
+      <title>Nutriment</title>
+      <link>https://dailydreamer.me/posts/2017-12-05-nutriment/</link>
+      <pubDate>Tue, 05 Dec 2017 02:25:44 -0800</pubDate>
+      
+      <guid>https://dailydreamer.me/posts/2017-12-05-nutriment/</guid>
+      <description>Introduction Nutriment is a project that I developed with Ibtasam and Jay for MSTI Design Thinking Studio. We started from idea brainstorming and secondary research, we did primary research to refine our design question and to come up with design requirements, then user scenarios and core tasks were generated, finally we made a low fidelity prototype and conducted some tests to get user feedback.
+Through this process, not only did I learned the toolset and methodology of design thinking, but also a mindset and a way of thinking a question.</description>
+    </item>
     
     <item>
       <title>移动端体验</title>
-      <link>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</link>
+      <link>https://dailydreamer.me/posts/2016-06-16-mobile-application-experience/</link>
       <pubDate>Thu, 16 Jun 2016 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2016-06-16-mobile-application-experience/</guid>
+      <guid>https://dailydreamer.me/posts/2016-06-16-mobile-application-experience/</guid>
       <description>前段时间在Edx上浏览了一门课程Mobile Application Experiences，听课笔记记录如下。
 Come up an idea Research method  observation location tour: park, office&amp;hellip; contextual inquiring: working, workout&amp;hellip; think aloud diary logging: taking photo, recording video&amp;hellip; close to the time that happened interview: ask last time they do something rather than the general situation  look at what they are frustrating to do. What kind of role the environment is playing.
 Analyze data  flow models: analyze how data flow transfer between subjects conversation analyze: look at the conversation of subjects related to a subject critical incident analyze: look at the place where people get stuck affinity analyze  Affinity analyze From data(bottom up) to find themes.</description>
@@ -24,10 +63,10 @@ Analyze data  flow models: analyze how data flow transfer between subjects conve
     
     <item>
       <title>人人都是产品经理</title>
-      <link>https://dailydreamer.me/post/2015-07-25-product-manager/</link>
+      <link>https://dailydreamer.me/posts/2015-07-25-product-manager/</link>
       <pubDate>Sat, 25 Jul 2015 20:00:00 +0800</pubDate>
       
-      <guid>https://dailydreamer.me/post/2015-07-25-product-manager/</guid>
+      <guid>https://dailydreamer.me/posts/2015-07-25-product-manager/</guid>
       <description>写给-1到3岁的产品经理 我们到底是不是产品经理 产品是可以满足人需求的载体，商业产品在用户需求和商业目标之间平衡。
 宝洁产生了产品经理的概念。
 传统产品经理是品牌经理或产品市场经理，重在营销。
@@ -42,13 +81,11 @@ Analyze data  flow models: analyze how data flow transfer between subjects conve
 一个需求的奋斗史 用户研究-&amp;gt;需求采集-&amp;gt;需求分析-&amp;gt;需求筛选-&amp;gt;需求管理。
 需求采集的大生产运功 明确目标，明确采集方法，制定采集计划，执行采集，资料整理，然后进需求分析。
 定性的说：用户访谈。
- 为避免说的和做的不一致，可以尽量在用户和产品交互的场合下进行。
- 要避免样本少，以偏概全。
- 牢记访谈目的，不要太强势，也不要被用户代跑。
- 避免一组固定的问题。这会让用户有被审问的感觉。
- 首先关注目标，任务其次，多问为什么这么做。
- 避免让用户成为设计师，用户的解决方案通常短浅片面(这个深有体会。。。)。
- 避免讨论技术。</description>
+  为避免说的和做的不一致，可以尽量在用户和产品交互的场合下进行。
+  要避免样本少，以偏概全。
+  牢记访谈目的，不要太强势，也不要被用户代跑。
+  避免一组固定的问题。这会让用户有被审问的感觉。
+  首先关注目标，任务其次，多问为什么这么做。</description>
     </item>
     
   </channel>
