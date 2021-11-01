@@ -11,16 +11,34 @@
     <loc>https://dailydreamer.me/</loc>
     <lastmod>2021-10-24T00:19:53+08:00</lastmod>
   </url><url>
+    <loc>https://dailydreamer.me/tags/%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2021-10-24T00:19:53+08:00</lastmod>
+  </url><url>
     <loc>https://dailydreamer.me/posts/2021-10-24-the-minds-i/</loc>
+    <lastmod>2021-10-24T00:19:53+08:00</lastmod>
+  </url><url>
+    <loc>https://dailydreamer.me/tags/%E7%A7%91%E5%AD%A6/</loc>
     <lastmod>2021-10-24T00:19:53+08:00</lastmod>
   </url><url>
     <loc>https://dailydreamer.me/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-10-24T00:19:53+08:00</lastmod>
   </url><url>
-    <loc>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</loc>
-    <lastmod>2018-11-25T17:43:19-08:00</lastmod>
+    <loc>https://dailydreamer.me/tags/ai/</loc>
+    <lastmod>2020-02-29T17:31:29+08:00</lastmod>
+  </url><url>
+    <loc>https://dailydreamer.me/posts/2020-02-29-large-scale-model-training/</loc>
+    <lastmod>2020-02-29T17:31:29+08:00</lastmod>
+  </url><url>
+    <loc>https://dailydreamer.me/tags/%E6%9E%B6%E6%9E%84/</loc>
+    <lastmod>2020-02-29T17:31:29+08:00</lastmod>
+  </url><url>
+    <loc>https://dailydreamer.me/posts/2019-10-10-nfs-config/</loc>
+    <lastmod>2019-10-10T19:25:41+08:00</lastmod>
   </url><url>
     <loc>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2019-10-10T19:25:41+08:00</lastmod>
+  </url><url>
+    <loc>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</loc>
     <lastmod>2018-11-25T17:43:19-08:00</lastmod>
   </url><url>
     <loc>https://dailydreamer.me/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</loc>
@@ -38,20 +56,14 @@
     <loc>https://dailydreamer.me/posts/2018-06-13-principles/</loc>
     <lastmod>2018-06-13T17:19:22-07:00</lastmod>
   </url><url>
-    <loc>https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/</loc>
+    <loc>https://dailydreamer.me/tags/%E4%BA%A7%E5%93%81/</loc>
     <lastmod>2018-06-13T00:30:35-07:00</lastmod>
   </url><url>
     <loc>https://dailydreamer.me/posts/2018-06-13-apparel-sales-prediction/</loc>
     <lastmod>2018-06-13T00:30:35-07:00</lastmod>
   </url><url>
-    <loc>https://dailydreamer.me/tags/%E8%A1%8C%E4%B8%9A/</loc>
-    <lastmod>2018-06-13T00:30:35-07:00</lastmod>
-  </url><url>
     <loc>https://dailydreamer.me/tags/%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2018-06-13T00:30:35-07:00</lastmod>
-  </url><url>
-    <loc>https://dailydreamer.me/tags/maker/</loc>
-    <lastmod>2018-06-03T22:00:00-08:00</lastmod>
   </url><url>
     <loc>https://dailydreamer.me/posts/2018-06-03-xlchain/</loc>
     <lastmod>2018-06-03T22:00:00-08:00</lastmod>
@@ -59,11 +71,8 @@
     <loc>https://dailydreamer.me/posts/2018-01-28-foodgo-autonomous-food-delivery/</loc>
     <lastmod>2018-01-28T22:34:59-08:00</lastmod>
   </url><url>
-    <loc>https://dailydreamer.me/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</loc>
+    <loc>https://dailydreamer.me/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
     <lastmod>2018-01-28T22:34:59-08:00</lastmod>
-  </url><url>
-    <loc>https://dailydreamer.me/tags/%E5%88%9B%E4%B8%9A/</loc>
-    <lastmod>2018-01-09T22:52:10-08:00</lastmod>
   </url><url>
     <loc>https://dailydreamer.me/posts/2018-01-09-past-failed-experiences/</loc>
     <lastmod>2018-01-09T22:52:10-08:00</lastmod>
@@ -71,13 +80,7 @@
     <loc>https://dailydreamer.me/posts/2017-12-05-nutriment/</loc>
     <lastmod>2017-12-05T02:25:44-08:00</lastmod>
   </url><url>
-    <loc>https://dailydreamer.me/tags/%E5%93%B2%E5%AD%A6/</loc>
-    <lastmod>2017-08-26T10:47:29+08:00</lastmod>
-  </url><url>
     <loc>https://dailydreamer.me/posts/2017-08-26-the-grand-design/</loc>
-    <lastmod>2017-08-26T10:47:29+08:00</lastmod>
-  </url><url>
-    <loc>https://dailydreamer.me/tags/%E7%A7%91%E5%AD%A6/</loc>
     <lastmod>2017-08-26T10:47:29+08:00</lastmod>
   </url><url>
     <loc>https://dailydreamer.me/posts/2017-08-07-a-new-kind-of-science-2/</loc>
@@ -133,12 +136,6 @@
   </url><url>
     <loc>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</loc>
     <lastmod>2015-11-23T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://dailydreamer.me/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2015-11-23T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://dailydreamer.me/tags/ssh/</loc>
-    <lastmod>2015-10-30T20:00:00+08:00</lastmod>
   </url><url>
     <loc>https://dailydreamer.me/posts/2015-10-30-ssh-config/</loc>
     <lastmod>2015-10-30T20:00:00+08:00</lastmod>

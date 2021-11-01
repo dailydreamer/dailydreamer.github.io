@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>自动驾驶 on dailydreamer</title>
-    <link>https://dailydreamer.me/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</link>
-    <description>Recent content in 自动驾驶 on dailydreamer</description>
+    <title>机器人 on dailydreamer</title>
+    <link>https://dailydreamer.me/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+    <description>Recent content in 机器人 on dailydreamer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 28 Jan 2018 22:34:59 -0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jan 2018 22:34:59 -0800</lastBuildDate><atom:link href="https://dailydreamer.me/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FoodGo, 层级式的配送小车</title>
       <link>https://dailydreamer.me/posts/2018-01-28-foodgo-autonomous-food-delivery/</link>

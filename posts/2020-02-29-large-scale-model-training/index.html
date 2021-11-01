@@ -11,8 +11,8 @@
 
 <link rel="shortcut icon" href="/images/avatar.jpg" />
 
-<meta name="keywords" content="AWS, ElasticSearch">
-<title>在AWS上配置ElasticSearch</title>
+<meta name="keywords" content="模型训练, AI">
+<title>大规模模型训练</title>
 
 <link href="/index.xml" rel="alternate" type="application/rss+xml" title="dailydreamer" />
 <link href="/index.xml" rel="feed" type="application/rss+xml" title="dailydreamer" />
@@ -502,76 +502,66 @@ if (!doNotTrack) {
 </aside>
     <article>
       <div class="content post">
-        <h1 data-identifier="2015-06-02">
-          在AWS上配置ElasticSearch
-          <span class="posts-date">Jun, 2015</span> 
+        <h1 data-identifier="2020-02-29">
+          大规模模型训练
+          <span class="posts-date">Feb, 2020</span> 
         </h1>       
         <div class="tags">
           
-          <span class="tag is-medium" style="margin-left:0">编程</span>
+          <span class="tag is-medium" style="margin-left:0">AI</span>
+          
+          <span class="tag is-medium" style="margin-left:0">架构</span>
           
         </div>
-        <p>最近在AWS EC2上部署了ElasticSearch，感觉AWS的文档详细但稍显凌乱，在这里总结一下步骤。</p>
-<p>首先注册AWS。注意你需要一张支持外币支付的信用卡。</p>
-<p>然后创建IAM用户，并配置其权限和密钥对。
-可按照<a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html">文档</a>中的步骤来。
-注意为了使elasticsearch节点启动后能够自动发现别的节点，你可能需要在这一步为该用户而外设置read-only权限。</p>
-<p>之后有两种方案，可以直接部署在<a href="http://aws.amazon.com/cn/ec2/">EC2</a>上，价格便宜量又足。
-也可以部署在<a href="http://aws.amazon.com/cn/elasticmapreduce/">EMR</a>上，获得Haddop的集群管理能力，方便扩展以及将来部署其它基于Haddop的程序。但是注意使用EMR除了支付EMR的计费还要支付其使用的EC2及S3等的计费。</p>
-<h2 id="部署在ec2上">部署在EC2上</h2>
-<p>进入EC2控制面板启动实例。
-如果你希望数据在EC2实例关闭后不丢失需要为其配置挂载EBS卷并将其存储至EBS中，详细见<a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/ebs-using-volumes.html">文档</a>。</p>
-<p>注意EBS卷最好在home/ec2-user/下新建目录挂载，上次我挂载在home/ec2-user/下结果不知道.ssh是存在那里的，然后就连接不上了。。。
-挂载完EBS卷后需要更改其权限使得普通用户可以读写文件。
-<code>sudo chmod 777 ./ -R</code></p>
-<p>之后为其配置EIP来避免每次重启实例后IP地址改变。
-EIP是一个固定的共有IP，将其和一个EC2实例的私有IP绑定即可。
-这样也方便切换实例而IP不变。</p>
-<p>最后即可ssh连接到EC2上然后安装ElasticSearch了。</p>
-<p>安装好ElasticSearch之后还需安装<a href="https://github.com/elastic/elasticsearch-cloud-aws">elasticsearch-cloud-aws插件</a>并配置才能实现自动Discovery。
-大致的配置如</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#75715e"># AWS discovery</span>
-<span style="color:#f92672">cloud.aws.access_key</span>: <span style="color:#ae81ff">KEY</span>
-<span style="color:#f92672">cloud.aws.secret_key</span>: <span style="color:#ae81ff">KEY</span>
-
-<span style="color:#f92672">plugin.mandatory</span>: <span style="color:#ae81ff">cloud-aws</span>
-<span style="color:#f92672">discovery.type</span>: <span style="color:#ae81ff">ec2</span>
-<span style="color:#f92672">discovery.zen.ping.multicast.enabled</span>: <span style="color:#66d9ef">false</span>
-<span style="color:#f92672">discovery.ec2.groups</span>: <span style="color:#e6db74">&#34;elasticsearch&#34;</span>
-
-<span style="color:#f92672">discovery.ec2.availability_zones</span>: <span style="color:#e6db74">&#34;ap-northeast-1a&#34;</span>
-<span style="color:#f92672">cloud.aws.region</span>: <span style="color:#e6db74">&#34;ap-northeast-1&#34;</span>
-
-<span style="color:#f92672">discovery.ec2.host_type</span>: <span style="color:#e6db74">&#34;public_ip&#34;</span>
-<span style="color:#f92672">network.publish_host</span>: [<span style="color:#ae81ff">PUBLIC_IP]</span>
-
-<span style="color:#f92672">discovery.ec2.ping_timeout</span>: <span style="color:#e6db74">&#34;30s&#34;</span>
-</code></pre></div><p>discovery.ec2.groups是你的EC2集群所在的安全组，注意用这种方式的设置会将必须该安全组中所有节点都启动ElasticSearch服务才行，否则会一直等待。
-如果不想这样可以使用Tag设置。</p>
-<p>discovery.ec2.availability_zones一定要写对，否则节点会无法互相发现，不知道可以看EC2控制面版中有写。</p>
-<p>network.publish_host是该节点的公网IP，可使用绑定的弹性IP。</p>
-<p>更加详细的设置可以看<a href="http://www.markbetz.net/2014/03/18/elasticsearch-discovery-in-ec2/">这里</a>。</p>
-<p>有关部署的更加详细的步骤可以参考<a href="http://pavelpolyakov.com/2014/08/13/elasticsearch-cluster-on-aws-part-1-preparing-environment/">这里</a>。</p>
-<p>注意如果弹性IP更换了绑定的实例之后要ssh之前需要将原来保存在本地的host_key删除，使用命令<code>ssh-keygen -R hostname</code>,否则会报Host key verification failed。</p>
-<h2 id="部署在emr上">部署在EMR上</h2>
-<p>安装AWS CLI。
-可按照<a href="http://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-welcome.html">文档</a>安装并配置。</p>
-<p>然后直接使用Amazon EMR的<a href="https://github.com/awslabs/emr-bootstrap-actions/tree/master/elasticsearch">bootstrp action脚本</a>即可。
-这个仓库中还有其它基于Hadooop的软件的启动脚本，如spark，cascading等。</p>
-<p>输入命令(相关参数可自行配置)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws emr create-cluster <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--ec2-attributes KeyName<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;YOUR_EC2_KEYNAME&gt;&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--log-uri<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;YOUR_LOGGING_BUCKET&gt;&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--bootstrap-action <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  Name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Install ElasticSearch&#34;</span>,Path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s3://support.elasticmapreduce/bootstrap-actions/other/elasticsearch_install.rb&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  Name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Installkibanaginx&#34;</span>,Path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s3://support.elasticmapreduce/bootstrap-actions/other/kibananginx_install.rb&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  Name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Installlogstash&#34;</span>,Path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s3://support.elasticmapreduce/bootstrap-actions/other/logstash_install.rb&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--ami-version<span style="color:#f92672">=</span>3.5.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--instance-count<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--instance-type<span style="color:#f92672">=</span>m1.medium <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;TestElasticSearch&#34;</span>
-</code></pre></div><p>即可启动一个3节点的elasticsearch集群，并安装kibana和logstash。</p>
-<p>至此，ElasticSearch集群便部署完成了。Enjoy your search~</p>
+        <p>大规模模型训练涉及多GPU时的并行、通讯以及模型过大等问题。</p>
+<h1 id="并行方式">并行方式</h1>
+<p>对于n个GPU</p>
+<ul>
+<li>数据并行：不同的GPU输入不同的数据，运行相同的完整的模型。</li>
+<li>模型并行：不同的GPU运行模型的不同部分，比如多层网络的不同层；</li>
+</ul>
+<p><img src="/images/2020-02-29-large-scale-model-training/model_and_data_parallelism.png" alt="数据并行与模型并行"></p>
+<p>如果模型能够放进单个GPU的显存中，可以使用数据并行加速。</p>
+<p>如果模型不能够放进单个GPU的显存中，但可以放进多个GPU显存，可以考虑模型并行。</p>
+<p><strong>模型并行加速：pipeline</strong></p>
+<p>对于模型并行，如果只是简单将模型不同部分放在不同GPU上，对GPU利用率很低。如下图所示。</p>
+<p><img src="/images/2020-02-29-large-scale-model-training/sequent.png" alt="串行执行"></p>
+<p>此时可以采用流水线技术，将一个batch数据切分为多个mini-batch，每个GPU运行完一个mini-batch就将数据传输到下一阶段GPU，然后继续运行下一个mini-batch，可成倍提高GPU利用效率。如下图所示：</p>
+<p><img src="/images/2020-02-29-large-scale-model-training/pipeline.png" alt="流水线执行"></p>
+<p>GPipe提供了一种模型并行流水线的实现 <a href="https://arxiv.org/abs/1811.06965">https://arxiv.org/abs/1811.06965</a></p>
+<h1 id="通讯算法">通讯算法</h1>
+<p>对于n个GPU</p>
+<ul>
+<li>Parameter Server：GPU 0将数据分成n份分到各个卡上，每张卡负责自己的那一份batch的训练，得到grad后，返回给GPU 0上做累积，得到更新的权重参数后，再分发给各个卡。</li>
+</ul>
+<p><img src="/images/2020-02-29-large-scale-model-training/parameter_server.png" alt="参数服务器"></p>
+<ul>
+<li>Ring AllReduce：n张以环形相连，每张卡都有左手卡和右手卡，一个负责接收，一个负责发送，循环n-1次完成梯度累积，再循环n-1次做参数同步。分为Scatter Reduce和All Gather两个环节。</li>
+</ul>
+<p><img src="/images/2020-02-29-large-scale-model-training/ring_allreduce.png" alt="环形传播"></p>
+<p>Parameter Server是一种更通用的通讯算法，对于很多分布式机器学习算法都适用。但是在deep learning这一通讯量巨大的特定场景中，负责汇总的parameter server容易成为通讯瓶颈。</p>
+<p>假设有N个GPU，通信一次完整的参数所需时间为K，那么使用PS架构，其通信成本为 <code>T=2(N−1)*K</code>。</p>
+<p>因此Ring AllReduce被提出来，分为Scatter Reduce和All Gather两个环节。</p>
+<p>Scatter Reduce过程：首先，我们将参数分为N份，相邻的GPU传递不同的参数，在传递N-1次之后，可以得到每一份参数的累积（在不同的GPU上）</p>
+<p>All Gather：得到每一份参数的累积之后，再做一次传递，同步到所有的GPU上。</p>
+<p>其通信成本仅为 <code>T=2(N−1)/N*K</code> 。</p>
+<p><strong>参考</strong></p>
+<p><a href="https://fyubang.com/2019/07/08/distributed-training/">https://fyubang.com/2019/07/08/distributed-training/</a></p>
+<h1 id="pytorch实现">PyTorch实现</h1>
+<ul>
+<li>DataParallel：基于Parameter server算法，通讯消耗较大，对于master节点会有额外显存消耗，但是改动小实现简单。</li>
+<li>DistributedDataParallel：官方推荐，基于Ring AllReduce算法，不过需要改造启动方式和dataloader。</li>
+</ul>
+<p><strong>参考</strong></p>
+<p><a href="https://fyubang.com/2019/07/23/distributed-training3/">https://fyubang.com/2019/07/23/distributed-training3/</a></p>
+<h1 id="模型过大显存不足">模型过大显存不足</h1>
+<ul>
+<li>梯度累积：适用于模型可以放进显存，但是想增大batch</li>
+<li>梯度检查点：适用于模型无法放进显存。前馈时只存储部分结果，反向传播时重新计算</li>
+<li>模型并行：使用于模型无法放进单个GPU，但可分段放入多个GPU中</li>
+</ul>
+<p><strong>参考</strong></p>
+<p><a href="https://zhuanlan.zhihu.com/p/48035735">https://zhuanlan.zhihu.com/p/48035735</a></p>
 
         
         
