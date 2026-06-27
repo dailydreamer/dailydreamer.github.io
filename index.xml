@@ -62,31 +62,6 @@ https://zhuanlan.zhihu.com/p/48035735</description>
     </item>
     
     <item>
-      <title>如何配置NFS</title>
-      <link>https://dailydreamer.me/posts/2019-10-10-nfs-config/</link>
-      <pubDate>Thu, 10 Oct 2019 19:25:41 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2019-10-10-nfs-config/</guid>
-      <description>NFS 全称 Network File System 网络文件系统，用于像访问本地文件系统一样访问远程文件系统。本文介绍如何在服务器上配置 NFS，默认使用Ubuntu 16.04系统。
-Server端 安装nfs server
-sudo apt install nfs-kernel-server 编辑 /etc/exports，参考 https://linux.die.net/man/5/exports
-/data xxx.xxx.xxx.*(rw,sync,no_root_squash,all_squash,anonuid=1000,anongid=1000) 格式为：导出数据盘 客户端ip地址（配置项）
-其中：
-rw 代表读写权限
-sync 表示同步读写
-no_root_squash 表示client保留对server共享文件夹的root权限
-all_squash 表示client其他用户被map到一个匿名用户
-anonuid 和 anongid 指定了匿名用户的uid和gid
-通过配置all_squash和指定匿名用户为nfs server上的常用用户，可以省去很多权限问题。
-然后重启nfs server端
-sudo systemctl restart nfs-kernel-server Client端 安装 nfs client
-sudo apt install nfs-common mount远程nfs
-sudo mount xxx.xxx.xxx.xxx:/data /data 如果是老版本的nfs server可以使用如下选项
-sudo mount -t nfs -o vers=3,timeo=600,nolock xxx.xxx.xxx.xxx:/data2 /data2 如果需要配置启动挂载可以编辑 /etc/fstab，
-# nfs auto mount xxx.</description>
-    </item>
-    
-    <item>
       <title>Python 并发模型</title>
       <link>https://dailydreamer.me/posts/2018-11-25-python-concurrency/</link>
       <pubDate>Sun, 25 Nov 2018 17:43:19 -0800</pubDate>
@@ -332,23 +307,6 @@ Analyze data  flow models: analyze how data flow transfer between subjects conve
     </item>
     
     <item>
-      <title>买基金给我加薪</title>
-      <link>https://dailydreamer.me/posts/2016-06-15-fund-tips/</link>
-      <pubDate>Wed, 15 Jun 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2016-06-15-fund-tips/</guid>
-      <description>一本有关基金的入门书籍，一些基本知识和理念。
-术语 选中长期绩效好的基金。
-所选择的基金公司不能只重视一只基金。
-基金风险指标：
- 标准差：过去一年净值的稳定程度，越低越稳定 beta值：基金波动幅度与打大盘的比值，越低越稳定 夏普指数：每单位反风险带来的收益，越大收益越高。  定投秘籍  越早进场越好 账面亏损无所谓，赎回时要赚钱 定期检视，适时去芜存菁（绩效连续在同类型中处在下游） 只设停利，不设停损（简单计算，年利率是定存的5倍）  单笔投资秘籍  熟悉市场脉动 分批进场，买跌不买涨 定期检视，停利更要止损 懂得分批出场  结合基本面（经济景气）和技术面
-基本面  国内生产总值 主要经济指标 美国采购经理指数 消费者物价指数 美联储态度 消费者信心指数  技术面  季线 KD线  结合操作 定投的收益也是市场的重要指标
-进场时：先定投，低谷时单笔投资
-出场时：先2-3次赎单笔投资，再一次赎回定投
-获利后滚入再投资</description>
-    </item>
-    
-    <item>
       <title>从函数式语言想到的</title>
       <link>https://dailydreamer.me/posts/2016-06-09-inspired-by-functional-programing-language/</link>
       <pubDate>Thu, 09 Jun 2016 20:00:00 +0800</pubDate>
@@ -366,21 +324,6 @@ functional programming 被认为是下一代的编程范式。 函数式编程�
 基于immutable的系统 Nix OS是一种使用Nix packager manager的纯函数式思想的系统。 Nix packager manager也可以在Linux和Mac OS X上使用。 它将每一个软件包都独立开来，升级软件的时候不会影响原来已经安装好的其它版本的该软件，使得软件可以轻松回滚，并且不会出现由于版本导致的各种问题，是ruby的RVM，node.js的NVM，python的virtualenv等等软件所解决问题的终极解决方案。
 类型 Haskell拥有强大的类型系统。 static type是指其编译时进行类型检查，strong type是指其类型检查要求类型严格匹配。 配合type inference，Haskell的类型系统做到了你不需要时感受不到，需要清晰接口时可以显示声明。 它永远在保障着程序的正确性，不会产生JavaScript中一些被人广泛诟病的错误（这个视频我笑了好久。。。）。 Scala中也有type inference，但是由于JVM的限制功能很有限。
 Haskell中的type class可以优雅的实现generics和polymorphism，并且可以避免很多OOP中因为不能把函数作为一等公民传递（高阶函数）而造成的臃肿的设计模式。 Julia中multiple dispatch更进一步，根据每个参数的类型不同调用不同的函数实现，更符合直觉，且避免了OOP中dynamic dispatch的动态查找带来的性能损失。</description>
-    </item>
-    
-    <item>
-      <title>WebRTC简介</title>
-      <link>https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/</link>
-      <pubDate>Wed, 25 May 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2016-05-25-webrtc-introduction/</guid>
-      <description>WebRTC简介 WebRTC是一种在浏览器中无需任何插件的点对点(P2P)实时视频、音频、数据交流协议，其中RTC是实时沟通(Real Time Communication)的缩写。 过去，实时沟通昂贵且实现复杂，需要专用的视频和音频设备及技术，使得将其集成进已有服务昂贵且费时。 后来，Google开源了Gmail和Hangouts中使用的RTC技术，并且参与W3C相关规范的制定。 2011年，WebRTC第一个版本被实现。 现在WebRTC技术已经被WhatsApp, Facebook Messenger等应用广泛使用。
-WebRTC主要实现了3个API，getUserMedia、RTCPeerConnection和RTCDataChannel。 其中getUserMedia定义了来获取设备上的视频(包括摄像头输入和屏幕输入等)、音频流的接口。RTCPeerConnection定义了用于处理两个客户端之间的流数据的接口。RTCDataChannel定义了用于处理两个客户端之间任意数据收发的接口。
-使用WebRTC过程 使用WebRTC时需要如下步骤：
- 使用getUserMedia获取MediaStream流数据，此时可以用Constraints对MediaStream的帧率、宽、高等进行设置。 使用RTCPeerConnection初始化客户端session，将MediaStream附加到session上。 获取网络信息(如IP地址、端口等)，与其他客户端进行Signaling(信令交换)。 该过程使用SDP（Session Description Protocol）协议。 Signaling交换流媒体数据信息(如编码、分辨率等)。 Signaling过程完成，直接点对点交换流媒体数据MediaStream。 (可选)建立RTCDataChannel进行数据交换。  实际应用中，会遇到客户端处于防火墙或NAT之后等复杂情况，这时需要用到STUN协议或TURN协议等来实现防火墙和NAT穿透，获取真实的网络信息。
-由于WebRTC在建立session之后流媒体数据是点对点传输，这样虽然很快，但是如果遇到大量客户端的视频会议等场景，客户端之间需要两两连接，对于客户端带宽要求很高。 这时就需要MCU(Multipoint Control Unit)来改变网络拓扑，节省带宽提高性能。
-WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交换，如WebSocket或XMPP等。
-由于WebRTC标准实现还未最终完全确定，各个浏览器都需开启实验性功能才能使用，可以考虑Chrome插件或者使用Electron封装成桌面程序的形式提供更好的用户体验。</description>
     </item>
     
     <item>
@@ -402,81 +345,6 @@ WebRTC在Signaling过程中需要使用其他双向数据协议进行信息交�
 原研哉说，设计师在其受众头脑中创建一种信息建筑，受众通过视觉听觉味觉触觉等感官信息，以及被外界重新唤醒的记忆来构建信息建筑。
 原研哉对书和纸的看法：书作为一种存储信息的媒介可能有诸多不便。 但是如果我们好好观察一下信息与个人的关系，会发现重要的其实是我们能多深入的理解信息。 就书而言，我们会有更愉快的用户体验，我们会更中意于那些以适当重量和质地的材料呈现的信息。 这可能就像食物与人类的关系一样。 因为电子媒介的兴起，纸终于能做他该做的事情了——充当一种本性迷人的材料。
 他还是无印良品咨询委员会委员。 无印良品的理念是无设计的设计，简单，追求的不是这个好而是这样就好。</description>
-    </item>
-    
-    <item>
-      <title>DOM和DOM Event</title>
-      <link>https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/</link>
-      <pubDate>Mon, 25 Apr 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2016-04-25-dom-and-dom-event/</guid>
-      <description>DOM和HTML，JavaScript，CSS的关系 Document Object Model(DOM)是W3C制定的一种语言无关的面向对象的文档模型，规定了一组可编程的interface需要实现的属性和方法。 HTML和XML文档实现了DOM，因此拥有面向对象的特性，其结构、样式、内容等可以被其他语言的DOM实现操纵。 DOM Level 4是2015年的最新一版标准。
-HTML中&amp;lt;script&amp;gt;元素中嵌入的JavaScript就是DOM的一种实现，如下所示：
-var paragraphs = document.getElementsByTagName(&amp;#34;P&amp;#34;); // paragraphs[0] is the first &amp;lt;p&amp;gt; element // paragraphs[1] is the second &amp;lt;p&amp;gt; element, etc. alert(paragraphs[0].nodeName); 其中document对象，getElementsByTagName方法，alert方法，nodeName属性均是DOM标准规定的。
-你也可以用其它语言操作DOM，如下的Python示例：
-# Python DOM example import xml.dom.minidom as m doc = m.parse(&amp;#34;test.xml&amp;#34;); doc.nodeName # DOM property of document object; p_list = doc.getElementsByTagName(&amp;#34;para&amp;#34;); HTML是一种文档标记语言，HTML元素除了实现DOM的interface之外，还实现了HTML标准中规定的一些interface。如下示例：
-var table = document.getElementById(&amp;#34;table&amp;#34;); var tableAttrs = table.attributes; // Node/Element interface for (var i = 0; i &amp;lt; tableAttrs.</description>
-    </item>
-    
-    <item>
-      <title>CSS Cheat Sheet</title>
-      <link>https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/</link>
-      <pubDate>Thu, 14 Apr 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2016-04-14-css-cheat-sheet/</guid>
-      <description>HTML block element块级元素，撑满一行
-inline element行内元素，宽度包围内容
-CSS原理 选择符 a, b {} 同时选中a和b
-a b {} a是b的祖先元素时选中b
-a &amp;gt; b {} a是b的父元素时选中b
-a + b {} a紧邻b时选中b
-a ~ b {} a和b是同胞时选中b
-* {} 全部选中
-.a {} 选中a类
-#a {} 选中id为a
-a.b {} 选中同时为a标签和b类
-.a.b {} 选中同时为a类和b类
-a[b] {} 选中a标签中带有b属性的
-a[b=c] {} 选中a标签中b属性值为c的
-伪类 a标签 a:link a:visited a:hover a:active
-a:focus a:target
-一组同胞元素中的第几个 a:first-child a:last-child a:nth-child(n) a:nth-child(odd) a:nth-child(even)
-伪元素 a::first-letter a::first-line
-a::before a::after</description>
-    </item>
-    
-    <item>
-      <title>单页应用JWT身份认证</title>
-      <link>https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/</link>
-      <pubDate>Sat, 09 Apr 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2016-04-09-spa-jwt-auth/</guid>
-      <description>最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 为了保持RESTful服务的无状态，要避免使用sesseion来保存登录状态，可以使用token方式来进行认证。 这篇博客就来说一下利用JWT(JSON Web Tokens)进行身份认证，以及如何防范MITM，XSS与CSRF攻击。
-JWT JWT是RFC 7159规范，利用JSON和一种可选的签名算法定义了一种紧凑且自恰的结构。 相比基于XML的SAML方式更加简单紧凑，节省流量且JSON格式方便处理。 相比基于session的认证方式不用在服务器端维护状态，易于扩展；不用查询数据库，性能更好；可以授权给别的应用。 缺点是实现过于复杂，很多语言库都没有实现完整的JWT规范。
-JWT由三部分组成，Header.Payload.Signature。
-Header Header包含签名算法和type，如下：
-{ &amp;#34;alg&amp;#34;: &amp;#34;HS256&amp;#34;, &amp;#34;typ&amp;#34;: &amp;#34;JWT&amp;#34; } Base64编码后即为Header。
-Payload 主体内容部分。有一些保留属性，如iss (issuer), exp (expiration time), sub (subject), aud (audience)等。也可以声明私有属性。
-如下：
-{ &amp;#34;sub&amp;#34;: &amp;#34;1234567890&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;John Doe&amp;#34;, &amp;#34;admin&amp;#34;: true } Base64编码后即为Payload。
-Signature 签名部分，生成过程如下：
-alg( base64UrlEncode(header) + &amp;#34;.&amp;#34; + base64UrlEncode(payload), secret) 其中alg为Header中声明的签名算法，常用的如SHA256等。 结合secret校对签名可以保证JWT的完整性和不可伪造性。
-身份验证过程 后端API除了注册和登录外的需要身份验证的接口都对JWT签名进行验证，不通过则返回401 Unauthorized，保护API。 用户注册登录后生成JWT返回用户，用户访问受保护的API时需要随请求发送JWT至服务器端。
-两种常见的安全威胁 接下来看看单页应用开发中几种常见的安全威胁：MITM(Man-In-The-Middle)，XSS(Cross-site scripting)和CSRF(Cross Site Request Forgery)。
-MITM MITM是指在数据传输过程中窃听甚至篡改线路中的数据，如窃听WIFI和ARP欺骗等等。 这里我们在应用层主要使用SSL加密，即HTTPS防范它。 在后端response的header的cookie设置Secure字段，强制cookie使用HTTPS传输。
-XSS XSS是指将恶意脚本注入站点，如在用户聊天框输入的地方输入如下内容
-&amp;lt;img src=x onerror=&amp;#34;alert(XSS!</description>
-    </item>
-    
-    <item>
-      <title>CORS解决单页应用跨域问题</title>
-      <link>https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/</link>
-      <pubDate>Fri, 08 Apr 2016 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2016-04-08-cors-solve-same-origin-policy-problem/</guid>
-      <description>同源策略 最近在开发一个单页应用，采用了前后端分离的策略，即后端只提供RESTful接口，前端进行路由，通过Ajax和后端交互。 这时前端和后端部署在不同的服务器上。 而浏览器为了安全，运行在浏览器中的Javascript脚本受到同源策略限制。
-同源是指协议+主机名+端口号全部相同，称为同源。 详细见下表，是跟&amp;quot;http://www.example.com/dir/page.html&amp;quot;做比较。
-   Compared URL Outcome Reason     http://www.example.com/dir/page2.html Success Same protocol, host and port   http://www.example.com/dir2/other.html Success Same protocol, host and port   http://username:password@www.example.com/dir2/other.html Success Same protocol, host and port   http://www.example.com:81/dir/other.html Failure Same protocol and host but different port   https://www.example.com/dir/other.html Failure Different protocol   http://en.example.com/dir/other.html Failure Different host   http://example.com/dir/other.html Failure Different host (exact match required)   http://v2.</description>
     </item>
     
     <item>
@@ -546,44 +414,6 @@ Abandon blame: map the contribution system blame是关于judging但是contributi
     </item>
     
     <item>
-      <title>一次与CTF的邂逅</title>
-      <link>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</link>
-      <pubDate>Mon, 23 Nov 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-11-23-meet-ctf/</guid>
-      <description>机缘巧合做了两道CTF二进制题目，谨以此为记。
-第一题 recho 主要参考这篇博客，ruby实现，也有人推荐了这篇python实现版，使用了pwntools。
-第一题中handle()函数buf大小256Byte，但是recv_line()函数接受用户输入没有限制长度，存在BOF漏洞可以利用。
-为了方便本地调试，将源代码中关于drop_priv()相关函数去除后，本地编译。
-为了能够在64位linux上编译和执行32位文件，需要安装32位环境。以Ubuntu14.04为例，执行
-sudo dpkg --add-architecture i386 sudo apt-get update sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 gcc-multilib 即可。
-编译时使用命令
-gcc -fno-stack-protector -g -o recholocal -m32 recholocal.c 注意使用-m32参数编译成32位，-fno-stack-protector关闭stack canary检测，-g方便gdb调试。
-运行./recholocal后通过命令
-ps -aux | grep recholocal 查看其进程号，通过
-gdb atach pid 来调试该进程。
-set follow-fork-mode child 可以使gdb在程序fork()后跟随子进程。
-在程序中找到recvline()和sendlen()，使用
-objdump -d recholocal | grep recvline 获取地址，使用他们来对内存进行写和读。 注意recv_line最后以\n结束。 还有程序最开始调用的sendstr()函数会将是将payload的strlen()长度发送，如果payload中有0x00就会被截断发送。
-使用objdump -x recholocal可以查看各个section的位置和布局，找到一个可读可写又足够大的section来存放我们的字符串参数，如.bss或.dynamic等。 发现.dynamic的位置是0x0804a10c。
-为了对付ALSR，需要先知道libc中某个函数的运行时地址，使用sendlen()将其发送过来，再加上system()相对这个函数的偏移，写入某个函数got表项，在调用该函数就是相当于调用了system()。
-使用
-objdump -R recholocal | grep __libc_start_main 发现__libc_start_main()的got表项地址为0x0804a040。</description>
-    </item>
-    
-    <item>
-      <title>多个github账号的ssh key切换</title>
-      <link>https://dailydreamer.me/posts/2015-10-30-ssh-config/</link>
-      <pubDate>Fri, 30 Oct 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-10-30-ssh-config/</guid>
-      <description>当拥有多个github账号并且想通过ssh方式同步代码时，就需要在多个账号的ssh key间切换。
-github多个账号ssh key切换 配置ssh的config文件 使用ssh-keygen -t rsa -C &amp;quot;youremail@xxx.com&amp;quot;生成两个ssh key之后，在~/.ssh/下添加一个config文件，内容如下:
-Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host second.github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa_second 设置远程仓库的ssh地址 只需要让ssh的目标主机地址变为你写的Host即可。
-git remote add origin git@second.github.com:myname/myrepo.git 更加深入的利用ssh config文件可以参考这篇文章。</description>
-    </item>
-    
-    <item>
       <title>禅与摩托车维修的艺术</title>
       <link>https://dailydreamer.me/posts/2015-08-04-zen-and-the-art-of-motorcycle-maintenance/</link>
       <pubDate>Tue, 04 Aug 2015 20:00:00 +0800</pubDate>
@@ -646,19 +476,6 @@ git remote add origin git@second.github.com:myname/myrepo.git 更加深入的利
     </item>
     
     <item>
-      <title>WPF全局隐藏鼠标</title>
-      <link>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</link>
-      <pubDate>Mon, 29 Jun 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
-      <description>前些日子使用WPF实现了一个填平两个屏幕间缝隙的小程序，在那里面需要让光标在两个屏幕间的时候将其隐藏。 在一个程序内部隐藏鼠标很容易，在WPF中只需设置Mouse.OverrideCursor = Cursors.None。 但是当程序最小化后鼠标还能隐藏着实费了一番功夫。 大致有如下几种思路。
-  将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看这里。 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐； 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！ 只有重启才能重新显示鼠标。
-  要隐藏鼠标时将鼠标的位置一直设置在右下角。 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏； 同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。
-  最后终于找到了一种十分讨巧的方法。 就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。 大致代码如下：
-  Window cursorWin; private void cursorWinInit() { cursorWin = new Window(); cursorWin.Left = bound - (W + hideBuffer); cursorWin.Top = 0; cursorWin.Width = 2 * (W + hideBuffer); cursorWin.Height = maxHeight; cursorWin.ShowInTaskbar = false; //禁止在任务栏显示  cursorWin.WindowStyle = WindowStyle.None; //无边框  cursorWin.AllowsTransparency = true; //透明  cursorWin.Topmost = true; //置顶  cursorWin.</description>
-    </item>
-    
-    <item>
       <title>UNIX编程艺术</title>
       <link>https://dailydreamer.me/posts/2015-06-28-unix-programming-art/</link>
       <pubDate>Sun, 28 Jun 2015 20:00:00 +0800</pubDate>
@@ -694,58 +511,6 @@ UNIX哲学起源与Ken Thompson早期关于如何设计一个服务接口简洁�
 “宽容的收，谨慎的发”。
   经济原则：宁花机器一分，不花程序员一秒
   生成原则：避免手工hack，尽量编写程序去生成程序</description>
-    </item>
-    
-    <item>
-      <title>Python解析XML与生成迭代器</title>
-      <link>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</link>
-      <pubDate>Tue, 23 Jun 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</guid>
-      <description>这次来看看Python解析XML与生成迭代器。
-迭代器 使用yield操作符可以使一个函数变成迭代器。如下一段测试代码：
-def genTest(n): print 1 print 2 for i in range(3,n+1): yield i print n+1 print n+2 if __name__ == &amp;#39;__main__&amp;#39;: for i in genTest(5): print i 输出如下：
-1 2 3 4 5 6 7 可以看出第一次调用genTest()时执行了1,2位置的代码。 之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。
-Python解析XML Python解析XML有许多种方法，它们各有特色。
-ElementTree ElementTree是python xml解析的一种轻量级实现。 它将XMl文件读取到内存中以一棵树的形式存储。 它速度快且方便使用，但是不能读取不规范的XMl文件，并且会一次将XML文件解析入内存。 因此适合解析一些小型的XML文件。 cElementTree是它的一个C优化过的版本。
-示例代码如下：
-def readXMLET(filename): try: import xml.etree.cElementTree as ET except ImportError: import xml.etree.ElementTree as ET tree = ET.ElementTree(file=filename) print &amp;#39;read finish!&amp;#39; root = tree.</description>
-    </item>
-    
-    <item>
-      <title>ElasticSearch搜索配置（2）</title>
-      <link>https://dailydreamer.me/posts/2015-06-22-elasticsearch-config-2/</link>
-      <pubDate>Mon, 22 Jun 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-06-22-elasticsearch-config-2/</guid>
-      <description>这次再来说说ElasticSearch的其他一些特性。
-Bulk 使用Index进行索引是一次索引一条doc，而bulk提供了批量索引的功能，能够显著的减少索引时间。 经过实际测试，对于1个100Mb约20K条doc，向远程服务器单节点发起索引的完成时间对比如下表。
-   chunck_size time/s     200 298.34   500 216.84   1000 169.64   2000 164.71    可以看出chunck_size在一个合适的区间时可以显著减少索引时间，而chunck_size的选取也和一个doc的大小有关。
-这里是官方文档。
-ElasticSearch的python API中对bulk进行了封装，有helpers.streaming_bulk和helpers.bulk两个方法，官方文档在这。大致使用方法如下：
-for success, fail in helpers.streaming_bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000): print &amp;#39;success: &amp;#39;, success success, fail = helpers.bulk(es, genDoc(filename), index=INDEX, doc_type=DOCTYPE, chunk_size=1000) 其中geDoc()是一个迭代器。 这两个方法的区别在于bulk调用了streaming_bulk并将信息一起返回。
-拼音搜索 对于中文内容较多的索引，如果能够使用拼音搜索会十分方便。 ElasticSearch有插件elasticsearch-analysis-pinyin可以实现这个功能。 它可以将中文转化为拼音字母，在建立索引的时候就可以在倒排列表中使对应的拼音字母关联到包含中文的Doc上。
-为了将拼音搜索的索引和IK分词的索引结合，需要用到另一个插件elasticsearch-analysis-combo。 它可以将两个Analyzer的结果合并起来得到一个新的Analyzer。
-基本的配置如下。
-index: analysis: analyzer: ik: alias: [news_analyzer_ik,ik_analyzer] type: org.</description>
-    </item>
-    
-    <item>
-      <title>ElasticSearch搜索配置（1）</title>
-      <link>https://dailydreamer.me/posts/2015-06-05-elasticsearch-config-1/</link>
-      <pubDate>Fri, 05 Jun 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-06-05-elasticsearch-config-1/</guid>
-      <description>最近在用ElasticSearch做一些搜索，来谈谈其中用到的一些特性。
-ElasticSearch是基于Lucene的分布式包装，其中每一个分片或一个副本都是一个Lucene实例。 ElasticSearch实现了很好的扩展性和冗余，自动负载均衡。可以通过Restful API与ElasticSearch集群交互。 我使用的是python API。
-可以参考ElasticSearch权威指南，讲解非常清楚。
-建立索引 建立索引的时候可以使用mapping建立对每个字段建立映射。
-mapping_body = { &amp;#39;mappings&amp;#39;:{ &amp;#39;tweet&amp;#39;:{ &amp;#34;properties&amp;#34;:{ &amp;#39;text&amp;#39;:{&amp;#39;type&amp;#39;:&amp;#39;string&amp;#39;, &amp;#39;index&amp;#39;:&amp;#39;analyzed&amp;#39;, &amp;#39;analyzer&amp;#39;:&amp;#39;ik_smart&amp;#39;, &amp;#39;similarity&amp;#39;: &amp;#39;BM25&amp;#39;} } } } } es.indices.create(index=&amp;#39;test-index&amp;#39;, body=mapping_body) 上面为&amp;rsquo;test-index&amp;rsquo;的索引中&amp;rsquo;tweet&amp;rsquo;的type中&amp;rsquo;text&amp;rsquo;字段建立映射。
-&amp;lsquo;index&amp;rsquo;设置为analyzed说明要先通过分析器，&amp;lsquo;analyzer&amp;rsquo;设置分析器为ik分词的智能粒度切分，默认为standard，不适合中文分词;&amp;lsquo;similarity&amp;rsquo;设置了相似度算法为BM25，默认为向量空间算法。
-具体可以看文档。
-查询 查询可以通过ID来检索，但是作为一个搜索引擎，ElasticSearch提供了一种基于JSON的DSL查询格式。
-search_body = { &amp;#34;query&amp;#34;: { &amp;#34;multi_match&amp;#34;: { &amp;#34;query&amp;#34;: &amp;#34;Hello世界&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;cross_fields&amp;#34;, &amp;#34;operator&amp;#34;: &amp;#34;or&amp;#34;, &amp;#34;fields&amp;#34;: [ &amp;#34;author&amp;#34;, &amp;#34;text^2&amp;#34; ] } }, &amp;#39;highlight&amp;#39;:{ &amp;#39;fields&amp;#39;:{ &amp;#39;author&amp;#39;:{}, &amp;#39;text&amp;#39;:{} } } } res = es.search(index=&amp;#39;test-index&amp;#39;, doc_type=&amp;#39;tweet&amp;#39;, body=search_body) Query 上面的示例中使用了multi match query来进行多字段查询，multi match query对fields中的每个field进行query查询。
-&amp;lsquo;operator&amp;rsquo;定义了对查询结果进行的操作，&amp;lsquo;or&amp;rsquo;代表取并集。</description>
     </item>
     
     <item>
@@ -801,32 +566,6 @@ DBC 按合约设计 前条件，后条件，类不变项。
 早测试，常测试，自动测试。
 温和的超出用户的期望。与用户交流期望。
 在你的作品上签名。这是责任和荣耀的表现。</description>
-    </item>
-    
-    <item>
-      <title>在AWS上配置ElasticSearch</title>
-      <link>https://dailydreamer.me/posts/2015-06-02-config-elasticsearch-on-aws/</link>
-      <pubDate>Tue, 02 Jun 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-06-02-config-elasticsearch-on-aws/</guid>
-      <description>最近在AWS EC2上部署了ElasticSearch，感觉AWS的文档详细但稍显凌乱，在这里总结一下步骤。
-首先注册AWS。注意你需要一张支持外币支付的信用卡。
-然后创建IAM用户，并配置其权限和密钥对。 可按照文档中的步骤来。 注意为了使elasticsearch节点启动后能够自动发现别的节点，你可能需要在这一步为该用户而外设置read-only权限。
-之后有两种方案，可以直接部署在EC2上，价格便宜量又足。 也可以部署在EMR上，获得Haddop的集群管理能力，方便扩展以及将来部署其它基于Haddop的程序。但是注意使用EMR除了支付EMR的计费还要支付其使用的EC2及S3等的计费。
-部署在EC2上 进入EC2控制面板启动实例。 如果你希望数据在EC2实例关闭后不丢失需要为其配置挂载EBS卷并将其存储至EBS中，详细见文档。
-注意EBS卷最好在home/ec2-user/下新建目录挂载，上次我挂载在home/ec2-user/下结果不知道.ssh是存在那里的，然后就连接不上了。。。 挂载完EBS卷后需要更改其权限使得普通用户可以读写文件。 sudo chmod 777 ./ -R
-之后为其配置EIP来避免每次重启实例后IP地址改变。 EIP是一个固定的共有IP，将其和一个EC2实例的私有IP绑定即可。 这样也方便切换实例而IP不变。
-最后即可ssh连接到EC2上然后安装ElasticSearch了。
-安装好ElasticSearch之后还需安装elasticsearch-cloud-aws插件并配置才能实现自动Discovery。 大致的配置如
-# AWS discovery cloud.aws.access_key: KEY cloud.aws.secret_key: KEY plugin.mandatory: cloud-aws discovery.type: ec2 discovery.zen.ping.multicast.enabled: false discovery.ec2.groups: &amp;#34;elasticsearch&amp;#34; discovery.ec2.availability_zones: &amp;#34;ap-northeast-1a&amp;#34; cloud.aws.region: &amp;#34;ap-northeast-1&amp;#34; discovery.ec2.host_type: &amp;#34;public_ip&amp;#34; network.publish_host: [PUBLIC_IP] discovery.ec2.ping_timeout: &amp;#34;30s&amp;#34; discovery.ec2.groups是你的EC2集群所在的安全组，注意用这种方式的设置会将必须该安全组中所有节点都启动ElasticSearch服务才行，否则会一直等待。 如果不想这样可以使用Tag设置。
-discovery.ec2.availability_zones一定要写对，否则节点会无法互相发现，不知道可以看EC2控制面版中有写。
-network.publish_host是该节点的公网IP，可使用绑定的弹性IP。
-更加详细的设置可以看这里。
-有关部署的更加详细的步骤可以参考这里。
-注意如果弹性IP更换了绑定的实例之后要ssh之前需要将原来保存在本地的host_key删除，使用命令ssh-keygen -R hostname,否则会报Host key verification failed。
-部署在EMR上 安装AWS CLI。 可按照文档安装并配置。
-然后直接使用Amazon EMR的bootstrp action脚本即可。 这个仓库中还有其它基于Hadooop的软件的启动脚本，如spark，cascading等。
-输入命令(相关参数可自行配置)</description>
     </item>
     
   </channel>

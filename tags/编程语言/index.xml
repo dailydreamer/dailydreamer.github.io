@@ -48,34 +48,5 @@ functional programming 被认为是下一代的编程范式。 函数式编程�
 Haskell中的type class可以优雅的实现generics和polymorphism，并且可以避免很多OOP中因为不能把函数作为一等公民传递（高阶函数）而造成的臃肿的设计模式。 Julia中multiple dispatch更进一步，根据每个参数的类型不同调用不同的函数实现，更符合直觉，且避免了OOP中dynamic dispatch的动态查找带来的性能损失。</description>
     </item>
     
-    <item>
-      <title>WPF全局隐藏鼠标</title>
-      <link>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</link>
-      <pubDate>Mon, 29 Jun 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-06-29-hiding-mouse-globally-in-wpf/</guid>
-      <description>前些日子使用WPF实现了一个填平两个屏幕间缝隙的小程序，在那里面需要让光标在两个屏幕间的时候将其隐藏。 在一个程序内部隐藏鼠标很容易，在WPF中只需设置Mouse.OverrideCursor = Cursors.None。 但是当程序最小化后鼠标还能隐藏着实费了一番功夫。 大致有如下几种思路。
-  将系统的光标图标设置为一个blank.cur的空图标，要显示时再替换回来，这样就可以全局隐藏鼠标，具体方法可以看这里。 但是这种方法有一些问题，一个是需要将系统所有状态的光标图标都替换为空图标，十分繁琐； 而且非常危险，因为一旦你的程序在隐藏鼠标时崩溃，那么鼠标就消失了！ 只有重启才能重新显示鼠标。
-  要隐藏鼠标时将鼠标的位置一直设置在右下角。 这样虽然看不见鼠标了，但是有时会触发侧边栏，尤其是Win8的右边栏； 同时无法知道用户此时已经将光标移动到哪里了，因此也不是非常好用。
-  最后终于找到了一种十分讨巧的方法。 就是在要隐藏光标的范围内新建一个透明窗口，然后在这个窗口上将光标隐藏。 大致代码如下：
-  Window cursorWin; private void cursorWinInit() { cursorWin = new Window(); cursorWin.Left = bound - (W + hideBuffer); cursorWin.Top = 0; cursorWin.Width = 2 * (W + hideBuffer); cursorWin.Height = maxHeight; cursorWin.ShowInTaskbar = false; //禁止在任务栏显示  cursorWin.WindowStyle = WindowStyle.None; //无边框  cursorWin.AllowsTransparency = true; //透明  cursorWin.Topmost = true; //置顶  cursorWin.</description>
-    </item>
-    
-    <item>
-      <title>Python解析XML与生成迭代器</title>
-      <link>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</link>
-      <pubDate>Tue, 23 Jun 2015 20:00:00 +0800</pubDate>
-      
-      <guid>https://dailydreamer.me/posts/2015-06-23-python-yeild-and-parse-xml/</guid>
-      <description>这次来看看Python解析XML与生成迭代器。
-迭代器 使用yield操作符可以使一个函数变成迭代器。如下一段测试代码：
-def genTest(n): print 1 print 2 for i in range(3,n+1): yield i print n+1 print n+2 if __name__ == &amp;#39;__main__&amp;#39;: for i in genTest(5): print i 输出如下：
-1 2 3 4 5 6 7 可以看出第一次调用genTest()时执行了1,2位置的代码。 之后yield将i返回给caller的i，然后再次调用时继续从genTest上次yield之后的代码执行，直至最后return停止，迭代结束。
-Python解析XML Python解析XML有许多种方法，它们各有特色。
-ElementTree ElementTree是python xml解析的一种轻量级实现。 它将XMl文件读取到内存中以一棵树的形式存储。 它速度快且方便使用，但是不能读取不规范的XMl文件，并且会一次将XML文件解析入内存。 因此适合解析一些小型的XML文件。 cElementTree是它的一个C优化过的版本。
-示例代码如下：
-def readXMLET(filename): try: import xml.etree.cElementTree as ET except ImportError: import xml.etree.ElementTree as ET tree = ET.ElementTree(file=filename) print &amp;#39;read finish!&amp;#39; root = tree.</description>
-    </item>
-    
   </channel>
 </rss>
